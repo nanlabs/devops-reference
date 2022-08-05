@@ -5,8 +5,8 @@ FROM mcr.microsoft.com/mssql/server:${MSSQL_TAG}
 # (but their default value is retained if set previously)
 ARG MSSQL_TAG
 
-RUN mkdir -p /docker-entrypoint-initdb.d
-COPY init.d /docker-entrypoint-initdb.d
+RUN mkdir -p /opt/mssql-scripts
+COPY init.d /opt/mssql-scripts
 COPY entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT [ "/bin/bash", "/docker-entrypoint.sh" ]

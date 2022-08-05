@@ -7,12 +7,12 @@ function initialize_app_database() {
     sleep 15s
     
     # Restore the application database
-    for file in /docker-entrypoint-initdb.d/*.sql; do
+    for file in /opt/mssql-scripts/*.sql; do
         echo "Importing $file"
         /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "${SA_PASSWORD}" -i "${file}"
     done
 
-    for file in /docker-entrypoint-initdb.d/*.sh; do
+    for file in /opt/mssql-scripts/*.sh; do
         echo "Importing $file"
         if [ -x "$file" ]; then
             "$file"
