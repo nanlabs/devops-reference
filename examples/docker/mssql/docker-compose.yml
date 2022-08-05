@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  mssql:
+    container_name: mssql
+    build:
+      context: .
+      dockerfile: ./mssql.Dockerfile
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: ${SA_PASSWORD}
+    volumes:
+      - mssql-data:/var/lib/mssqlql/data
+      - init.d:/docker-entrypoint-initdb.d
+    ports:
+      - 1433:1433
+    networks:
+      - measured
+
+networks:
+  mssql-net:
+    driver: bridge
+
+volumes:
+  mssql-data:
+    name: mssql-data

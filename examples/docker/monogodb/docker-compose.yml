@@ -1,4 +1,5 @@
 version: "3.9"
+
 services:
   mongo:
     container_name: mongodb
@@ -43,7 +44,7 @@ services:
 
 networks:
   mongodb-example-net:
-    driver: "bridge"
+    driver: bridge
 
 volumes:
   mongo:
