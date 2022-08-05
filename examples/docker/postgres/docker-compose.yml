@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:14.4
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - postgres-net
+
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4:6.11
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - 5050:80
+    networks:
+      - postgres-net
+
+networks:
+  postgres-net:
+    driver: "bridge"
+
+volumes:
+  postgres-data:
+    name: postgres-data

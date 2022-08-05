@@ -10,7 +10,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./entrypoint:/docker-entrypoint-initdb.d:ro
+      - ./initdb.d:/docker-entrypoint-initdb.d:ro
       - mongo:/data/db
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongo 127.0.0.1:27017/test --quiet

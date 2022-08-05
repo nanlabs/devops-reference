@@ -20,4 +20,4 @@ This will start the following services:
 
 ## MongoDB Initialization
 
-When the MongoDB container is started for the first time it will execute files with extensions `.sh` and `.js` that are found in `entrypoint/`. Files will be executed in alphabetical order. `.js` files will be executed by mongo using the database specified by the `MONGO_INITDB_DATABASE` variable, if it is present, or test otherwise. You may also switch databases within the `.js` script.
+When the MongoDB container is started for the first time it will execute files with extensions `.sh` and `.js` that are found in `initdb.d/`. Files will be executed in alphabetical order. `.js` files will be executed by mongo using the database specified by the `MONGO_INITDB_DATABASE` variable, if it is present, or test otherwise. You may also switch databases within the `.js` script.
