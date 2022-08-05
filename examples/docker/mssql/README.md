@@ -1,4 +1,4 @@
-# Microsfot SQL Server
+# Microsoft SQL Server
 
 ## Requirements
 
@@ -15,7 +15,7 @@ docker compose up
 
 This will start the following services:
 
-- `mssql`: Microsfot SQL Server
+- `mssql`: Microsoft SQL Server
 
 ## Initialization
 
