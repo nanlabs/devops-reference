@@ -1,0 +1,20 @@
+[flake8]
+max-line-length = 89
+max-complexity = 18
+select = B,C,E,F,W,T4,B9
+exclude =
+    .git
+    .hg
+    .mypy_cache
+    .tox
+    .venv
+    _build
+    buck-out
+    build
+    dist
+    .serverless
+    .glue
+    node_modules
+    .ipynb_checkpoints
+    blib2to3
+    tests/data
