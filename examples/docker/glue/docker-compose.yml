@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  awsglue:
+    container_name: awsglue
+    restart: always
+    build:
+      context: .
+      dockerfile: gluelibs.Dockerfile
+    command: /home/glue_user/jupyter/jupyter_start.sh
+    ports:
+      - 4040:4040
+      - 8888:8888
+      - 18080:18080
+      - 8998:8998
+    environment:
+      AWS_PROFILE: ${AWS_PROFILE:-}
+      AWS_REGION: ${AWS_REGION:-}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      DISABLE_SSL: 'true'
+    volumes:
+      - ~/.aws:/home/glue_user/.aws:ro
+      - .:/home/glue_user/workspace/
+      - awsglue-jupyter:/home/glue_user/workspace/jupyter_workspace
+
+volumes:
+  awsglue-jupyter:
+    name: awsglue-jupyter
