@@ -35,7 +35,7 @@ For using EasyOptions in your script, simply document it using double-hash comme
 
 The above comments work both as source code documentation and as help text, as well as define the options supported by your script. There is no duplication of the options specification. The string `@script.name` will be replaced with the actual script name. Now you only need to call EasyOptions in your script and _that's it_!
 
-### Example
+### Using Arguments
 
 After writing your documentation, you simply source this script. Then all command line options will get parsed into the corresponding variables. You can then check their values for reacting to them. Regular arguments will be available in the `$arguments` array. You can source `easyoptions.sh` for a pure Bash implementation. Here is an example for parsing the comments above:
 
