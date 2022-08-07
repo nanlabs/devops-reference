@@ -106,10 +106,10 @@ parse_options() {
     # Prepare known options
     for option in "${options[@]}"; do
         option_var=${option#*=}
-        option_name=${option%=$option_var}
+        option_name=${option%="$option_var"}
         if [[ "${#option_name}" = "1" ]]; then
             short_options="${short_options}${option_name}"
-            if [[ "${#option_var}" > "1" ]]; then
+            if [[ "${#option_var}" -gt "1" ]]; then
                 short_option_vars+=("$option_var")
             fi
         fi
@@ -123,7 +123,7 @@ parse_options() {
             parameters+=("$argument")
             for known_option in "${options[@]}"; do
                 known_option_var=${known_option#*=}
-                known_option_name=${known_option%=$known_option_var}
+                known_option_name=${known_option%="$known_option_var"}
                 if [[ "$known_option_var" = "?" && "$argument" = --$known_option_name ]]; then
                     next_is_value="yes"
                     break
