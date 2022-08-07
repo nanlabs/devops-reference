@@ -9,7 +9,7 @@
 <h1>Infrastructure Reference</h1>
 
 [Changelog](#) |
-[Contributing](./CONTRIBUTING.md)
+[Contributing](https://github.com/nanlabs/infra-reference/blob/main/CONTRIBUTING.md)
 
 </div>
 <div align="center">
