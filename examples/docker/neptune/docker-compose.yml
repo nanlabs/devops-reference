@@ -7,5 +7,3 @@ services:
       dockerfile: gremlin.Dockerfile
     ports:
       - 8182:8182
-    volumes:
-      - ./config:/gremlin:ro
