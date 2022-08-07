@@ -5,7 +5,7 @@ set -e
 function initialize_app_database() {
     # Wait a bit for SQL Server to start. SQL Server's process doesn't provide a clever way to check if it's up or not, and it needs to be up before we can import the application database
     sleep 15s
-    
+
     # Restore the application database
     for file in /opt/mssql-scripts/*.sql; do
         echo "Importing $file"
@@ -20,7 +20,7 @@ function initialize_app_database() {
             source "$file"
         fi
     done
-    
+
     # Note that the container has been initialized so future starts won't wipe changes to the data
     touch /tmp/app-initialized
 }
