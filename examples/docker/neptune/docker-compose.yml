@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  gremlin:
+    build:
+      context: .
+      dockerfile: gremlin.Dockerfile
+    ports:
+      - 8182:8182
+    volumes:
+      - ./config:/gremlin:ro

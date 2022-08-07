@@ -1,0 +1,83 @@
+host: 0
+port: 8182
+scriptEvaluationTimeout: 30000
+channelizer: org.apache.tinkerpop.gremlin.server.channel.WsAndHttpChannelizer
+graphs: { graph: tinkergraph.properties }
+scriptEngines:
+  {
+    gremlin-groovy:
+      {
+        plugins:
+          {
+            ? org.apache.tinkerpop.gremlin.server.jsr223.GremlinServerGremlinPlugin
+            : {},
+            ? org.apache.tinkerpop.gremlin.tinkergraph.jsr223.TinkerGraphGremlinPlugin
+            : {},
+            org.apache.tinkerpop.gremlin.jsr223.ImportGremlinPlugin:
+              {
+                classImports: [java.lang.Math],
+                methodImports: [java.lang.Math#*],
+              },
+            org.apache.tinkerpop.gremlin.jsr223.ScriptFileGremlinPlugin:
+              { files: [initialize.groovy] },
+          },
+      },
+  }
+serializers:
+  - {
+      className: org.apache.tinkerpop.gremlin.driver.ser.GryoMessageSerializerV3d0,
+      config:
+        {
+          ioRegistries:
+            [
+              org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerIoRegistryV3d0,
+            ],
+        },
+    } # application/vnd.gremlin-v3.0+gryo
+  - {
+      className: org.apache.tinkerpop.gremlin.driver.ser.GryoMessageSerializerV3d0,
+      config: { serializeResultToString: true },
+    } # application/vnd.gremlin-v3.0+gryo-stringd
+  - {
+      className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV3d0,
+      config:
+        {
+          ioRegistries:
+            [
+              org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerIoRegistryV3d0,
+            ],
+        },
+    } # application/json
+  - {
+      className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerGremlinV1d0,
+      config:
+        {
+          ioRegistries:
+            [
+              org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerIoRegistryV1d0,
+            ],
+        },
+    } # application/vnd.gremlin-v1.0+json
+  - {
+      className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerGremlinV2d0,
+      config:
+        {
+          ioRegistries:
+            [
+              org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerIoRegistryV2d0,
+            ],
+        },
+    } # application/vnd.gremlin-v2.0+json
+  - {
+      className: org.apache.tinkerpop.gremlin.driver.ser.GraphBinaryMessageSerializerV1,
+    } # application/vnd.graphbinary-v1.0
+metrics: { slf4jReporter: { enabled: true, interval: 180000 } }
+strictTransactionManagement: false
+idleConnectionTimeout: 0
+keepAliveInterval: 0
+maxInitialLineLength: 4096
+maxHeaderSize: 8192
+maxChunkSize: 8192
+maxContentLength: 65536
+maxAccumulationBufferComponents: 1024
+resultIterationBatchSize: 64
