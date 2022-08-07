@@ -1,0 +1,116 @@
+service: Neo4jEC2
+
+useDotenv: true
+
+provider:
+  name: aws
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+
+resources:
+  Resources:
+    Neo4jEC2:
+      Type: AWS::EC2::Instance
+      Properties:
+        ImageId: ami-011903ed24775f492
+        KeyName: ${env:NEO4J_EC2_KEY_NAME}
+        DisableApiTermination: true
+        InstanceType: ${env:NEO4J_EC2_INSTANCE_TYPE}
+        SubnetId: ${env:NEO4J_EC2_SUBNET_ID}
+        SecurityGroupIds:
+          - !Ref Neo4jSecurityGroup
+        BlockDeviceMappings:
+          - DeviceName: /dev/sda1
+            Ebs:
+              VolumeSize: ${env:NEO4J_EC2_EBS_SIZE}
+              VolumeType: gp3
+              DeleteOnTermination: false
+        Tags:
+          - Key: Name
+            Value: nan-ec2-neo4j
+          - Key: repo
+            Value: nan-ec2
+        UserData: !Base64 |
+          #!/bin/bash
+          echo "Hello World"
+    Neo4jSecurityGroup:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: Neo4j security group for nan-ec2
+        VpcId: ${env:VPC_ID}
+        SecurityGroupIngress:
+          - Description: SSH
+            IpProtocol: tcp
+            FromPort: 22
+            ToPort: 22
+            CidrIp: 0.0.0.0/0
+          - Description: Neo4j HTTPS
+            IpProtocol: tcp
+            FromPort: 7473
+            ToPort: 7473
+            CidrIp: 0.0.0.0/0
+          - Description: Neo4j HTTP
+            IpProtocol: tcp
+            FromPort: 7474
+            ToPort: 7474
+            CidrIp: 0.0.0.0/0
+          - Description: Neo4j Bolt
+            IpProtocol: tcp
+            FromPort: 7687
+            ToPort: 7687
+            CidrIp: 0.0.0.0/0
+    Neo4jElasticIP:
+      Type: AWS::EC2::EIP
+      Properties:
+        Domain: vpc
+        InstanceId: !Ref Neo4jEC2
+    Neo4jRecordSet:
+      Type: AWS::Route53::RecordSet
+      Properties:
+        ResourceRecords:
+          - !GetAtt Neo4jEC2.PrivateIp
+        HostedZoneId: ${env:NEO4J_RECORD_SET_HOSTED_ZONE_ID}
+        Name: ${env:NEO4J_RECORD_SET_NAME}
+        Type: A
+        TTL: "60"
+    DlmServiceRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - dlm.amazonaws.com
+              Action:
+                - sts:AssumeRole
+        Path: /service-role/
+        ManagedPolicyArns:
+          - arn:aws:iam::aws:policy/service-role/AWSDataLifecycleManagerServiceRole
+    Neo4jLifecyclePolicy:
+      Type: AWS::DLM::LifecyclePolicy
+      Properties:
+        Description: Neo4j Lifecycle Policy
+        State: ENABLED
+        ExecutionRoleArn: !GetAtt DlmServiceRole.Arn
+        PolicyDetails:
+          PolicyType: EBS_SNAPSHOT_MANAGEMENT
+          ResourceTypes:
+            - INSTANCE
+          TargetTags:
+            - Key: repo
+              Value: nan-ec2
+          Schedules:
+            - Name: Daily Snapshots
+              CreateRule:
+                IntervalUnit: HOURS
+                Interval: 24
+              RetainRule:
+                Count: 3
+            - Name: Weekly Snapshots
+              CreateRule:
+                CronExpression: cron(0 16 ? * SUN *)
+              RetainRule:
+                Count: 3

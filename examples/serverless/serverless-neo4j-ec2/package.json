@@ -1,7 +1,7 @@
 {
-  "name": "nanglue",
+  "name": "neo4j-example",
   "version": "1.0.0",
-  "description": "Serverless Glue example",
+  "description": "Serverless Neo4j EC2 example",
   "main": "index.js",
   "scripts": {
     "sls": "serverless",
@@ -17,9 +17,6 @@
   "license": "MIT",
   "homepage": "https://github.com/nanlabs/infra-reference#readme",
   "devDependencies": {
-    "bestzip": "^2.2.1",
-    "serverless": "^3.19.0",
-    "serverless-glue": "^2.9.0",
-    "serverless-plugin-scripts": "^1.0.2"
+    "serverless": "^3.19.0"
   }
 }
