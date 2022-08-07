@@ -26,7 +26,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 - [Examples](#examples)
   - [Shell Scripting](#shell-scripting)
   - [Cloud Development Kit](#cloud-development-kit)
-  - [Containers (Docker and more)](#containers-docker-and-more)
+  - [Docker and Docker Compose](#docker-and-docker-compose)
   - [Kubernetes](#kubernetes)
   - [Serverless Framework](#serverless-framework)
 - [Contributing](#contributing)
@@ -42,7 +42,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 > TODO
 
-### Containers (Docker and more)
+### Docker and Docker Compose
 
 - [AWS Glue](./examples/docker/glue/)
 - [Localstack](./examples/docker/localstack/)
