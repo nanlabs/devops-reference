@@ -1,7 +1,6 @@
 FROM openjdk:8-jre-alpine
 
-ARG GREMLIN_VERSION 3.4.8
-ENV GREMLIN_VERSION $GREMLIN_VERSION
+ENV GREMLIN_VERSION 3.4.8
 
 RUN set -ex \
     && apk add --no-cache --virtual .build-deps wget unzip \
