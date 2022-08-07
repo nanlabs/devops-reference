@@ -18,9 +18,14 @@ jobs:
       - name: Begin CI...
         uses: actions/checkout@v3
 
+      - name: Setup Danger Files
+        run: |
+          echo "Setting up Danger files..."
+          mv validations/danger/* .
+
       - uses: actions/setup-node@v3
         with:
-          node-version: '16.13.2'
+          node-version-file: '.nvmrc'
 
       - name: Get npm cache directory
         id: npm-cache-dir
