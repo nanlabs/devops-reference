@@ -149,7 +149,7 @@ parse_options() {
         # Set the corresponding variable for known options
         for known_option in "${options[@]}" "${short_option_vars[@]}"; do
             known_option_var=${known_option#*=}
-            known_option_name=${known_option%=$known_option_var}
+            known_option_name=${known_option%="$known_option_var"}
 
             # Short option
             if [[ "$option" = "$known_option_name" ]]; then
