@@ -18,7 +18,7 @@ Set up the following environment variables:
 ```sh
 export AWS_ACCESS_KEY_ID=<your-access-key-id>
 export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
-export AWS_DEFAULT_REGION=<your-default-region>
+export AWS_REGION=<your-default-region>
 ```
 
 or setup your AWS credentials in your `~/.aws/credentials` file. Then you can
