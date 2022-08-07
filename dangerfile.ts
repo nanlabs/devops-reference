@@ -7,11 +7,11 @@ const DOC_FILE_MATCH = '**/*.md';
 const SRC_FILE_REGEXP = /test.*\.([tj]s?)$/;
 
 // No PR is too small to include a description of why you made a change
-if (!danger.github.pr.body || !danger.github.pr.body.includes("## What's this PR do?")) {
+if (!danger.github.pr.body || !danger.github.pr.body.includes("# What's this PR do?")) {
   const title = ':clipboard: Missing Summary';
   const idea =
     'Can you add a Summary? ' +
-    "To do so, add a `## What's this PR do?` section to your PR description. " +
+    "To do so, add a `# What's this PR do?` section to your PR description. " +
     'This is a good place to explain the motivation for making this change.';
   message(`${title} - <i>${idea}</i>`);
 }
