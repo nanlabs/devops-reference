@@ -5,18 +5,39 @@ services:
     container_name: "${LOCALSTACK_DOCKER_NAME-localstack_main}"
     image: localstack/localstack:1.0.3
     ports:
-      - "127.0.0.1:4566:4566"            # LocalStack Gateway
-      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
-      - "127.0.0.1:53:53"                # DNS config (only required for Pro)
-      - "127.0.0.1:53:53/udp"            # DNS config (only required for Pro)
-      - "127.0.0.1:443:443"              # LocalStack HTTPS Gateway (only required for Pro)
+      - "4566:4566"            # LocalStack Gateway
+      - "4510-4559:4510-4559"  # external services port range
+      - "53:53"                # DNS config (only required for Pro)
+      - "53:53/udp"            # DNS config (only required for Pro)
+      - "443:443"              # LocalStack HTTPS Gateway (only required for Pro)
     environment:
       - DEBUG=${DEBUG-}
       - PERSISTENCE=${PERSISTENCE-}
       - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR-}
       - LOCALSTACK_API_KEY=${LOCALSTACK_API_KEY-}  # only required for Pro
       - DOCKER_HOST=unix:///var/run/docker.sock
-      - SERVICES=s3
+      - SERVICES=dynamodb,kinesis,s3,sqs
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - localstack-net
+
+  setup-resources:
+    image: mesosphere/aws-cli:1.14.5
+    volumes:
+      - ./:/project
+    environment:
+      - AWS_ACCESS_KEY_ID=dummyaccess
+      - AWS_SECRET_ACCESS_KEY=dummysecret
+      - AWS_DEFAULT_REGION=us-east-1
+    entrypoint: /bin/sh -c
+    command: /project/setup-resources.sh
+    networks:
+      - localstack-net
+    depends_on:
+      - localstack
+
+networks:
+  localstack-net:
+    driver: bridge
