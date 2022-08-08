@@ -25,6 +25,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 - [Examples](#examples)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
+  - [DevContainers and Codespaces](#devcontainers-and-codespaces)
   - [Cloud Development Kit](#cloud-development-kit)
   - [Docker and Docker Compose](#docker-and-docker-compose)
   - [Kubernetes](#kubernetes)
@@ -38,6 +39,10 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 - [AWS SSO](./examples/scripts/aws-sso/)
 - [Easy Options](./examples/scripts/easy-options/)
+
+### DevContainers and Codespaces
+
+- [NodeJS](./examples/devcontainers/nodejs/)
 
 ### Cloud Development Kit
 
