@@ -23,6 +23,7 @@
 This repository contains different infrastructure components that are used in different projects
 here at [NaN Labs](https://www.nanlabs.com/).
 
+- [Applications examples](#applications-examples)
 - [Examples](#examples)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
@@ -33,13 +34,26 @@ here at [NaN Labs](https://www.nanlabs.com/).
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
+## Applications examples
+
+> Collection of examples that were created as a composition of different examples that
+> can be found separately in the [examples](./examples/) directory.
+> Read more about the examples in the [examples](#examples) section.
+
+- [Complete AWS Glue example app](./examples/_apps/serverless-glue/)
+
 ## Examples
 
 ### Shell Scripting and Utilities
 
+> Collection of shell utilities and scripts.
+
 - [Easy Options](./examples/scripts/easy-options/)
 
 ### DevContainers and Codespaces
+
+> Collection of DevContainers that can be used to run local development environments using VSCode
+> or Cloud Development environments using GitHub Codespaces.
 
 - [AWS Glue](./examples/devcontainers/glue/)
 - [NodeJS](./examples/devcontainers/nodejs/)
@@ -49,6 +63,9 @@ here at [NaN Labs](https://www.nanlabs.com/).
 > TODO
 
 ### Docker and Docker Compose
+
+> Collection of Docker and Docker Compose that can be used to run local development environments.
+> Most of the examples can be migrated to other containerization tools such as podman.
 
 - [AWS Glue](./examples/docker/glue/)
 - [Localstack](./examples/docker/localstack/)
@@ -62,6 +79,9 @@ here at [NaN Labs](https://www.nanlabs.com/).
 > TODO
 
 ### Serverless Framework
+
+> Collection of Serverless Framework that can be used to run local development environments
+> and deploy different resources to the Cloud.
 
 - [AWS Glue with Python Shell and PySpark Jobs](./examples/serverless/serverless-glue/)
 - [Neo4j in EC2](./examples/serverless/serverless-neo4j-ec2/)
