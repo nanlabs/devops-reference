@@ -42,6 +42,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 ### DevContainers and Codespaces
 
+- [AWS Glue](./examples/devcontainers/glue/)
 - [NodeJS](./examples/devcontainers/nodejs/)
 
 ### Cloud Development Kit
