@@ -160,4 +160,9 @@ cython_debug/
 #.idea/
 Footer
 
+# Serverless
+node_modules/
+.serverless/
+.glue
+*.zip
 jupyter_workspace/

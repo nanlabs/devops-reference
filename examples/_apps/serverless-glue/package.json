@@ -1,0 +1,25 @@
+{
+  "name": "nanglue",
+  "version": "1.0.0",
+  "description": "Serverless Glue example",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "deploy": "serverless deploy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip:app": "bestzip package.zip __init__.py app/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/infra-reference.git"
+  },
+  "author": "ulises-jeremias",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/infra-reference#readme",
+  "devDependencies": {
+    "bestzip": "^2.2.1",
+    "serverless": "^3.19.0",
+    "serverless-glue": "^2.9.0",
+    "serverless-plugin-scripts": "^1.0.2"
+  }
+}

@@ -35,13 +35,3 @@ Then run the following command:
 ```sh
 npm run deploy -- --verbose --stage <stage>
 ```
-
-## Recommended Resources
-
-We recommend the following resources to add local development tools to your project:
-
-- [AWS Glue docker example](../../docker/glue/)
-- [VSCode DevContainer example](../../devcontainer/glue/)
-
-Check out the [Complete AWS Glue example app](../../_apps/serverless-glue/) to see
-a full example of a complete AWS Glue setup.

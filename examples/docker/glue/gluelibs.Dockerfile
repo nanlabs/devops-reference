@@ -7,7 +7,7 @@ ARG GLUE_TAG
 
 USER root
 
-COPY docker/glue/requirements.txt /requirements.txt
+COPY requirements.txt /requirements.txt
 
 RUN pip3 install -U -r /requirements.txt
 
