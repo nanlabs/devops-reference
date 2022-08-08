@@ -24,15 +24,20 @@ This repository contains different infrastructure components that are used in di
 here at [NaN Labs](https://www.nanlabs.com/).
 
 - [Examples](#examples)
+  - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
   - [Cloud Development Kit](#cloud-development-kit)
   - [Docker and Docker Compose](#docker-and-docker-compose)
   - [Kubernetes](#kubernetes)
   - [Serverless Framework](#serverless-framework)
-  - [Shell Scripting](#shell-scripting)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
 ## Examples
+
+### Shell Scripting and Utilities
+
+- [AWS SSO](./examples/scripts/aws-sso/)
+- [Easy Options](./examples/scripts/easy-options/)
 
 ### Cloud Development Kit
 
@@ -55,10 +60,6 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 - [AWS Glue](./examples/serverless/serverless-glue/)
 - [Neo4j in EC2](./examples/serverless/serverless-neo4j-ec2/)
-
-### Shell Scripting
-
-- [Easy Options](./examples/shell-scripting/easy-options/)
 
 ## Contributing
 
