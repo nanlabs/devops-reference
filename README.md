@@ -37,7 +37,6 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 ### Shell Scripting and Utilities
 
-- [AWS SSO](./examples/scripts/aws-sso/)
 - [Easy Options](./examples/scripts/easy-options/)
 
 ### DevContainers and Codespaces
