@@ -42,3 +42,7 @@ pull request for each branch. This allows us to review and pull in new features 
 - Use `shellscript` to error-check your code
 - Test your code before submitting a PR (not required if it's a draft)
 - Write long and informative commit messages
+
+## Writing Dockerfiles
+
+- Follow the [Dockerfile best practices](https://github.com/docker/docker.github.io/blob/master/develop/develop-images/dockerfile_best-practices.md)
