@@ -1,12 +1,3 @@
-<div align="center">
-<p>
-    <img
-        style="width: 200px"
-        width="200"
-        src="https://avatars.githubusercontent.com/u/4426989?s=200&v=4"
-    >
-</p>
-<h1>Infrastructure Reference</h1>
 
 [Changelog](#) |
 [Contributing](./CONTRIBUTING.md)
