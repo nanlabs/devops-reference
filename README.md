@@ -21,9 +21,10 @@ First create the directories
 
 	mkdir -p ./dags ./logs ./plugins ./notebooks ./spark/app ./spark/resources/data ./spark/resources/jars
 
-Next set the UID in the .env file
+Next set the UID and GID in the .env file
 
 	echo -e "AIRFLOW_UID=$(id -u)" > .env
+    echo -e "AIRFLOW_GID=0" >> .env
 
 On all operating systems, you need to run database migrations and create the first user account. To do it, run.
 
@@ -47,6 +48,15 @@ Now you can start all services:
 
 	docker-compose up
 
+After the first startup you need to set up the Spark connection, navigate to the connection page in the airflow UI (Admin > Connections) and add the following connection
+
+	Connection Id: spark_default
+	Connection Type: Spark
+	Host: spark://spark
+	Port: 7077
+	Extra: {"queue": "root.default"}
+
+
 ## Cleaning up
 
 To stop and delete containers, delete volumes with database data and download images, run:
@@ -58,7 +68,7 @@ To stop and delete containers, delete volumes with database data and download im
 URLs to access the UIs
 
 - Spark Master: http://localhost:8181
-- Airflow: http://localhost:8282
+- Airflow: http://localhost:8080
 - Jupyter Notebook: http://127.0.0.1:8888/lab
 
 You need to run the code below to get the URL + Token generated and paste in your browser to access the jupyter notebook UI.
