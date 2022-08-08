@@ -23,7 +23,7 @@
 This repository contains different infrastructure components that are used in different projects
 here at [NaN Labs](https://www.nanlabs.com/).
 
-- [Applications examples](#applications-examples)
+- [Applications](#applications)
 - [Examples](#examples)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
@@ -34,7 +34,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
-## Applications examples
+## Applications
 
 > Collection of examples that were created as a composition of different examples that
 > can be found separately in the [examples](./examples/) directory.
@@ -43,6 +43,8 @@ here at [NaN Labs](https://www.nanlabs.com/).
 - [Complete AWS Glue example app](./examples/_apps/serverless-glue/)
 
 ## Examples
+
+> Collection of examples that solve specific problems using small pieces of code.
 
 ### Shell Scripting and Utilities
 
