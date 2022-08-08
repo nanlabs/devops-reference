@@ -35,7 +35,7 @@ pull request for each branch. This allows us to review and pull in new features 
   line and below any other copyright notices
   (e.g. `Copyright (C) Jane Doe <contact@jane.doe>`)
 - Always line wrap at 80 characters
-- Scripts should be named `setup-<function>` and should not have an extension
+- Scripts should not have an extension, e.g. `./example.sh` should be `./example`.
 - Libraries should always have a `.sh` extension and should not have a shebang
 - Neither scripts nor libraries should be executable (their permissions are
   set during compilation)
