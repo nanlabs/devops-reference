@@ -36,15 +36,15 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 ## Applications
 
-> Collection of examples that were created as a composition of different examples that
-> can be found separately in the [examples](./examples/) directory.
-> Read more about the examples in the [examples](#examples) section.
+Collection of examples that were created as a composition of different examples that
+can be found separately in the [examples](./examples/) directory.
+Read more about the examples in the [examples](#examples) section.
 
 - [Complete AWS Glue example app](./examples/_apps/serverless-glue/)
 
 ## Examples
 
-> Collection of examples that solve specific problems using small pieces of code.
+Collection of examples that solve specific problems using small pieces of code.
 
 ### Shell Scripting and Utilities
 
