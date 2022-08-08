@@ -45,4 +45,4 @@ pull request for each branch. This allows us to review and pull in new features 
 
 ## Writing Dockerfiles
 
-- Follow the [Dockerfile best practices](https://github.com/docker/docker.github.io/blob/master/develop/develop-images/dockerfile_best-practices.md)
+- Follow the [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
