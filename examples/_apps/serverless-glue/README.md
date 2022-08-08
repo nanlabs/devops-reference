@@ -7,7 +7,7 @@ and a Glue job using PySpark.
   - [Overview](#overview)
   - [Local Development](#local-development)
     - [Using VSCode + Remote Containers (recommended)](#using-vscode--remote-containers-recommended)
-    - [Using Docker Compose - (longer, but more flexible)](#using-docker-compose---longer-but-more-flexible)
+    - [Using Docker Compose manually](#using-docker-compose-manually)
   - [Deployment](#deployment)
 
 ## Overview
@@ -46,7 +46,7 @@ su glue_user
 $ glue-spark-submit src/jobs/pyspark.py --JOB_NAME job_example --CUSTOM_ARGUMENT custom_value
 ```
 
-### Using Docker Compose - (longer, but more flexible)
+### Using Docker Compose manually
 
 Check the full [development documentation](./docs/DEVELOPMENT.md) to learn how to setup a local development environment for DataNaN
 using Docker Compose.
