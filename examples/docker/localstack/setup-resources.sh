@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Needed so all localstack components will startup correctly (i'm sure there's a better way to do this)
-sleep 15
+sleep 10
 
 aws dynamodb create-table --endpoint-url=http://localstack:4566 --table-name my_table \
     --attribute-definitions AttributeName=key,AttributeType=S \
