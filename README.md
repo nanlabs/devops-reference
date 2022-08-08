@@ -63,7 +63,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 ### Serverless Framework
 
-- [AWS Glue](./examples/serverless/serverless-glue/)
+- [AWS Glue with Python Shell and PySpark Jobs](./examples/serverless/serverless-glue/)
 - [Neo4j in EC2](./examples/serverless/serverless-neo4j-ec2/)
 
 ## Contributing
