@@ -26,6 +26,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
 - [Applications](#applications)
 - [Examples](#examples)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
+  - [CI/CD with GitHub Actions](#cicd-with-github-actions)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
   - [Cloud Development Kit](#cloud-development-kit)
   - [Docker and Docker Compose](#docker-and-docker-compose)
@@ -52,6 +53,22 @@ Collection of examples that solve specific problems using small pieces of code.
 > Collection of shell utilities and scripts.
 
 - [Easy Options](./examples/scripts/easy-options/)
+
+### CI/CD with GitHub Actions
+
+- [Automation Seed example](https://github.com/nanlabs/automation-seed/tree/main/.github/workflows). This example contains the following workflows:
+  - Main Validation (ESLint + Prettier + E2E Tests)
+  - Manual Execution with Params (Automated Tests execution)
+  - Periodic Test execution and History update
+  - Pull Requests validation with DangerJS
+
+- [React Webpack Boilerplate](https://github.com/nanlabs/react-webpack-boilerplate). This example contains the following workflows:
+  - Main Validation (ESLint + Prettier + Unit Tests)
+  - Pull Requests validation with DangerJS
+  - Deployment example with GitHub Pages
+
+- [Shell Check](./.github/workflows/shellcheck.yml)
+- [Terraform Check](./.github/workflows/tf-check.yml)
 
 ### DevContainers and Codespaces
 
