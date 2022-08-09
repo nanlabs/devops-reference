@@ -62,7 +62,7 @@ Collection of examples that solve specific problems using small pieces of code.
   - Periodic Test execution and History update
   - Pull Requests validation with DangerJS
 
-- [React Webpack Boilerplate](https://github.com/nanlabs/react-webpack-boilerplate). This example contains the following workflows:
+- [React Webpack Boilerplate](https://github.com/nanlabs/react-webpack-boilerplate/tree/main/.github/workflows). This example contains the following workflows:
   - Main Validation (ESLint + Prettier + Unit Tests)
   - Pull Requests validation with DangerJS
   - Deployment example with GitHub Pages
