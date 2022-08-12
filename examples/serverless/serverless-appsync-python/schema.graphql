@@ -1,0 +1,17 @@
+type Resource {
+  id: String!
+  name: String!
+}
+
+type Query {
+  getResource(id: String!): Resource
+  getResources: [Resource]
+}
+
+type Mutation {
+  createResource(data: ResourceInput!): Resource
+}
+
+input ResourceInput {
+  name: String!
+}

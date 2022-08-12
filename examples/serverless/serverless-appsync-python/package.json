@@ -1,0 +1,29 @@
+{
+  "name": "nanglue",
+  "version": "1.0.0",
+  "description": "Serverless AppSync + Python example",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "deploy": "serverless deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/infra-reference.git"
+  },
+  "author": "ulises-jeremias",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/infra-reference#readme",
+  "resolutions": {
+    "serverless-appsync-simulator/cfn-resolver-lib": "1.1.7"
+  },
+  "devDependencies": {
+    "cfn-resolver-lib": "1.1.7",
+    "serverless": "^3.19.0",
+    "serverless-appsync-plugin": "^1.14.0",
+    "serverless-appsync-simulator": "^0.20.0",
+    "serverless-offline": "^9.2.0",
+    "serverless-python-requirements": "^5.4.0"
+  }
+}
