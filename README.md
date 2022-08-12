@@ -103,6 +103,8 @@ Collection of examples that solve specific problems using small pieces of code.
 > Collection of Serverless Framework that can be used to run local development environments
 > and deploy different resources to the Cloud.
 
+- [AWS AppSync + TypeScript](./examples/serverless/serverless-appsync-nodejs/)
+- [AWS AppSync + Python](./examples/serverless/serverless-appsync-python/)
 - [AWS Glue with Python Shell and PySpark Jobs](./examples/serverless/serverless-glue/)
 - [Neo4j in EC2](./examples/serverless/serverless-neo4j-ec2/)
 

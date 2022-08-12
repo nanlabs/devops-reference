@@ -1,0 +1,35 @@
+{
+  "name": "nan-appsync-nodejs",
+  "version": "1.0.0",
+  "description": "Serverless AppSync + Python example",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "sls": "serverless",
+    "start": "serverless offline start --stage local",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/infra-reference.git"
+  },
+  "author": "ulises-jeremias",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/infra-reference#readme",
+  "resolutions": {
+    "serverless-appsync-simulator/cfn-resolver-lib": "1.1.7"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.102",
+    "cfn-resolver-lib": "1.1.7",
+    "serverless": "^3.19.0",
+    "serverless-appsync-plugin": "^1.14.0",
+    "serverless-appsync-simulator": "^0.20.0",
+    "serverless-offline": "^9.2.0",
+    "serverless-plugin-typescript": "^2.1.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7"
+  }
+}

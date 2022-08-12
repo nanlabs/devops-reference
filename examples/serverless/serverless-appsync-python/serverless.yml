@@ -1,0 +1,99 @@
+service: NaNAppSync
+
+plugins:
+  - serverless-appsync-plugin
+  - serverless-appsync-simulator
+  - serverless-offline
+  - serverless-python-requirements
+
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+  patterns:
+    - '*.graphql'
+    - 'mapping-templates/*.vtl'
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+    useChildProcesses: true
+  appsync-simulator:
+    apiKey: da2-fakeApiId123456
+    watch:
+      - '*.graphql'
+      - '*.vtl'
+  appSync:
+    name: nanAppSyncExample
+    authenticationType: API_KEY
+    schema: schema.graphql
+    wafConfig:
+      enabled: true
+      rules:
+        - throttle: 200
+    apiKeys:
+      - name: nanAppSyncExample-api-key
+        description: 'NaN AppSync API Key'
+        expiresAfter: 1y
+    defaultMappingTemplates:
+      request: false
+      response: response.vtl
+    mappingTemplates:
+      - type: Query
+        dataSource: nanAppSyncExample_lambdaDataSource
+        field: getResource
+      - type: Query
+        dataSource: nanAppSyncExample_lambdaDataSource
+        field: getResources
+      - type: Mutation
+        dataSource: nanAppSyncExample_lambdaDataSource
+        field: createResource
+    dataSources:
+      - type: AWS_LAMBDA
+        name: nanAppSyncExample_lambdaDataSource
+        description: 'NaN AppSync Lambda DataSource'
+        config:
+          functionName: nanAppSyncExampleResolver
+    tags:
+      name: nanAppSyncExample
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+  # vpc:
+  #   securityGroupIds:
+  #     - ${env:VPC_SECURITY_GROUP_ID}
+  #     - ${self:resources.Outputs.SecurityGroup.Value}
+  #   subnetIds:
+  #     - ${env:SUBNET_ID}
+
+functions:
+  nanAppSyncExampleResolver:
+    handler: app/resolvers/handler.graphqlResolver
+
+# resources:
+#   Resources:
+#     NaNAppSyncSecurityGroup:
+#       Type: AWS::EC2::SecurityGroup
+#       Properties:
+#         GroupName: NaNAppSyncExampleSG
+#         GroupDescription: NaNAppSync Security Group
+#         SecurityGroupIngress:
+#           - IpProtocol: tcp
+#             FromPort: 8182
+#             ToPort: 8182
+#             CidrIp: 0.0.0.0/0
+#         Tags:
+#           - Key: name
+#             Value: NaNAppSyncExampleSG
+#         VpcId: ${env:VPC_ID}
+
+#   Outputs:
+#     SecurityGroup:
+#       Description: NaNAppSync Security Group
+#       Value: !GetAtt NaNAppSyncSecurityGroup.GroupId
