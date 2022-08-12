@@ -39,7 +39,7 @@ custom:
         expiresAfter: 1y
     defaultMappingTemplates:
       request: false
-      response: false
+      response: response.vtl
     mappingTemplates:
       - type: Query
         dataSource: nanAppSyncExample_lambdaDataSource

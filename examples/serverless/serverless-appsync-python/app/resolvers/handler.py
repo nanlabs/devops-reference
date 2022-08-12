@@ -1,4 +1,4 @@
-def getResource(id):
+def getResource(id=None):
     """
     This is the resolver for the getResource field.
     
@@ -9,7 +9,7 @@ def getResource(id):
 
     return {
         'id': id,
-        'name': 'Resource 1'
+        'name': f'Resource {id}'
     }
 
 def getResources():
@@ -30,7 +30,7 @@ def getResources():
         }
     ]
 
-def createResource(name):
+def createResource(name=None):
     """
     This is the resolver for the createResource field.
     
@@ -58,13 +58,13 @@ def graphqlResolver(event, context):
     arguments = event['arguments']
     fieldName = info['fieldName']
 
-    options = {
+    handlers = {
         'getResource': getResource,
         'getResources': getResources,
         'createResource': createResource
     }
 
-    if fieldName in options:
-        return options[fieldName](**arguments)
+    if fieldName in handlers:
+        return handlers[fieldName](**arguments)
 
     raise Exception('Unknown field name: ' + fieldName)
