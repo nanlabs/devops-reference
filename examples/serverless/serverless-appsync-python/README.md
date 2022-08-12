@@ -1,6 +1,7 @@
-# Serverless AppSync + Python Deployment
+# Serverless AppSync + Python Example
 
-We use Serverless Framework to do production ready deployments.
+We use Serverless Framework to do production ready deployments and local development using
+*serverless-offline*.
 
 ## Requirements
 
