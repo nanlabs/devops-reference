@@ -7,9 +7,25 @@ We use Serverless Framework to do production ready deployments.
 **You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ```sh
+git clone https://github.com/nanlabs/infra-reference.git
+cd infra-reference/examples/serverless/serverless-appsync-python
 fnm use 16.13.2
 npm install
 ```
+
+## Local Development
+
+This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+Run the following command to start the local development server:
+
+```sh
+npm run start
+```
+
+It will start the following services:
+
+- App Sync server at `http://localhost:20002/graphql`
+- GraphQL playground at `http://localhost:20002`
 
 ## AppSync Deployment
 
