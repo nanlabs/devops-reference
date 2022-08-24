@@ -6,7 +6,8 @@ metadata:
   labels:
     app: theapp
 spec:
-  type: ClusterIP #even it is the default value here, it is worth noticing this ip type is enough since we are accesing through Ingress
+  # even it is the default value here, it is worth noticing this ip type is enough since we are accessing through Ingress
+  type: ClusterIP
   ports:
   - port: 80
     targetPort: 8080
