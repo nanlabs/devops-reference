@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/mssql/server:${MSSQL_TAG}
 ARG MSSQL_TAG
 
 RUN mkdir -p /opt/mssql-scripts
-COPY init.d /opt/mssql-scripts
+COPY initdb.d /opt/mssql-scripts
 COPY entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT [ "/bin/bash", "/docker-entrypoint.sh" ]

@@ -11,7 +11,7 @@ services:
       SA_PASSWORD: ${SA_PASSWORD}
     volumes:
       - mssql-data:/var/lib/mssqlql/data
-      - init.d:/opt/mssql-scripts
+      - initdb.d:/opt/mssql-scripts
     ports:
       - 1433:1433
     networks:
