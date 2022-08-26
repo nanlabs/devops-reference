@@ -5,13 +5,16 @@ set -e
 function initialize_app_database() {
     # Wait a bit for SQL Server to start. SQL Server's process doesn't provide a clever way to check if it's up or not, and it needs to be up before we can import the application database
     sleep 15s
-
-    # Restore the application database
+    
+    # Restore the application database using .sql files
+    shopt -s globstar nullglob
     for file in /opt/mssql-scripts/*.sql; do
         echo "Importing $file"
         /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "${SA_PASSWORD}" -i "${file}"
     done
-
+    
+    # Restore the application database using .sh files
+    shopt -s globstar nullglob
     for file in /opt/mssql-scripts/*.sh; do
         echo "Importing $file"
         if [ -x "$file" ]; then
