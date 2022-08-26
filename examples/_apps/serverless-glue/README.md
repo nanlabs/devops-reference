@@ -41,9 +41,7 @@ In the following gif we execute the following commands:
 
 ```sh
 pip3 install -U .
-pip3 install -U -r requirements.txt
-su glue_user
-$ glue-spark-submit src/jobs/pyspark.py --JOB_NAME job_example --CUSTOM_ARGUMENT custom_value
+glue-spark-submit src/jobs/pyspark.py --JOB_NAME job_example --CUSTOM_ARGUMENT custom_value
 ```
 
 ### Using Docker Compose manually
