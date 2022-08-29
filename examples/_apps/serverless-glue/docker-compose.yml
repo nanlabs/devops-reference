@@ -20,7 +20,7 @@ services:
       DISABLE_SSL: 'true'
     volumes:
       - ~/.aws:/home/glue_user/.aws:ro
-      - .:/home/glue_user/workspace/
+      - .:/home/glue_user/workspace/serverless-glue
       - awsglue-jupyter:/home/glue_user/workspace/jupyter_workspace
 
 volumes:

@@ -2,42 +2,37 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/docker-existing-docker-compose
 // If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
 {
-	"name": "Extended AWS Glue Dev Container",
-
+	"name": "AWS Glue Dev Container",
 	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yml",
 		"./docker-compose.yml"
 	],
-
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
 	"service": "awsglue",
-
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/home/glue_user/workspace",
+	"workspaceFolder": "/home/glue_user/workspace/serverless-glue",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-python.python"
+				"amazonwebservices.aws-toolkit-vscode",
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
-
 	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
 	// "shutdownAction": "none",
-
 	// Uncomment the next line to run commands after the container is created - for example installing curl.
-	"postCreateCommand": "pip3 install -r requirements.txt"
-
+	"postCreateCommand": "pip3 install -U -r requirements.txt && pip3 -U install .",
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "glue_user"
+	"remoteUser": "glue_user"
 }
