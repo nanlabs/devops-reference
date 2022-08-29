@@ -32,7 +32,7 @@ if [ "$1" = '/opt/mssql/bin/sqlservr' ]; then
     # If this is the container's first run, initialize the application database
     if [ ! -f /tmp/app-initialized ]; then
         # Initialize the application database asynchronously in a background process. This allows a) the SQL Server process to be the main process in the container, which allows graceful shutdown and other goodies, and b) us to only start the SQL Server process once, as opposed to starting, stopping, then starting it again.
-        initialize_app_database &
+        initialize_app_database
     fi
 fi
 
