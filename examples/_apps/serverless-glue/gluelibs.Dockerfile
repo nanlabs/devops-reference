@@ -13,7 +13,7 @@ RUN pip3 install -U -r /requirements.txt
 
 # TODO: This is a temporary hack to solve the issue with the VSCode permissions.
 #       This should be removed once the issue is resolved.
-RUN chmod 775 /tmp/spark-events
+RUN chmod -R 777 /tmp/spark-events
 
 # Return to original base image's user
 USER glue_user
