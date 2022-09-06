@@ -27,8 +27,6 @@ custom:
     host: localhost
     port: 8000
     directory: ${env:LOCAL_S3_PATH, '/tmp'}
-    buckets:
-      - ${env:S3_BUCKET_NAME}
     accessKeyId: S3RVER
     secretAccessKey: S3RVER
 
@@ -38,6 +36,13 @@ provider:
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
   profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource:
+        - arn:aws:s3:::${env:S3_BUCKET_NAME}
+        - arn:aws:s3:::${env:S3_BUCKET_NAME}/*
 
 functions:
   slsS3LocalExampleResolver:
@@ -51,3 +56,14 @@ functions:
           # rules:
           #   - prefix: uploads/
           #   - suffix: .jpg
+
+resources:
+  Resources:
+    S3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${env:S3_BUCKET_NAME}
+
+  Outputs:
+    S3BucketNameOutputKey:
+      Value: !Ref S3Bucket
