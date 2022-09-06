@@ -1,0 +1,25 @@
+{
+  "name": "sls-s3-local-example",
+  "version": "1.0.0",
+  "description": "Serverless S3 Local Example",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "deploy": "serverless deploy",
+    "offline:start": "serverless offline start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/infra-reference.git"
+  },
+  "author": "ulises-jeremias",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/infra-reference#readme",
+  "devDependencies": {
+    "serverless": "^3.19.0",
+    "serverless-offline": "^8.0.0",
+    "serverless-python-requirements": "^5.4.0",
+    "serverless-s3-local": "^0.6.22"
+  }
+}

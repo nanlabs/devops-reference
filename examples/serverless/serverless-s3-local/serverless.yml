@@ -1,0 +1,53 @@
+service: SlsS3LocalExample
+
+plugins:
+  - serverless-python-requirements
+  - serverless-s3-local
+  - serverless-offline
+  - ./plugins/serverless-offline-python-requirements
+
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+  include:
+    - '!./**'
+    - '**/*.py'
+  exclude:
+    - '**'
+
+custom:
+  pythonRequirements:
+    usePipenv: true
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+  s3:
+    host: localhost
+    port: 8000
+    directory: ${env:LOCAL_S3_PATH, '/tmp'}
+    buckets:
+      - ${env:S3_BUCKET_NAME}
+    accessKeyId: S3RVER
+    secretAccessKey: S3RVER
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+
+functions:
+  slsS3LocalExampleResolver:
+    handler: on-object-created.handler
+    runtime: python3.9
+    module: src/handlers/s3
+    events:
+      - s3:
+          bucket: ${env:S3_BUCKET_NAME}
+          event: s3:ObjectCreated:*
+          # rules:
+          #   - prefix: uploads/
+          #   - suffix: .jpg
