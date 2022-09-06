@@ -32,7 +32,7 @@
 	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
 	// "shutdownAction": "none",
 	// Uncomment the next line to run commands after the container is created - for example installing curl.
-	"postCreateCommand": "pip3 install -U -r requirements.txt && pip3 -U install .",
+	"postCreateCommand": "pip3 install -U -r requirements.txt && pip3 -U install --editable .",
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "glue_user"
 }
