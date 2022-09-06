@@ -23,6 +23,6 @@ and then run the following command inside the container:
 
 ```sh
 pip3 install -U requirements.txt
-pip3 install -U .
+pip3 install -U --editable .
 glue-spark-submit app/jobs/pyspark.py --JOB_NAME job_example --CUSTOM_ARGUMENT custom_value
 ```
