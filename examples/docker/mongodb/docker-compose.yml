@@ -49,6 +49,3 @@ networks:
 volumes:
   mongo:
     name: mongo
-
-  awsglue:
-    name: awsglue
