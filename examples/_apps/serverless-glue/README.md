@@ -40,7 +40,6 @@ after the container is running inside VSCode, you can try to run the jobs locall
 In the following gif we execute the following commands:
 
 ```sh
-pip3 install -U --editable .
 glue-spark-submit src/jobs/pyspark.py --JOB_NAME job_example --CUSTOM_ARGUMENT custom_value
 ```
 
