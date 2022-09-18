@@ -1,0 +1,38 @@
+service: DocumentDB
+
+useDotenv: true
+
+custom:
+  documentdb:
+    clusterIdentifier: ${env:DOCUMENTDB_CLUSTER_IDENTIFIER}
+    masterUsername: ${env:DOCUMENTDB_MASTER_USERNAME}
+    masterUserPassword: ${env:DOCUMENTDB_MASTER_USER_PASSWORD}
+
+provider:
+  name: aws
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+
+resources:
+  Resources:
+    DBCluster:
+      Type: AWS::DocDB::DBCluster
+      Properties:
+        DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
+        MasterUsername: ${self:custom.documentdb.masterUsername}
+        MasterUserPassword: ${self:custom.documentdb.masterUserPassword}
+
+    DBInstance:
+      Type: AWS::DocDB::DBInstance
+      DependsOn: DBCluster
+      Properties:
+        DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
+        DBInstanceIdentifier: ${self:custom.documentdb.clusterIdentifier}-instance
+        DBInstanceClass: "db.r4.large"
+
+  Outputs:
+    DocumentDBEndpoint:
+      Value: !GetAtt DBCluster.Endpoint.Address
+      Export:
+        Name: DocumentDBEndpoint
