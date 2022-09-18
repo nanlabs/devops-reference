@@ -1,5 +1,5 @@
 {
-  "name": "nanglue",
+  "name": "serverless-appsync-python",
   "version": "1.0.0",
   "description": "Serverless AppSync + Python example",
   "main": "index.js",

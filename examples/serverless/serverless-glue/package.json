@@ -1,5 +1,5 @@
 {
-  "name": "nanglue",
+  "name": "serverless-glue",
   "version": "1.0.0",
   "description": "Serverless Glue example",
   "main": "index.js",

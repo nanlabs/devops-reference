@@ -1,5 +1,5 @@
 {
-  "name": "documentdb-example",
+  "name": "serverless-documentdb",
   "version": "1.0.0",
   "description": "Serverless DocumentDB example",
   "main": "index.js",
