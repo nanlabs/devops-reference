@@ -1,4 +1,4 @@
-# Serverless DocumentDB Deployment
+# Serverless Neo4j Deployment
 
 We use Serverless Framework to do production ready deployments.
 

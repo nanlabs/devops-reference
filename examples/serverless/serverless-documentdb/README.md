@@ -1,4 +1,4 @@
-# Serverless Neo4j Deployment
+# Serverless DocumentDB Deployment
 
 We use Serverless Framework to do production ready deployments.
 
@@ -11,7 +11,7 @@ fnm use 16.13.2
 npm install
 ```
 
-## EC2 Instance Deployment
+## DocumentDB Deployment
 
 Set up the following environment variables:
 
