@@ -1,3 +1,4 @@
 # Serverless
 node_modules/
 .serverless/
+.env

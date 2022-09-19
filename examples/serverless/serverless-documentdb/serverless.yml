@@ -4,7 +4,7 @@ useDotenv: true
 
 custom:
   documentdb:
-    clusterIdentifier: ${env:DOCUMENTDB_CLUSTER_IDENTIFIER}
+    clusterIdentifier: ${self:service}-${self:provider.stage}-${env:DOCUMENTDB_CLUSTER_IDENTIFIER}
     masterUsername: ${env:DOCUMENTDB_MASTER_USERNAME}
     masterUserPassword: ${env:DOCUMENTDB_MASTER_USER_PASSWORD}
 
@@ -16,23 +16,159 @@ provider:
 
 resources:
   Resources:
-    DBCluster:
+    VPC:
+      Type: AWS::EC2::VPC
+      Properties:
+        CidrBlock: 10.0.0.0/16
+        EnableDnsSupport: true
+        EnableDnsHostnames: true
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-vpc
+    PublicSubnetOne:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.0.0/24
+        AvailabilityZone: !Select [0, !GetAZs ""]
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-public-subnet-1
+    PublicSubnetTwo:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.1.0/24
+        AvailabilityZone: !Select [1, !GetAZs ""]
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-public-subnet-2
+    PrivateSubnetOne:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.2.0/24
+        AvailabilityZone: !Select [0, !GetAZs ""]
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-private-subnet-1
+    PrivateSubnetTwo:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.3.0/24
+        AvailabilityZone: !Select [1, !GetAZs ""]
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-private-subnet-2
+    InternetGateway:
+      Type: AWS::EC2::InternetGateway
+      Properties:
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-igw
+    VPCGatewayAttachment:
+      Type: AWS::EC2::VPCGatewayAttachment
+      Properties:
+        VpcId: !Ref VPC
+        InternetGatewayId: !Ref InternetGateway
+    PublicRouteTable:
+      Type: AWS::EC2::RouteTable
+      Properties:
+        VpcId: !Ref VPC
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-public-route-table
+    PublicRoute:
+      Type: AWS::EC2::Route
+      DependsOn: VPCGatewayAttachment
+      Properties:
+        RouteTableId: !Ref PublicRouteTable
+        DestinationCidrBlock: 0.0.0.0/0
+        GatewayId: !Ref InternetGateway
+    PublicSubnetOneRouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PublicSubnetOne
+        RouteTableId: !Ref PublicRouteTable
+    PublicSubnetTwoRouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PublicSubnetTwo
+        RouteTableId: !Ref PublicRouteTable
+    PrivateRouteTable:
+      Type: AWS::EC2::RouteTable
+      Properties:
+        VpcId: !Ref VPC
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-private-route-table
+    PrivateSubnetOneRouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PrivateSubnetOne
+        RouteTableId: !Ref PrivateRouteTable
+    PrivateSubnetTwoRouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PrivateSubnetTwo
+        RouteTableId: !Ref PrivateRouteTable
+    DocumentDBSecurityGroup:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: Allow HTTP and HTTPS from anywhere
+        VpcId: !Ref VPC
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            FromPort: 27017
+            ToPort: 27017
+            CidrIp: 10.0.0.0/16
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-documentdb-security-group
+    DocumentDBSubnetGroup:
+      Type: AWS::DocDB::DBSubnetGroup
+      Properties:
+        DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-documentdb-subnet-group
+        SubnetIds:
+          - !Ref PrivateSubnetOne
+          - !Ref PrivateSubnetTwo
+        Tags:
+          - Key: Name
+            Value: ${self:service}-${self:provider.stage}-documentdb-subnet-group
+    DocumentDBCluster:
       Type: AWS::DocDB::DBCluster
       Properties:
         DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
         MasterUsername: ${self:custom.documentdb.masterUsername}
         MasterUserPassword: ${self:custom.documentdb.masterUserPassword}
-
-    DBInstance:
+        DBSubnetGroupName: !Ref DocumentDBSubnetGroup
+        VpcSecurityGroupIds:
+          - !Ref DocumentDBSecurityGroup
+    DocumentDBInstance:
       Type: AWS::DocDB::DBInstance
-      DependsOn: DBCluster
+      DependsOn: DocumentDBCluster
       Properties:
         DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
-        DBInstanceIdentifier: ${self:custom.documentdb.clusterIdentifier}-instance
-        DBInstanceClass: "db.r4.large"
+        DBInstanceIdentifier: ${self:custom.documentdb.clusterIdentifier}Instance1
+        DBInstanceClass: db.r6g.large
 
   Outputs:
-    DocumentDBEndpoint:
-      Value: !GetAtt DBCluster.Endpoint.Address
-      Export:
-        Name: DocumentDBEndpoint
+    VPC:
+      Value: !Ref VPC
+    PublicSubnetOne:
+      Value: !Ref PublicSubnetOne
+    PublicSubnetTwo:
+      Value: !Ref PublicSubnetTwo
+    PrivateSubnetOne:
+      Value: !Ref PrivateSubnetOne
+    PrivateSubnetTwo:
+      Value: !Ref PrivateSubnetTwo
+    DocumentDBCluster:
+      Value: !Ref DocumentDBCluster
+    DocumentDBInstance:
+      Value: !Ref DocumentDBInstance
+    DocumentDBSubnetGroup:
+      Value: !Ref DocumentDBSubnetGroup
+    DocumentDBSecurityGroup:
+      Value: !Ref DocumentDBSecurityGroup
