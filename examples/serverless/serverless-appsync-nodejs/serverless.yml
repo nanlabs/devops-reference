@@ -65,7 +65,7 @@ provider:
   runtime: nodejs16.x
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
-  profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   # vpc:
   #   securityGroupIds:
   #     - ${env:VPC_SECURITY_GROUP_ID}

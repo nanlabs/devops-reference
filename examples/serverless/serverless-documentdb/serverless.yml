@@ -12,7 +12,7 @@ provider:
   name: aws
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
-  profile: ${opt:aws-profile, env:AWS_PROFILE, 'default'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
 
 resources:
   Resources:
