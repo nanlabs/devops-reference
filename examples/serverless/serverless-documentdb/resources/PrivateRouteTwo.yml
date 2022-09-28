@@ -1,0 +1,6 @@
+Type: AWS::EC2::Route
+Condition: CreateNetworkResources
+Properties:
+  RouteTableId: ${self:resources.Outputs.PrivateRouteTableTwo.Value}
+  DestinationCidrBlock: "0.0.0.0/0"
+  GatewayId: ${self:resources.Outputs.InternetGateway.Value}

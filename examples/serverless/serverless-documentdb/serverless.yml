@@ -6,7 +6,9 @@ custom:
   documentdb:
     clusterIdentifier: ${self:service}-${self:provider.stage}-${env:DOCUMENTDB_CLUSTER_IDENTIFIER}
     masterUsername: ${env:DOCUMENTDB_MASTER_USERNAME}
-    masterUserPassword: ${env:DOCUMENTDB_MASTER_USER_PASSWORD}
+    database: ${env:DOCUMENTDB_DATABASE_NAME}
+  vpc:
+    cidr: ${env:VPC_CIDR, '10.15.0.0/16'}
 
 provider:
   name: aws
@@ -15,160 +17,161 @@ provider:
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
 
 resources:
+  Conditions:
+    CreateDocumentDBCluster:
+      Fn::Equals:
+        - ${param:skipDocumentDBClusterCreation, env:SKIP_DOCUMENTDB_CLUSTER_CREATION, 'false'}
+        - "false"
+    CreateNetworkResources:
+      Fn::Equals:
+        - ${param:skipNetworkResources, env:SKIP_NETWORK_RESOURCES, 'false'}
+        - "false"
+    CreateVpc:
+      Fn::And:
+        - Condition: CreateNetworkResources
+        - Fn::Equals:
+            - ${param:vpcId, env:VPC_ID, ''}
+            - ""
+
   Resources:
-    VPC:
-      Type: AWS::EC2::VPC
-      Properties:
-        CidrBlock: 10.0.0.0/16
-        EnableDnsSupport: true
-        EnableDnsHostnames: true
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-vpc
-    PublicSubnetOne:
-      Type: AWS::EC2::Subnet
-      Properties:
-        VpcId: !Ref VPC
-        CidrBlock: 10.0.0.0/24
-        AvailabilityZone: !Select [0, !GetAZs ""]
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-public-subnet-1
-    PublicSubnetTwo:
-      Type: AWS::EC2::Subnet
-      Properties:
-        VpcId: !Ref VPC
-        CidrBlock: 10.0.1.0/24
-        AvailabilityZone: !Select [1, !GetAZs ""]
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-public-subnet-2
-    PrivateSubnetOne:
-      Type: AWS::EC2::Subnet
-      Properties:
-        VpcId: !Ref VPC
-        CidrBlock: 10.0.2.0/24
-        AvailabilityZone: !Select [0, !GetAZs ""]
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-private-subnet-1
-    PrivateSubnetTwo:
-      Type: AWS::EC2::Subnet
-      Properties:
-        VpcId: !Ref VPC
-        CidrBlock: 10.0.3.0/24
-        AvailabilityZone: !Select [1, !GetAZs ""]
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-private-subnet-2
-    InternetGateway:
-      Type: AWS::EC2::InternetGateway
-      Properties:
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-igw
-    VPCGatewayAttachment:
-      Type: AWS::EC2::VPCGatewayAttachment
-      Properties:
-        VpcId: !Ref VPC
-        InternetGatewayId: !Ref InternetGateway
-    PublicRouteTable:
-      Type: AWS::EC2::RouteTable
-      Properties:
-        VpcId: !Ref VPC
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-public-route-table
-    PublicRoute:
-      Type: AWS::EC2::Route
-      DependsOn: VPCGatewayAttachment
-      Properties:
-        RouteTableId: !Ref PublicRouteTable
-        DestinationCidrBlock: 0.0.0.0/0
-        GatewayId: !Ref InternetGateway
-    PublicSubnetOneRouteTableAssociation:
-      Type: AWS::EC2::SubnetRouteTableAssociation
-      Properties:
-        SubnetId: !Ref PublicSubnetOne
-        RouteTableId: !Ref PublicRouteTable
-    PublicSubnetTwoRouteTableAssociation:
-      Type: AWS::EC2::SubnetRouteTableAssociation
-      Properties:
-        SubnetId: !Ref PublicSubnetTwo
-        RouteTableId: !Ref PublicRouteTable
-    PrivateRouteTable:
-      Type: AWS::EC2::RouteTable
-      Properties:
-        VpcId: !Ref VPC
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-private-route-table
-    PrivateSubnetOneRouteTableAssociation:
-      Type: AWS::EC2::SubnetRouteTableAssociation
-      Properties:
-        SubnetId: !Ref PrivateSubnetOne
-        RouteTableId: !Ref PrivateRouteTable
-    PrivateSubnetTwoRouteTableAssociation:
-      Type: AWS::EC2::SubnetRouteTableAssociation
-      Properties:
-        SubnetId: !Ref PrivateSubnetTwo
-        RouteTableId: !Ref PrivateRouteTable
-    DocumentDBSecurityGroup:
-      Type: AWS::EC2::SecurityGroup
-      Properties:
-        GroupDescription: Allow HTTP and HTTPS from anywhere
-        VpcId: !Ref VPC
-        SecurityGroupIngress:
-          - IpProtocol: tcp
-            FromPort: 27017
-            ToPort: 27017
-            CidrIp: 10.0.0.0/16
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-documentdb-security-group
-    DocumentDBSubnetGroup:
-      Type: AWS::DocDB::DBSubnetGroup
-      Properties:
-        DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-documentdb-subnet-group
-        SubnetIds:
-          - !Ref PrivateSubnetOne
-          - !Ref PrivateSubnetTwo
-        Tags:
-          - Key: Name
-            Value: ${self:service}-${self:provider.stage}-documentdb-subnet-group
-    DocumentDBCluster:
-      Type: AWS::DocDB::DBCluster
-      Properties:
-        DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
-        MasterUsername: ${self:custom.documentdb.masterUsername}
-        MasterUserPassword: ${self:custom.documentdb.masterUserPassword}
-        DBSubnetGroupName: !Ref DocumentDBSubnetGroup
-        VpcSecurityGroupIds:
-          - !Ref DocumentDBSecurityGroup
-    DocumentDBInstance:
-      Type: AWS::DocDB::DBInstance
-      DependsOn: DocumentDBCluster
-      Properties:
-        DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
-        DBInstanceIdentifier: ${self:custom.documentdb.clusterIdentifier}Instance1
-        DBInstanceClass: db.r6g.large
+    DocumentDBConnectionSecret: ${file(./resources/DocumentDBConnectionSecret.yml)}
+    DocumentDBCluster: ${file(./resources/DocumentDBCluster.yml)}
+    DocumentDBInstanceWriter: ${file(./resources/DocumentDBInstanceWriter.yml)}
+    DocumentDBInstanceReaderOne: ${file(./resources/DocumentDBInstanceReaderOne.yml)}
+    DocumentDBInstanceReaderTwo: ${file(./resources/DocumentDBInstanceReaderTwo.yml)}
+    DocumentDBSecurityGroup: ${file(./resources/DocumentDBSecurityGroup.yml)}
+    DocumentDBSubnetGroup: ${file(./resources/DocumentDBSubnetGroup.yml)}
+    VPC: ${file(./resources/VPC.yml)}
+    InternetGateway: ${file(./resources/InternetGateway.yml)}
+    VPCGatewayAttachment: ${file(./resources/VPCGatewayAttachment.yml)}
+    PrivateSubnetOne: ${file(./resources/PrivateSubnetOne.yml)}
+    PrivateRouteTableOne: ${file(./resources/PrivateRouteTableOne.yml)}
+    PrivateRouteOne: ${file(./resources/PrivateRouteOne.yml)}
+    PrivateSubnetOneRouteTableAssociation: ${file(./resources/PrivateSubnetOneRouteTableAssociation.yml)}
+    PrivateSubnetTwo: ${file(./resources/PrivateSubnetTwo.yml)}
+    PrivateRouteTableTwo: ${file(./resources/PrivateRouteTableTwo.yml)}
+    PrivateRouteTwo: ${file(./resources/PrivateRouteTwo.yml)}
+    PrivateSubnetTwoRouteTableAssociation: ${file(./resources/PrivateSubnetTwoRouteTableAssociation.yml)}
+    Cloud9env: ${file(./resources/Cloud9env.yml)}
 
   Outputs:
-    VPC:
-      Value: !Ref VPC
-    PublicSubnetOne:
-      Value: !Ref PublicSubnetOne
-    PublicSubnetTwo:
-      Value: !Ref PublicSubnetTwo
-    PrivateSubnetOne:
-      Value: !Ref PrivateSubnetOne
-    PrivateSubnetTwo:
-      Value: !Ref PrivateSubnetTwo
     DocumentDBCluster:
-      Value: !Ref DocumentDBCluster
-    DocumentDBInstance:
-      Value: !Ref DocumentDBInstance
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !Ref DocumentDBCluster
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBCluster, ''}
+    DocumentDBInstanceWriter:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !Ref DocumentDBInstanceWriter
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBInstanceWriter, ''}
+    DocumentDBInstanceReaderOne:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !Ref DocumentDBInstanceReaderOne
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBInstanceReaderOne, ''}
+    DocumentDBInstanceReaderTwo:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !Ref DocumentDBInstanceReaderTwo
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBInstanceReaderTwo, ''}
     DocumentDBSubnetGroup:
-      Value: !Ref DocumentDBSubnetGroup
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref DocumentDBSubnetGroup
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBSubnetGroup, ''}
     DocumentDBSecurityGroup:
-      Value: !Ref DocumentDBSecurityGroup
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref DocumentDBSecurityGroup
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBSecurityGroup, ''}
+    DocumentDBClusterEndpoint:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !GetAtt DocumentDBCluster.Endpoint
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBClusterEndpoint, ''}
+    DocumentDBClusterPort:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !GetAtt DocumentDBCluster.Port
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBClusterPort, ''}
+    DocumentDBConnectionSecret:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !Ref DocumentDBConnectionSecret
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecret, ''}
+    DocumentDBConnectionSecretName:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - ${self:provider.stage}/${self:service}
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecretName, ''}
+    VpcId:
+      Value:
+        Fn::If:
+          - CreateVpc
+          - !Ref VPC
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VpcId, env:VPC_ID, ''}
+    InternetGateway:
+      Value:
+        Fn::If:
+          - CreateVpc
+          - !Ref InternetGateway
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.InternetGateway, env:INTERNET_GATEWAY_ID, ''}
+    VPCGatewayAttachment:
+      Value:
+        Fn::If:
+          - CreateVpc
+          - !Ref VPCGatewayAttachment
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VPCGatewayAttachment, ''}
+    PrivateSubnetOne:
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref PrivateSubnetOne
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateSubnetOne, env:PRIVATE_SUBNET_ONE, ''}
+    PrivateRouteTableOne:
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref PrivateRouteTableOne
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTableOne, ''}
+    PrivateRouteOne:
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref PrivateRouteOne
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteOne, ''}
+    PrivateSubnetTwo:
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref PrivateSubnetTwo
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO, ''}
+    PrivateRouteTableTwo:
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref PrivateRouteTableTwo
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTableTwo, ''}
+    PrivateRouteTwo:
+      Value:
+        Fn::If:
+          - CreateNetworkResources
+          - !Ref PrivateRouteTwo
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTwo, ''}
+    Cloud9env:
+      Value:
+        Fn::If:
+          - CreateDocumentDBCluster
+          - !Ref Cloud9env
+          - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.Cloud9env, ''}

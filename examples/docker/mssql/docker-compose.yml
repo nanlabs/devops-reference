@@ -15,7 +15,7 @@ services:
     ports:
       - 1433:1433
     networks:
-      - measured
+      - mssql-net
 
 networks:
   mssql-net:
