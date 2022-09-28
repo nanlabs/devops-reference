@@ -108,7 +108,7 @@ Collection of examples that solve specific problems using small pieces of code.
 - [AWS Glue with Python Shell and PySpark Jobs](./examples/serverless/serverless-glue/)
 - [Neo4j in EC2](./examples/serverless/serverless-neo4j-ec2/)
 - [Serverless S3 Local example](./examples/serverless/serverless-s3-local/)
-- [DocumentDB](./examples/serverless/serverless-documentdb/)
+- [DocumentDB Cluster](./examples/serverless/serverless-documentdb/)
 
 ### Terraform
 
