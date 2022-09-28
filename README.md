@@ -31,7 +31,7 @@ here at [NaN Labs](https://www.nanlabs.com/).
   - [Cloud Development Kit](#cloud-development-kit)
   - [Docker and Docker Compose](#docker-and-docker-compose)
   - [Kubernetes](#kubernetes)
-  - [Serverless Framework](#serverless-framework)
+  - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
   - [Terraform](#terraform)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
@@ -98,10 +98,10 @@ Collection of examples that solve specific problems using small pieces of code.
 
 > TODO
 
-### Serverless Framework
+### Serverless Framework and CloudFormation
 
 > Collection of Serverless Framework that can be used to run local development environments
-> and deploy different resources to the Cloud.
+> and deploy different resources to the Cloud using Serverless Framework and CloudFormation.
 
 - [AWS AppSync + TypeScript](./examples/serverless/serverless-appsync-nodejs/)
 - [AWS AppSync + Python](./examples/serverless/serverless-appsync-python/)
