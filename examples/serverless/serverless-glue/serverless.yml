@@ -1,4 +1,4 @@
-service: NaNGlue
+service: GlueExample
 
 plugins:
   - serverless-plugin-scripts
@@ -16,7 +16,7 @@ custom:
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.9
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
@@ -29,222 +29,22 @@ provider:
 
 # Glue Jobs configuration:
 # Check the full documentation at https://www.npmjs.com/package/serverless-glue
-Glue:
-  bucketDeploy: ${self:service}-${self:provider.stage}-glue-bucket-deploy
-  createBucket: true
-  s3Prefix: ""
-  jobs:
-    - name: pyspark
-      scriptPath: app/jobs/pyspark.py
-      type: spark
-      role: !Sub arn:aws:iam::${AWS::AccountId}:role/NaNGlueJobRole/NaNGlueJobRole
-      glueVersion: python3-3.0
-      MaxConcurrentRuns: 3
-      WorkerType: Standard
-      NumberOfWorkers: 1
-      Timeout: 3000
-      MaxRetries: 1
-      Connections:
-        - !Ref GlueConnection
-      DefaultArguments:
-        usePostgresDriver: true
-        enableS3ParquetOptimizedCommitter: true
-        enableGlueDatacatalog: true
-        enableMetrics: true
-        enableContinuousCloudwatchLog: true
-        enableContinuousLogFilter: true
-        continuousLogLogGroup: ${self:service}-${self:provider.stage}-pyspark
-        enableSparkUi: true
-        sparkEventLogsPath: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/pyspark/spark-events-logs/
-        tempDir: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/tmp/
-        extraPyFiles: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/package.zip
-        customArguments:
-          # Install additional python packages
-          "additional-python-modules": "tldextract==3.3.0"
-          # Pass additional arguments to the pyspark script
-          "CUSTOM_ARGUMENT": "CUSTOM_VALUE"
-      SupportFiles:
-        - local_path: package.zip
-          s3_bucket: ${self:service}-${self:provider.stage}-glue-bucket-deploy
-          s3_prefix: ""
-          execute_upload: true
-    - name: pythonshell
-      scriptPath: app/jobs/pythonshell.py
-      type: pythonshell
-      role: !Sub arn:aws:iam::${AWS::AccountId}:role/NaNGlueJobRole/NaNGlueJobRole
-      glueVersion: python3-3.0
-      MaxConcurrentRuns: 3
-      WorkerType: Standard
-      Timeout: 3000
-      MaxRetries: 1
-      Connections:
-        - !Ref GlueConnection
-      DefaultArguments:
-        usePostgresDriver: true
-        enableS3ParquetOptimizedCommitter: true
-        enableGlueDatacatalog: true
-        enableMetrics: true
-        enableContinuousCloudwatchLog: true
-        enableContinuousLogFilter: true
-        continuousLogLogGroup: ${self:service}-${self:provider.stage}-pythonshell
-        tempDir: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/tmp/
-        extraPyFiles: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/package.zip
-        customArguments:
-          # Install additional python packages
-          "additional-python-modules": "tldextract==3.3.0"
-          # Pass additional arguments to the pythonshell script
-          "CUSTOM_ARGUMENT": "CUSTOM_VALUE"
-      SupportFiles:
-        - local_path: package.zip
-          s3_bucket: ${self:service}-${self:provider.stage}-glue-bucket-deploy
-          s3_prefix: ""
-          execute_upload: true
-  triggers:
-    - name: trigger1
-      Tags:
-        trigger_tag_pyspark: pyspark
-      actions:
-        - name: pyspark
-    - name: trigger2
-      Tags:
-        trigger_tag_pythonshell: pythonshell
-      actions:
-        - name: pythonshell
+Glue: ${file(./glue.yml)}
 
 resources:
   Resources:
-    GlueConnection:
-      Type: AWS::Glue::Connection
-      Properties:
-        CatalogId: !Ref AWS::AccountId
-        ConnectionInput:
-          ConnectionType: NETWORK
-          ConnectionProperties:
-            Name: nanglue-net
-            Description: NaNGlue Network
-            Type: NETWORK
-          PhysicalConnectionRequirements:
-            AvailabilityZone: ${env:AWS_AVAILABILITY_ZONE}
-            SecurityGroupIdList:
-              - ${self:resources.Outputs.SecurityGroup.Value}
-            SubnetId: ${env:SUBNET_ID}
-    MainJobAccessLogs:
-      Type: AWS::Logs::LogGroup
-      Properties:
-        LogGroupName: ${self:service}-${self:provider.stage}-pyspark
-    NaNGlueSecurityGroup:
-      Type: AWS::EC2::SecurityGroup
-      Properties:
-        GroupName: nangluesg
-        GroupDescription: NaNGlue Security Group
-        SecurityGroupIngress:
-          - IpProtocol: tcp
-            FromPort: 0
-            ToPort: 65535
-            CidrIp: 0.0.0.0/0
-        Tags:
-          - Key: name
-            Value: nangluesg
-        VpcId: ${env:VPC_ID}
-    NaNGlueJobRole:
-      Type: AWS::IAM::Role
-      Properties:
-        Path: /NaNGlueJobRole/
-        RoleName: NaNGlueJobRole
-        AssumeRolePolicyDocument:
-          Version: "2012-10-17"
-          Statement:
-            - Effect: Allow
-              Principal:
-                Service:
-                  - glue.amazonaws.com
-              Action: sts:AssumeRole
-        Policies:
-          - PolicyName: GlueJobPolicy
-            PolicyDocument:
-              Version: "2012-10-17"
-              Statement:
-                - Effect: Allow
-                  Action:
-                    - ec2:DescribeSubnets
-                    - ec2:DescribeSecurityGroups
-                    - ec2:DescribeVpcEndpoints
-                    - ec2:DescribeVpcEndpointServices
-                    - ec2:DescribeRouteTables
-                    - ec2:CreateNetworkInterface
-                  Resource:
-                    - "*"
-                - Effect: Allow
-                  Action:
-                    - logs:CreateLogGroup
-                    - logs:CreateLogStream
-                    - logs:PutLogEvents
-                  Resource:
-                    - "arn:aws:logs:*:*:*"
-                - Effect: Allow
-                  Action:
-                    - s3:GetObject
-                    - s3:PutObject
-                  Resource:
-                    - Fn::Join:
-                        - ":"
-                        - - "arn:aws:s3"
-                          - ""
-                          - ""
-                          - "${self:service}-${self:provider.stage}-glue-bucket-deploy/*"
-                - Effect: Allow
-                  Action:
-                    - ec2:CreateTags
-                    - ec2:DeleteTags
-                  Resource:
-                    - "arn:aws:ec2:*:*:network-interface/*"
-                    - "arn:aws:ec2:*:*:security-group/*"
-                    - "arn:aws:ec2:*:*:instance/*"
-                - Effect: Allow
-                  Action:
-                    - "glue:GetConnection"
-                  Resource:
-                    - Fn::Join:
-                        - ":"
-                        - - "arn:aws:glue"
-                          - Ref: "AWS::Region"
-                          - Ref: "AWS::AccountId"
-                          - "catalog"
-                    - Fn::Join:
-                        - ":"
-                        - - "arn:aws:glue"
-                          - Ref: "AWS::Region"
-                          - Ref: "AWS::AccountId"
-                          - "connection/*"
-                - Effect: "Allow"
-                  Action:
-                    - "ssm:GetParameter"
-                  Resource:
-                    - Fn::Join:
-                        - ":"
-                        - - "arn:aws:ssm"
-                          - Ref: "AWS::Region"
-                          - Ref: "AWS::AccountId"
-                          - "parameter/*"
-                - Effect: "Allow"
-                  Action:
-                    - "secretsmanager:GetSecretValue"
-                  Resource:
-                    - Fn::Join:
-                        - ":"
-                        - - "arn:aws:secretsmanager"
-                          - Ref: "AWS::Region"
-                          - Ref: "AWS::AccountId"
-                          - "secret"
-                          - "*"
+    GlueConnection: ${file(./resources/GlueConnection.yml)}
+    GlueAccessLogs: ${file(./resources/GlueAccessLogs.yml)}
+    GlueSecurityGroup: ${file(./resources/GlueSecurityGroup.yml)}
+    GlueJobRole: ${file(./resources/GlueJobRole.yml)}
 
   Outputs:
-    MainJobAccessLogsArn:
+    GlueAccessLogsArn:
       Description: Main Job Access Logs Arn
       Value:
         Fn::GetAtt:
-          - MainJobAccessLogs
+          - GlueAccessLogs
           - Arn
     SecurityGroup:
       Description: NaNGlue Security Group
-      Value: !GetAtt NaNGlueSecurityGroup.GroupId
+      Value: !GetAtt GlueSecurityGroup.GroupId

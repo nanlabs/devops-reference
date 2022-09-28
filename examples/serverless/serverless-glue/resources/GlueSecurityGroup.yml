@@ -1,0 +1,12 @@
+Type: AWS::EC2::SecurityGroup
+Properties:
+  GroupName: ${self:service}-${self:provider.stage}-security-group
+  GroupDescription: NaNGlue Security Group
+  SecurityGroupIngress:
+    - IpProtocol: -1
+      Descritpion: Allow all traffic by default
+      CidrIp: 0.0.0.0/0
+  Tags:
+    - Key: name
+      Value: nangluesg
+  VpcId: ${env:VPC_ID}

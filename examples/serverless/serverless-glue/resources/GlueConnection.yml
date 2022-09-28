@@ -1,0 +1,14 @@
+Type: AWS::Glue::Connection
+Properties:
+  CatalogId: !Ref AWS::AccountId
+  ConnectionInput:
+    ConnectionType: NETWORK
+    ConnectionProperties:
+      Name: nanglue-net
+      Description: NaNGlue Network
+      Type: NETWORK
+    PhysicalConnectionRequirements:
+      AvailabilityZone: ${env:AWS_AVAILABILITY_ZONE}
+      SecurityGroupIdList:
+        - ${self:resources.Outputs.SecurityGroup.Value}
+      SubnetId: ${env:SUBNET_ID}
