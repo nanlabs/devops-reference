@@ -6,6 +6,36 @@ Please note we have a [code of conduct](./.github/CODE_OF_CONDUCT.md), please fo
 
 You can help contribute to this project in many ways, including:
 
+## Reporting Bugs
+
+This section guides you through submitting a bug report for this project. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+
+Before creating bug reports, please check [this list](#before-submitting-a-bug-report)
+as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](./.github/ISSUE_TEMPLATE/bug_report.md), the information it asks for helps us resolve issues faster.
+
+### Before Submitting A Bug Report
+
+TODO
+
+### How Do I Submit A (Good) Bug Report?
+
+TODO
+
+## Suggesting Enhancements
+
+This section guides you through submitting an enhancement suggestion for this project, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion and find related suggestions.
+
+Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion)
+as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](./.github/ISSUE_TEMPLATE/feature_request.md), including the steps that you imagine you would take if the feature you're requesting existed.
+
+### Before Submitting An Enhancement Suggestion
+
+TODO
+
+### How Do I Submit A (Good) Enhancement Suggestion?
+
+TODO
+
 ## Pull Requests
 
 1. Fork this repository.
@@ -15,7 +45,7 @@ You can help contribute to this project in many ways, including:
 It is very important to separate new features or improvements into separate feature branches, and to send a
 pull request for each branch. This allows us to review and pull in new features or improvements individually.
 
-## Writing Shell Scripting code
+### Writing Shell Scripting code
 
 - Follow shell scripting best practices (e.g. as described in
   [Google's shell style guide](https://google.github.io/styleguide/shell.xml))
@@ -43,6 +73,6 @@ pull request for each branch. This allows us to review and pull in new features 
 - Test your code before submitting a PR (not required if it's a draft)
 - Write long and informative commit messages
 
-## Writing Dockerfiles
+### Writing Dockerfiles
 
 - Follow the [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
