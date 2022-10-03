@@ -1,0 +1,5 @@
+Type: AWS::EC2::EIP
+Condition: CreateNetworkResources
+DependsOn: GatewayAttachment
+Properties:
+  Domain: vpc

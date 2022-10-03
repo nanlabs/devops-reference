@@ -1,0 +1,174 @@
+DocumentDBCluster:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBCluster
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBCluster, ''}
+DocumentDBInstanceWriter:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBInstanceWriter
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBInstanceWriter, ''}
+DocumentDBInstanceReaderOne:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBInstanceReaderOne
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBInstanceReaderOne, ''}
+DocumentDBInstanceReaderTwo:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBInstanceReaderTwo
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBInstanceReaderTwo, ''}
+DocumentDBSubnetGroup:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref DocumentDBSubnetGroup
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBSubnetGroup, ''}
+DocumentDBSecurityGroup:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref DocumentDBSecurityGroup
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBSecurityGroup, ''}
+DocumentDBClusterEndpoint:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !GetAtt DocumentDBCluster.Endpoint
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBClusterEndpoint, ''}
+DocumentDBClusterPort:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !GetAtt DocumentDBCluster.Port
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBClusterPort, ''}
+DocumentDBConnectionSecret:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBConnectionSecret
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecret, ''}
+DocumentDBConnectionSecretName:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - ${self:provider.stage}/${self:service}
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecretName, ''}
+VpcId:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref VPC
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VpcId, env:VPC_ID, ''}
+InternetGateway:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref InternetGateway
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.InternetGateway, env:INTERNET_GATEWAY_ID, ''}
+GatewayAttachment:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref GatewayAttachment
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.GatewayAttachment, ''}
+NatGatewayOneAttachment:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref NatGatewayOneAttachment
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayOneAttachment, ''}
+NatGatewayOne:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref NatGatewayOne
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayOne, env:NAT_GATEWAY_ONE_ID, ''}
+NatGatewayTwoAttachment:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref NatGatewayTwoAttachment
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayTwoAttachment, ''}
+NatGatewayTwo:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref NatGatewayTwo
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayTwo, env:NAT_GATEWAY_TWO_ID, ''}
+PublicSubnetOne:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref PuclicSubnetOne
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
+PublicSubnetTwo:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref PuclicSubnetTwo
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetTwo, env:PUBLIC_SUBNET_TWO_ID, ''}
+PublicRouteTable:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref PublicRouteTable
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicRouteTable, ''}
+PublicSubnetOneRouteTableAssociation:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref PublicSubnetOneRouteTableAssociation
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetOneRouteTableAssociation, ''}
+PublicSubnetTwoRouteTableAssociation:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref PublicSubnetTwoRouteTableAssociation
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetTwoRouteTableAssociation, ''}
+PrivateSubnetOne:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateSubnetOne
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateSubnetOne, env:PRIVATE_SUBNET_ONE, ''}
+PrivateRouteTableOne:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateRouteTableOne
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTableOne, ''}
+PrivateRouteOne:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateRouteOne
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteOne, ''}
+PrivateSubnetTwo:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateSubnetTwo
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO, ''}
+PrivateRouteTableTwo:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateRouteTableTwo
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTableTwo, ''}
+PrivateRouteTwo:
+  Value:
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateRouteTwo
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTwo, ''}
+Cloud9env:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref Cloud9env
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.Cloud9env, ''}
