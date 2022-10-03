@@ -50,9 +50,8 @@ resources:
     NatGatewayTwoAttachment: ${file(./resources/NatGatewayTwoAttachment.yml)}
     PuclicSubnetOne: ${file(./resources/PublicSubnetOne.yml)}
     PuclicSubnetTwo: ${file(./resources/PublicSubnetTwo.yml)}
+    PublicRoute: ${file(./resources/PublicRoute.yml)}
     PublicRouteTable: ${file(./resources/PublicRouteTable.yml)}
-    PublicRouteOne: ${file(./resources/PublicRouteOne.yml)}
-    PublicRouteTwo: ${file(./resources/PublicRouteTwo.yml)}
     PublicSubnetOneRouteTableAssociation: ${file(./resources/PublicSubnetOneRouteTableAssociation.yml)}
     PublicSubnetTwoRouteTableAssociation: ${file(./resources/PublicSubnetTwoRouteTableAssociation.yml)}
     PrivateSubnetOne: ${file(./resources/PrivateSubnetOne.yml)}

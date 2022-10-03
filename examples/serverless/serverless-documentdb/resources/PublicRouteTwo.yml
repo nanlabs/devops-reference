@@ -1,7 +1,0 @@
-Type: AWS::EC2::Route
-Condition: CreateNetworkResources
-DependsOn: GatewayAttachment
-Properties:
-  RouteTableId: ${self:resources.Outputs.PublicRouteTable.Value}
-  DestinationCidrBlock: "0.0.0.0/0"
-  GatewayId: ${self:resources.Outputs.InternetGateway.Value}
