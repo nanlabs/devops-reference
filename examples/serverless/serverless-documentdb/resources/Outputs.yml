@@ -104,13 +104,13 @@ PublicSubnetOne:
   Value:
     Fn::If:
       - CreateVpc
-      - !Ref PuclicSubnetOne
+      - !Ref PublicSubnetOne
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
 PublicSubnetTwo:
   Value:
     Fn::If:
       - CreateVpc
-      - !Ref PuclicSubnetTwo
+      - !Ref PublicSubnetTwo
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetTwo, env:PUBLIC_SUBNET_TWO_ID, ''}
 PublicRoute:
   Value:
