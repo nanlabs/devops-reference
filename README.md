@@ -68,7 +68,7 @@ Collection of examples that solve specific problems using small pieces of code.
   - Pull Requests validation with DangerJS
   - Deployment example with GitHub Pages
 
-- [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the[markdownlint action](https://github.com/marketplace/actions/markdown-lint).
+- [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
 - [Shell Check](./.github/workflows/shellcheck.yml). This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).
 - [Terraform Check](./.github/workflows/tf-check.yml). This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).
 
