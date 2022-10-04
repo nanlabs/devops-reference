@@ -14,6 +14,7 @@
 </div>
 <div align="center">
 
+[![Markdown Lint][markdownlintbadge]][markdownlinturl]
 [![Shell Check][shellcheckbadge]][shellcheckurl]
 [![Tensorflow Check][tf-checkbadge]][tf-checkurl]
 [![License: MIT][licensebadge]][licenseurl]
@@ -67,8 +68,9 @@ Collection of examples that solve specific problems using small pieces of code.
   - Pull Requests validation with DangerJS
   - Deployment example with GitHub Pages
 
-- [Shell Check](./.github/workflows/shellcheck.yml)
-- [Terraform Check](./.github/workflows/tf-check.yml)
+- [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the[markdownlint action](https://github.com/marketplace/actions/markdown-lint).
+- [Shell Check](./.github/workflows/shellcheck.yml). This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).
+- [Terraform Check](./.github/workflows/tf-check.yml). This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).
 
 ### DevContainers and Codespaces
 
@@ -126,9 +128,11 @@ Contributions are welcome!
 
 Made with [contributors-img](https://contrib.rocks).
 
+[markdownlintbadge]: https://github.com/nanlabs/infra-reference/actions/workflows/markdownlint.yml/badge.svg
 [shellcheckbadge]: https://github.com/nanlabs/infra-reference/actions/workflows/shellcheck.yml/badge.svg
 [tf-checkbadge]: https://github.com/nanlabs/infra-reference/actions/workflows/tf-check.yml/badge.svg
 [licensebadge]: https://img.shields.io/badge/License-MIT-blue.svg
+[markdownlinturl]: https://github.com/nanlabs/infra-reference/actions/workflows/markdownlint.yml
 [shellcheckurl]: https://github.com/nanlabs/infra-reference/actions/workflows/shellcheck.yml
 [tf-checkurl]: https://github.com/nanlabs/infra-reference/actions/workflows/tf-check.yml
 [licenseurl]: https://github.com/nanlabs/infra-reference/blob/main/LICENSE
