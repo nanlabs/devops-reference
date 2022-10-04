@@ -55,6 +55,8 @@ GitHub provides additional document on [forking a repository](https://help.githu
 
 Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.
 
+## Coding Guidelines
+
 ### Writing Shell Scripting code
 
 - Follow shell scripting best practices (e.g. as described in
