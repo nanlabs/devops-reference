@@ -118,7 +118,16 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ## Contributing
 
-Contributions are welcome!
+- Contributions make the open source community such an amazing place to learn, inspire, and create.
+- Any contributions you make are **truly appreciated**.
+- Check out our [contribution guidelines](./CONTRIBUTING.md) for more information.
+
+## License
+
+<br>
+<p>
+This project is Licensed under the <a href="./LICENSE">MIT License</a>. Please go through the License atleast once before making your contribution. </p>
+<br>
 
 ## Contributors
 
