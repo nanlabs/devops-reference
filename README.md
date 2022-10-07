@@ -124,10 +124,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ## License
 
-<br>
-<p>
-This project is Licensed under the <a href="./LICENSE">MIT License</a>. Please go through the License atleast once before making your contribution. </p>
-<br>
+This project is Licensed under the [MIT License](./LICENSE). Please go through the License atleast once before making your contribution. </p>
 
 ## Contributors
 
