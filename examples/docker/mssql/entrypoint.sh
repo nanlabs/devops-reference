@@ -9,7 +9,16 @@ function initialize_app_database() {
         echo "Importing $file"
         /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "${SA_PASSWORD}" -i "${file}"
     done
-    
+
+    # TODO - Add support for `.sql.gz` and document it on the README.md of the example
+    # Restore the application database using .sql.gz files
+    shopt -s globstar nullglob
+    for file in /opt/mssql-scripts/*.sql.gz; do
+        echo "Importing $file"
+        echo "Warning: .sql.gz files are not supported yet. Skipping"
+        break
+    done
+
     # Restore the application database using .sh files
     shopt -s globstar nullglob
     for file in /opt/mssql-scripts/*.sh; do
