@@ -1,0 +1,22 @@
+# package directories
+node_modules
+.build
+
+# testing
+coverage
+
+temp
+dist
+.webpack
+.webpackCache
+
+# Serverless directories
+.serverless
+
+ideas.txt
+.DS_Store
+.idea/*
+
+*.log
+
+.env
