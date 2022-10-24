@@ -71,6 +71,7 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
 - [Shell Check](./.github/workflows/shellcheck.yml). This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).
 - [Terraform Check](./.github/workflows/tf-check.yml). This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).
+- [Todo to Issue](./.github/workflows/todo.yml). This workflow scans new commits on the main branch looking for `TODO`s in the code and creates new Github issues.
 
 ### DevContainers and Codespaces
 
