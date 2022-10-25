@@ -2,13 +2,13 @@
 
 set -e
 
-INITDB_FOLDER="/opt/mssql-scripts/"
-TMP_DIR="/tmp/"
+INITDB_FOLDER="/opt/mssql-scripts"
+TMP_DIR="/tmp"
 
 function sqlcmd() {
   file=${1?"Sql file must be provided as a parameter"}
-  /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "${SA_PASSWORD}" -i "${file}" && \
-    echo "$file imported successfully"
+  /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "${SA_PASSWORD}" -i "${file}"
+  echo "$file imported successfully"
 }
 
 function initialize_app_database() {
@@ -20,13 +20,13 @@ function initialize_app_database() {
 
     # Restore the application database using .sql.gz files
     shopt -s globstar nullglob
-
     for file in "$INITDB_FOLDER"/*.sql.gz; do
         echo "Uncompressing $file to $TMP_DIR"
         filename=$(basename "$file")
         uncompressed_file="$TMP_DIR/${filename//.gz/}"
-        #TODO mkfifo support?
-        gunzip --keep --stdout "$file" > "$uncompressed_file" &&  sqlcmd "$uncompressed_file"
+        # TODO Check if it's possible to pipe output directly to sqlcmd (checked  -i -, however it didn´t seem to be supported ). as an alternative mkfifo can be reviewed as well
+        gunzip --keep --stdout "$file" > "$uncompressed_file"
+        sqlcmd "$uncompressed_file"
     done
 
     # Restore the application database using .sh files
@@ -41,7 +41,8 @@ function initialize_app_database() {
     done
 
     # Note that the container has been initialized so future starts won't wipe changes to the data
-    touch /tmp/app-initialized && echo "Initialized!"
+    touch /tmp/app-initialized
+    echo "Initialized!"
 }
 
 if [ "$1" == '/opt/mssql/bin/sqlservr' ]; then
