@@ -90,8 +90,7 @@ Collection of examples that solve specific problems using small pieces of code.
 ### Docker and Docker Compose
 
 > Collection of Docker and Docker Compose that can be used to run local development environments.
->
-> NOTE: Most of the examples are compatible with other container runtimes like Podman.
+> Most of the examples are compatible with other container runtimes like Podman.
 
 - [AWS Glue](./examples/docker/glue/) - Dockerfile and docker-compose.yml for AWS Glue development.
 - [Localstack](./examples/docker/localstack/) - Dockerfile and docker-compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.
