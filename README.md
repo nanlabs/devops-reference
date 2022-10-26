@@ -90,6 +90,7 @@ Collection of examples that solve specific problems using small pieces of code.
 ### Docker and Docker Compose
 
 > Collection of Docker and Docker Compose that can be used to run local development environments.
+>
 > NOTE: Most of the examples are compatible with other container runtimes like Podman.
 
 - [AWS Glue](./examples/docker/glue/) - Dockerfile and docker-compose.yml for AWS Glue development.
