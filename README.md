@@ -101,6 +101,9 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### Kubernetes
 
+> Collection of Kubernetes manifests that can be used to run local development environments or
+> to deploy applications to a Kubernetes cluster.
+
 - [Ingress](./examples/kubernetes/ingress/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).
 
 ### Serverless Framework and CloudFormation
