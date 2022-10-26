@@ -10,7 +10,7 @@ We use Serverless Framework to do production ready deployments and local develop
 ```sh
 git clone https://github.com/nanlabs/infra-reference.git
 cd infra-reference/examples/serverless/serverless-middy
-fnm use 16.13.2
+fnm use
 npm install
 ```
 
