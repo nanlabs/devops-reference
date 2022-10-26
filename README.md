@@ -55,6 +55,10 @@ Collection of examples that solve specific problems using small pieces of code.
 
 - [Easy Options](./examples/scripts/easy-options/)
 
+### Buildpacks
+
+- [Python](.examples/buildpacks/python/README.md)
+
 ### CI/CD with GitHub Actions
 
 - [Automation Seed example](https://github.com/nanlabs/automation-seed/tree/main/.github/workflows). This example contains the following workflows:
