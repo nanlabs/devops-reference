@@ -7,7 +7,7 @@ export interface HelloResponse {
 }
 
 interface APIGatewayEventMiddyNormalised {
-  body: { [msg: string]: string };
+  body: { [key: string]: string };
 }
 
 // Example with official middleware
