@@ -111,6 +111,7 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Neo4j in EC2](./examples/serverless/serverless-neo4j-ec2/)
 - [Serverless S3 Local example](./examples/serverless/serverless-s3-local/)
 - [DocumentDB Cluster](./examples/serverless/serverless-documentdb/)
+- [Middy + AWS Lambda](./examples/serverless/serverless-middy/)
 
 ### Terraform
 
