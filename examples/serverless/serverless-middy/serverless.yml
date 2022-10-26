@@ -25,10 +25,15 @@ provider:
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
 
 functions:
-  nanMiddyExampleResolver:
-    handler: src/handler.middyHandler
+  officialMiddlewareExample:
+    handler: src/handler.officialMiddlewareHandler
     events:
       - http:
            path: /
            method: POST
-
+  customMiddlewareExample:
+    handler: src/handler.customMiddlewareHandler
+    events:
+      - http:
+           path: /
+           method: GET

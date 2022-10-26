@@ -1,17 +1,16 @@
 import { APIGatewayProxyResult } from "aws-lambda";
 import middy from "@middy/core";
-import jsonBodyParser from '@middy/http-json-body-parser'
-
+import jsonBodyParser from "@middy/http-json-body-parser";
+import { customMiddleware } from "./customMiddleware";
 export interface HelloResponse {
   message: string;
 }
-
 interface APIGatewayEventMiddyNormalised {
-  body: { [key: string]: string };
+  body: { [msg: string]: string };
 }
 
-// Example with official middleware
-export const handler = async (
+// Example with official middleware, you need to do a POST request in order to send the body
+export const postHandler = async (
   event: APIGatewayEventMiddyNormalised
 ): Promise<APIGatewayProxyResult> => {
   const { msg } = event.body;
@@ -25,5 +24,23 @@ export const handler = async (
   };
 };
 
-export const middyHandler = middy(handler)
-  .use(jsonBodyParser());
+// Example with official middleware, you need to do a POST request in order to send the body
+export const getHandler = async (
+  event: APIGatewayEventMiddyNormalised
+): Promise<APIGatewayProxyResult> => {
+  return {
+    statusCode: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify("Your are in the safe list"),
+  };
+};
+
+export const officialMiddlewareHandler = middy(postHandler).use(
+  jsonBodyParser()
+);
+
+export const customMiddlewareHandler = middy(getHandler).use(
+  customMiddleware()
+);
