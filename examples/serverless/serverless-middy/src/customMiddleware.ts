@@ -13,8 +13,8 @@ export const customMiddleware = (): middy.MiddlewareObj<
     APIGatewayProxyEvent,
     APIGatewayProxyResult
   > = async (request): Promise<void> => {
-    const host = request.event.headers["host"];
-
+    const host = request.event.headers["Host"];
+    console.log(request);
     if (host && SAFELIST.includes(host)) {
       return;
     }
@@ -24,7 +24,7 @@ export const customMiddleware = (): middy.MiddlewareObj<
   const onError: middy.MiddlewareFn<
     APIGatewayProxyEvent,
     APIGatewayProxyResult
-  > = async (request): Promise<APIGatewayProxyResult> => {
+  > = async (): Promise<APIGatewayProxyResult> => {
     return {
       statusCode: 401,
       headers: {
