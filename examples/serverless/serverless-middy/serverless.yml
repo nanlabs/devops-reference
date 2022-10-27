@@ -26,13 +26,13 @@ provider:
 
 functions:
   officialMiddlewareExample:
-    handler: src/handler.officialMiddlewareHandler
+    handler: src/handlers/post.officialMiddlewareHandler
     events:
       - http:
            path: /
            method: POST
   customMiddlewareExample:
-    handler: src/handler.customMiddlewareHandler
+    handler: src/handlers/get.customMiddlewareHandler
     events:
       - http:
            path: /
