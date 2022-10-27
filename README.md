@@ -57,7 +57,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### Buildpacks
 
-- [Python](.examples/buildpacks/python/README.md)
+- [Python](./examples/buildpacks/python#readme)
 
 ### CI/CD with GitHub Actions
 
