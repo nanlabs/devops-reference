@@ -56,6 +56,10 @@ Collection of examples that solve specific problems using small pieces of code.
 
 - [Easy Options](./examples/scripts/easy-options/) - Easy options for shell scripts.
 
+### Buildpacks
+
+- [Python](./examples/buildpacks/python#readme)
+
 ### CI/CD with GitHub Actions
 
 - [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
