@@ -1,0 +1,4 @@
+services:
+  mongo:
+    volumes:
+      - ./data:/data/db
