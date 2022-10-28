@@ -26,6 +26,7 @@
   "dependencies": {
     "@middy/core": "^3.6.2",
     "@middy/http-json-body-parser": "^3.6.2",
-    "aws-lambda": "^1.0.7"
+    "aws-lambda": "^1.0.7",
+    "http-errors": "^2.0.0"
   }
 }
