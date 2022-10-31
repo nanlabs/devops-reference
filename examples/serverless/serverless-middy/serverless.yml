@@ -31,9 +31,3 @@ functions:
       - http:
            path: /
            method: POST
-  customMiddlewareExample:
-    handler: src/handlers/get.customMiddlewareHandler
-    events:
-      - http:
-           path: /
-           method: GET
