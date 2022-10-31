@@ -122,6 +122,7 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Serverless S3 Local example](./examples/serverless/serverless-s3-local/) - Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local).
 - [DocumentDB Cluster](./examples/serverless/serverless-documentdb/) - Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources.
 - [Serverless Middy](./examples/serverless/serverless-middy/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.
+- [Serverless Middy-custom-middlware](./examples/serverless/serverless-middy-custom-middlware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.
 
 ### Terraform
 
