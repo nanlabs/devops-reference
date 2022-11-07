@@ -6,7 +6,11 @@ There were a lot of announcements on AWS re:Invent last year. One of those is th
 
 ### Outcomes
 
-This is a very recent announcement so there is not that much documentation and examples on how to setup CloudWatch Evidently. Anyways I think there are enough examples to start using it and the good thing is that it has some features that are similar to other services from AWS. We need to consider that CloudWatch Evidently is not a service itself but a feature on AWS CloudWatch, so it should be easy to use starting from there.
+This is a very recent announcement so there is not that much documentation and examples on how to setup CloudWatch Evidently. Anyways we think there are enough examples to start using it and the good thing is that it has some features that are similar to other services from AWS. We need to consider that CloudWatch Evidently is not a service itself but a feature on AWS CloudWatch, so it should be easy to use starting from there.
+
+### Pros and Cons
+
+In this section we will list the pros and cons of using CloudWatch Evidently.
 
 #### Cons
 
