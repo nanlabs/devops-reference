@@ -45,7 +45,7 @@ There is a POC that you can use to test the service in a [Frontend Application w
 We also created on Proof of Concept on how to integrate the service with a [Backend Application with Node.js](./POC.md).
 This Proof of Concept was created in **LESS THAN 20 MINUTES!!**. It is a simple application that has a feature that is enabled or disabled based on the variation that the user is assigned to. Also provides a simple experiment that is used to test the service and some images that are displayed based on the variation that the user is assigned to.
 
-# Reference Documentation and Helpful Links
+## Reference Documentation and Helpful Links
 
 - [AWS News Blog - Amazon CloudWatch Evidently - Experiments and Feature Management](https://aws.amazon.com/blogs/aws/cloudwatch-evidently/)
 - [AWS CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/)
