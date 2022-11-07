@@ -26,7 +26,9 @@ here at [NaN Labs](https://www.nanlabs.com/).
 
 - [Applications](#applications)
 - [Examples](#examples)
+  - [A/B Testing](#ab-testing)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
+  - [Buildpacks](#buildpacks)
   - [CI/CD with GitHub Actions](#cicd-with-github-actions)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
   - [Cloud Development Kit](#cloud-development-kit)
@@ -49,6 +51,13 @@ Read more about the examples in the [examples](#examples) section.
 ## Examples
 
 Collection of examples that solve specific problems using small pieces of code.
+
+### A/B Testing
+
+> A/B testing is a method of comparing two versions of a single variable, A and B, to determine which one is more effective.
+> Here we provide examples of how to implement A/B testing using different technologies.
+
+- [AWS CloudWatch Evidently](./examples/services/aws-cloudwatch-evidently/) - A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application.
 
 ### Shell Scripting and Utilities
 
