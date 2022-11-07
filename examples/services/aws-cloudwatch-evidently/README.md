@@ -30,15 +30,15 @@ The experiments component allows you to run experiments on your application. You
 
 The feature management component allows you to enable or disable features in your application. You can define the feature and the different variations that you want to test. You can also define the percentage of users that will be part of the experiment. The service will take care of the rest. It will randomly assign users to the different variations and will report the results of the experiment.
 
-### How to integrate with your application?
-
-The service provides a SDK that you can use to integrate with your application. The SDK is available in many different languages.
-
 ## Analysis
 
 We did a research on which are the Pros and Cons of using this service. We also did a research on how to integrate with your application. You can read the full analysis [here](./ANALYSIS.md).
 
-## How to use it? Proof of Concept
+## How to integrate with your application?
+
+The service provides a SDK that you can use to integrate with your application. The SDK is available in many different languages.
+
+### Proof of Concept
 
 There is a POC that you can use to test the service in a [Frontend Application with React](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-bookstoreexample.html).
 
