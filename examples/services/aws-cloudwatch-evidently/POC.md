@@ -1,6 +1,6 @@
 # Proof of Concept: Backend Application with Node.js
 
-We created on Proof of Concept on how to integrate the service with a [Backend Application with Node.js](./POC.md).
+We created a Proof of Concept to demostrate how to integrate the service with a [Backend Application with Node.js](./POC.md).
 This POC was created in less than 20 minutes. It is a simple application that has a feature that is enabled or disabled based on the variation that the user is assigned to. Also provides a simple experiment that is used to test the service and some images that are displayed based on the variation that the user is assigned to.
 
 - [Proof of Concept: Backend Application with Node.js](#proof-of-concept-backend-application-with-nodejs)
