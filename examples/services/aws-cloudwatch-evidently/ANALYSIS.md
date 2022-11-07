@@ -4,6 +4,8 @@
 
 There were a lot of announcements on AWS re:Invent last year. One of those is the new Amazon CloudWatch Evidently which is an experiments and feature management. The idea of this document is to analyze that service.
 
+> ***IMPORTANT** - This analysis was made on 2021-12-17. The service is still in preview and the documentation is not complete.*
+
 ### Outcomes
 
 This is a very recent announcement so there is not that much documentation and examples on how to setup CloudWatch Evidently. Anyways we think there are enough examples to start using it and the good thing is that it has some features that are similar to other services from AWS. We need to consider that CloudWatch Evidently is not a service itself but a feature on AWS CloudWatch, so it should be easy to use starting from there.
