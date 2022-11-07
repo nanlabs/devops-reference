@@ -48,3 +48,4 @@ This Proof of Concept was created in **LESS THAN 20 MINUTES!!**. It is a simple 
 # Reference Documentation and Helpful Links
 
 - [AWS News Blog - Amazon CloudWatch Evidently - Experiments and Feature Management](https://aws.amazon.com/blogs/aws/cloudwatch-evidently/)
+- [AWS CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/)
