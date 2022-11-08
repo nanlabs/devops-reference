@@ -23,21 +23,21 @@ This POC is just the result we got following that guide and developing the featu
 
 Let’s start by configuring Evidently. We open the AWS Management Console and navigate to **CloudWatch Evidently**. Then, we select **Create a project**.
 
-![Create a new Project](./static/project.png).
+![Create a new Project](./static/project.png)
 
 We enter a **Project name** and Description.
 
 Evidently lets you optionally store events to CloudWatch logs or S3, so that you can move them to systems such as [Amazon Redshift](https://aws.amazon.com/redshift/) to perform analytical operations. For this POC, we choose not to store events. When done, we select **Create project**.
 
-![Create a new Project](./static/project_edit.png).
+![Create a new Project](./static/project_edit.png)
 
 ## Add a Feature
 
 Next, we create a feature for this project by selecting **Add feature**. we enter a **Feature name** and **Feature description**. Next, we define our **Feature variations.** In this example, there are two variations, and we use a Boolean type. `true` indicates the feature _TestFeature_ is ON and `false` indicates it is OFF. Variations types might be `boolean`, `double`, `long`, or `string`.
 
-![Add a Feature](./static/feature1.png).
+![Add a Feature](./static/feature1.png)
 
-![Add a Feature](./static/feature2.png).
+![Add a Feature](./static/feature2.png)
 
 ## Instrument our Application Code
 
@@ -114,27 +114,27 @@ The response we get is something like this:
 
 Now that the feature is defined on the server-side, and the client code is instrumented, we deploy the code and expose it to our customers. At a later stage, we may decide to launch the feature. We navigate back to the console, select our project, and select **Create Launch**. we choose a **Launch name** and a **Launch description** for our launch. Then, we **select** the feature we want to launch.
 
-![Create a Launch](./static/launch1.png).
+![Create a Launch](./static/launch1.png)
 
 In the **Launch Configuration** section, we configure how much traffic is sent to each variation. We may also schedule the launch with multiple steps. This lets me plan different steps of routing based on a schedule. For example, on the first day, we may choose to send 10% of the traffic to the new feature, and on the second day 20%, etc. In this example, we decide to split the traffic 50/50.
 
-![Create a Launch](./static/launch2.png).
+![Create a Launch](./static/launch2.png)
 
 Finally, we may define up to three metrics to measure the performance of our variations. Metrics are defined by applying rules to data events.
 
-![Create a Launch](./static/launch3.png).
+![Create a Launch](./static/launch3.png)
 
 Again, we have to instrument our code to send these metrics with `PutProjectEvents` API from Evidently. Once our launch is created, the `EvaluateFeature` API returns different values for different values of `entityId` (users in this demo).
 
 At any moment, we may change the routing configuration. Moreover, we also have access to a monitoring dashboard to observe the distribution of our variations and the metrics for each variation.
 
-![Create a Launch](./static/launch4.png).
+![Create a Launch](./static/launch4.png)
 
 ## A/B Testing
 
-Doing an A/B test is similar. We create a feature to test, and we create an **Experiment**. we configure the experiment to route part of the traffic to variation 1, and then the other part to variation 2. When we am ready to launch the experiment, we explicitly select **Start experiment**.
+Doing an A/B test is similar. We create a feature to test, and we create an **Experiment**. we configure the experiment to route part of the traffic to variation 1, and then the other part to variation 2. When we are ready to launch the experiment, we explicitly select **Start experiment**.
 
-![A/B Testing](./static/experiment1.png).
+![A/B Testing](./static/experiment1.png)
 
 To put events we use a code like the following:
 
@@ -184,6 +184,6 @@ These results are generated throughout the experiment and the confidence interva
 
 The following two screenshots show graphs for the average value of two metrics over time, and the improvement for a metric within a 95% confidence interval.
 
-![A/B Testing](./static/experiment2.png).
+![A/B Testing](./static/experiment2.png)
 
-![A/B Testing](./static/experiment3.png).
+![A/B Testing](./static/experiment3.png)
