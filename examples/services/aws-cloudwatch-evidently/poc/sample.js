@@ -14,7 +14,7 @@ const evaluateFeatureRequest = {
   // Name of your feature
   feature: "TestFeature",
   // Name of your project
-  project: "AUEvidentlyPOC",
+  project: "AWSEvidentlyPOC",
 };
 
 // Evaluate feature

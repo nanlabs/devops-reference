@@ -74,7 +74,7 @@ const evaluateFeatureRequest = {
   // Name of your feature
   feature: "TestFeature",
   // Name of your project
-  project: "AUEvidentlyPOC",
+  project: "AWSEvidentlyPOC",
 };
 
 // Evaluate feature
@@ -163,7 +163,7 @@ const yesterday = new Date();
 yesterday.setDate(yesterday.getDate() - 1);
 
 const putProjectEventsRequest = {
-  project: "AUEvidentlyPOC",
+  project: "AWSEvidentlyPOC",
   events: [
     {
       timestamp: yesterday,
