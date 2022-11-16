@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: theapp
+spec:
+  tls:
+    - secretName: example-com-tls
+      hosts:
+        - example.com
+  rules: 
+    - host: example.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service: 
+                name: theapp
+                port:
+                  number: 80

@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+set -eu
+
+COMPOSE="docker compose --file docker-compose.yaml"
+CMD="up"
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+    -e|--express)
+       COMPOSE="${COMPOSE} --file mongo-express.yaml"
+       shift
+       ;;
+    -v|--volumes)
+      COMPOSE="${COMPOSE} --file mongo-vol.yaml"
+      shift
+      ;;
+    -c|--command)
+      CMD="$2"
+      shift
+      shift
+      ;;
+    -h|--help)
+      echo "
+      available parameters:
+        -c|--command <docker compose command>: allow to pass through parameters directly to docker compose
+        -e|--express: make express UI available
+        -h|--help: prints this helping text
+        -v|--volumes: bring data from volume
+
+        Notice: any other parameters are passed as is to the docker compose command
+      "
+      exit 0
+      ;;
+    *) #unknown option, pass it through
+      POSITIONAL+=("$1")
+      shift 
+      ;;
+  esac
+done
+
+#restore positional parameters
+set -- "${POSITIONAL[@]}"
+
+echo "$COMPOSE $CMD $*"
+$COMPOSE "$CMD" "$@"

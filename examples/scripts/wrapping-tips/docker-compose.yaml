@@ -1,0 +1,9 @@
+services:
+
+  mongo:
+    image: mongo:6.0.2
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWD}
+
