@@ -32,5 +32,5 @@ if [[ -n "${volumes}" ]]; then
     COMPOSE="${COMPOSE} --file mongo-vol.yaml"
 fi
 
-echo "${COMPOSE} ${command} ${arguments[@]}"
-# ${COMPOSE} "${command}" "${arguments[@]}"
+echo "${COMPOSE} ${command} ${arguments[*]}"
+${COMPOSE} "${command}" "${arguments[@]}"
