@@ -19,7 +19,7 @@
 set -e
 
 ROOT=$(dirname "$0")
-source "${ROOT}/easyoptions.sh" || exit # Bash implementation, slower
+source "${ROOT}/easyoptions.sh" || exit
 
 COMPOSE="docker compose --file docker-compose.yaml"
 command="${command:-up}"
