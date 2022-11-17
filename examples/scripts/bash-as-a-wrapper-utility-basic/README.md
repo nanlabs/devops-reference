@@ -3,6 +3,9 @@
 ## Requirements
 
 - [docker](https://www.docker.com/)
+
+## Related Resources
+
 - [When to use shell](https://google.github.io/styleguide/shellguide.html#when-to-use-shell)
 
 ## Quickstart
