@@ -1,14 +1,16 @@
 # Ingress on K8s
 
+This example shows how to use Ingress on Kubernetes. We use `minikube` to run a local Kubernetes cluster.
+
 ## Sample ingress setup
 
 ### Starting minikube for local running
 
+> NOTE: tested on standard docker installation. if you use rootless mode, check [minikube documentation](https://minikube.sigs.k8s.io/docs/drivers/docker/#requirements) and [rootless documentation](https://rootlesscontaine.rs/getting-started/kubernetes/#minikube)
+
 ```sh
 minikube start --kubernetes-version=v1.24.3
 ```
-
-NOTICE: tested on standard docker installation. if you use rootless mode, check [minikube documentation](https://minikube.sigs.k8s.io/docs/drivers/docker/#requirements) and [rootless documentation](https://rootlesscontaine.rs/getting-started/kubernetes/#minikube)
 
 ### Enabling ingress in minikube
 
@@ -33,9 +35,9 @@ kubectl create secret tls example-com-tls --cert=tls.crt --key=tls.key --dry-run
 ```yaml
 spec:
   tls:
-   - secretName: example-com-tls
-     hosts:
-       - example.com
+    - secretName: example-com-tls
+      hosts:
+        - example.com
 ```
 
 ### Apply changes
@@ -53,7 +55,7 @@ echo "$(minikube ip) example.com" | sudo tee -a /etc/hosts
 ### Checking changes
 
 ```sh
-curl --insecure https://example.com 
+curl --insecure https://example.com
 ```
 
 ### Clean up
