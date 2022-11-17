@@ -1,16 +1,20 @@
-# Bash script as a wrapper utility
+# Bash script as a wrapper utility using Easy Options
 
 ## Requirements
 
 - [docker](https://www.docker.com/)
-- .env properly set up. an example can be taken from .env.example
+
+## Related Resources
+
 - [When to use shell](https://google.github.io/styleguide/shellguide.html#when-to-use-shell)
+- [Easy Options](../easy-options/)
 
 ## Quickstart
 
 The control script is called ctl. you can get usage instructions by running the following command
 
 ```sh
+cp .env.example .env
 ./ctl --help
 ```
 

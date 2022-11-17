@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+## EasyOptions Example
+## Copyright (C) Someone
+## Licensed under XYZ
+##
+## This program is an example of EasyOptions. It just prints the options and
+## arguments provided in command line. Usage:
+##
+##     @script.name [option] ARGUMENTS...
+##
+## Options:
+##     -h, --help              Show this help text.
+##     -c, --command=COMMAND   Command to run. Allow to pass through parameters directly to docker compose
+##     -e, --express           Make express UI available
+##     -v, --volumes           Bring data from volume
+##
+
+set -e
+
+ROOT=$(dirname "$0")
+source "${ROOT}/easyoptions.sh" || exit # Bash implementation, slower
+
+COMPOSE="docker compose --file docker-compose.yaml"
+command="${command:-up}"
+
+if [[ -n "${express}" ]]; then
+    COMPOSE="${COMPOSE} --file mongo-express.yaml"
+fi
+
+if [[ -n "${volumes}" ]]; then
+    COMPOSE="${COMPOSE} --file mongo-vol.yaml"
+fi
+
+echo "${COMPOSE} ${command} ${arguments[@]}"
+# ${COMPOSE} "${command}" "${arguments[@]}"

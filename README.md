@@ -63,7 +63,10 @@ Collection of examples that solve specific problems using small pieces of code.
 
 > Collection of shell utilities and scripts.
 
+- [When to use shell](https://google.github.io/styleguide/shellguide.html#when-to-use-shell) - A guide from Google on when to use shell scripts.
 - [Easy Options](./examples/scripts/easy-options/) - Easy options for shell scripts.
+- [Bash as a Wrapper Utility](./examples/scripts/bash-as-a-wrapper-utility-basic/) - Bash as a wrapper utility for other languages and tools.
+- [Bash as a Wrapper Utility with Easy Options](./examples/scripts/bash-as-a-wrapper-utility-easy-options/) - Bash as a wrapper utility for other languages and tools using [Easy Options](./examples/scripts/easy-options/).
 
 ### Buildpacks
 
