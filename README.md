@@ -28,11 +28,10 @@ here at [NaN Labs](https://www.nanlabs.com/).
 - [Examples](#examples)
   - [A/B Testing](#ab-testing)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
-  - [Buildpacks](#buildpacks)
   - [CI/CD with GitHub Actions](#cicd-with-github-actions)
+  - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
   - [Cloud Development Kit](#cloud-development-kit)
-  - [Docker and Docker Compose](#docker-and-docker-compose)
   - [Kubernetes](#kubernetes)
   - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
   - [Terraform](#terraform)
@@ -68,10 +67,6 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Bash as a Wrapper Utility](./examples/scripts/bash-as-a-wrapper-utility-basic/) - Bash as a wrapper utility for other languages and tools.
 - [Bash as a Wrapper Utility with Easy Options](./examples/scripts/bash-as-a-wrapper-utility-with-easy-options/) - Bash as a wrapper utility for other languages and tools using [Easy Options](./examples/scripts/easy-options/).
 
-### Buildpacks
-
-- [Python](./examples/buildpacks/python#readme)
-
 ### CI/CD with GitHub Actions
 
 - [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
@@ -91,6 +86,20 @@ Collection of examples that solve specific problems using small pieces of code.
   - Pull Requests validation with DangerJS
   - Deployment example with GitHub Pages
 
+### Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)
+
+> Collection of examples that use Docker, Docker Compose, Buildpacks among other tools
+> that can be used to run local development environments.
+> NOTE: Most of the examples are compatible with other container runtimes like Podman.
+
+- [AWS Glue using Docker and Docker Compose](./examples/docker/glue/) - Dockerfile and docker-compose.yml for AWS Glue development.
+- [Localstack using Docker and Docker Compose](./examples/docker/localstack/) - Dockerfile and docker-compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.
+- [MongoDB + Mongo Express using Docker and Docker Compose](./examples/docker/mongodb/) - Dockerfile and docker-compose.yml to run MongoDB and Mongo Express locally with initialization scripts.
+- [Microsoft SQL Server using Docker and Docker Compose](./examples/docker/mssql/) - Dockerfile and docker-compose.yml to run Microsoft SQL Server locally with initialization scripts.
+- [AWS Neptune using Docker and Docker Compose](./examples/docker/neptune/) - Dockerfile and docker-compose.yml to run AWS Neptune locally with initialization scripts.
+- [PostgreSQL using Docker and Docker Compose](./examples/docker/postgres/) - Dockerfile and docker-compose.yml to run PostgreSQL locally with initialization scripts.
+- [Python Buildpack](./examples/buildpacks/python#readme) - Buildpack example for Python applications.
+
 ### DevContainers and Codespaces
 
 > Collection of DevContainers that can be used to run local development environments using VSCode
@@ -102,18 +111,6 @@ Collection of examples that solve specific problems using small pieces of code.
 ### Cloud Development Kit
 
 > TODO
-
-### Docker and Docker Compose
-
-> Collection of Docker and Docker Compose that can be used to run local development environments.
-> Most of the examples are compatible with other container runtimes like Podman.
-
-- [AWS Glue](./examples/docker/glue/) - Dockerfile and docker-compose.yml for AWS Glue development.
-- [Localstack](./examples/docker/localstack/) - Dockerfile and docker-compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.
-- [MongoDB + Mongo Express](./examples/docker/mongodb/) - Dockerfile and docker-compose.yml to run MongoDB and Mongo Express locally with initialization scripts.
-- [Microsoft SQL Server](./examples/docker/mssql/) - Dockerfile and docker-compose.yml to run Microsoft SQL Server locally with initialization scripts.
-- [AWS Neptune](./examples/docker/neptune/) - Dockerfile and docker-compose.yml to run AWS Neptune locally with initialization scripts.
-- [PostgreSQL](./examples/docker/postgres/) - Dockerfile and docker-compose.yml to run PostgreSQL locally with initialization scripts.
 
 ### Kubernetes
 
