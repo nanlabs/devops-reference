@@ -1,5 +1,7 @@
 # Docker Airflow Spark Example
 
+> NOTE: This example was moved from [github.com/julianpalmerio/docker-airflow-spark](https://github.com/julianpalmerio/docker-airflow-spark).
+
 This project aims to allow you to build a local airflow and spark environment for testing and development.
 
 This project is not ready for a production environment.
