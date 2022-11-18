@@ -45,7 +45,7 @@ Collection of examples that were created as a composition of different examples 
 can be found separately in the [examples](./examples/) directory.
 Read more about the examples in the [examples](#examples) section.
 
-- [Complete AWS Glue example app](./examples/_apps/serverless-glue/) - A complete example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally. It provides jobs using Python Shell and PySpark.
+- [Complete AWS Glue example app](./examples/_apps/serverless-glue/) - A complete example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark.
 
 ## Examples
 
@@ -92,20 +92,21 @@ Collection of examples that solve specific problems using small pieces of code.
 > that can be used to run local development environments.
 > NOTE: Most of the examples are compatible with other container runtimes like Podman.
 
-- [AWS Glue using Docker and Docker Compose](./examples/docker/glue/) - Dockerfile and docker-compose.yml for AWS Glue development.
+- [AWS Glue using Docker and Docker Compose](./examples/docker/glue/) - Dockerfile and docker-compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.
 - [Localstack using Docker and Docker Compose](./examples/docker/localstack/) - Dockerfile and docker-compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.
 - [MongoDB + Mongo Express using Docker and Docker Compose](./examples/docker/mongodb/) - Dockerfile and docker-compose.yml to run MongoDB and Mongo Express locally with initialization scripts.
 - [Microsoft SQL Server using Docker and Docker Compose](./examples/docker/mssql/) - Dockerfile and docker-compose.yml to run Microsoft SQL Server locally with initialization scripts.
 - [AWS Neptune using Docker and Docker Compose](./examples/docker/neptune/) - Dockerfile and docker-compose.yml to run AWS Neptune locally with initialization scripts.
 - [PostgreSQL using Docker and Docker Compose](./examples/docker/postgres/) - Dockerfile and docker-compose.yml to run PostgreSQL locally with initialization scripts.
 - [Python Buildpack](./examples/buildpacks/python#readme) - Buildpack example for Python applications.
+- [Airflow and Spark environment using Docker and Docker Compose](./examples/docker/airflow/) - Dockerfile and docker-compose.yml to run Airflow locally with initialization scripts.
 
 ### DevContainers and Codespaces
 
 > Collection of DevContainers that can be used to run local development environments using VSCode
 > or Cloud Development environments using GitHub Codespaces.
 
-- [AWS Glue](./examples/devcontainers/glue/) - DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs.
+- [AWS Glue](./examples/devcontainers/glue/) - DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.
 - [NodeJS](./examples/devcontainers/nodejs/) - DevContainer for NodeJS development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop NodeJS applications.
 
 ### Cloud Development Kit
