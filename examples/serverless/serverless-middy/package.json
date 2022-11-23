@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/nanlabs/infra-reference.git"
+    "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
   },
   "author": "darioscrivano",
   "license": "MIT",
-  "homepage": "https://github.com/nanlabs/infra-reference#readme",
+  "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.108",
     "serverless": "^3.23.0",

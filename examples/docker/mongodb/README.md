@@ -7,8 +7,8 @@
 ## Quickstart
 
 ```sh
-git clone https://github.com/nanlabs/infra-reference.git
-cd infra-reference/examples/docker/mongodb
+git clone https://github.com/nanlabs/devops-reference.git
+cd devops-reference/examples/docker/mongodb
 cp .env.example .env
 docker compose up
 ```

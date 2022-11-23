@@ -6,7 +6,7 @@
         src="https://avatars.githubusercontent.com/u/4426989?s=200&v=4"
     >
 </p>
-<h1>Infrastructure Reference</h1>
+<h1>DevOps Reference</h1>
 
 [Changelog](#) |
 [Contributing](./CONTRIBUTING.md)
@@ -21,8 +21,8 @@
 
 </div>
 
-This repository contains different infrastructure components that are used in different projects
-here at [NaN Labs](https://www.nanlabs.com/).
+This repository contains different infrastructure components, CI/CD pipelines, automation tools
+among other resources that are used in different projects here at [NaN Labs](https://www.nanlabs.com/).
 
 - [Applications](#applications)
 - [Examples](#examples)
@@ -150,17 +150,17 @@ This project is Licensed under the [MIT License](./LICENSE). Please go through t
 
 ## Contributors
 
-<a href="https://github.com/nanlabs/infra-reference/contributors">
-  <img src="https://contrib.rocks/image?repo=nanlabs/infra-reference"/>
+<a href="https://github.com/nanlabs/devops-reference/contributors">
+  <img src="https://contrib.rocks/image?repo=nanlabs/devops-reference"/>
 </a>
 
 Made with [contributors-img](https://contrib.rocks).
 
-[markdownlintbadge]: https://github.com/nanlabs/infra-reference/actions/workflows/markdownlint.yml/badge.svg
-[shellcheckbadge]: https://github.com/nanlabs/infra-reference/actions/workflows/shellcheck.yml/badge.svg
-[tf-checkbadge]: https://github.com/nanlabs/infra-reference/actions/workflows/tf-check.yml/badge.svg
+[markdownlintbadge]: https://github.com/nanlabs/devops-reference/actions/workflows/markdownlint.yml/badge.svg
+[shellcheckbadge]: https://github.com/nanlabs/devops-reference/actions/workflows/shellcheck.yml/badge.svg
+[tf-checkbadge]: https://github.com/nanlabs/devops-reference/actions/workflows/tf-check.yml/badge.svg
 [licensebadge]: https://img.shields.io/badge/License-MIT-blue.svg
-[markdownlinturl]: https://github.com/nanlabs/infra-reference/actions/workflows/markdownlint.yml
-[shellcheckurl]: https://github.com/nanlabs/infra-reference/actions/workflows/shellcheck.yml
-[tf-checkurl]: https://github.com/nanlabs/infra-reference/actions/workflows/tf-check.yml
-[licenseurl]: https://github.com/nanlabs/infra-reference/blob/main/LICENSE
+[markdownlinturl]: https://github.com/nanlabs/devops-reference/actions/workflows/markdownlint.yml
+[shellcheckurl]: https://github.com/nanlabs/devops-reference/actions/workflows/shellcheck.yml
+[tf-checkurl]: https://github.com/nanlabs/devops-reference/actions/workflows/tf-check.yml
+[licenseurl]: https://github.com/nanlabs/devops-reference/blob/main/LICENSE

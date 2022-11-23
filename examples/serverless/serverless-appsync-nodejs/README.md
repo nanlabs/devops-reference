@@ -8,8 +8,8 @@ We use Serverless Framework to do production ready deployments and local develop
 **You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ```sh
-git clone https://github.com/nanlabs/infra-reference.git
-cd infra-reference/examples/serverless/serverless-appsync-python
+git clone https://github.com/nanlabs/devops-reference.git
+cd devops-reference/examples/serverless/serverless-appsync-python
 fnm use 16.13.2
 npm install
 ```
