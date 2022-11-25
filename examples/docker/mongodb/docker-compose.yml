@@ -33,7 +33,7 @@ services:
     ports:
       - 8081:8081
     depends_on:
-      - mongodb
+      - mongo
     healthcheck:
       test: wget --quiet --tries=3 --spider http://${MONGO_USERNAME}:${MONGO_PASSWORD}@127.0.0.1:8081 || exit 1
       interval: 30s
