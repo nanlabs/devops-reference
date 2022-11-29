@@ -28,18 +28,30 @@ RDSClusterPort:
       - CreateRDSCluster
       - !GetAtt RDSCluster.Port
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSClusterPort, ''}
-RDSConnectionSecret:
+RDSPostgresConnectionSecret:
   Value:
     Fn::If:
       - CreateRDSCluster
-      - !Ref RDSConnectionSecret
-      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSConnectionSecret, ''}
-RDSConnectionSecretName:
+      - !Ref RDSPostgresConnectionSecret
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecret, ''}
+RDSPostgresConnectionSecretName:
   Value:
     Fn::If:
       - CreateRDSCluster
       - ${self:provider.stage}/${self:service}
-      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSConnectionSecretName, ''}
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretName, ''}
+RDSPostgresConnectionSecretRotationSchedule:
+  Value:
+    Fn::If:
+      - CreateRDSCluster
+      - !Ref RDSPostgresConnectionSecretRotationSchedule
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretRotationSchedule, ''}
+RDSPostgresConnectionSecretTargetAttachment:
+  Value:
+    Fn::If:
+      - CreateRDSCluster
+      - !Ref RDSPostgresConnectionSecretTargetAttachment
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretTargetAttachment, ''}
 VpcId:
   Value:
     Fn::If:

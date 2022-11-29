@@ -58,6 +58,18 @@ DocumentDBConnectionSecretName:
       - CreateDocumentDBCluster
       - ${self:provider.stage}/${self:service}
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecretName, ''}
+DocumentDBConnectionSecretRotationSchedule:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBConnectionSecretRotationSchedule
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecretRotationSchedule, ''}
+DocumentDBConnectionSecretTargetAttachment:
+  Value:
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBConnectionSecretTargetAttachment
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBConnectionSecretTargetAttachment, ''}
 VpcId:
   Value:
     Fn::If:

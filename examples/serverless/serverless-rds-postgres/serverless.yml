@@ -47,9 +47,9 @@ resources:
 
   Resources:
     # Secret Manager resources for RDS
-    RDSConnectionSecret: ${file(./resources/RDSConnectionSecret.yml)}
-    RDSConnectionSecretRotationSchedule: ${file(./resources/RDSConnectionSecretRotationSchedule.yml)}
-    RDSConnectionSecretTargetAttachment: ${file(./resources/RDSConnectionSecretTargetAttachment.yml)}
+    RDSPostgresConnectionSecret: ${file(./resources/RDSPostgresConnectionSecret.yml)}
+    RDSPostgresConnectionSecretRotationSchedule: ${file(./resources/RDSPostgresConnectionSecretRotationSchedule.yml)}
+    RDSPostgresConnectionSecretTargetAttachment: ${file(./resources/RDSPostgresConnectionSecretTargetAttachment.yml)}
 
     # RDS resources
     RDSPostgreSqlInstance: ${file(./resources/RDSPostgreSqlInstance.yml)}

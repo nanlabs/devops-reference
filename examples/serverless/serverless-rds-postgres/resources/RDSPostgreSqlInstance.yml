@@ -4,11 +4,11 @@ Properties:
   MasterUsername:
     Fn::Sub:
       - "{{resolve:secretsmanager:${SecretName}:SecretString:username}}"
-      - SecretName: !Ref RDSConnectionSecret
+      - SecretName: !Ref RDSPostgresConnectionSecret
   MasterUserPassword:
     Fn::Sub:
       - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
-      - SecretName: !Ref RDSConnectionSecret
+      - SecretName: !Ref RDSPostgresConnectionSecret
   AllocatedStorage: 20
   DBName: ${self:custom.rds.clusterIdentifier}
   DBInstanceClass: db.t4g.small
