@@ -1,4 +1,4 @@
-service: GlueExample
+service: ${env:SERVICE_NAME, 'GlueExample'}
 
 plugins:
   - serverless-plugin-scripts

@@ -1,4 +1,4 @@
-service: NaNAppSync
+service: ${env:SERVICE_NAME, 'AppSync'}
 
 plugins:
   - serverless-python-requirements
@@ -32,7 +32,7 @@ custom:
       - '*.graphql'
       - '*.vtl'
   appSync:
-    name: nanAppSyncExample
+    name: AppSyncExample
     authenticationType: API_KEY
     schema: schema.graphql
     wafConfig:
@@ -40,7 +40,7 @@ custom:
       rules:
         - throttle: 200
     apiKeys:
-      - name: nanAppSyncExample-api-key
+      - name: AppSyncExample-api-key
         description: 'NaN AppSync API Key'
         expiresAfter: 1y
     defaultMappingTemplates:
@@ -48,22 +48,22 @@ custom:
       response: response.vtl
     mappingTemplates:
       - type: Query
-        dataSource: nanAppSyncExample_lambdaDataSource
+        dataSource: AppSyncExample_lambdaDataSource
         field: getResource
       - type: Query
-        dataSource: nanAppSyncExample_lambdaDataSource
+        dataSource: AppSyncExample_lambdaDataSource
         field: getResources
       - type: Mutation
-        dataSource: nanAppSyncExample_lambdaDataSource
+        dataSource: AppSyncExample_lambdaDataSource
         field: createResource
     dataSources:
       - type: AWS_LAMBDA
-        name: nanAppSyncExample_lambdaDataSource
+        name: AppSyncExample_lambdaDataSource
         description: 'NaN AppSync Lambda DataSource'
         config:
-          functionName: nanAppSyncExampleResolver
+          functionName: AppSyncExampleResolver
     tags:
-      name: nanAppSyncExample
+      name: AppSyncExample
 
 provider:
   name: aws
@@ -79,7 +79,7 @@ provider:
   #     - ${env:SUBNET_ID}
 
 functions:
-  nanAppSyncExampleResolver:
+  AppSyncExampleResolver:
     runtime: python3.9
     module: app/resolvers
     handler: handler.graphqlResolver
@@ -88,11 +88,11 @@ functions:
 
 # resources:
 #   Resources:
-#     NaNAppSyncSecurityGroup:
+#     AppSyncSecurityGroup:
 #       Type: AWS::EC2::SecurityGroup
 #       Properties:
-#         GroupName: NaNAppSyncExampleSG
-#         GroupDescription: NaNAppSync Security Group
+#         GroupName: AppSyncExampleSG
+#         GroupDescription: AppSync Security Group
 #         SecurityGroupIngress:
 #           - IpProtocol: tcp
 #             FromPort: 8182
@@ -100,10 +100,15 @@ functions:
 #             CidrIp: 0.0.0.0/0
 #         Tags:
 #           - Key: name
-#             Value: NaNAppSyncExampleSG
+#             Value: AppSyncExampleSG
 #         VpcId: ${env:VPC_ID}
 
 #   Outputs:
 #     SecurityGroup:
-#       Description: NaNAppSync Security Group
-#       Value: !GetAtt NaNAppSyncSecurityGroup.GroupId
+#       Description: AppSync Security Group
+#       Value: !GetAtt AppSyncSecurityGroup.GroupId
+
+resources:
+  Outputs:
+    AppSyncApiUrl:
+      Value: !GetAtt GraphQlApi.GraphQLUrl
