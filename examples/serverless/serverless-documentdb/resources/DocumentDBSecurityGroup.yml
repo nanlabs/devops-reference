@@ -1,5 +1,5 @@
 Type: AWS::EC2::SecurityGroup
-Condition: CreateNetworkResources
+Condition: CreateDocumentDBCluster
 Properties:
   GroupDescription: Allow HTTP and HTTPS from anywhere
   VpcId: ${self:resources.Outputs.VpcId.Value}

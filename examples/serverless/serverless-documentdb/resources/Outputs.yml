@@ -25,13 +25,13 @@ DocumentDBInstanceReaderTwo:
 DocumentDBSubnetGroup:
   Value:
     Fn::If:
-      - CreateNetworkResources
+      - CreateDocumentDBCluster
       - !Ref DocumentDBSubnetGroup
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBSubnetGroup, param:DocumentDBSubnetGroup, ''}
 DocumentDBSecurityGroup:
   Value:
     Fn::If:
-      - CreateNetworkResources
+      - CreateDocumentDBCluster
       - !Ref DocumentDBSecurityGroup
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.DocumentDBSecurityGroup, param:DocumentDBSecurityGroup, ''}
 DocumentDBClusterEndpoint:

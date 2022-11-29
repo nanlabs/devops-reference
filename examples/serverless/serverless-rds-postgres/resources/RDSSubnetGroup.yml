@@ -1,5 +1,5 @@
 Type: AWS::RDS::DBSubnetGroup
-Condition: CreateNetworkResources
+Condition: CreateRDSCluster
 Properties:
   DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-RDS-subnet-group
   DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group

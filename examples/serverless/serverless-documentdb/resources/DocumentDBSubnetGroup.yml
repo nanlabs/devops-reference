@@ -1,5 +1,5 @@
 Type: AWS::DocDB::DBSubnetGroup
-Condition: CreateNetworkResources
+Condition: CreateDocumentDBCluster
 Properties:
   DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-documentdb-subnet-group
   DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group

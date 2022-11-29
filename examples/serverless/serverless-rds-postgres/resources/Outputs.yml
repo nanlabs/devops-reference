@@ -7,13 +7,13 @@ RDSPostgreSqlInstance:
 RDSSubnetGroup:
   Value:
     Fn::If:
-      - CreateNetworkResources
+      - CreateRDSCluster
       - !Ref RDSSubnetGroup
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSSubnetGroup, param:RDSSubnetGroup, ''}
 RDSSecurityGroup:
   Value:
     Fn::If:
-      - CreateNetworkResources
+      - CreateRDSCluster
       - !Ref RDSSecurityGroup
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSSecurityGroup, param:RDSSecurityGroup, ''}
 RDSClusterEndpoint:
