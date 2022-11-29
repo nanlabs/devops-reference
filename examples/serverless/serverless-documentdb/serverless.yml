@@ -30,7 +30,7 @@ resources:
       Fn::And:
         - Condition: CreateNetworkResources
         - Fn::Equals:
-            - ${param:vpcId, env:VPC_ID, ''}
+            - ${param:VpcId, env:VPC_ID, ''}
             - ""
     CreateCloud9Environment:
       Fn::And:
