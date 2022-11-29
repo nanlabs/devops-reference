@@ -1,4 +1,4 @@
-service: SlsS3LocalExample
+service: ${env:SERVICE_NAME, 'S3LocalExample'}
 
 plugins:
   - serverless-python-requirements

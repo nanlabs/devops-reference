@@ -1,4 +1,4 @@
-service: NaNMiddy
+service: ${env:SERVICE_NAME, 'Middy'}
 
 plugins:
   - serverless-plugin-typescript
