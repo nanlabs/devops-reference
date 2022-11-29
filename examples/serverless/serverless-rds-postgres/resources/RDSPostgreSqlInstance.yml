@@ -1,0 +1,19 @@
+Type: AWS::RDS::DBInstance
+Condition: CreateRDSCluster
+Properties:
+  MasterUsername:
+    Fn::Sub:
+      - "{{resolve:secretsmanager:${SecretName}:SecretString:username}}"
+      - SecretName: !Ref RDSConnectionSecret
+  MasterUserPassword:
+    Fn::Sub:
+      - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
+      - SecretName: !Ref RDSConnectionSecret
+  AllocatedStorage: 20
+  DBName: ${self:custom.RDS.clusterIdentifier}
+  DBInstanceClass: db.t4g.small
+  DBSubnetGroupName: ${self:resources.Outputs.RDSSubnetGroup.Value}
+  Engine: postgres
+  PubliclyAccessible: false
+  VpcSecurityGroupIds:
+    - ${self:resources.Outputs.RDSSecurityGroup.Value}

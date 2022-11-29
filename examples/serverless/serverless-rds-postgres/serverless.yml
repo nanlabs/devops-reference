@@ -1,12 +1,12 @@
-service: ${env:SERVICE_NAME, 'DocumentDB'}
+service: ${env:SERVICE_NAME, 'RDS'}
 
 useDotenv: true
 
 custom:
-  documentdb:
-    clusterIdentifier: ${self:service}-${self:provider.stage}-${env:DOCUMENTDB_CLUSTER_IDENTIFIER}
-    masterUsername: ${env:DOCUMENTDB_MASTER_USERNAME}
-    database: ${env:DOCUMENTDB_DATABASE_NAME}
+  RDS:
+    clusterIdentifier: ${self:service}-${self:provider.stage}-${env:RDS_CLUSTER_IDENTIFIER}
+    masterUsername: ${env:RDS_MASTER_USERNAME}
+    database: ${env:RDS_DATABASE_NAME}
   vpc:
     cidr: ${env:VPC_CIDR, '10.0.0.0/16'}
 
@@ -18,9 +18,9 @@ provider:
 
 resources:
   Conditions:
-    CreateDocumentDBCluster:
+    CreateRDSCluster:
       Fn::Equals:
-        - ${param:skipDocumentDBClusterCreation, env:SKIP_DOCUMENTDB_CLUSTER_CREATION, 'false'}
+        - ${param:skipRDSClusterCreation, env:SKIP_RDS_CLUSTER_CREATION, 'false'}
         - "false"
     CreateNetworkResources:
       Fn::Equals:
@@ -34,13 +34,10 @@ resources:
             - ""
 
   Resources:
-    DocumentDBConnectionSecret: ${file(./resources/DocumentDBConnectionSecret.yml)}
-    DocumentDBCluster: ${file(./resources/DocumentDBCluster.yml)}
-    DocumentDBInstanceWriter: ${file(./resources/DocumentDBInstanceWriter.yml)}
-    DocumentDBInstanceReaderOne: ${file(./resources/DocumentDBInstanceReaderOne.yml)}
-    DocumentDBInstanceReaderTwo: ${file(./resources/DocumentDBInstanceReaderTwo.yml)}
-    DocumentDBSecurityGroup: ${file(./resources/DocumentDBSecurityGroup.yml)}
-    DocumentDBSubnetGroup: ${file(./resources/DocumentDBSubnetGroup.yml)}
+    RDSConnectionSecret: ${file(./resources/RDSConnectionSecret.yml)}
+    RDSPostgreSqlInstance: ${file(./resources/RDSPostgreSqlInstance.yml)}
+    RDSSecurityGroup: ${file(./resources/RDSSecurityGroup.yml)}
+    RDSSubnetGroup: ${file(./resources/RDSSubnetGroup.yml)}
     VPC: ${file(./resources/VPC.yml)}
     InternetGateway: ${file(./resources/InternetGateway.yml)}
     GatewayAttachment: ${file(./resources/GatewayAttachment.yml)}

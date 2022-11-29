@@ -1,0 +1,15 @@
+Type: AWS::EC2::Subnet
+Condition: CreateNetworkResources
+Properties:
+  VpcId: ${self:resources.Outputs.VpcId.Value}
+  CidrBlock:
+    Fn::Select:
+      - 0
+      - Fn::Cidr:
+          - ${self:custom.vpc.cidr}
+          - 12
+          - 8
+  AvailabilityZone: !Select [0, !GetAZs ""]
+  Tags:
+    - Key: Name
+      Value: ${self:service}-${self:provider.stage}-private-subnet-1

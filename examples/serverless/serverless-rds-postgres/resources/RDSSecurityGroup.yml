@@ -1,0 +1,13 @@
+Type: AWS::EC2::SecurityGroup
+Condition: CreateNetworkResources
+Properties:
+  GroupDescription: Allow HTTP and HTTPS from anywhere
+  VpcId: ${self:resources.Outputs.VpcId.Value}
+  SecurityGroupIngress:
+    - IpProtocol: tcp
+      FromPort: 27017
+      ToPort: 27017
+      CidrIp: ${self:custom.vpc.cidr}
+  Tags:
+    - Key: Name
+      Value: ${self:service}-${self:provider.stage}-RDS-security-group

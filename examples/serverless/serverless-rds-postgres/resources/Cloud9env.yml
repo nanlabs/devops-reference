@@ -1,0 +1,9 @@
+Type: AWS::Cloud9::EnvironmentEC2
+Condition: CreateRDSCluster
+DependsOn: RDSCluster
+Properties:
+  AutomaticStopTimeMinutes: 60
+  Description: Cloud9 instance to access Cloud9
+  InstanceType: t2.small
+  Name: RDSCloud9${self:service}${self:provider.stage}
+  SubnetId: ${self:resources.Outputs.PrivateSubnetOne.Value}
