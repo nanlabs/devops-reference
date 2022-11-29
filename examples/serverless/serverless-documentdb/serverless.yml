@@ -35,6 +35,8 @@ resources:
 
   Resources:
     DocumentDBConnectionSecret: ${file(./resources/DocumentDBConnectionSecret.yml)}
+    DocumentDBConnectionSecretRotationSchedule: ${file(./resources/DocumentDBConnectionSecretRotationSchedule.yml)}
+    DocumentDBConnectionSecretTargetAttachment: ${file(./resources/DocumentDBConnectionSecretTargetAttachment.yml)}
     DocumentDBCluster: ${file(./resources/DocumentDBCluster.yml)}
     DocumentDBInstanceWriter: ${file(./resources/DocumentDBInstanceWriter.yml)}
     DocumentDBInstanceReaderOne: ${file(./resources/DocumentDBInstanceReaderOne.yml)}
