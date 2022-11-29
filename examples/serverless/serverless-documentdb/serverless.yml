@@ -1,4 +1,4 @@
-service: DocumentDBExample
+service: ${env:SERVICE_NAME, 'DocumentDB'}
 
 useDotenv: true
 
