@@ -34,15 +34,20 @@ resources:
             - ""
 
   Resources:
+    # Secret Manager resources for DocumentDB
     DocumentDBConnectionSecret: ${file(./resources/DocumentDBConnectionSecret.yml)}
     DocumentDBConnectionSecretRotationSchedule: ${file(./resources/DocumentDBConnectionSecretRotationSchedule.yml)}
     DocumentDBConnectionSecretTargetAttachment: ${file(./resources/DocumentDBConnectionSecretTargetAttachment.yml)}
+
+    # DocumentDB resources
     DocumentDBCluster: ${file(./resources/DocumentDBCluster.yml)}
     DocumentDBInstanceWriter: ${file(./resources/DocumentDBInstanceWriter.yml)}
     DocumentDBInstanceReaderOne: ${file(./resources/DocumentDBInstanceReaderOne.yml)}
     DocumentDBInstanceReaderTwo: ${file(./resources/DocumentDBInstanceReaderTwo.yml)}
     DocumentDBSecurityGroup: ${file(./resources/DocumentDBSecurityGroup.yml)}
     DocumentDBSubnetGroup: ${file(./resources/DocumentDBSubnetGroup.yml)}
+
+    # Network resources (VPC, Gateway, Subnets, Route Tables, etc.)
     VPC: ${file(./resources/VPC.yml)}
     InternetGateway: ${file(./resources/InternetGateway.yml)}
     GatewayAttachment: ${file(./resources/GatewayAttachment.yml)}
@@ -64,6 +69,8 @@ resources:
     PrivateRouteTableTwo: ${file(./resources/PrivateRouteTableTwo.yml)}
     PrivateSubnetOneRouteTableAssociation: ${file(./resources/PrivateSubnetOneRouteTableAssociation.yml)}
     PrivateSubnetTwoRouteTableAssociation: ${file(./resources/PrivateSubnetTwoRouteTableAssociation.yml)}
+
+    # Cloud9 resources
     Cloud9env: ${file(./resources/Cloud9env.yml)}
 
   Outputs: ${file(./resources/Outputs.yml)}

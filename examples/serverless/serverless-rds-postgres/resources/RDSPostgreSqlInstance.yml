@@ -10,7 +10,7 @@ Properties:
       - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
       - SecretName: !Ref RDSConnectionSecret
   AllocatedStorage: 20
-  DBName: ${self:custom.RDS.clusterIdentifier}
+  DBName: ${self:custom.rds.clusterIdentifier}
   DBInstanceClass: db.t4g.small
   DBSubnetGroupName: ${self:resources.Outputs.RDSSubnetGroup.Value}
   Engine: postgres

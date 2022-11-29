@@ -3,7 +3,7 @@ service: ${env:SERVICE_NAME, 'RDS'}
 useDotenv: true
 
 custom:
-  RDS:
+  rds:
     clusterIdentifier: ${self:service}-${self:provider.stage}-${env:RDS_CLUSTER_IDENTIFIER}
     masterUsername: ${env:RDS_MASTER_USERNAME}
     database: ${env:RDS_DATABASE_NAME}
@@ -34,10 +34,17 @@ resources:
             - ""
 
   Resources:
+    # Secret Manager resources for RDS
     RDSConnectionSecret: ${file(./resources/RDSConnectionSecret.yml)}
+    RDSConnectionSecretRotationSchedule: ${file(./resources/RDSConnectionSecretRotationSchedule.yml)}
+    RDSConnectionSecretTargetAttachment: ${file(./resources/RDSConnectionSecretTargetAttachment.yml)}
+
+    # RDS resources
     RDSPostgreSqlInstance: ${file(./resources/RDSPostgreSqlInstance.yml)}
     RDSSecurityGroup: ${file(./resources/RDSSecurityGroup.yml)}
     RDSSubnetGroup: ${file(./resources/RDSSubnetGroup.yml)}
+
+    # Network resources (VPC, Gateway, Subnets, Route Tables, etc.)
     VPC: ${file(./resources/VPC.yml)}
     InternetGateway: ${file(./resources/InternetGateway.yml)}
     GatewayAttachment: ${file(./resources/GatewayAttachment.yml)}
@@ -59,6 +66,8 @@ resources:
     PrivateRouteTableTwo: ${file(./resources/PrivateRouteTableTwo.yml)}
     PrivateSubnetOneRouteTableAssociation: ${file(./resources/PrivateSubnetOneRouteTableAssociation.yml)}
     PrivateSubnetTwoRouteTableAssociation: ${file(./resources/PrivateSubnetTwoRouteTableAssociation.yml)}
+    
+    # Cloud9 resources
     Cloud9env: ${file(./resources/Cloud9env.yml)}
 
   Outputs: ${file(./resources/Outputs.yml)}
