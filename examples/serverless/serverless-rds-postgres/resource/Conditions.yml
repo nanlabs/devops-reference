@@ -1,7 +1,7 @@
 Conditions:
-  CreateDocumentDBCluster:
+  CreateRDSCluster:
     Fn::Equals:
-      - ${param:skipDocumentDBClusterCreation, env:SKIP_DOCUMENTDB_CLUSTER_CREATION, 'false'}
+      - ${param:skipRDSClusterCreation, env:SKIP_RDS_POSTGRES_CLUSTER_CREATION, 'false'}
       - "false"
   CreateNetworkResources:
     Fn::Equals:
@@ -15,9 +15,9 @@ Conditions:
           - ""
   CreateCloud9Environment:
     Fn::And:
-      - Condition: CreateDocumentDBCluster
+      - Condition: CreateRDSCluster
       - Fn::Equals:
-        - ${param:skipCloud9Environment, env:SKIP_DOCUMENTDB_CLOUD9_ENVIRONMENT, 'false'}
+        - ${param:skipCloud9Environment, env:SKIP_RDS_POSTGRES_CLOUD9_ENVIRONMENT, 'false'}
         - "false"
   CreateNatGateways:
     Fn::And:
