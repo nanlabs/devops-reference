@@ -1,7 +1,8 @@
-Type: AWS::DocDB::DBSubnetGroup
+Type: AWS::RDS::DBSubnetGroup
 Condition: CreateNetworkResources
 Properties:
   DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-RDS-subnet-group
+  DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group
   SubnetIds:
     - ${self:resources.Outputs.PrivateSubnetOne.Value}
     - ${self:resources.Outputs.PrivateSubnetTwo.Value}
