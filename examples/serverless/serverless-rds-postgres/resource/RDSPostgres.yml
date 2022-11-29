@@ -1,0 +1,94 @@
+Resources:
+  RDSPostgresConnectionSecret:
+    Type: AWS::SecretsManager::Secret
+    Condition: CreateRDSCluster
+    Properties:
+      Name: ${self:provider.stage}/${self:service}
+      Description: RDS Cluster Connection Secret
+      GenerateSecretString:
+        SecretStringTemplate: '{ "username": "${self:custom.postgres.masterUsername}", "database": "${self:custom.postgres.database}" }'
+        GenerateStringKey: password
+        PasswordLength: 32
+        ExcludePunctuation: true
+        ExcludeCaracters: "/@\"'\\"
+      Tags:
+        - Key: Name
+          Value: ${self:provider.stage}/RDS
+
+  RDSPostgresConnectionSecretRotationSchedule:
+    Type: AWS::SecretsManager::RotationSchedule
+    Condition: CreateRDSCluster
+    DependsOn: RDSPostgresConnectionSecretTargetAttachment
+    Properties:
+      SecretId: !Ref RDSPostgresConnectionSecret
+      HostedRotationLambda:
+        RotationType: PostgreSQLSingleUser
+        RotationLambdaName: PostgreSQLSingleUser
+        VpcSecurityGroupIds: ${self:resources.Outputs.VPCDefaultSecurityGroup.Value}
+        VpcSubnetIds:
+          Fn::Join:
+            - ","
+            - - ${self:resources.Outputs.PrivateSubnetOne.Value}
+              - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+      RotationRules:
+        Duration: 2h
+        ScheduleExpression: "cron(0 8 1 * ? *)"
+
+  RDSPostgresConnectionSecretTargetAttachment:
+    Type: AWS::SecretsManager::SecretTargetAttachment
+    Condition: CreateRDSCluster
+    Properties:
+      SecretId:
+        Ref: RDSPostgresConnectionSecret
+      TargetId:
+        Ref: RDSCluster
+      TargetType: AWS::DocDB::DBCluster
+
+  RDSPostgreSqlInstance:
+    Type: AWS::RDS::DBInstance
+    Condition: CreateRDSCluster
+    Properties:
+      MasterUsername:
+        Fn::Sub:
+          - "{{resolve:secretsmanager:${SecretName}:SecretString:username}}"
+          - SecretName: !Ref RDSPostgresConnectionSecret
+      MasterUserPassword:
+        Fn::Sub:
+          - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
+          - SecretName: !Ref RDSPostgresConnectionSecret
+      AllocatedStorage: 20
+      DBName: ${self:custom.postgres.clusterIdentifier}
+      DBInstanceClass: db.t4g.small
+      DBSubnetGroupName: ${self:resources.Outputs.RDSSubnetGroup.Value}
+      Engine: postgres
+      PubliclyAccessible: false
+      VpcSecurityGroupIds:
+        - ${self:resources.Outputs.RDSSecurityGroup.Value}
+
+  RDSPostgresSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Condition: CreateRDSCluster
+    Properties:
+      GroupDescription: Allow HTTP and HTTPS from anywhere
+      VpcId: ${self:resources.Outputs.VpcId.Value}
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          CidrIp: ${self:custom.vpc.cidr}
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-RDS-security-group
+
+  RDSPostgresSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Condition: CreateRDSCluster
+    Properties:
+      DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-RDS-subnet-group
+      DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group
+      SubnetIds:
+        - ${self:resources.Outputs.PrivateSubnetOne.Value}
+        - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-RDS-subnet-group

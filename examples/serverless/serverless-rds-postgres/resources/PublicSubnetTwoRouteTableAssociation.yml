@@ -1,5 +1,0 @@
-Type: AWS::EC2::SubnetRouteTableAssociation
-Condition: CreateVpc
-Properties:
-  SubnetId: ${self:resources.Outputs.PublicSubnetTwo.Value}
-  RouteTableId: ${self:resources.Outputs.PublicRouteTable.Value}

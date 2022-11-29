@@ -3,12 +3,12 @@ service: ${env:SERVICE_NAME, 'RDS'}
 useDotenv: true
 
 custom:
-  rds:
-    clusterIdentifier: ${self:service}-${self:provider.stage}-${env:RDS_CLUSTER_IDENTIFIER}
-    masterUsername: ${env:RDS_MASTER_USERNAME}
-    database: ${env:RDS_DATABASE_NAME}
+  postgres:
+    clusterIdentifier: ${self:service}-${self:provider.stage}-${param:PostgresClusterIdentifier, env:RDS_POSTGRES_CLUSTER_IDENTIFIER}
+    masterUsername: ${param:PostgresMasterUsername, env:RDS_POSTGRES_MASTER_USERNAME}
+    database: ${param:PostgresDatabaseName, env:RDS_POSTGRES_DATABASE_NAME}
   vpc:
-    cidr: ${env:VPC_CIDR, '10.0.0.0/16'}
+    cidr: ${param:VpcCird, env:VPC_CIDR, '10.0.0.0/16'}
 
 provider:
   name: aws
@@ -17,70 +17,12 @@ provider:
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
 
 resources:
-  Conditions:
-    CreateRDSCluster:
-      Fn::Equals:
-        - ${param:skipRDSClusterCreation, env:SKIP_RDS_CLUSTER_CREATION, 'false'}
-        - "false"
-    CreateNetworkResources:
-      Fn::Equals:
-        - ${param:skipNetworkResources, env:SKIP_NETWORK_RESOURCES, 'false'}
-        - "false"
-    CreateVpc:
-      Fn::And:
-        - Condition: CreateNetworkResources
-        - Fn::Equals:
-            - ${param:VpcId, env:VPC_ID, ''}
-            - ""
-    CreateCloud9Environment:
-      Fn::And:
-        - Condition: CreateDocumentDBCluster
-        - Fn::Equals:
-          - ${param:skipCloud9Environment, env:SKIP_DOCUMENTDB_CLOUD9_ENVIRONMENT, 'false'}
-          - "false"
-    CreateNatGateways:
-      Fn::And:
-        - Condition: CreateNetworkResources
-        - Fn::Equals:
-          - ${param:skipNatGatewayCreation, env:SKIP_NAT_GATEWAY_CREATION, 'false'}
-          - "false"
-
-  Resources:
-    # Secret Manager resources for RDS
-    RDSPostgresConnectionSecret: ${file(./resource/RDSPostgresConnectionSecret.yml)}
-    RDSPostgresConnectionSecretRotationSchedule: ${file(./resource/RDSPostgresConnectionSecretRotationSchedule.yml)}
-    RDSPostgresConnectionSecretTargetAttachment: ${file(./resource/RDSPostgresConnectionSecretTargetAttachment.yml)}
-
-    # RDS resources
-    RDSPostgreSqlInstance: ${file(./resource/RDSPostgreSqlInstance.yml)}
-    RDSSecurityGroup: ${file(./resource/RDSSecurityGroup.yml)}
-    RDSSubnetGroup: ${file(./resource/RDSSubnetGroup.yml)}
-
-    # Network resources (VPC, Gateway, Subnets, Route Tables, etc.)
-    VPC: ${file(./resource/VPC.yml)}
-    SecretsManagerVPCEndpoint: ${file(./resource/SecretsManagerVPCEndpoint.yml)}
-    InternetGateway: ${file(./resource/InternetGateway.yml)}
-    GatewayAttachment: ${file(./resource/GatewayAttachment.yml)}
-    NatGatewayOne: ${file(./resource/NatGatewayOne.yml)}
-    NatGatewayOneAttachment: ${file(./resource/NatGatewayOneAttachment.yml)}
-    NatGatewayTwo: ${file(./resource/NatGatewayTwo.yml)}
-    NatGatewayTwoAttachment: ${file(./resource/NatGatewayTwoAttachment.yml)}
-    PublicSubnetOne: ${file(./resource/PublicSubnetOne.yml)}
-    PublicSubnetTwo: ${file(./resource/PublicSubnetTwo.yml)}
-    PublicRoute: ${file(./resource/PublicRoute.yml)}
-    PublicRouteTable: ${file(./resource/PublicRouteTable.yml)}
-    PublicSubnetOneRouteTableAssociation: ${file(./resource/PublicSubnetOneRouteTableAssociation.yml)}
-    PublicSubnetTwoRouteTableAssociation: ${file(./resource/PublicSubnetTwoRouteTableAssociation.yml)}
-    PrivateSubnetOne: ${file(./resource/PrivateSubnetOne.yml)}
-    PrivateSubnetTwo: ${file(./resource/PrivateSubnetTwo.yml)}
-    PrivateRouteOne: ${file(./resource/PrivateRouteOne.yml)}
-    PrivateRouteTwo: ${file(./resource/PrivateRouteTwo.yml)}
-    PrivateRouteTableOne: ${file(./resource/PrivateRouteTableOne.yml)}
-    PrivateRouteTableTwo: ${file(./resource/PrivateRouteTableTwo.yml)}
-    PrivateSubnetOneRouteTableAssociation: ${file(./resource/PrivateSubnetOneRouteTableAssociation.yml)}
-    PrivateSubnetTwoRouteTableAssociation: ${file(./resource/PrivateSubnetTwoRouteTableAssociation.yml)}
-    
-    # Cloud9 resources
-    Cloud9env: ${file(./resource/Cloud9env.yml)}
-
-  Outputs: ${file(./resource/Outputs.yml)}
+  - ${file(./resource/Conditions.yml)}
+  - ${file(./resource/VPC.yml)}
+  - ${file(./resource/VPCGateways.yml)}
+  - ${file(./resource/VPCEndpoints.yml)}
+  - ${file(./resource/VPCSubnets.yml)}
+  - ${file(./resource/VPCRoutes.yml)}
+  - ${file(./resource/RDSPostgres.yml)}
+  - ${file(./resource/Cloud9env.yml)}
+  - ${file(./resource/Outputs.yml)}

@@ -1,2 +1,0 @@
-Type: AWS::EC2::InternetGateway
-Condition: CreateVpc

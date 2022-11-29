@@ -4,9 +4,9 @@ useDotenv: true
 
 custom:
   documentdb:
-    clusterIdentifier: ${self:service}-${self:provider.stage}-${param:DocumentdbClusterIdentifier, env:DOCUMENTDB_CLUSTER_IDENTIFIER}
-    masterUsername: ${param:DocumentdbMasterUsername, env:DOCUMENTDB_MASTER_USERNAME}
-    database: ${param:DocumentdbDatabaseName, env:DOCUMENTDB_DATABASE_NAME}
+    clusterIdentifier: ${self:service}-${self:provider.stage}-${param:DocumentDBClusterIdentifier, env:DOCUMENTDB_CLUSTER_IDENTIFIER}
+    masterUsername: ${param:DocumentDBMasterUsername, env:DOCUMENTDB_MASTER_USERNAME}
+    database: ${param:DocumentDBDatabaseName, env:DOCUMENTDB_DATABASE_NAME}
   vpc:
     cidr: ${param:VpcCird, env:VPC_CIDR, '10.0.0.0/16'}
 

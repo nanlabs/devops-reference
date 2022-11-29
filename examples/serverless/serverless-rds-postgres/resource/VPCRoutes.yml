@@ -1,0 +1,43 @@
+Resources:
+  PrivateRouteOne:
+    Type: AWS::EC2::Route
+    Condition: CreateNatGateways
+    Properties:
+      RouteTableId: ${self:resources.Outputs.PrivateRouteTableOne.Value}
+      DestinationCidrBlock: "0.0.0.0/0"
+      NatGatewayId: ${self:resources.Outputs.NatGatewayOne.Value}
+
+  PrivateRouteTableOne:
+    Type: AWS::EC2::RouteTable
+    Condition: CreateNetworkResources
+    Properties:
+      VpcId: ${self:resources.Outputs.VpcId.Value}
+
+  PrivateRouteTwo:
+    Type: AWS::EC2::Route
+    Condition: CreateNatGateways
+    Properties:
+      RouteTableId: ${self:resources.Outputs.PrivateRouteTableTwo.Value}
+      DestinationCidrBlock: "0.0.0.0/0"
+      NatGatewayId: ${self:resources.Outputs.NatGatewayTwo.Value}
+
+  PrivateRouteTableTwo:
+    Type: AWS::EC2::RouteTable
+    Condition: CreateNetworkResources
+    Properties:
+      VpcId: ${self:resources.Outputs.VpcId.Value}
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    Condition: CreateVpc
+    DependsOn: GatewayAttachment
+    Properties:
+      RouteTableId: ${self:resources.Outputs.PublicRouteTable.Value}
+      DestinationCidrBlock: "0.0.0.0/0"
+      GatewayId: ${self:resources.Outputs.InternetGateway.Value}
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Condition: CreateVpc
+    Properties:
+      VpcId: ${self:resources.Outputs.VpcId.Value}

@@ -1,5 +1,0 @@
-Type: AWS::EC2::SubnetRouteTableAssociation
-Condition: CreateNetworkResources
-Properties:
-  SubnetId: ${self:resources.Outputs.PrivateSubnetOne.Value}
-  RouteTableId: ${self:resources.Outputs.PrivateRouteTableOne.Value}
