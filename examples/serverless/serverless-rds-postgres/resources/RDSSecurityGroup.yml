@@ -5,8 +5,8 @@ Properties:
   VpcId: ${self:resources.Outputs.VpcId.Value}
   SecurityGroupIngress:
     - IpProtocol: tcp
-      FromPort: 27017
-      ToPort: 27017
+      FromPort: 5432
+      ToPort: 5432
       CidrIp: ${self:custom.vpc.cidr}
   Tags:
     - Key: Name
