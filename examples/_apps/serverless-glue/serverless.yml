@@ -33,10 +33,10 @@ Glue: ${file(./glue.yml)}
 
 resources:
   Resources:
-    GlueConnection: ${file(./resources/GlueConnection.yml)}
-    GlueAccessLogs: ${file(./resources/GlueAccessLogs.yml)}
-    GlueSecurityGroup: ${file(./resources/GlueSecurityGroup.yml)}
-    GlueJobRole: ${file(./resources/GlueJobRole.yml)}
+    GlueConnection: ${file(./resource/GlueConnection.yml)}
+    GlueAccessLogs: ${file(./resource/GlueAccessLogs.yml)}
+    GlueSecurityGroup: ${file(./resource/GlueSecurityGroup.yml)}
+    GlueJobRole: ${file(./resource/GlueJobRole.yml)}
 
   Outputs:
     GlueAccessLogsArn:

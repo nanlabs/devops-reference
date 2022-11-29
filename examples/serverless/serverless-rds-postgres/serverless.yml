@@ -47,40 +47,40 @@ resources:
 
   Resources:
     # Secret Manager resources for RDS
-    RDSPostgresConnectionSecret: ${file(./resources/RDSPostgresConnectionSecret.yml)}
-    RDSPostgresConnectionSecretRotationSchedule: ${file(./resources/RDSPostgresConnectionSecretRotationSchedule.yml)}
-    RDSPostgresConnectionSecretTargetAttachment: ${file(./resources/RDSPostgresConnectionSecretTargetAttachment.yml)}
+    RDSPostgresConnectionSecret: ${file(./resource/RDSPostgresConnectionSecret.yml)}
+    RDSPostgresConnectionSecretRotationSchedule: ${file(./resource/RDSPostgresConnectionSecretRotationSchedule.yml)}
+    RDSPostgresConnectionSecretTargetAttachment: ${file(./resource/RDSPostgresConnectionSecretTargetAttachment.yml)}
 
     # RDS resources
-    RDSPostgreSqlInstance: ${file(./resources/RDSPostgreSqlInstance.yml)}
-    RDSSecurityGroup: ${file(./resources/RDSSecurityGroup.yml)}
-    RDSSubnetGroup: ${file(./resources/RDSSubnetGroup.yml)}
+    RDSPostgreSqlInstance: ${file(./resource/RDSPostgreSqlInstance.yml)}
+    RDSSecurityGroup: ${file(./resource/RDSSecurityGroup.yml)}
+    RDSSubnetGroup: ${file(./resource/RDSSubnetGroup.yml)}
 
     # Network resources (VPC, Gateway, Subnets, Route Tables, etc.)
-    VPC: ${file(./resources/VPC.yml)}
-    SecretsManagerVPCEndpoint: ${file(./resources/SecretsManagerVPCEndpoint.yml)}
-    InternetGateway: ${file(./resources/InternetGateway.yml)}
-    GatewayAttachment: ${file(./resources/GatewayAttachment.yml)}
-    NatGatewayOne: ${file(./resources/NatGatewayOne.yml)}
-    NatGatewayOneAttachment: ${file(./resources/NatGatewayOneAttachment.yml)}
-    NatGatewayTwo: ${file(./resources/NatGatewayTwo.yml)}
-    NatGatewayTwoAttachment: ${file(./resources/NatGatewayTwoAttachment.yml)}
-    PublicSubnetOne: ${file(./resources/PublicSubnetOne.yml)}
-    PublicSubnetTwo: ${file(./resources/PublicSubnetTwo.yml)}
-    PublicRoute: ${file(./resources/PublicRoute.yml)}
-    PublicRouteTable: ${file(./resources/PublicRouteTable.yml)}
-    PublicSubnetOneRouteTableAssociation: ${file(./resources/PublicSubnetOneRouteTableAssociation.yml)}
-    PublicSubnetTwoRouteTableAssociation: ${file(./resources/PublicSubnetTwoRouteTableAssociation.yml)}
-    PrivateSubnetOne: ${file(./resources/PrivateSubnetOne.yml)}
-    PrivateSubnetTwo: ${file(./resources/PrivateSubnetTwo.yml)}
-    PrivateRouteOne: ${file(./resources/PrivateRouteOne.yml)}
-    PrivateRouteTwo: ${file(./resources/PrivateRouteTwo.yml)}
-    PrivateRouteTableOne: ${file(./resources/PrivateRouteTableOne.yml)}
-    PrivateRouteTableTwo: ${file(./resources/PrivateRouteTableTwo.yml)}
-    PrivateSubnetOneRouteTableAssociation: ${file(./resources/PrivateSubnetOneRouteTableAssociation.yml)}
-    PrivateSubnetTwoRouteTableAssociation: ${file(./resources/PrivateSubnetTwoRouteTableAssociation.yml)}
+    VPC: ${file(./resource/VPC.yml)}
+    SecretsManagerVPCEndpoint: ${file(./resource/SecretsManagerVPCEndpoint.yml)}
+    InternetGateway: ${file(./resource/InternetGateway.yml)}
+    GatewayAttachment: ${file(./resource/GatewayAttachment.yml)}
+    NatGatewayOne: ${file(./resource/NatGatewayOne.yml)}
+    NatGatewayOneAttachment: ${file(./resource/NatGatewayOneAttachment.yml)}
+    NatGatewayTwo: ${file(./resource/NatGatewayTwo.yml)}
+    NatGatewayTwoAttachment: ${file(./resource/NatGatewayTwoAttachment.yml)}
+    PublicSubnetOne: ${file(./resource/PublicSubnetOne.yml)}
+    PublicSubnetTwo: ${file(./resource/PublicSubnetTwo.yml)}
+    PublicRoute: ${file(./resource/PublicRoute.yml)}
+    PublicRouteTable: ${file(./resource/PublicRouteTable.yml)}
+    PublicSubnetOneRouteTableAssociation: ${file(./resource/PublicSubnetOneRouteTableAssociation.yml)}
+    PublicSubnetTwoRouteTableAssociation: ${file(./resource/PublicSubnetTwoRouteTableAssociation.yml)}
+    PrivateSubnetOne: ${file(./resource/PrivateSubnetOne.yml)}
+    PrivateSubnetTwo: ${file(./resource/PrivateSubnetTwo.yml)}
+    PrivateRouteOne: ${file(./resource/PrivateRouteOne.yml)}
+    PrivateRouteTwo: ${file(./resource/PrivateRouteTwo.yml)}
+    PrivateRouteTableOne: ${file(./resource/PrivateRouteTableOne.yml)}
+    PrivateRouteTableTwo: ${file(./resource/PrivateRouteTableTwo.yml)}
+    PrivateSubnetOneRouteTableAssociation: ${file(./resource/PrivateSubnetOneRouteTableAssociation.yml)}
+    PrivateSubnetTwoRouteTableAssociation: ${file(./resource/PrivateSubnetTwoRouteTableAssociation.yml)}
     
     # Cloud9 resources
-    Cloud9env: ${file(./resources/Cloud9env.yml)}
+    Cloud9env: ${file(./resource/Cloud9env.yml)}
 
-  Outputs: ${file(./resources/Outputs.yml)}
+  Outputs: ${file(./resource/Outputs.yml)}

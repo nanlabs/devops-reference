@@ -1,0 +1,18 @@
+Resources:
+  SecretsManagerVPCEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Condition: CreateVpc
+    Properties:
+      SubnetIds:
+        - Ref: PrivateSubnetOne
+        - Ref: PrivateSubnetTwo
+      SecurityGroupIds:
+        - Fn::GetAtt:
+          - VPC
+          - DefaultSecurityGroup
+      VpcEndpointType: Interface
+      ServiceName:
+        Fn::Sub: com.amazonaws.${AWS::Region}.secretsmanager
+      PrivateDnsEnabled: true
+      VpcId:
+        Ref: VPC

@@ -1,5 +1,0 @@
-Type: AWS::EC2::NatGateway
-Condition: CreateNatGateways
-Properties:
-  AllocationId: !GetAtt NatGatewayOneAttachment.AllocationId
-  SubnetId: ${self:resources.Outputs.PublicSubnetOne.Value}

@@ -1,9 +1,0 @@
-Type: AWS::DocDB::DBInstance
-Condition: CreateDocumentDBCluster
-DependsOn: DocumentDBCluster
-Properties:
-  DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
-  DBInstanceClass: db.r5.large
-  Tags:
-    - Key: Name
-      Value: ${self:service}-${self:provider.stage}-documentdb-instance-reader2

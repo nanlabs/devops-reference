@@ -1,9 +1,0 @@
-Type: AWS::EC2::VPC
-Condition: CreateVpc
-Properties:
-  CidrBlock: ${self:custom.vpc.cidr}
-  EnableDnsSupport: true
-  EnableDnsHostnames: true
-  Tags:
-    - Key: Name
-      Value: ${self:service}-${self:provider.stage}-vpc

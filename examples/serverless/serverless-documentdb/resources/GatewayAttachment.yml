@@ -1,5 +1,0 @@
-Type: AWS::EC2::VPCGatewayAttachment
-Condition: CreateVpc
-Properties:
-  VpcId: ${self:resources.Outputs.VpcId.Value}
-  InternetGatewayId: ${self:resources.Outputs.InternetGateway.Value}

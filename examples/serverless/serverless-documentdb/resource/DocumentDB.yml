@@ -1,0 +1,122 @@
+Resources:
+  DocumentDBCluster:
+    Type: AWS::DocDB::DBCluster
+    Condition: CreateDocumentDBCluster
+    Properties:
+      DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
+      MasterUsername:
+        Fn::Sub:
+          - "{{resolve:secretsmanager:${SecretName}:SecretString:username}}"
+          - SecretName: !Ref DocumentDBConnectionSecret
+      MasterUserPassword:
+        Fn::Sub:
+          - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
+          - SecretName: !Ref DocumentDBConnectionSecret
+      DBSubnetGroupName: ${self:resources.Outputs.DocumentDBSubnetGroup.Value}
+      VpcSecurityGroupIds:
+        - ${self:resources.Outputs.DocumentDBSecurityGroup.Value}
+
+  DocumentDBConnectionSecret:
+    Type: AWS::SecretsManager::Secret
+    Condition: CreateDocumentDBCluster
+    Properties:
+      Name: ${self:provider.stage}/${self:service}
+      Description: DocumentDB Cluster Connection Secret
+      GenerateSecretString:
+        SecretStringTemplate: '{ "username": "${self:custom.documentdb.masterUsername}", "database": "${self:custom.documentdb.database}" }'
+        GenerateStringKey: password
+        PasswordLength: 32
+        ExcludePunctuation: true
+      Tags:
+        - Key: Name
+          Value: ${self:provider.stage}/DocumentDB
+
+  DocumentDBConnectionSecretRotationSchedule:
+    Type: AWS::SecretsManager::RotationSchedule
+    Condition: CreateDocumentDBCluster
+    DependsOn: DocumentDBConnectionSecretTargetAttachment
+    Properties:
+      SecretId: !Ref DocumentDBConnectionSecret
+      HostedRotationLambda:
+        RotationType: MongoDBSingleUser
+        RotationLambdaName: MongoDBSingleUser
+        VpcSecurityGroupIds: ${self:resources.Outputs.VPCDefaultSecurityGroup.Value}
+        VpcSubnetIds:
+          Fn::Join:
+            - ","
+            - - ${self:resources.Outputs.PrivateSubnetOne.Value}
+              - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+      RotationRules:
+        Duration: 2h
+        ScheduleExpression: "cron(0 8 1 * ? *)"
+
+  DocumentDBConnectionSecretTargetAttachment:
+    Type: AWS::SecretsManager::SecretTargetAttachment
+    Condition: CreateDocumentDBCluster
+    Properties:
+      SecretId:
+        Ref: DocumentDBConnectionSecret
+      TargetId:
+        Ref: DocumentDBCluster
+      TargetType: AWS::DocDB::DBCluster
+
+  DocumentDBInstanceReaderOne:
+    Type: AWS::DocDB::DBInstance
+    Condition: CreateDocumentDBCluster
+    DependsOn: DocumentDBCluster
+    Properties:
+      DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
+      DBInstanceClass: db.r5.large
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-documentdb-instance-reader1
+
+  DocumentDBInstanceReaderTwo:
+    Type: AWS::DocDB::DBInstance
+    Condition: CreateDocumentDBCluster
+    DependsOn: DocumentDBCluster
+    Properties:
+      DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
+      DBInstanceClass: db.r5.large
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-documentdb-instance-reader2
+
+  DocumentDBInstanceWriter:
+    Type: AWS::DocDB::DBInstance
+    Condition: CreateDocumentDBCluster
+    DependsOn: DocumentDBCluster
+    Properties:
+      DBClusterIdentifier: ${self:custom.documentdb.clusterIdentifier}
+      DBInstanceClass: db.r5.large
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-documentdb-instance-writer
+
+  DocumentDBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Condition: CreateDocumentDBCluster
+    Properties:
+      GroupDescription: Allow HTTP and HTTPS from anywhere
+      VpcId: ${self:resources.Outputs.VpcId.Value}
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 27017
+          ToPort: 27017
+          CidrIp: ${self:custom.vpc.cidr}
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-documentdb-security-group
+
+  DocumentDBSubnetGroup:
+    Type: AWS::DocDB::DBSubnetGroup
+    Condition: CreateDocumentDBCluster
+    Properties:
+      DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-documentdb-subnet-group
+      DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group
+      SubnetIds:
+        - ${self:resources.Outputs.PrivateSubnetOne.Value}
+        - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-documentdb-subnet-group
