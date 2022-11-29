@@ -1,7 +1,7 @@
 Resources:
   RDSPostgresConnectionSecret:
     Type: AWS::SecretsManager::Secret
-    Condition: CreateRDSCluster
+    Condition: CreateRDSPostgres
     Properties:
       Name: ${self:provider.stage}/${self:service}
       Description: RDS Cluster Connection Secret
@@ -17,7 +17,7 @@ Resources:
 
   RDSPostgresConnectionSecretRotationSchedule:
     Type: AWS::SecretsManager::RotationSchedule
-    Condition: CreateRDSCluster
+    Condition: CreateRDSPostgres
     DependsOn: RDSPostgresConnectionSecretTargetAttachment
     Properties:
       SecretId: !Ref RDSPostgresConnectionSecret
@@ -36,17 +36,17 @@ Resources:
 
   RDSPostgresConnectionSecretTargetAttachment:
     Type: AWS::SecretsManager::SecretTargetAttachment
-    Condition: CreateRDSCluster
+    Condition: CreateRDSPostgres
     Properties:
       SecretId:
         Ref: RDSPostgresConnectionSecret
       TargetId:
-        Ref: RDSCluster
+        Ref: RDSPostgreSqlInstance
       TargetType: AWS::DocDB::DBCluster
 
   RDSPostgreSqlInstance:
     Type: AWS::RDS::DBInstance
-    Condition: CreateRDSCluster
+    Condition: CreateRDSPostgres
     Properties:
       MasterUsername:
         Fn::Sub:
@@ -57,7 +57,7 @@ Resources:
           - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
           - SecretName: !Ref RDSPostgresConnectionSecret
       AllocatedStorage: 20
-      DBName: ${self:custom.postgres.clusterIdentifier}
+      DBName: ${self:custom.postgres.database}
       DBInstanceClass: db.t4g.small
       DBSubnetGroupName: ${self:resources.Outputs.RDSSubnetGroup.Value}
       Engine: postgres
@@ -67,7 +67,7 @@ Resources:
 
   RDSPostgresSecurityGroup:
     Type: AWS::EC2::SecurityGroup
-    Condition: CreateRDSCluster
+    Condition: CreateRDSPostgres
     Properties:
       GroupDescription: Allow HTTP and HTTPS from anywhere
       VpcId: ${self:resources.Outputs.VpcId.Value}
@@ -76,13 +76,17 @@ Resources:
           FromPort: 5432
           ToPort: 5432
           CidrIp: ${self:custom.vpc.cidr}
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          CidrIp: ${env:GLUE_VPC_CIDR}
       Tags:
         - Key: Name
           Value: ${self:service}-${self:provider.stage}-RDS-security-group
 
   RDSPostgresSubnetGroup:
     Type: AWS::RDS::DBSubnetGroup
-    Condition: CreateRDSCluster
+    Condition: CreateRDSPostgres
     Properties:
       DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-RDS-subnet-group
       DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group

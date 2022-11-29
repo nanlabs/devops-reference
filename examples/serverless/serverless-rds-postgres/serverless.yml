@@ -4,7 +4,6 @@ useDotenv: true
 
 custom:
   postgres:
-    clusterIdentifier: ${self:service}-${self:provider.stage}-${param:PostgresClusterIdentifier, env:RDS_POSTGRES_CLUSTER_IDENTIFIER}
     masterUsername: ${param:PostgresMasterUsername, env:RDS_POSTGRES_MASTER_USERNAME}
     database: ${param:PostgresDatabaseName, env:RDS_POSTGRES_DATABASE_NAME}
   vpc:

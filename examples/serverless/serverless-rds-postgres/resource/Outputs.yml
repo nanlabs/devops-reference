@@ -2,55 +2,55 @@ Outputs:
   RDSPostgreSqlInstance:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - !Ref RDSPostgreSqlInstance
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgreSqlInstance, param:RDSPostgreSqlInstance, ''}
   RDSPostgresSubnetGroup:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - !Ref RDSPostgresSubnetGroup
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresSubnetGroup, param:RDSPostgresSubnetGroup, ''}
   RDSPostgresSecurityGroup:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - !Ref RDSPostgresSecurityGroup
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresSecurityGroup, param:RDSPostgresSecurityGroup, ''}
   RDSPostgresEndpoint:
     Value:
       Fn::If:
-        - CreateRDSCluster
-        - !GetAtt RDSCluster.Endpoint
+        - CreateRDSPostgres
+        - !GetAtt RDSPostgres.Endpoint
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresEndpoint, param:RDSPostgresEndpoint, ''}
   RDSPostgresPort:
     Value:
       Fn::If:
-        - CreateRDSCluster
-        - !GetAtt RDSCluster.Port
+        - CreateRDSPostgres
+        - !GetAtt RDSPostgres.Port
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresPort, param:RDSPostgresPort, ''}
   RDSPostgresConnectionSecret:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - !Ref RDSPostgresConnectionSecret
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecret, param:RDSPostgresConnectionSecret, ''}
   RDSPostgresConnectionSecretName:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - ${self:provider.stage}/${self:service}
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretName, param:RDSPostgresConnectionSecretName, ''}
   RDSPostgresConnectionSecretRotationSchedule:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - !Ref RDSPostgresConnectionSecretRotationSchedule
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretRotationSchedule, param:RDSPostgresConnectionSecretRotationSchedule, ''}
   RDSPostgresConnectionSecretTargetAttachment:
     Value:
       Fn::If:
-        - CreateRDSCluster
+        - CreateRDSPostgres
         - !Ref RDSPostgresConnectionSecretTargetAttachment
         - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretTargetAttachment, param:RDSPostgresConnectionSecretTargetAttachment, ''}
   VpcId:

@@ -1,7 +1,7 @@
 Conditions:
-  CreateRDSCluster:
+  CreateRDSPostgres:
     Fn::Equals:
-      - ${param:skipRDSClusterCreation, env:SKIP_RDS_POSTGRES_CLUSTER_CREATION, 'false'}
+      - ${param:skipRDSPostgresCreation, env:SKIP_RDS_POSTGRES_CREATION, 'false'}
       - "false"
   CreateNetworkResources:
     Fn::Equals:
@@ -15,7 +15,7 @@ Conditions:
           - ""
   CreateCloud9Environment:
     Fn::And:
-      - Condition: CreateRDSCluster
+      - Condition: CreateRDSPostgres
       - Fn::Equals:
         - ${param:skipCloud9Environment, env:SKIP_RDS_POSTGRES_CLOUD9_ENVIRONMENT, 'false'}
         - "false"

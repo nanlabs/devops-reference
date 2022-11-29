@@ -2,7 +2,7 @@ Resources:
   Cloud9env:
     Type: AWS::Cloud9::EnvironmentEC2
     Condition: CreateCloud9Environment
-    DependsOn: RDSCluster
+    DependsOn: RDSPostgreSqlInstance
     Properties:
       AutomaticStopTimeMinutes: 60
       Description: Cloud9 instance to access Cloud9
