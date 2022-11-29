@@ -6,8 +6,7 @@
   "scripts": {
     "sls": "serverless",
     "deploy": "serverless deploy",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "zip:app": "bestzip package.zip __init__.py app/*"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

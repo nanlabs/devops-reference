@@ -1,4 +1,4 @@
-# Serverless Neo4j Deployment
+# Serverless RDS Postgres Deployment
 
 We use Serverless Framework to do production ready deployments.
 
@@ -11,7 +11,7 @@ fnm use
 npm install
 ```
 
-## EC2 Instance Deployment
+## RDS Postgres Deployment
 
 Set up the following environment variables:
 

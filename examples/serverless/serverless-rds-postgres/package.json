@@ -1,7 +1,7 @@
 {
-  "name": "serverless-neo4j",
+  "name": "serverless-rds-postgres",
   "version": "1.0.0",
-  "description": "Serverless Neo4j EC2 example",
+  "description": "Serverless RDS Postgres example",
   "main": "index.js",
   "scripts": {
     "sls": "serverless",

@@ -1,0 +1,67 @@
+service: ${env:SERVICE_NAME, 'DocumentDB'}
+
+useDotenv: true
+
+custom:
+  documentdb:
+    clusterIdentifier: ${self:service}-${self:provider.stage}-${env:DOCUMENTDB_CLUSTER_IDENTIFIER}
+    masterUsername: ${env:DOCUMENTDB_MASTER_USERNAME}
+    database: ${env:DOCUMENTDB_DATABASE_NAME}
+  vpc:
+    cidr: ${env:VPC_CIDR, '10.0.0.0/16'}
+
+provider:
+  name: aws
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+
+resources:
+  Conditions:
+    CreateDocumentDBCluster:
+      Fn::Equals:
+        - ${param:skipDocumentDBClusterCreation, env:SKIP_DOCUMENTDB_CLUSTER_CREATION, 'false'}
+        - "false"
+    CreateNetworkResources:
+      Fn::Equals:
+        - ${param:skipNetworkResources, env:SKIP_NETWORK_RESOURCES, 'false'}
+        - "false"
+    CreateVpc:
+      Fn::And:
+        - Condition: CreateNetworkResources
+        - Fn::Equals:
+            - ${param:vpcId, env:VPC_ID, ''}
+            - ""
+
+  Resources:
+    DocumentDBConnectionSecret: ${file(./resources/DocumentDBConnectionSecret.yml)}
+    DocumentDBCluster: ${file(./resources/DocumentDBCluster.yml)}
+    DocumentDBInstanceWriter: ${file(./resources/DocumentDBInstanceWriter.yml)}
+    DocumentDBInstanceReaderOne: ${file(./resources/DocumentDBInstanceReaderOne.yml)}
+    DocumentDBInstanceReaderTwo: ${file(./resources/DocumentDBInstanceReaderTwo.yml)}
+    DocumentDBSecurityGroup: ${file(./resources/DocumentDBSecurityGroup.yml)}
+    DocumentDBSubnetGroup: ${file(./resources/DocumentDBSubnetGroup.yml)}
+    VPC: ${file(./resources/VPC.yml)}
+    InternetGateway: ${file(./resources/InternetGateway.yml)}
+    GatewayAttachment: ${file(./resources/GatewayAttachment.yml)}
+    NatGatewayOne: ${file(./resources/NatGatewayOne.yml)}
+    NatGatewayOneAttachment: ${file(./resources/NatGatewayOneAttachment.yml)}
+    NatGatewayTwo: ${file(./resources/NatGatewayTwo.yml)}
+    NatGatewayTwoAttachment: ${file(./resources/NatGatewayTwoAttachment.yml)}
+    PublicSubnetOne: ${file(./resources/PublicSubnetOne.yml)}
+    PublicSubnetTwo: ${file(./resources/PublicSubnetTwo.yml)}
+    PublicRoute: ${file(./resources/PublicRoute.yml)}
+    PublicRouteTable: ${file(./resources/PublicRouteTable.yml)}
+    PublicSubnetOneRouteTableAssociation: ${file(./resources/PublicSubnetOneRouteTableAssociation.yml)}
+    PublicSubnetTwoRouteTableAssociation: ${file(./resources/PublicSubnetTwoRouteTableAssociation.yml)}
+    PrivateSubnetOne: ${file(./resources/PrivateSubnetOne.yml)}
+    PrivateSubnetTwo: ${file(./resources/PrivateSubnetTwo.yml)}
+    PrivateRouteOne: ${file(./resources/PrivateRouteOne.yml)}
+    PrivateRouteTwo: ${file(./resources/PrivateRouteTwo.yml)}
+    PrivateRouteTableOne: ${file(./resources/PrivateRouteTableOne.yml)}
+    PrivateRouteTableTwo: ${file(./resources/PrivateRouteTableTwo.yml)}
+    PrivateSubnetOneRouteTableAssociation: ${file(./resources/PrivateSubnetOneRouteTableAssociation.yml)}
+    PrivateSubnetTwoRouteTableAssociation: ${file(./resources/PrivateSubnetTwoRouteTableAssociation.yml)}
+    Cloud9env: ${file(./resources/Cloud9env.yml)}
+
+  Outputs: ${file(./resources/Outputs.yml)}

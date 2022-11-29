@@ -10,7 +10,7 @@ We use Serverless Framework to do production ready deployments and local develop
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
 cd devops-reference/examples/serverless/serverless-appsync-python
-fnm use 16.13.2
+fnm use
 npm install
 ```
 
