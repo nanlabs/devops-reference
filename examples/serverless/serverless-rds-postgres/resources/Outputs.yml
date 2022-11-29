@@ -58,6 +58,12 @@ VpcId:
       - CreateVpc
       - !Ref VPC
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VpcId, param:VpcId, env:VPC_ID, ''}
+SecretsManagerVPCEndpoint:
+  Value:
+    Fn::If:
+      - CreateVpc
+      - !Ref SecretsManagerVPCEndpoint
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.SecretsManagerVPCEndpoint, ''}
 InternetGateway:
   Value:
     Fn::If:

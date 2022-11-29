@@ -79,7 +79,7 @@ VpcId:
 SecretsManagerVPCEndpoint:
   Value:
     Fn::If:
-      - CreateDocumentDBCluster
+      - CreateVpc
       - !Ref SecretsManagerVPCEndpoint
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.SecretsManagerVPCEndpoint, ''}
 InternetGateway:

@@ -1,4 +1,4 @@
 Type: AWS::EC2::RouteTable
-Condition: CreateNetworkResources
+Condition: CreateVpc
 Properties:
   VpcId: ${self:resources.Outputs.VpcId.Value}

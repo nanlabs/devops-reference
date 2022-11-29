@@ -1,5 +1,5 @@
 Type: AWS::EC2::Subnet
-Condition: CreateNetworkResources
+Condition: CreateVpc
 Properties:
   VpcId: ${self:resources.Outputs.VpcId.Value}
   CidrBlock:
