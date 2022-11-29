@@ -1,5 +1,5 @@
 Type: AWS::Cloud9::EnvironmentEC2
-Condition: CreateDocumentDBCluster
+Condition: CreateCloud9Environment
 DependsOn: DocumentDBCluster
 Properties:
   AutomaticStopTimeMinutes: 60

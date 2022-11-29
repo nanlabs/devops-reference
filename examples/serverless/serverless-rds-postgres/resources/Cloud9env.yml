@@ -1,5 +1,5 @@
 Type: AWS::Cloud9::EnvironmentEC2
-Condition: CreateRDSCluster
+Condition: CreateCloud9Environment
 DependsOn: RDSCluster
 Properties:
   AutomaticStopTimeMinutes: 60

@@ -1,5 +1,5 @@
 Type: AWS::EC2::Route
-Condition: CreateNetworkResources
+Condition: CreateNatGateways
 Properties:
   RouteTableId: ${self:resources.Outputs.PrivateRouteTableTwo.Value}
   DestinationCidrBlock: "0.0.0.0/0"

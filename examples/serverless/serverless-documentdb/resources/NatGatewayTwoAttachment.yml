@@ -1,5 +1,5 @@
 Type: AWS::EC2::EIP
-Condition: CreateNetworkResources
+Condition: CreateNatGateways
 DependsOn: GatewayAttachment
 Properties:
   Domain: vpc

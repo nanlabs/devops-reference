@@ -79,25 +79,25 @@ GatewayAttachment:
 NatGatewayOneAttachment:
   Value:
     Fn::If:
-      - CreateVpc
+      - CreateNatGateways
       - !Ref NatGatewayOneAttachment
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayOneAttachment, ''}
 NatGatewayOne:
   Value:
     Fn::If:
-      - CreateVpc
+      - CreateNatGateways
       - !Ref NatGatewayOne
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayOne, env:NAT_GATEWAY_ONE_ID, ''}
 NatGatewayTwoAttachment:
   Value:
     Fn::If:
-      - CreateVpc
+      - CreateNatGateways
       - !Ref NatGatewayTwoAttachment
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayTwoAttachment, ''}
 NatGatewayTwo:
   Value:
     Fn::If:
-      - CreateVpc
+      - CreateNatGateways
       - !Ref NatGatewayTwo
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayTwo, env:NAT_GATEWAY_TWO_ID, ''}
 PublicSubnetOne:
@@ -151,7 +151,7 @@ PrivateRouteTableOne:
 PrivateRouteOne:
   Value:
     Fn::If:
-      - CreateNetworkResources
+      - CreateNatGateways
       - !Ref PrivateRouteOne
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteOne, ''}
 PrivateSubnetTwo:
@@ -169,12 +169,12 @@ PrivateRouteTableTwo:
 PrivateRouteTwo:
   Value:
     Fn::If:
-      - CreateNetworkResources
+      - CreateNatGateways
       - !Ref PrivateRouteTwo
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTwo, ''}
 Cloud9env:
   Value:
     Fn::If:
-      - CreateDocumentDBCluster
+      - CreateCloud9Environment
       - !Ref Cloud9env
       - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.Cloud9env, ''}
