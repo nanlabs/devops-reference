@@ -75,7 +75,7 @@ VpcId:
     Fn::If:
       - CreateVpc
       - !Ref VPC
-      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VpcId, env:VPC_ID, ''}
+      - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VpcId, param:vpcId, env:VPC_ID, ''}
 SecretsManagerVPCEndpoint:
   Value:
     Fn::If:
