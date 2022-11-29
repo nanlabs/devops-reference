@@ -61,6 +61,7 @@ resources:
 
     # Network resources (VPC, Gateway, Subnets, Route Tables, etc.)
     VPC: ${file(./resources/VPC.yml)}
+    SecretsManagerVPCEndpoint: ${file(./resources/SecretsManagerVPCEndpoint.yml)}
     InternetGateway: ${file(./resources/InternetGateway.yml)}
     GatewayAttachment: ${file(./resources/GatewayAttachment.yml)}
     NatGatewayOne: ${file(./resources/NatGatewayOne.yml)}
