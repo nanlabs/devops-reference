@@ -1,0 +1,98 @@
+# The following are the default values for the VPC and DocumentDB resources.
+# If you want to use existing resources, you can set the
+# USE_EXISTING_RESOURCES_FROM_STAGE environment variable to the stage name
+# where the resources were created.
+externalStack: ${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}
+defaults:
+  documentDBSecurityGroup: ${cf:${self:externalStack}.DocumentDBSecurityGroup, param:DocumentDBSecurityGroup, ''}
+  documentDBClusterEndpoint: ${cf:${self:externalStack}.DocumentDBClusterEndpoint, param:DocumentDBClusterEndpoint, ''}
+  documentDBClusterPort: ${cf:${self:externalStack}.DocumentDBClusterPort, param:DocumentDBClusterPort, ''}
+  documentDBConnectionSecretName: ${cf:${self:externalStack}.DocumentDBConnectionSecretName, param:DocumentDBConnectionSecretName, ''}
+  vpcId: ${cf:${self:variables.externalStack}.VpcId, param:VpcId, env:VPC_ID, ''}
+  defaultSecurityGroup: ${cf:${self:variables.externalStack}.VPCDefaultSecurityGroup, param:VPCDefaultSecurityGroup, ''}
+  publicSubnetOne: ${cf:${self:variables.externalStack}.PublicSubnetOne, param:PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
+  publicSubnetTwo: ${cf:${self:variables.externalStack}.PublicSubnetTwo, param:PublicSubnetTwo, env:PUBLIC_SUBNET_TWO_ID, ''}
+  privateSubnetOne: ${cf:${self:variables.externalStack}.PrivateSubnetOne, param:PrivateSubnetOne, env:PRIVATE_SUBNET_ONE, ''}
+  privateSubnetTwo: ${cf:${self:variables.externalStack}.PrivateSubnetTwo, param:PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO, ''}
+  cloud9env: ${cf:${self:variables.externalStack}.Cloud9env, param:Cloud9env, ''}
+
+# The following are the values based on conditions.
+values:
+  DocumentDBSecurityGroup:
+    Value:
+      Fn::If:
+        - CreateDocumentDBCluster
+        - !Ref DocumentDBSecurityGroup
+        - ${self:variables.defaults.documentDBSecurityGroup}
+  DocumentDBClusterEndpoint:
+    Value:
+      Fn::If:
+        - CreateDocumentDBCluster
+        - !GetAtt DocumentDBCluster.Endpoint
+        - ${self:variables.defaults.documentDBClusterEndpoint}
+  DocumentDBClusterPort:
+    Value:
+      Fn::If:
+        - CreateDocumentDBCluster
+        - !GetAtt DocumentDBCluster.Port
+        - ${self:variables.defaults.documentDBClusterPort}
+  DocumentDBConnectionSecretName:
+    Value:
+      Fn::If:
+        - CreateDocumentDBCluster
+        - ${self:provider.stage}/${self:service}
+        - ${self:variables.defaults.documentDBConnectionSecretName}
+  VpcId:
+    Value:
+      Fn::If:
+        - CreateVpc
+        - !Ref VPC
+        - ${self:variables.defaults.vpcId}
+  VPCDefaultSecurityGroup:
+    Value:
+      Fn::If:
+        - CreateVpc
+        - !Ref VPCDefaultSecurityGroup
+        - ${self:variables.defaults.defaultSecurityGroup}
+  PublicSubnetOne:
+    Value:
+      Fn::If:
+        - CreateVpc
+        - !Ref PublicSubnetOne
+        - ${self:variables.defaults.publicSubnetOne}
+  PublicSubnetTwo:
+    Value:
+      Fn::If:
+        - CreateVpc
+        - !Ref PublicSubnetTwo
+        - ${self:variables.defaults.publicSubnetTwo}
+  PrivateSubnetOne:
+    Value:
+      Fn::If:
+        - CreateNetworkResources
+        - !Ref PrivateSubnetOne
+        - ${self:variables.defaults.privateSubnetOne}
+  PrivateRouteTableOne:
+    Value:
+      Fn::If:
+        - CreateNetworkResources
+        - !Ref PrivateRouteTableOne
+        - ${self:variables.defaults.privateRouteTableOne}
+  PrivateSubnetTwo:
+    Value:
+      Fn::If:
+        - CreateNetworkResources
+        - !Ref PrivateSubnetTwo
+        - ${self:variables.defaults.privateSubnetTwo}
+  PrivateRouteTableTwo:
+    Value:
+      Fn::If:
+        - CreateNetworkResources
+        - !Ref PrivateRouteTableTwo
+        - ${self:variables.defaults.privateRouteTableTwo}
+  Cloud9env:
+    Value:
+      Fn::If:
+        - CreateCloud9Environment
+        - !Ref Cloud9env
+        - ${self:variables.defaults.cloud9env}

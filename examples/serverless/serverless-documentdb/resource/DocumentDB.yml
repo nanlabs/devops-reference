@@ -12,9 +12,9 @@ Resources:
         Fn::Sub:
           - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
           - SecretName: !Ref DocumentDBConnectionSecret
-      DBSubnetGroupName: ${self:resources.Outputs.DocumentDBSubnetGroup.Value}
+      DBSubnetGroupName: !Ref DocumentDBSubnetGroup
       VpcSecurityGroupIds:
-        - ${self:resources.Outputs.DocumentDBSecurityGroup.Value}
+        - !Ref DocumentDBSecurityGroup
 
   DocumentDBConnectionSecret:
     Type: AWS::SecretsManager::Secret
@@ -40,12 +40,12 @@ Resources:
       HostedRotationLambda:
         RotationType: MongoDBSingleUser
         RotationLambdaName: MongoDBSingleUser
-        VpcSecurityGroupIds: ${self:resources.Outputs.VPCDefaultSecurityGroup.Value}
+        VpcSecurityGroupIds: ${self:variables.values.VpcSecurityGroupIds}
         VpcSubnetIds:
           Fn::Join:
             - ","
-            - - ${self:resources.Outputs.PrivateSubnetOne.Value}
-              - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+            - - ${self:variables.values.PrivateSubnetOne}
+              - ${self:variables.values.PrivateSubnetTwo}
       RotationRules:
         Duration: 2h
         ScheduleExpression: "cron(0 8 1 * ? *)"
@@ -54,10 +54,8 @@ Resources:
     Type: AWS::SecretsManager::SecretTargetAttachment
     Condition: CreateDocumentDBCluster
     Properties:
-      SecretId:
-        Ref: DocumentDBConnectionSecret
-      TargetId:
-        Ref: DocumentDBCluster
+      SecretId: !Ref DocumentDBConnectionSecret
+      TargetId: !Ref DocumentDBCluster
       TargetType: AWS::DocDB::DBCluster
 
   DocumentDBInstanceReaderOne:
@@ -98,12 +96,16 @@ Resources:
     Condition: CreateDocumentDBCluster
     Properties:
       GroupDescription: Allow HTTP and HTTPS from anywhere
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 27017
           ToPort: 27017
           CidrIp: ${self:custom.vpc.cidr}
+        - IpProtocol: tcp
+          FromPort: 27017
+          ToPort: 27017
+          CidrIp: ${env:GLUE_VPC_CIDR}
       Tags:
         - Key: Name
           Value: ${self:service}-${self:provider.stage}-documentdb-security-group
@@ -113,10 +115,10 @@ Resources:
     Condition: CreateDocumentDBCluster
     Properties:
       DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-documentdb-subnet-group
-      DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group
+      DBSubnetGroupName: ${self:service}-${self:provider.stage}-DocumentDB-subnet-group
       SubnetIds:
-        - ${self:resources.Outputs.PrivateSubnetOne.Value}
-        - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+        - ${self:variables.values.PrivateSubnetOne}
+        - ${self:variables.values.PrivateSubnetTwo}
       Tags:
         - Key: Name
           Value: ${self:service}-${self:provider.stage}-documentdb-subnet-group
