@@ -1,0 +1,27 @@
+Conditions:
+  CreateDocumentDBCluster:
+    Fn::Equals:
+      - ${param:skipDocumentDBClusterCreation, env:SKIP_DOCUMENTDB_CLUSTER_CREATION, 'false'}
+      - "false"
+  CreateNetworkResources:
+    Fn::Equals:
+      - ${param:skipNetworkResources, env:SKIP_NETWORK_RESOURCES, 'false'}
+      - "false"
+  CreateVpc:
+    Fn::And:
+      - Condition: CreateNetworkResources
+      - Fn::Equals:
+          - ${param:VpcId, env:VPC_ID, ''}
+          - ""
+  CreateCloud9Environment:
+    Fn::And:
+      - Condition: CreateDocumentDBCluster
+      - Fn::Equals:
+        - ${param:skipCloud9Environment, env:SKIP_DOCUMENTDB_CLOUD9_ENVIRONMENT, 'false'}
+        - "false"
+  CreateNatGateways:
+    Fn::And:
+      - Condition: CreateNetworkResources
+      - Fn::Equals:
+        - ${param:skipNatGatewayCreation, env:SKIP_NAT_GATEWAY_CREATION, 'false'}
+        - "false"
