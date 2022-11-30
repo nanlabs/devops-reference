@@ -2,10 +2,10 @@ Resources:
   Cloud9env:
     Type: AWS::Cloud9::EnvironmentEC2
     Condition: CreateCloud9Environment
-    DependsOn: RDSPostgreSqlInstance
+    DependsOn: RDSPostgresInstance
     Properties:
       AutomaticStopTimeMinutes: 60
       Description: Cloud9 instance to access Cloud9
       InstanceType: t2.small
       Name: RDSCloud9${self:service}${self:provider.stage}
-      SubnetId: ${self:resources.Outputs.PrivateSubnetOne.Value}
+      SubnetId: ${self:variables.values.PrivateSubnetOne}

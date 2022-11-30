@@ -7,15 +7,15 @@ Resources:
     Type: AWS::EC2::VPCGatewayAttachment
     Condition: CreateVpc
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
-      InternetGatewayId: ${self:resources.Outputs.InternetGateway.Value}
+      VpcId: ${self:variables.values.VpcId}
+      InternetGatewayId: !Ref InternetGateway
 
   NatGatewayOne:
     Type: AWS::EC2::NatGateway
     Condition: CreateNatGateways
     Properties:
       AllocationId: !GetAtt NatGatewayOneAttachment.AllocationId
-      SubnetId: ${self:resources.Outputs.PublicSubnetOne.Value}
+      SubnetId: ${self:variables.values.PublicSubnetOne}
 
   NatGatewayOneAttachment:
     Type: AWS::EC2::EIP
@@ -29,7 +29,7 @@ Resources:
     Condition: CreateNatGateways
     Properties:
       AllocationId: !GetAtt NatGatewayTwoAttachment.AllocationId
-      SubnetId: ${self:resources.Outputs.PublicSubnetTwo.Value}
+      SubnetId: ${self:variables.values.PublicSubnetTwo}
 
   NatGatewayTwoAttachment:
     Type: AWS::EC2::EIP

@@ -1,181 +1,35 @@
 Outputs:
-  RDSPostgreSqlInstance:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !Ref RDSPostgreSqlInstance
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgreSqlInstance, param:RDSPostgreSqlInstance, ''}
-  RDSPostgresSubnetGroup:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !Ref RDSPostgresSubnetGroup
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresSubnetGroup, param:RDSPostgresSubnetGroup, ''}
   RDSPostgresSecurityGroup:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !Ref RDSPostgresSecurityGroup
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresSecurityGroup, param:RDSPostgresSecurityGroup, ''}
+    Description: The security group of the RDS Postgres instance
+    Value: ${self:variables.values.RDSPostgresSecurityGroup}
   RDSPostgresEndpoint:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !GetAtt RDSPostgres.Endpoint
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresEndpoint, param:RDSPostgresEndpoint, ''}
+    Description: The endpoint of the RDS Postgres instance
+    Value: ${self:variables.values.RDSPostgresEndpoint}
   RDSPostgresPort:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !GetAtt RDSPostgres.Port
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresPort, param:RDSPostgresPort, ''}
-  RDSPostgresConnectionSecret:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !Ref RDSPostgresConnectionSecret
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecret, param:RDSPostgresConnectionSecret, ''}
+    Description: The port of the RDS Postgres instance
+    Value: ${self:variables.values.RDSPostgresPort}
   RDSPostgresConnectionSecretName:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - ${self:provider.stage}/${self:service}
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretName, param:RDSPostgresConnectionSecretName, ''}
-  RDSPostgresConnectionSecretRotationSchedule:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !Ref RDSPostgresConnectionSecretRotationSchedule
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretRotationSchedule, param:RDSPostgresConnectionSecretRotationSchedule, ''}
-  RDSPostgresConnectionSecretTargetAttachment:
-    Value:
-      Fn::If:
-        - CreateRDSPostgres
-        - !Ref RDSPostgresConnectionSecretTargetAttachment
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.RDSPostgresConnectionSecretTargetAttachment, param:RDSPostgresConnectionSecretTargetAttachment, ''}
+    Description: The name of the secret that contains the connection information of the RDS Postgres instance
+    Value: ${self:variables.values.RDSPostgresConnectionSecretName}
   VpcId:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref VPC
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.VpcId, param:VpcId, env:VPC_ID, ''}
-  SecretsManagerVPCEndpoint:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref SecretsManagerVPCEndpoint
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.SecretsManagerVPCEndpoint, param:SecretsManagerVPCEndpoint, ''}
-  InternetGateway:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref InternetGateway
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.InternetGateway, param:InternetGateway, env:INTERNET_GATEWAY_ID, ''}
-  GatewayAttachment:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref GatewayAttachment
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.GatewayAttachment, param:GatewayAttachment, ''}
-  NatGatewayOneAttachment:
-    Value:
-      Fn::If:
-        - CreateNatGateways
-        - !Ref NatGatewayOneAttachment
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayOneAttachment, param:NatGatewayOneAttachment, ''}
-  NatGatewayOne:
-    Value:
-      Fn::If:
-        - CreateNatGateways
-        - !Ref NatGatewayOne
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayOne, param:NatGatewayOne, env:NAT_GATEWAY_ONE_ID, ''}
-  NatGatewayTwoAttachment:
-    Value:
-      Fn::If:
-        - CreateNatGateways
-        - !Ref NatGatewayTwoAttachment
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayTwoAttachment, param:NatGatewayTwoAttachment, ''}
-  NatGatewayTwo:
-    Value:
-      Fn::If:
-        - CreateNatGateways
-        - !Ref NatGatewayTwo
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.NatGatewayTwo, param:NatGatewayTwo, env:NAT_GATEWAY_TWO_ID, ''}
+    Description: The ID of the VPC
+    Value: ${self:variables.values.VpcId}
+  VPCDefaultSecurityGroup:
+    Description: The ID of the default security group of the VPC
+    Value: ${self:variables.values.VPCDefaultSecurityGroup}
   PublicSubnetOne:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicSubnetOne
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetOne, param:PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
+    Description: The ID of the public subnet one
+    Value: ${self:variables.values.PublicSubnetOne}
   PublicSubnetTwo:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicSubnetTwo
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetTwo, param:PublicSubnetTwo, env:PUBLIC_SUBNET_TWO_ID, ''}
-  PublicRoute:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicRoute
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicRoute, param:PublicRoute, ''}
-  PublicRouteTable:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicRouteTable
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicRouteTable, param:PublicRouteTable, ''}
-  PublicSubnetOneRouteTableAssociation:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicSubnetOneRouteTableAssociation
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetOneRouteTableAssociation, param:PublicSubnetOneRouteTableAssociation, ''}
-  PublicSubnetTwoRouteTableAssociation:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicSubnetTwoRouteTableAssociation
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PublicSubnetTwoRouteTableAssociation, param:PublicSubnetTwoRouteTableAssociation, ''}
+    Description: The ID of the public subnet two
+    Value: ${self:variables.values.PublicSubnetTwo}
   PrivateSubnetOne:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateSubnetOne
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateSubnetOne, param:PrivateSubnetOne, env:PRIVATE_SUBNET_ONE, ''}
-  PrivateRouteTableOne:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateRouteTableOne
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTableOne, param:PrivateRouteTableOne, ''}
-  PrivateRouteOne:
-    Value:
-      Fn::If:
-        - CreateNatGateways
-        - !Ref PrivateRouteOne
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteOne, param:PrivateRouteOne, ''}
+    Description: The ID of the private subnet one
+    Value: ${self:variables.values.PrivateSubnetOne}
   PrivateSubnetTwo:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateSubnetTwo
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateSubnetTwo, param:PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO, ''}
-  PrivateRouteTableTwo:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateRouteTableTwo
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTableTwo, param:PrivateRouteTableTwo, ''}
-  PrivateRouteTwo:
-    Value:
-      Fn::If:
-        - CreateNatGateways
-        - !Ref PrivateRouteTwo
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.PrivateRouteTwo, param:PrivateRouteTwo, ''}
+    Description: The ID of the private subnet two
+    Value: ${self:variables.values.PrivateSubnetTwo}
   Cloud9env:
-    Value:
-      Fn::If:
-        - CreateCloud9Environment
-        - !Ref Cloud9env
-        - ${cf:${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}.Cloud9env, param:Cloud9env, ''}
+    Description: The name of the Cloud9 environment
+    Value: ${self:variables.values.Cloud9env}
+  

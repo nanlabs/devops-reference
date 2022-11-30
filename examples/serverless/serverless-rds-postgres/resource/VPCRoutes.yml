@@ -3,41 +3,41 @@ Resources:
     Type: AWS::EC2::Route
     Condition: CreateNatGateways
     Properties:
-      RouteTableId: ${self:resources.Outputs.PrivateRouteTableOne.Value}
+      RouteTableId: !Ref PrivateRouteTableOne
       DestinationCidrBlock: "0.0.0.0/0"
-      NatGatewayId: ${self:resources.Outputs.NatGatewayOne.Value}
+      NatGatewayId: !Ref NatGatewayOne
 
   PrivateRouteTableOne:
     Type: AWS::EC2::RouteTable
     Condition: CreateNetworkResources
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
 
   PrivateRouteTwo:
     Type: AWS::EC2::Route
     Condition: CreateNatGateways
     Properties:
-      RouteTableId: ${self:resources.Outputs.PrivateRouteTableTwo.Value}
+      RouteTableId: !Ref PrivateRouteTableTwo
       DestinationCidrBlock: "0.0.0.0/0"
-      NatGatewayId: ${self:resources.Outputs.NatGatewayTwo.Value}
+      NatGatewayId: !Ref NatGatewayTwo
 
   PrivateRouteTableTwo:
     Type: AWS::EC2::RouteTable
     Condition: CreateNetworkResources
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
 
   PublicRoute:
     Type: AWS::EC2::Route
     Condition: CreateVpc
     DependsOn: GatewayAttachment
     Properties:
-      RouteTableId: ${self:resources.Outputs.PublicRouteTable.Value}
+      RouteTableId: !Ref PublicRouteTable
       DestinationCidrBlock: "0.0.0.0/0"
-      GatewayId: ${self:resources.Outputs.InternetGateway.Value}
+      GatewayId: !Ref InternetGateway
 
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
     Condition: CreateVpc
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}

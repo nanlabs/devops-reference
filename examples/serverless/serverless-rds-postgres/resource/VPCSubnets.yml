@@ -3,7 +3,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Condition: CreateNetworkResources
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
       CidrBlock:
         Fn::Select:
           - 0
@@ -20,14 +20,14 @@ Resources:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Condition: CreateNetworkResources
     Properties:
-      SubnetId: ${self:resources.Outputs.PrivateSubnetOne.Value}
-      RouteTableId: ${self:resources.Outputs.PrivateRouteTableOne.Value}
+      SubnetId: !Ref PrivateSubnetOne
+      RouteTableId: !Ref PrivateRouteTableOne
 
   PrivateSubnetTwo:
     Type: AWS::EC2::Subnet
     Condition: CreateNetworkResources
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
       CidrBlock:
         Fn::Select:
           - 1
@@ -44,14 +44,14 @@ Resources:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Condition: CreateNetworkResources
     Properties:
-      SubnetId: ${self:resources.Outputs.PrivateSubnetTwo.Value}
-      RouteTableId: ${self:resources.Outputs.PrivateRouteTableTwo.Value}
+      SubnetId: !Ref PrivateSubnetTwo
+      RouteTableId: !Ref PrivateRouteTableTwo
 
   PublicSubnetOne:
     Type: AWS::EC2::Subnet
     Condition: CreateVpc
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
       CidrBlock:
         Fn::Select:
           - 2
@@ -68,14 +68,14 @@ Resources:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Condition: CreateVpc
     Properties:
-      SubnetId: ${self:resources.Outputs.PublicSubnetOne.Value}
-      RouteTableId: ${self:resources.Outputs.PublicRouteTable.Value}
+      SubnetId: !Ref PublicSubnetOne
+      RouteTableId: !Ref PublicRouteTable
 
   PublicSubnetTwo:
     Type: AWS::EC2::Subnet
     Condition: CreateVpc
     Properties:
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
       CidrBlock:
         Fn::Select:
           - 3
@@ -92,5 +92,5 @@ Resources:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Condition: CreateVpc
     Properties:
-      SubnetId: ${self:resources.Outputs.PublicSubnetTwo.Value}
-      RouteTableId: ${self:resources.Outputs.PublicRouteTable.Value}
+      SubnetId: !Ref PublicSubnetTwo
+      RouteTableId: !Ref PublicRouteTable

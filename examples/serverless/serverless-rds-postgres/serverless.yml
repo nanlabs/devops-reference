@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'RDS'}
+service: ${env:SERVICE_NAME, 'RDSPostgres'}
 
 useDotenv: true
 
@@ -14,6 +14,11 @@ provider:
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+
+# variables are used to reference resources created in this stack and other stacks
+# based on the service name, stage, conditions, and region.
+# Check out the content of the file to see how it works.
+variables: ${file(./variables.yml)}
 
 resources:
   - ${file(./resource/Conditions.yml)}

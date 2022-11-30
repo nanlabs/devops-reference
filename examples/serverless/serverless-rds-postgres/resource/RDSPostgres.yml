@@ -10,7 +10,6 @@ Resources:
         GenerateStringKey: password
         PasswordLength: 32
         ExcludePunctuation: true
-        ExcludeCaracters: "/@\"'\\"
       Tags:
         - Key: Name
           Value: ${self:provider.stage}/RDS
@@ -24,12 +23,12 @@ Resources:
       HostedRotationLambda:
         RotationType: PostgreSQLSingleUser
         RotationLambdaName: PostgreSQLSingleUser
-        VpcSecurityGroupIds: ${self:resources.Outputs.VPCDefaultSecurityGroup.Value}
+        VpcSecurityGroupIds: ${self:variables.values.VPCDefaultSecurityGroup}
         VpcSubnetIds:
           Fn::Join:
             - ","
-            - - ${self:resources.Outputs.PrivateSubnetOne.Value}
-              - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+            - - ${self:variables.values.PrivateSubnetOne}
+              - ${self:variables.values.PrivateSubnetTwo}
       RotationRules:
         Duration: 2h
         ScheduleExpression: "cron(0 8 1 * ? *)"
@@ -38,13 +37,11 @@ Resources:
     Type: AWS::SecretsManager::SecretTargetAttachment
     Condition: CreateRDSPostgres
     Properties:
-      SecretId:
-        Ref: RDSPostgresConnectionSecret
-      TargetId:
-        Ref: RDSPostgreSqlInstance
+      SecretId: !Ref RDSPostgresConnectionSecret
+      TargetId: !Ref RDSPostgresInstance
       TargetType: AWS::DocDB::DBCluster
 
-  RDSPostgreSqlInstance:
+  RDSPostgresInstance:
     Type: AWS::RDS::DBInstance
     Condition: CreateRDSPostgres
     Properties:
@@ -59,18 +56,18 @@ Resources:
       AllocatedStorage: 20
       DBName: ${self:custom.postgres.database}
       DBInstanceClass: db.t4g.small
-      DBSubnetGroupName: ${self:resources.Outputs.RDSSubnetGroup.Value}
+      DBSubnetGroupName: !Ref RDSPostgresSubnetGroup
       Engine: postgres
       PubliclyAccessible: false
-      VpcSecurityGroupIds:
-        - ${self:resources.Outputs.RDSSecurityGroup.Value}
+      VPCSecurityGroups:
+        - !Ref RDSPostgresSecurityGroup
 
   RDSPostgresSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Condition: CreateRDSPostgres
     Properties:
       GroupDescription: Allow HTTP and HTTPS from anywhere
-      VpcId: ${self:resources.Outputs.VpcId.Value}
+      VpcId: ${self:variables.values.VpcId}
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 5432
@@ -91,8 +88,8 @@ Resources:
       DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-RDS-subnet-group
       DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group
       SubnetIds:
-        - ${self:resources.Outputs.PrivateSubnetOne.Value}
-        - ${self:resources.Outputs.PrivateSubnetTwo.Value}
+        - ${self:variables.values.PrivateSubnetOne}
+        - ${self:variables.values.PrivateSubnetTwo}
       Tags:
         - Key: Name
           Value: ${self:service}-${self:provider.stage}-RDS-subnet-group
