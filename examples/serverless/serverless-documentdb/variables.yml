@@ -4,10 +4,10 @@
 # where the resources were created.
 externalStack: ${self:service}-${env:USE_EXISTING_RESOURCES_FROM_STAGE, ''}
 defaults:
-  documentDBSecurityGroup: ${cf:${self:externalStack}.DocumentDBSecurityGroup, param:DocumentDBSecurityGroup, ''}
-  documentDBClusterEndpoint: ${cf:${self:externalStack}.DocumentDBClusterEndpoint, param:DocumentDBClusterEndpoint, ''}
-  documentDBClusterPort: ${cf:${self:externalStack}.DocumentDBClusterPort, param:DocumentDBClusterPort, ''}
-  documentDBConnectionSecretName: ${cf:${self:externalStack}.DocumentDBConnectionSecretName, param:DocumentDBConnectionSecretName, ''}
+  documentDBSecurityGroup: ${cf:${self:variables.externalStack}.DocumentDBSecurityGroup, param:DocumentDBSecurityGroup, ''}
+  documentDBClusterEndpoint: ${cf:${self:variables.externalStack}.DocumentDBClusterEndpoint, param:DocumentDBClusterEndpoint, ''}
+  documentDBClusterPort: ${cf:${self:variables.externalStack}.DocumentDBClusterPort, param:DocumentDBClusterPort, ''}
+  documentDBConnectionSecretName: ${cf:${self:variables.externalStack}.DocumentDBConnectionSecretName, param:DocumentDBConnectionSecretName, ''}
   vpcId: ${cf:${self:variables.externalStack}.VpcId, param:VpcId, env:VPC_ID, ''}
   defaultSecurityGroup: ${cf:${self:variables.externalStack}.VPCDefaultSecurityGroup, param:VPCDefaultSecurityGroup, ''}
   publicSubnetOne: ${cf:${self:variables.externalStack}.PublicSubnetOne, param:PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
