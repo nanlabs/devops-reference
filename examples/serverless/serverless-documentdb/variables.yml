@@ -21,80 +21,67 @@ defaults:
 # The following are the values based on conditions.
 values:
   DocumentDBSecurityGroup:
-    Value:
-      Fn::If:
-        - CreateDocumentDBCluster
-        - !Ref DocumentDBSecurityGroup
-        - ${self:variables.defaults.documentDBSecurityGroup}
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !Ref DocumentDBSecurityGroup
+      - ${self:variables.defaults.documentDBSecurityGroup}
   DocumentDBClusterEndpoint:
-    Value:
-      Fn::If:
-        - CreateDocumentDBCluster
-        - !GetAtt DocumentDBCluster.Endpoint
-        - ${self:variables.defaults.documentDBClusterEndpoint}
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !GetAtt DocumentDBCluster.Endpoint
+      - ${self:variables.defaults.documentDBClusterEndpoint}
   DocumentDBClusterPort:
-    Value:
-      Fn::If:
-        - CreateDocumentDBCluster
-        - !GetAtt DocumentDBCluster.Port
-        - ${self:variables.defaults.documentDBClusterPort}
+    Fn::If:
+      - CreateDocumentDBCluster
+      - !GetAtt DocumentDBCluster.Port
+      - ${self:variables.defaults.documentDBClusterPort}
   DocumentDBConnectionSecretName:
-    Value:
-      Fn::If:
-        - CreateDocumentDBCluster
-        - ${self:provider.stage}/${self:service}
-        - ${self:variables.defaults.documentDBConnectionSecretName}
+    Fn::If:
+      - CreateDocumentDBCluster
+      - ${self:provider.stage}/${self:service}
+      - ${self:variables.defaults.documentDBConnectionSecretName}
   VpcId:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref VPC
-        - ${self:variables.defaults.vpcId}
+    Fn::If:
+      - CreateVpc
+      - !Ref VPC
+      - ${self:variables.defaults.vpcId}
   VPCDefaultSecurityGroup:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref VPCDefaultSecurityGroup
-        - ${self:variables.defaults.defaultSecurityGroup}
+    Fn::If:
+      - CreateVpc
+      - !Ref VPCDefaultSecurityGroup
+      - ${self:variables.defaults.defaultSecurityGroup}
   PublicSubnetOne:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicSubnetOne
-        - ${self:variables.defaults.publicSubnetOne}
+    Fn::If:
+      - CreateVpc
+      - !Ref PublicSubnetOne
+      - ${self:variables.defaults.publicSubnetOne}
   PublicSubnetTwo:
-    Value:
-      Fn::If:
-        - CreateVpc
-        - !Ref PublicSubnetTwo
-        - ${self:variables.defaults.publicSubnetTwo}
+    Fn::If:
+      - CreateVpc
+      - !Ref PublicSubnetTwo
+      - ${self:variables.defaults.publicSubnetTwo}
   PrivateSubnetOne:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateSubnetOne
-        - ${self:variables.defaults.privateSubnetOne}
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateSubnetOne
+      - ${self:variables.defaults.privateSubnetOne}
   PrivateRouteTableOne:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateRouteTableOne
-        - ${self:variables.defaults.privateRouteTableOne}
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateRouteTableOne
+      - ${self:variables.defaults.privateRouteTableOne}
   PrivateSubnetTwo:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateSubnetTwo
-        - ${self:variables.defaults.privateSubnetTwo}
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateSubnetTwo
+      - ${self:variables.defaults.privateSubnetTwo}
   PrivateRouteTableTwo:
-    Value:
-      Fn::If:
-        - CreateNetworkResources
-        - !Ref PrivateRouteTableTwo
-        - ${self:variables.defaults.privateRouteTableTwo}
+    Fn::If:
+      - CreateNetworkResources
+      - !Ref PrivateRouteTableTwo
+      - ${self:variables.defaults.privateRouteTableTwo}
   Cloud9env:
-    Value:
-      Fn::If:
-        - CreateCloud9Environment
-        - !Ref Cloud9env
-        - ${self:variables.defaults.cloud9env}
+    Fn::If:
+      - CreateCloud9Environment
+      - !Ref Cloud9env
+      - ${self:variables.defaults.cloud9env}
