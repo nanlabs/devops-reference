@@ -22,54 +22,54 @@ values:
     Fn::If:
       - CreateRDSPostgres
       - !Ref RDSPostgresSecurityGroup
-      - ${self:variables.values.defaults.rdsPostgresSecurityGroup}
+      - ${self:variables.defaults.rdsPostgresSecurityGroup}
   RDSPostgresEndpoint:
     Fn::If:
       - CreateRDSPostgres
       - !GetAtt RDSPostgresInstance.Endpoint.Address
-      - ${self:variables.values.defaults.rdsPostgresEndpoint}
+      - ${self:variables.defaults.rdsPostgresEndpoint}
   RDSPostgresPort:
     Fn::If:
       - CreateRDSPostgres
       - !GetAtt RDSPostgresInstance.Endpoint.Port
-      - ${self:variables.values.defaults.rdsPostgresPort}
+      - ${self:variables.defaults.rdsPostgresPort}
   RDSPostgresConnectionSecretName:
     Fn::If:
       - CreateRDSPostgres
       - ${self:provider.stage}/${self:service}
-      - ${self:variables.values.defaults.rdsPostgresConnectionSecretName}
+      - ${self:variables.defaults.rdsPostgresConnectionSecretName}
   VpcId:
     Fn::If:
       - CreateVpc
       - !Ref VPC
-      - ${self:variables.values.defaults.vpcId}
+      - ${self:variables.defaults.vpcId}
   VPCDefaultSecurityGroup:
     Fn::If:
       - CreateVpc
       - !GetAtt VPC.DefaultSecurityGroup
-      - ${self:variables.values.defaults.defaultSecurityGroup}
+      - ${self:variables.defaults.defaultSecurityGroup}
   PublicSubnetOne:
     Fn::If:
       - CreateVpc
       - !Ref PublicSubnetOne
-      - ${self:variables.values.defaults.publicSubnetOne}
+      - ${self:variables.defaults.publicSubnetOne}
   PublicSubnetTwo:
     Fn::If:
       - CreateVpc
       - !Ref PublicSubnetTwo
-      - ${self:variables.values.defaults.publicSubnetTwo}
+      - ${self:variables.defaults.publicSubnetTwo}
   PrivateSubnetOne:
     Fn::If:
       - CreateNetworkResources
       - !Ref PrivateSubnetOne
-      - ${self:variables.values.defaults.privateSubnetOne}
+      - ${self:variables.defaults.privateSubnetOne}
   PrivateSubnetTwo:
     Fn::If:
       - CreateNetworkResources
       - !Ref PrivateSubnetTwo
-      - ${self:variables.values.defaults.privateSubnetTwo}
+      - ${self:variables.defaults.privateSubnetTwo}
   Cloud9env:
     Fn::If:
       - CreateCloud9Environment
       - !Ref Cloud9env
-      - ${self:variables.values.defaults.cloud9env}
+      - ${self:variables.defaults.cloud9env}
