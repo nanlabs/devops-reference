@@ -1,4 +1,3 @@
-Transform: AWS::SecretsManager-2020-07-23
 Resources:
   DocumentDBCluster:
     Type: AWS::DocDB::DBCluster
@@ -16,48 +15,6 @@ Resources:
       DBSubnetGroupName: !Ref DocumentDBSubnetGroup
       VpcSecurityGroupIds:
         - !Ref DocumentDBSecurityGroup
-
-  DocumentDBConnectionSecret:
-    Type: AWS::SecretsManager::Secret
-    Condition: CreateDocumentDBCluster
-    Properties:
-      Name: ${self:provider.stage}/${self:service}
-      Description: DocumentDB Cluster Connection Secret
-      GenerateSecretString:
-        SecretStringTemplate: '{ "username": "${self:custom.documentdb.masterUsername}", "database": "${self:custom.documentdb.database}" }'
-        GenerateStringKey: password
-        PasswordLength: 32
-        ExcludePunctuation: true
-      Tags:
-        - Key: Name
-          Value: ${self:provider.stage}/DocumentDB
-
-  DocumentDBConnectionSecretRotationSchedule:
-    Type: AWS::SecretsManager::RotationSchedule
-    Condition: CreateDocumentDBCluster
-    DependsOn: DocumentDBConnectionSecretTargetAttachment
-    Properties:
-      SecretId: !Ref DocumentDBConnectionSecret
-      HostedRotationLambda:
-        RotationType: MongoDBSingleUser
-        RotationLambdaName: MongoDBSingleUser
-        VpcSecurityGroupIds: ${self:variables.values.VPCDefaultSecurityGroup}
-        VpcSubnetIds:
-          Fn::Join:
-            - ","
-            - - ${self:variables.values.PrivateSubnetOne}
-              - ${self:variables.values.PrivateSubnetTwo}
-      RotationRules:
-        Duration: 2h
-        ScheduleExpression: "cron(0 8 1 * ? *)"
-
-  DocumentDBConnectionSecretTargetAttachment:
-    Type: AWS::SecretsManager::SecretTargetAttachment
-    Condition: CreateDocumentDBCluster
-    Properties:
-      SecretId: !Ref DocumentDBConnectionSecret
-      TargetId: !Ref DocumentDBCluster
-      TargetType: AWS::DocDB::DBCluster
 
   DocumentDBInstanceReaderOne:
     Type: AWS::DocDB::DBInstance
