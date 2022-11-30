@@ -48,7 +48,7 @@ values:
   VPCDefaultSecurityGroup:
     Fn::If:
       - CreateVpc
-      - !Ref VPCDefaultSecurityGroup
+      - !GetAtt VPC.DefaultSecurityGroup
       - ${self:variables.defaults.defaultSecurityGroup}
   PublicSubnetOne:
     Fn::If:
