@@ -40,7 +40,7 @@ Resources:
       HostedRotationLambda:
         RotationType: MongoDBSingleUser
         RotationLambdaName: MongoDBSingleUser
-        VpcSecurityGroupIds: ${self:variables.values.VpcSecurityGroupIds}
+        VpcSecurityGroupIds: ${self:variables.values.VPCDefaultSecurityGroup}
         VpcSubnetIds:
           Fn::Join:
             - ","
