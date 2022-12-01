@@ -36,6 +36,10 @@ provider:
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
   iamRoleStatements:
     - Effect: Allow
       Action:
