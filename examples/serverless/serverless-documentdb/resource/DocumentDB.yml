@@ -13,8 +13,22 @@ Resources:
           - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
           - SecretName: !Ref DocumentDBConnectionSecret
       DBSubnetGroupName: !Ref DocumentDBSubnetGroup
+      DBClusterParameterGroupName: !Ref DocumentDBClusterParameterGroup
       VpcSecurityGroupIds:
         - !Ref DocumentDBSecurityGroup
+
+  DocumentDBClusterParameterGroup:
+    Type: AWS::DocDB::DBClusterParameterGroup
+    Condition: CreateDocumentDBCluster
+    Properties:
+      Description: DocumentDB cluster parameter group
+      Name: !Sub ${self:custom.documentdb.clusterIdentifier}-cluster-parameter-group
+      Family: docdb4.0
+      Parameters:
+        tls: enabled
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-DocumentDBClusterParameterGroup
 
   DocumentDBInstanceReaderOne:
     Type: AWS::DocDB::DBInstance
