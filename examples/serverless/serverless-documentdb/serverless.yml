@@ -8,7 +8,7 @@ custom:
     masterUsername: ${param:DocumentDBMasterUsername, env:DOCUMENTDB_MASTER_USERNAME}
     database: ${param:DocumentDBDatabaseName, env:DOCUMENTDB_DATABASE_NAME}
   vpc:
-    cidr: ${param:VpcCird, env:VPC_CIDR, '10.0.0.0/16'}
+    cidr: ${param:VpcCidr, env:VPC_CIDR, '10.0.0.0/16'}
 
 provider:
   name: aws

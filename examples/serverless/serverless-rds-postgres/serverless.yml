@@ -7,7 +7,7 @@ custom:
     masterUsername: ${param:PostgresMasterUsername, env:RDS_POSTGRES_MASTER_USERNAME}
     database: ${param:PostgresDatabaseName, env:RDS_POSTGRES_DATABASE_NAME}
   vpc:
-    cidr: ${param:VpcCird, env:VPC_CIDR, '10.0.0.0/16'}
+    cidr: ${param:VpcCidr, env:VPC_CIDR, '10.0.0.0/16'}
 
 provider:
   name: aws
