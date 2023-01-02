@@ -1,3 +1,0 @@
-Type: AWS::Logs::LogGroup
-Properties:
-  LogGroupName: ${self:service}-${self:provider.stage}-logs

@@ -1,0 +1,124 @@
+Resources:
+  GlueConnection:
+    Type: AWS::Glue::Connection
+    Properties:
+      CatalogId: !Ref AWS::AccountId
+      ConnectionInput:
+        ConnectionType: NETWORK
+        ConnectionProperties:
+          Name: nanglue-net
+          Description: NaNGlue Network
+          Type: NETWORK
+        PhysicalConnectionRequirements:
+          AvailabilityZone: ${env:AWS_AVAILABILITY_ZONE}
+          SecurityGroupIdList:
+            - ${self:resources.Outputs.SecurityGroup.Value}
+          SubnetId: ${env:SUBNET_ID}
+    GlueAccessLogs:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        LogGroupName: ${self:service}-${self:provider.stage}-logs
+    GlueSecurityGroup:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupName: ${self:service}-${self:provider.stage}-security-group
+        GroupDescription: NaNGlue Security Group
+        SecurityGroupIngress:
+          - IpProtocol: -1
+            Descritpion: Allow all traffic by default
+            CidrIp: 0.0.0.0/0
+        Tags:
+          - Key: name
+            Value: nangluesg
+        VpcId: ${env:VPC_ID}
+    GlueJobRole:
+      Type: AWS::IAM::Role
+      Properties:
+        Path: /NaNGlueJobRole/
+        RoleName: NaNGlueJobRole
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - glue.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: GlueJobPolicy
+            PolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - ec2:DescribeSubnets
+                    - ec2:DescribeSecurityGroups
+                    - ec2:DescribeVpcEndpoints
+                    - ec2:DescribeVpcEndpointServices
+                    - ec2:DescribeRouteTables
+                    - ec2:CreateNetworkInterface
+                  Resource:
+                    - "*"
+                - Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup
+                    - logs:CreateLogStream
+                    - logs:PutLogEvents
+                  Resource:
+                    - "arn:aws:logs:*:*:*"
+                - Effect: Allow
+                  Action:
+                    - s3:GetObject
+                    - s3:PutObject
+                  Resource:
+                    - Fn::Join:
+                        - ":"
+                        - - "arn:aws:s3"
+                          - ""
+                          - ""
+                          - "${self:service}-${self:provider.stage}-glue-bucket-deploy/*"
+                - Effect: Allow
+                  Action:
+                    - ec2:CreateTags
+                    - ec2:DeleteTags
+                  Resource:
+                    - "arn:aws:ec2:*:*:network-interface/*"
+                    - "arn:aws:ec2:*:*:security-group/*"
+                    - "arn:aws:ec2:*:*:instance/*"
+                - Effect: Allow
+                  Action:
+                    - "glue:GetConnection"
+                  Resource:
+                    - Fn::Join:
+                        - ":"
+                        - - "arn:aws:glue"
+                          - Ref: "AWS::Region"
+                          - Ref: "AWS::AccountId"
+                          - "catalog"
+                    - Fn::Join:
+                        - ":"
+                        - - "arn:aws:glue"
+                          - Ref: "AWS::Region"
+                          - Ref: "AWS::AccountId"
+                          - "connection/*"
+                - Effect: "Allow"
+                  Action:
+                    - "ssm:GetParameter"
+                  Resource:
+                    - Fn::Join:
+                        - ":"
+                        - - "arn:aws:ssm"
+                          - Ref: "AWS::Region"
+                          - Ref: "AWS::AccountId"
+                          - "parameter/*"
+                - Effect: "Allow"
+                  Action:
+                    - "secretsmanager:GetSecretValue"
+                  Resource:
+                    - Fn::Join:
+                        - ":"
+                        - - "arn:aws:secretsmanager"
+                          - Ref: "AWS::Region"
+                          - Ref: "AWS::AccountId"
+                          - "secret"
+                          - "*"

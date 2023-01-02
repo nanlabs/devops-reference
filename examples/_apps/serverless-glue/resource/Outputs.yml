@@ -1,0 +1,10 @@
+Outputs:
+  GlueAccessLogsArn:
+    Description: Main Job Access Logs Arn
+    Value:
+      Fn::GetAtt:
+        - GlueAccessLogs
+        - Arn
+  SecurityGroup:
+    Description: NaNGlue Security Group
+    Value: !GetAtt GlueSecurityGroup.GroupId
