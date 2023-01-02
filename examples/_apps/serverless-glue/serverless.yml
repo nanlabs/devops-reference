@@ -23,7 +23,7 @@ provider:
   vpc:
     securityGroupIds:
       - ${env:VPC_SECURITY_GROUP_ID, ''}
-      - ${self:resources.Outputs.SecurityGroup.Value}
+      - !Ref SecurityGroup
     subnetIds:
       - ${env:SUBNET_ID}
 
