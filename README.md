@@ -28,7 +28,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 - [Examples](#examples)
   - [A/B Testing](#ab-testing)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
-  - [Continuous Integration and Delivery](#continuous-integration-and-delivery)
+  - [Continuous Integration, Delivery and Deployment](#continuous-integration-delivery-and-deployment)
     - [GitHub Actions](#github-actions)
   - [Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless](#containers-orchestration-kubernetes-ecs-eks-fargate--and-serverless)
     - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
@@ -72,7 +72,7 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Bash as a Wrapper Utility](./examples/scripts/bash-as-a-wrapper-utility-basic/) - Bash as a wrapper utility for other languages and tools.
 - [Bash as a Wrapper Utility with Easy Options](./examples/scripts/bash-as-a-wrapper-utility-with-easy-options/) - Bash as a wrapper utility for other languages and tools using [Easy Options](./examples/scripts/easy-options/).
 
-### Continuous Integration and Delivery
+### Continuous Integration, Delivery and Deployment
 
 > Collection of examples of CI/CD pipelines using different tools.
 
