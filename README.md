@@ -32,6 +32,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
   - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
   - [Cloud Development Kit](#cloud-development-kit)
+  - [Feature Flags](#feature-flags)
   - [Kubernetes](#kubernetes)
   - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
   - [Terraform](#terraform)
@@ -69,6 +70,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### CI/CD with GitHub Actions
 
+- [Actionlint Playground](https://rhysd.github.io/actionlint/): Static checker for GitHub Actions workflow files.
 - [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
 - [Shell Check](./.github/workflows/shellcheck.yml). This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).
 - [Terraform Check](./.github/workflows/tf-check.yml). This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).
@@ -113,6 +115,10 @@ Collection of examples that solve specific problems using small pieces of code.
 
 > TODO
 
+### Feature Flags
+
+- [Feature flags Post](https://www.atlassian.com/continuous-delivery/principles/feature-flags): How to progressively expose your features with feature flags by IAN BUCHANNAN.
+
 ### Kubernetes
 
 > Collection of Kubernetes manifests that can be used to run local development environments or
@@ -147,7 +153,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ## License
 
-This project is Licensed under the [MIT License](./LICENSE). Please go through the License atleast once before making your contribution. </p>
+This project is Licensed under the [MIT License](./LICENSE). Please go through the License at least once before making your contribution. </p>
 
 ## Contributors
 
