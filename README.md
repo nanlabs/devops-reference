@@ -32,7 +32,6 @@ among other resources that are used in different projects here at [NaN Labs](htt
   - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
   - [Cloud Development Kit](#cloud-development-kit)
-  - [Feature Flags](#feature-flags)
   - [Kubernetes](#kubernetes)
   - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
   - [Terraform](#terraform)
@@ -58,6 +57,7 @@ Collection of examples that solve specific problems using small pieces of code.
 > Here we provide examples of how to implement A/B testing using different technologies.
 
 - [AWS CloudWatch Evidently](./examples/services/aws-cloudwatch-evidently/) - A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application.
+- [Feature flags Post](https://www.atlassian.com/continuous-delivery/principles/feature-flags): How to progressively expose your features with feature flags by IAN BUCHANNAN.
 
 ### Shell Scripting and Utilities
 
@@ -114,10 +114,6 @@ Collection of examples that solve specific problems using small pieces of code.
 ### Cloud Development Kit
 
 > TODO
-
-### Feature Flags
-
-- [Feature flags Post](https://www.atlassian.com/continuous-delivery/principles/feature-flags): How to progressively expose your features with feature flags by IAN BUCHANNAN.
 
 ### Kubernetes
 
