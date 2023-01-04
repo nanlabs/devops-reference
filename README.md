@@ -34,7 +34,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
     - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
     - [DevContainers and Codespaces](#devcontainers-and-codespaces)
     - [Kubernetes](#kubernetes)
-  - [Infrastructure as Code (Terraform, AWS CDK, Serverless Framework, CloudFormation, ...)](#infrastructure-as-code-terraform-aws-cdk-serverless-framework-cloudformation-)
+  - [Infrastructure as Code (Terraform, Serverless Framework, ...)](#infrastructure-as-code-terraform-serverless-framework-)
     - [AWS Amplify](#aws-amplify)
     - [AWS Cloud Development Kit](#aws-cloud-development-kit)
     - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
@@ -133,9 +133,9 @@ Collection of examples that solve specific problems using small pieces of code.
 
 - [Ingress](./examples/kubernetes/ingress/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).
 
-### Infrastructure as Code (Terraform, AWS CDK, Serverless Framework, CloudFormation, ...)
+### Infrastructure as Code (Terraform, Serverless Framework, ...)
 
-> Collection of examples that use Terraform, AWS CDK, Serverless Framework and CloudFormation
+> Collection of examples that use Terraform, AWS CDK, AWS Amplify, Serverless Framework and CloudFormation
 > among other tools that can be used to deploy infrastructure to the Cloud.
 
 #### AWS Amplify
