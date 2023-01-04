@@ -57,6 +57,7 @@ Collection of examples that solve specific problems using small pieces of code.
 > Here we provide examples of how to implement A/B testing using different technologies.
 
 - [AWS CloudWatch Evidently](./examples/services/aws-cloudwatch-evidently/) - A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application.
+- [Feature flags Post](https://www.atlassian.com/continuous-delivery/principles/feature-flags): How to progressively expose your features with feature flags by IAN BUCHANNAN.
 
 ### Shell Scripting and Utilities
 
@@ -69,6 +70,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### CI/CD with GitHub Actions
 
+- [Actionlint Playground](https://rhysd.github.io/actionlint/): Static checker for GitHub Actions workflow files.
 - [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
 - [Shell Check](./.github/workflows/shellcheck.yml). This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).
 - [Terraform Check](./.github/workflows/tf-check.yml). This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).
@@ -147,7 +149,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ## License
 
-This project is Licensed under the [MIT License](./LICENSE). Please go through the License atleast once before making your contribution. </p>
+This project is Licensed under the [MIT License](./LICENSE). Please go through the License at least once before making your contribution. </p>
 
 ## Contributors
 
