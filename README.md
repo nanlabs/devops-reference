@@ -29,15 +29,15 @@ among other resources that are used in different projects here at [NaN Labs](htt
   - [A/B Testing](#ab-testing)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
   - [CI/CD with GitHub Actions](#cicd-with-github-actions)
-  - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
-  - [DevContainers and Codespaces](#devcontainers-and-codespaces)
-  - [Containers Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless](#containers-orchestration-kubernetes-ecs-eks-fargate--and-serverless)
+  - [Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless](#containers-orchestration-kubernetes-ecs-eks-fargate--and-serverless)
+    - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
+    - [DevContainers and Codespaces](#devcontainers-and-codespaces)
     - [Kubernetes](#kubernetes)
-  - [Infrastructure as Code](#infrastructure-as-code)
+  - [Infrastructure as Code (Terraform, AWS CDK, Serverless Framework, CloudFormation, ...)](#infrastructure-as-code-terraform-aws-cdk-serverless-framework-cloudformation-)
     - [AWS Amplify](#aws-amplify)
     - [AWS Cloud Development Kit](#aws-cloud-development-kit)
-  - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
-  - [Terraform](#terraform)
+    - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
+    - [Terraform](#terraform)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contributors](#contributors)
@@ -91,7 +91,12 @@ Collection of examples that solve specific problems using small pieces of code.
   - Pull Requests validation with DangerJS
   - Deployment example with GitHub Pages
 
-### Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)
+### Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless
+
+> Collection of examples that use Kubernetes, ECS, EKS, Fargate, Serverless Framework and CloudFormation
+> among other tools that can be used to to deploy applications
+
+#### Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)
 
 > Collection of examples that use Docker, Docker Compose, Buildpacks among other tools
 > that can be used to run local development environments.
@@ -106,18 +111,13 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Python Buildpack](./examples/buildpacks/python#readme) - Buildpack example for Python applications.
 - [Airflow and Spark environment using Docker and Docker Compose](./examples/docker/airflow/) - Dockerfile and docker-compose.yml to run Airflow locally with initialization scripts.
 
-### DevContainers and Codespaces
+#### DevContainers and Codespaces
 
 > Collection of DevContainers that can be used to run local development environments using VSCode
 > or Cloud Development environments using GitHub Codespaces.
 
 - [AWS Glue](./examples/devcontainers/glue/) - DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.
 - [NodeJS](./examples/devcontainers/nodejs/) - DevContainer for NodeJS development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop NodeJS applications.
-
-### Containers Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless
-
-> Collection of examples that use Kubernetes, ECS, EKS, Fargate, Serverless Framework and CloudFormation
-> among other tools that can be used to to deploy applications
 
 #### Kubernetes
 
@@ -126,7 +126,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 - [Ingress](./examples/kubernetes/ingress/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).
 
-### Infrastructure as Code
+### Infrastructure as Code (Terraform, AWS CDK, Serverless Framework, CloudFormation, ...)
 
 > Collection of examples that use Terraform, AWS CDK, Serverless Framework and CloudFormation
 > among other tools that can be used to deploy infrastructure to the Cloud.
@@ -141,7 +141,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 > TODO
 
-### Serverless Framework and CloudFormation
+#### Serverless Framework and CloudFormation
 
 > Collection of Serverless Framework that can be used to run local development environments
 > and deploy different resources to the Cloud using Serverless Framework and CloudFormation.
@@ -156,7 +156,7 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Serverless Middy](./examples/serverless/serverless-middy/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.
 - [Serverless Middy with Custom Middleware](./examples/serverless/serverless-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.
 
-### Terraform
+#### Terraform
 
 > TODO
 
