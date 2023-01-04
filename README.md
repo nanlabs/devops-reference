@@ -57,15 +57,15 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### A/B Testing
 
-> A/B testing is a method of comparing two versions of a single variable, A and B, to determine which one is more effective.
-> Here we provide examples of how to implement A/B testing using different technologies.
+A/B testing is a method of comparing two versions of a single variable, A and B, to determine which one is more effective.
+Here we provide examples of how to implement A/B testing using different technologies.
 
 - [AWS CloudWatch Evidently](./examples/services/aws-cloudwatch-evidently/) - A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application.
 - [Feature flags Post](https://www.atlassian.com/continuous-delivery/principles/feature-flags): How to progressively expose your features with feature flags by IAN BUCHANNAN.
 
 ### Shell Scripting and Utilities
 
-> Collection of shell utilities and scripts.
+Collection of shell utilities and scripts.
 
 - [When to use shell](https://google.github.io/styleguide/shellguide.html#when-to-use-shell) - A guide from Google on when to use shell scripts.
 - [Easy Options](./examples/scripts/easy-options/) - Easy options for shell scripts.
@@ -74,7 +74,7 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### Continuous Integration, Delivery and Deployment
 
-> Collection of examples of CI/CD pipelines using different tools.
+Collection of examples of CI/CD pipelines using different tools.
 
 #### GitHub Actions
 
@@ -100,8 +100,8 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless
 
-> Collection of examples that use Kubernetes, ECS, EKS, Fargate, Serverless Framework and CloudFormation
-> among other tools that can be used to to deploy applications
+Collection of examples that use Kubernetes, ECS, EKS, Fargate, Serverless Framework and CloudFormation
+among other tools that can be used to to deploy applications
 
 #### Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)
 
@@ -135,8 +135,8 @@ Collection of examples that solve specific problems using small pieces of code.
 
 ### Infrastructure as Code (Terraform, Serverless Framework, ...)
 
-> Collection of examples that use Terraform, AWS CDK, AWS Amplify, Serverless Framework and CloudFormation
-> among other tools that can be used to deploy infrastructure to the Cloud.
+Collection of examples that use Terraform, AWS CDK, AWS Amplify, Serverless Framework and CloudFormation
+among other tools that can be used to deploy infrastructure to the Cloud.
 
 #### AWS Amplify
 
