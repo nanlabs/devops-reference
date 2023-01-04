@@ -1,4 +1,4 @@
-## Deploy a Next.js app to AWS with Amplify
+# NextJS v13 Deployment with AWS Amplify
 
 Deploying a Next.js app can sometimes be a little harder than deploying a regular React app built with a tool like CRA, where by default we only have support for client side rendering, which means it's enough to just create static files at build time, upload them to some storage service and make them public.
 
@@ -6,7 +6,21 @@ We can't follow that same approach for most Next.js apps since this framework pr
 
 There are multiple options out there to host Next.js apps, here we are going to see how to do it using Amplify from AWS.
 
-Amplify will set up everything for us in a very automatic way, we just need to tell it where our codebase is, and then Amplify will deploy every required AWS service behind the scenes, like s3 buckets, lambda functions, CloudFront distributions, etc.
+- [NextJS v13 Deployment with AWS Amplify](#nextjs-v13-deployment-with-aws-amplify)
+  - [Prerequisites](#prerequisites)
+  - [Steps](#steps)
+    - [Create the app](#create-the-app)
+    - [Deploy to Amplify](#deploy-to-amplify)
+    - [Check if SSR is working](#check-if-ssr-is-working)
+
+## Prerequisites
+
+- An AWS account
+- Node.js installed
+
+## Steps
+
+AWS Amplify will set up everything for us in a very automatic way, we just need to tell it where our codebase is, and then it will deploy every required AWS service behind the scenes, like S3 buckets, Lambda functions, CloudFront distributions, etc.
 
 This can be done using the Amplify CLI or with the Amplify dashboard, we are going to do it with the dashboard here since it's easier, although it doesn't have all the available options the CLI provides.
 
@@ -40,7 +54,7 @@ Then Amplify automatically detects the build settings you need based on your cod
 
 Amplify will start building the application, we can check the current status in the dashboard. After 2-3 minutes it will finish and it will provide us an URL for our website, we can visit it and check the website renders correctly.
 
-### Check SSR is working
+### Check if SSR is working
 
 The default app we created with `create-next-app` doesn't have a page that renders with SSR so we can create a new page doing a small SSR example to check it works correctly with Amplify.
 

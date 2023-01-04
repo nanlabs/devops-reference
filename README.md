@@ -31,8 +31,11 @@ among other resources that are used in different projects here at [NaN Labs](htt
   - [CI/CD with GitHub Actions](#cicd-with-github-actions)
   - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
   - [DevContainers and Codespaces](#devcontainers-and-codespaces)
-  - [Cloud Development Kit](#cloud-development-kit)
-  - [Kubernetes](#kubernetes)
+  - [Containers Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless](#containers-orchestration-kubernetes-ecs-eks-fargate--and-serverless)
+    - [Kubernetes](#kubernetes)
+  - [Infrastructure as Code](#infrastructure-as-code)
+    - [AWS Amplify](#aws-amplify)
+    - [AWS Cloud Development Kit](#aws-cloud-development-kit)
   - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
   - [Terraform](#terraform)
 - [Contributing](#contributing)
@@ -111,16 +114,32 @@ Collection of examples that solve specific problems using small pieces of code.
 - [AWS Glue](./examples/devcontainers/glue/) - DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.
 - [NodeJS](./examples/devcontainers/nodejs/) - DevContainer for NodeJS development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop NodeJS applications.
 
-### Cloud Development Kit
+### Containers Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless
 
-> TODO
+> Collection of examples that use Kubernetes, ECS, EKS, Fargate, Serverless Framework and CloudFormation
+> among other tools that can be used to to deploy applications
 
-### Kubernetes
+#### Kubernetes
 
 > Collection of Kubernetes manifests that can be used to run local development environments or
 > to deploy applications to a Kubernetes cluster.
 
 - [Ingress](./examples/kubernetes/ingress/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).
+
+### Infrastructure as Code
+
+> Collection of examples that use Terraform, AWS CDK, Serverless Framework and CloudFormation
+> among other tools that can be used to deploy infrastructure to the Cloud.
+
+#### AWS Amplify
+
+> Collection of examples that use AWS Amplify to deploy applications to the Cloud.
+
+- [AWS Amplify + NextJS 13](./examples/amplify/amplify-nextjs-deployment/) - AWS Amplify example to deploy a NextJS v13 application to the Cloud.
+
+#### AWS Cloud Development Kit
+
+> TODO
 
 ### Serverless Framework and CloudFormation
 
