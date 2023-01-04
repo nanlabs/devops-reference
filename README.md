@@ -28,7 +28,8 @@ among other resources that are used in different projects here at [NaN Labs](htt
 - [Examples](#examples)
   - [A/B Testing](#ab-testing)
   - [Shell Scripting and Utilities](#shell-scripting-and-utilities)
-  - [CI/CD with GitHub Actions](#cicd-with-github-actions)
+  - [Continuous Integration and Delivery](#continuous-integration-and-delivery)
+    - [GitHub Actions](#github-actions)
   - [Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless](#containers-orchestration-kubernetes-ecs-eks-fargate--and-serverless)
     - [Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)](#containers-and-compositions-docker-docker-compose-buildpacks-)
     - [DevContainers and Codespaces](#devcontainers-and-codespaces)
@@ -71,7 +72,13 @@ Collection of examples that solve specific problems using small pieces of code.
 - [Bash as a Wrapper Utility](./examples/scripts/bash-as-a-wrapper-utility-basic/) - Bash as a wrapper utility for other languages and tools.
 - [Bash as a Wrapper Utility with Easy Options](./examples/scripts/bash-as-a-wrapper-utility-with-easy-options/) - Bash as a wrapper utility for other languages and tools using [Easy Options](./examples/scripts/easy-options/).
 
-### CI/CD with GitHub Actions
+### Continuous Integration and Delivery
+
+> Collection of examples of CI/CD pipelines using different tools.
+
+#### GitHub Actions
+
+> Collection of examples of CI/CD pipelines using GitHub Actions.
 
 - [Actionlint Playground](https://rhysd.github.io/actionlint/): Static checker for GitHub Actions workflow files.
 - [Markdown Lint](./.github/workflows/markdownlint.yml). This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).
