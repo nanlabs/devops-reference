@@ -12,9 +12,9 @@ defaults:
   defaultSecurityGroup: ${cf:${self:variables.externalStack}.VPCDefaultSecurityGroup, param:VPCDefaultSecurityGroup, ''}
   publicSubnetOne: ${cf:${self:variables.externalStack}.PublicSubnetOne, param:PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
   publicSubnetTwo: ${cf:${self:variables.externalStack}.PublicSubnetTwo, param:PublicSubnetTwo, env:PUBLIC_SUBNET_TWO_ID, ''}
-  privateSubnetOne: ${cf:${self:variables.externalStack}.PrivateSubnetOne, param:PrivateSubnetOne, env:PRIVATE_SUBNET_ONE, ''}
+  privateSubnetOne: ${cf:${self:variables.externalStack}.PrivateSubnetOne, param:PrivateSubnetOne, env:PRIVATE_SUBNET_ONE_ID, ''}
   privateRouteTableOne: ${cf:${self:variables.externalStack}.PrivateRouteTableOne, param:PrivateRouteTableOne, env:PRIVATE_ROUTE_TABLE_ONE, ''}
-  privateSubnetTwo: ${cf:${self:variables.externalStack}.PrivateSubnetTwo, param:PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO, ''}
+  privateSubnetTwo: ${cf:${self:variables.externalStack}.PrivateSubnetTwo, param:PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO_ID, ''}
   privateRouteTableTwo: ${cf:${self:variables.externalStack}.PrivateRouteTableTwo, param:PrivateRouteTableTwo, env:PRIVATE_ROUTE_TABLE_TWO, ''}
   cloud9env: ${cf:${self:variables.externalStack}.Cloud9env, param:Cloud9env, ''}
 

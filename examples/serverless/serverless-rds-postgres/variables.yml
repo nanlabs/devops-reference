@@ -12,8 +12,8 @@ defaults:
   defaultSecurityGroup: ${cf:${self:variables.externalStack}.VPCDefaultSecurityGroup, param:VPCDefaultSecurityGroup, ''}
   publicSubnetOne: ${cf:${self:variables.externalStack}.PublicSubnetOne, param:PublicSubnetOne, env:PUBLIC_SUBNET_ONE_ID, ''}
   publicSubnetTwo: ${cf:${self:variables.externalStack}.PublicSubnetTwo, param:PublicSubnetTwo, env:PUBLIC_SUBNET_TWO_ID, ''}
-  privateSubnetOne: ${cf:${self:variables.externalStack}.PrivateSubnetOne, param:PrivateSubnetOne, env:PRIVATE_SUBNET_ONE, ''}
-  privateSubnetTwo: ${cf:${self:variables.externalStack}.PrivateSubnetTwo, param:PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO, ''}
+  privateSubnetOne: ${cf:${self:variables.externalStack}.PrivateSubnetOne, param:PrivateSubnetOne, env:PRIVATE_SUBNET_ONE_ID, ''}
+  privateSubnetTwo: ${cf:${self:variables.externalStack}.PrivateSubnetTwo, param:PrivateSubnetTwo, env:PRIVATE_SUBNET_TWO_ID, ''}
   cloud9env: ${cf:${self:variables.externalStack}.Cloud9env, param:Cloud9env, ''}
 
 # The following are the values based on conditions.
