@@ -26,7 +26,7 @@ jobs:
 
   tf-check:
     name: Terraform Check
-    uses: ./.github/workflows/shellcheck.yml
+    uses: ./.github/workflows/tf-check.yml
 
   markdownlint:
     name: Markdownlint
