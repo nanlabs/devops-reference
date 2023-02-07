@@ -5,13 +5,10 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_call:
 
 jobs:
   pr-review:
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
 
     steps:

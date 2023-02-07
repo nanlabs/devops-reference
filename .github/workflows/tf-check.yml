@@ -1,13 +1,7 @@
 name: Terraform Check
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - main
+  workflow_call:
 
 jobs:
   tf-fmt-check:
