@@ -67,6 +67,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 #### Continuous Integration, Delivery and Deployment
 
 - [Actionlint Playground](https://rhysd.github.io/actionlint/) - Static checker for GitHub Actions workflow files. _Keywords: GitHub Actions, Actionlint_
+- [Automate Pull Requests Reviews using Danger](https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/pr-review.yml) - This workflow automates the initial review of Pull Requests using [Danger.js](https://danger.systems/js/). This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your teams norms. Leaving humans to think about harder problems. _Keywords: GitHub Actions, Danger.js_
 - [Automation Seed example](https://github.com/nanlabs/automation-seed/tree/main/.github/workflows) - Different workflows to validate the code and deploy an automation report page. _Keywords: GitHub Actions, Automation_
 - [Markdown Lint](https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/markdownlint.yml) - This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint). _Keywords: GitHub Actions, Markdown Lint_
 - [React Webpack Boilerplate](https://github.com/nanlabs/react-webpack-boilerplate/tree/main/.github/workflows) - Different workflows to validate the code and deploy a React application. _Keywords: GitHub Actions, React, Webpack_
