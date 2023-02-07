@@ -60,7 +60,7 @@
     },
     {
       "name": "Bash as a Wrapper Utility with Easy Options",
-      "description": "Bash as a wrapper utility for other languages and tools using [Easy Options",
+      "description": "Bash as a wrapper utility for other languages and tools using Easy Options",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/bash-as-a-wrapper-utility-with-easy-options/",
       "tags": ["Examples > Shell Scripting and Utilities"],
       "labels": ["Shell Scripting", "Utilities", "Easy Options"]
