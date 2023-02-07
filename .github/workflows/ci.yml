@@ -25,11 +25,11 @@ jobs:
     uses: ./.github/workflows/shellcheck.yml
 
   tf-check:
-    name: Shellcheck
+    name: Terraform Check
     uses: ./.github/workflows/shellcheck.yml
 
   markdownlint:
-    name: Shellcheck
+    name: Markdownlint
     uses: ./.github/workflows/markdownlint.yml
 
   todo:
