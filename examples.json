@@ -119,7 +119,7 @@
       "description": "Dockerfile and docker-compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/glue/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": [
         "Docker",
@@ -135,7 +135,7 @@
       "description": "Dockerfile and docker-compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/localstack/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": [
         "Docker",
@@ -152,7 +152,7 @@
       "description": "Dockerfile and docker-compose.yml to run MongoDB and Mongo Express locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/mongodb/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": ["Docker", "Docker Compose", "MongoDB", "Mongo Express"]
     },
@@ -161,7 +161,7 @@
       "description": "Dockerfile and docker-compose.yml to run Microsoft SQL Server locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/mssql/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": ["Docker", "Docker Compose", "Microsoft SQL Server"]
     },
@@ -170,7 +170,7 @@
       "description": "Dockerfile and docker-compose.yml to run AWS Neptune locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/neptune/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": ["Docker", "Docker Compose", "AWS Neptune"]
     },
@@ -179,7 +179,7 @@
       "description": "Dockerfile and docker-compose.yml to run PostgreSQL locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/postgres/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": ["Docker", "Docker Compose", "PostgreSQL"]
     },
@@ -188,7 +188,7 @@
       "description": "Buildpack example for Python applications.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/buildpacks/python#readme",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": ["Buildpack", "Python"]
     },
@@ -197,7 +197,7 @@
       "description": "Dockerfile and docker-compose.yml to run Airflow locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/airflow/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
+        "Examples > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks, ...)"
       ],
       "labels": ["Docker", "Docker Compose", "Airflow", "Spark"]
     },
@@ -206,7 +206,7 @@
       "description": "DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers/glue/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > DevContainers and Codespaces"
+        "Examples > Containers, Orchestration and Serverless > DevContainers and Codespaces"
       ],
       "labels": [
         "Docker",
@@ -225,7 +225,7 @@
       "description": "DevContainer for NodeJS development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop NodeJS applications.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers/nodejs/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > DevContainers and Codespaces"
+        "Examples > Containers, Orchestration and Serverless > DevContainers and Codespaces"
       ],
       "labels": [
         "Docker",
@@ -241,7 +241,7 @@
       "description": "Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes/ingress/",
       "tags": [
-        "Examples > Containers, Orchestration (Kubernetes, ECS, EKS, Fargate, ...) and Serverless > Kubernetes"
+        "Examples > Containers, Orchestration and Serverless > Kubernetes"
       ],
       "labels": ["Kubernetes", "Ingress", "NGINX Ingress Controller"]
     },
@@ -250,7 +250,7 @@
       "description": "AWS Amplify example to deploy a NextJS v13 application to the Cloud.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/amplify/amplify-nextjs-deployment/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > AWS Amplify"
+        "Examples > Infrastructure as Code > AWS Amplify"
       ],
       "labels": ["AWS Amplify", "NextJS", "NextJS 13"]
     },
@@ -259,7 +259,7 @@
       "description": "Serverless Framework example to deploy an AWS AppSync API using TypeScript. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-nodejs/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS AppSync", "TypeScript"]
     },
@@ -268,7 +268,7 @@
       "description": "Serverless Framework example to deploy an AWS AppSync API using Python. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-python/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS AppSync", "Python"]
     },
@@ -277,7 +277,7 @@
       "description": "Serverless Framework example to deploy an AWS Glue job using Python Shell and PySpark.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-glue/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS Glue", "Python Shell", "PySpark"]
     },
@@ -286,7 +286,7 @@
       "description": "Serverless Framework example to deploy a Neo4j instance in EC2.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-neo4j-ec2/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Neo4j", "EC2"]
     },
@@ -295,7 +295,7 @@
       "description": "Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-s3-local/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Serverless S3 Local"]
     },
@@ -304,7 +304,7 @@
       "description": "Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-documentdb/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "DocumentDB"]
     },
@@ -313,7 +313,7 @@
       "description": "Serverless Framework example to deploy a RDS Postgres cluster with all the necessary resources.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-rds-postgres/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "RDS Postgres"]
     },
@@ -322,7 +322,7 @@
       "description": "Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Middy"]
     },
@@ -331,7 +331,7 @@
       "description": "Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy-custom-middleware/",
       "tags": [
-        "Examples > Infrastructure as Code (Terraform, Serverless Framework, ...) > Serverless Framework and CloudFormation"
+        "Examples > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Middy", "Custom Middleware"]
     }
