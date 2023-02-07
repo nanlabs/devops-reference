@@ -13,4 +13,4 @@ jobs:
       - name: Terraform Fmt
         uses: dflook/terraform-fmt-check@v1.24
         with:
-          path: examples/terraform
+          path: .
