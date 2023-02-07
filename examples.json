@@ -101,6 +101,13 @@
       "labels": ["GitHub Actions", "Todo"]
     },
     {
+      "name": "Automate Pull Requests Reviews using Danger",
+      "description": "This workflow automates the initial review of Pull Requests using [Danger.js](https://danger.systems/js/). This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your teams norms. Leaving humans to think about harder problems.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/pr-review.yml",
+      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": ["GitHub Actions", "Danger.js"]
+    },
+    {
       "name": "Automation Seed example",
       "description": "Different workflows to validate the code and deploy an automation report page.",
       "url": "https://github.com/nanlabs/automation-seed/tree/main/.github/workflows",
