@@ -22,22 +22,22 @@ on:
 jobs:
   shellcheck:
     name: Shellcheck
-    uses: ./.github/workflows/shellcheck.yml@main
+    uses: ./.github/workflows/shellcheck.yml
 
   tf-check:
     name: Terraform Check
-    uses: ./.github/workflows/tf-check.yml@main
+    uses: ./.github/workflows/tf-check.yml
 
   markdownlint:
     name: Markdownlint
-    uses: ./.github/workflows/markdownlint.yml@main
+    uses: ./.github/workflows/markdownlint.yml
 
   todo:
     if: github.event_name == 'push'
     name: TODO
-    uses: ./.github/workflows/todo.yml@main
+    uses: ./.github/workflows/todo.yml
 
   pr-review:
     if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
     name: Pull Request Validation
-    uses: ./.github/workflows/pr-review.yml@main
+    uses: ./.github/workflows/pr-review.yml
