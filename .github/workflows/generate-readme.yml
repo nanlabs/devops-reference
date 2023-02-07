@@ -39,6 +39,7 @@ jobs:
         uses: articulate/actions-markdownlint@v1
         with:
           fix: true
+          files: README.md
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
