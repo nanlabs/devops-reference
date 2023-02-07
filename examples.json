@@ -68,7 +68,7 @@
     {
       "name": "Actionlint Playground",
       "description": "Static checker for GitHub Actions workflow files.",
-      "url": "https://rhysd.github.io/actionlint/)",
+      "url": "https://rhysd.github.io/actionlint/",
       "tags": ["Examples > Continuous Integration, Delivery and Deployment"],
       "labels": ["GitHub Actions", "Actionlint"]
     },
