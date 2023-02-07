@@ -21,8 +21,7 @@
 
 </div>
 
-This repository contains different infrastructure components, CI/CD pipelines, automation tools
-among other resources that are used in different projects here at [NaN Labs](https://www.nanlabs.com/).
+This is a curated list of all the Open Source examples and projects we have at [NaN Labs](https://www.nanlabs.com/).
 
 ## Contents
 
