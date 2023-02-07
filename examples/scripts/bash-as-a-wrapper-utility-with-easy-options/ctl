@@ -11,9 +11,9 @@
 ##
 ## Options:
 ##     -h, --help              Show this help text.
-##     -c, --command=COMMAND   Command to run. Allow to pass through parameters directly to docker compose
 ##     -e, --express           Make express UI available
 ##     -v, --volumes           Bring data from volume
+##         --command=COMMAND   Command to run. Allow to pass through parameters directly to docker compose
 ##
 
 set -e

@@ -23,17 +23,17 @@ cp .env.example .env
 ### Running basic mongo
 
 ```sh
-./ctl [-c up]
+./ctl [--command up]
 ```
 
 ### Running basic mongo with express and detach output
 
 ```sh
-./ctl -e [-c up] --detach
+./ctl -e [--command up] --detach
 ```
 
 ### Stop containers (including express)
 
 ```sh
-./ctl -e -c down
+./ctl -e --command down
 ```
