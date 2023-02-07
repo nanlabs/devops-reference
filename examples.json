@@ -41,28 +41,28 @@
       "name": "When to use shell",
       "description": "A guide from Google on when to use shell scripts.",
       "url": "https://google.github.io/styleguide/shellguide.html#when-to-use-shell",
-      "tags": ["Examples > DevOps > Shell Scripting and Utilities"],
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
       "labels": ["Shell Scripting", "Utilities"]
     },
     {
       "name": "Easy Options",
       "description": "Easy options for shell scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/easy-options/",
-      "tags": ["Examples > DevOps > Shell Scripting and Utilities"],
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
       "labels": ["Shell Scripting", "Utilities", "Easy Options"]
     },
     {
       "name": "Bash as a Wrapper Utility",
       "description": "Bash as a wrapper utility for other languages and tools.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/bash-as-a-wrapper-utility-basic/",
-      "tags": ["Examples > DevOps > Shell Scripting and Utilities"],
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
       "labels": ["Shell Scripting", "Utilities"]
     },
     {
       "name": "Bash as a Wrapper Utility with Easy Options",
       "description": "Bash as a wrapper utility for other languages and tools using Easy Options.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/bash-as-a-wrapper-utility-with-easy-options/",
-      "tags": ["Examples > DevOps > Shell Scripting and Utilities"],
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
       "labels": ["Shell Scripting", "Utilities", "Easy Options"]
     },
     {
