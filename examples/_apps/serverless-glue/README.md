@@ -4,19 +4,28 @@ This example app is a full AWS Glue setup that deploys a Glue job using Python S
 and a Glue job using PySpark.
 
 - [Complete AWS Glue example app](#complete-aws-glue-example-app)
+  - [Usage](#usage)
   - [Overview](#overview)
   - [Local Development](#local-development)
     - [Using VSCode + Remote Containers (recommended)](#using-vscode--remote-containers-recommended)
     - [Using Docker Compose manually](#using-docker-compose-manually)
   - [Deployment](#deployment)
 
+## Usage
+
+To install this example to bootstrap your project, run the following command:
+
+```sh
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/_apps/serverless-glue -n my-project
+```
+
 ## Overview
 
 This example was created as a composition of the following examples:
 
-- [Serverless Glue example](../../serverless/serverless-glue/)
-- [AWS Glue docker example](../../docker/glue/)
-- [VSCode DevContainer example](../../devcontainer/glue/)
+- [Serverless Glue example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-glue/)
+- [AWS Glue docker example](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/glue/)
+- [VSCode DevContainer example](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainer/glue/)
 
 ## Local Development
 

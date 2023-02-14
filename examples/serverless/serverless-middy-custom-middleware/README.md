@@ -3,6 +3,14 @@
 We use Serverless Framework to do production ready deployments and local development using
 *serverless-offline*.
 
+## Usage
+
+To install this example to bootstrap your project, run the following command:
+
+```sh
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy-with-custom-middleware -n my-project
+```
+
 ## Requirements
 
 **You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
@@ -56,4 +64,4 @@ npm run deploy -- --verbose --stage <stage>
 
 We recommend the following resources to add local development tools to your project:
 
-- [LocalStack](../../docker/localstack/)
+- [LocalStack](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/localstack/)
