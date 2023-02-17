@@ -1,7 +1,7 @@
 {
-  "name": "nan-middy",
+  "name": "nan-sqs-nodejs",
   "version": "1.0.0",
-  "description": "Serverless Middy + Lambda example",
+  "description": "Serverless sqs with local stack example",
   "main": "index.js",
   "scripts": {
     "deploy": "serverless deploy",

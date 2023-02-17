@@ -44,8 +44,7 @@ npm run invoke:local sendToQueue --data '{ "message": "value"}'
 The command above will enqueue the message on the queue, and after some seconds you will see
 the readFromFirstQueue lambda getting the message and deleting it.
 
-If you have any issue you can run the following command that will list the urls
-of all available queues
+You can also list the available queues with the command below
 
 ```sh
 npm run invoke:local listQueues
