@@ -1,0 +1,89 @@
+service: ${env:SERVICE_NAME, 'sqs-nodejs'}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline-sqs
+  - serverless-offline
+
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+  exclude:
+    - elasticMQ
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+    useChildProcesses: true
+    noPrependStageInUrl: true
+  
+  serverless-offline-sqs:
+    autoCreate: true
+    apiVersion: "2012-11-05"
+    endpoint: http://0.0.0.0:9324 # elasticMQ
+    region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+    skipCacheInvalidation: false
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - SQS:SendMessage
+        - SQS:DeleteMessage
+        - SQS:ReceiveMessage
+        - SQS:GetQueueUrl
+        - SQS:ListQueues
+      Resource: "*"     
+
+functions:
+  listQueues:
+    handler: src/handlers/listQueues.handler
+    description: This lambda will list all the queues for an account
+    events:
+      - http:
+          path: /list
+          method: get
+          cors: true
+
+  sendToQueue:
+    handler: src/handlers/sendToQueue.handler
+    description: This lambda will enqueue a message
+    events:
+      - http:
+          path: /invoke
+          method: post
+          cors: true
+
+  readFromFirstQueue:
+    handler: src/handlers/readFromFirstQueue.handler
+    description: Log messages on sqs queue and delete them
+    events:
+      - sqs:
+          arn:
+            Fn::GetAtt:
+              - myFirstQueue
+              - Arn
+
+resources:
+  Resources:
+    myFirstQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: ${self:service}-${self:provider.stage}-myFirstQueue
