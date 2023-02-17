@@ -115,6 +115,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 - [Serverless Middy with Custom Middleware](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy, Custom Middleware_
 - [Serverless S3 Local](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-s3-local/) - Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local). _Keywords: Serverless Framework, Serverless S3 Local_
 - [Serverless sqs with localstack](./examples/serverless/serverless-sqs-nodejs/) - Serverless Framework example to run SQS with localstack
+
 ## Contributing
 
 - Contributions make the open source community such an amazing place to learn, inspire, and create.
