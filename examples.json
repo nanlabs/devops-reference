@@ -115,11 +115,11 @@
       "labels": ["GitHub Actions", "Automation"]
     },
     {
-      "name": "React Webpack Boilerplate",
+      "name": "React Boilerplate",
       "description": "Different workflows to validate the code and deploy a React application.",
-      "url": "https://github.com/nanlabs/react-webpack-boilerplate/tree/main/.github/workflows",
+      "url": "https://github.com/nanlabs/react-boilerplate/tree/main/.github/workflows",
       "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
-      "labels": ["GitHub Actions", "React", "Webpack"]
+      "labels": ["GitHub Actions", "React"]
     },
     {
       "name": "AWS Glue using Docker and Docker Compose",
