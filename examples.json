@@ -123,7 +123,7 @@
     },
     {
       "name": "AWS Glue using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
+      "description": "Dockerfile and compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/glue/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
@@ -139,7 +139,7 @@
     },
     {
       "name": "Localstack using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.",
+      "description": "Dockerfile and compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/localstack/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
@@ -156,7 +156,7 @@
     },
     {
       "name": "MongoDB + Mongo Express using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml to run MongoDB and Mongo Express locally with initialization scripts.",
+      "description": "Dockerfile and compose.yml to run MongoDB and Mongo Express locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/mongodb/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
@@ -165,7 +165,7 @@
     },
     {
       "name": "Microsoft SQL Server using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml to run Microsoft SQL Server locally with initialization scripts.",
+      "description": "Dockerfile and compose.yml to run Microsoft SQL Server locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/mssql/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
@@ -174,7 +174,7 @@
     },
     {
       "name": "AWS Neptune using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml to run AWS Neptune locally with initialization scripts.",
+      "description": "Dockerfile and compose.yml to run AWS Neptune locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/neptune/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
@@ -183,7 +183,7 @@
     },
     {
       "name": "PostgreSQL using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml to run PostgreSQL locally with initialization scripts.",
+      "description": "Dockerfile and compose.yml to run PostgreSQL locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/postgres/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
@@ -201,7 +201,7 @@
     },
     {
       "name": "Airflow and Spark environment using Docker and Docker Compose",
-      "description": "Dockerfile and docker-compose.yml to run Airflow locally with initialization scripts.",
+      "description": "Dockerfile and compose.yml to run Airflow locally with initialization scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/docker/airflow/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
