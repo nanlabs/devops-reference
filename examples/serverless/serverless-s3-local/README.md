@@ -1,4 +1,4 @@
-# Scans Watcher Service
+# S3 Local Example
 
 We use Serverless Framework and Serverless Compose to do production ready deployments and local development using _serverless-offline_.
 
