@@ -1,6 +1,6 @@
 # S3 Local Example
 
-We use Serverless Framework and Serverless Compose to do production ready deployments and local development using _serverless-offline_.
+We use Serverless Framework to do production ready deployments and local development using _serverless-offline_.
 
 ## Usage
 
