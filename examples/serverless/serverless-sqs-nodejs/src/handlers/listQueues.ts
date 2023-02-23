@@ -3,7 +3,7 @@ import { ListQueuesCommand } from "@aws-sdk/client-sqs";
 
 const sqsClient = new SQSClient({
   region: process.env.AWS_REGION,
-  endpoint: process.env.ELASTICMQ_URL,
+  endpoint: process.env.SQS_CLIENT_URL,
 });
 
 export const handler = async () => {

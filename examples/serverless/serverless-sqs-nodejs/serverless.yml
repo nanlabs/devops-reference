@@ -23,7 +23,7 @@ custom:
   serverless-offline-sqs:
     autoCreate: true
     apiVersion: "2012-11-05"
-    endpoint: http://0.0.0.0:9324 # elasticMQ
+    endpoint: ${env:ELASTICMQ_ENDPOINT, 'http://0.0.0.0:9324'} # elasticMQ
     region: ${opt:region, env:AWS_REGION, 'us-east-1'}
     skipCacheInvalidation: false
 
@@ -34,7 +34,7 @@ provider:
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   environment: 
-    ELASTICMQ_URL: http://localhost:9324
+    SQS_CLIENT_URL: ${env:SQS_CLIENT_URL, 'http://localhost:9324'}
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
