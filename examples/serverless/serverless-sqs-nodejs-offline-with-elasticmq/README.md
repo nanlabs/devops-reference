@@ -1,4 +1,4 @@
-# Serverless SQS offline + TypeScript Example
+# Serverless SQS offline + TypeScript + ElasticMQ Example
 
 We use Serverless Framework to do production ready deployments and local development using
 *serverless-offline*.

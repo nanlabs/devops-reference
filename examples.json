@@ -321,9 +321,9 @@
       "labels": ["Serverless Framework", "Serverless S3 Local"]
     },
     {
-      "name": "Serverless SQS offline + TypeScript Example",
+      "name": "Serverless SQS offline + TypeScript + ElasticMQ Example",
       "description": "Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-nodejs/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-nodejs-offline-with-elasticmq/",
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
@@ -331,7 +331,8 @@
         "Serverless Framework",
         "SQS",
         "Serverless Offline",
-        "Serverless Offline SQS"
+        "Serverless Offline SQS",
+        "ElasticMQ"
       ]
     },
     {
