@@ -2,7 +2,7 @@ import { SQSClient, SendMessageCommand } from "@aws-sdk/client-sqs";
 
 const client = new SQSClient({
   region: process.env.AWS_REGION,
-  endpoint: "http://localhost:9324"
+  endpoint: process.env.ELASTICMQ_URL
 });
 
 export const handler = async (event: { message?: string, queue?: string }) => {

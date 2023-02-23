@@ -1,4 +1,4 @@
-# Serverless Middy + TypeScript Example
+# Serverless SQS offline + TypeScript Example
 
 We use Serverless Framework to do production ready deployments and local development using
 *serverless-offline*.

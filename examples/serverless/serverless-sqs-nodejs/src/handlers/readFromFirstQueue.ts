@@ -4,7 +4,7 @@ import { SQSEvent } from "aws-lambda";
 
 const sqsClient = new SQSClient({
   region: process.env.AWS_REGION,
-  endpoint: "http://localhost:9324",
+  endpoint: process.env.ELASTICMQ_URL,
 });
 
 export const handler = async (event: SQSEvent) => {
