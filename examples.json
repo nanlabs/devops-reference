@@ -69,56 +69,72 @@
       "name": "Actionlint Playground",
       "description": "Static checker for GitHub Actions workflow files.",
       "url": "https://rhysd.github.io/actionlint/",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Actionlint"]
     },
     {
       "name": "Markdown Lint",
       "description": "This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/markdownlint.yml",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Markdown Lint"]
     },
     {
       "name": "Shell Check",
       "description": "This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/shellcheck.yml",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Shell Check"]
     },
     {
       "name": "Terraform Check",
       "description": "This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/tf-check.yml",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Terraform"]
     },
     {
       "name": "Todo to Issue",
       "description": "This workflow scans new commits on the main branch looking for `TODO`s in the code and creates new GitHub issues.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/todo.yml",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Todo"]
     },
     {
       "name": "Automate Pull Requests Reviews using Danger",
       "description": "This workflow automates the initial review of Pull Requests using [Danger.js](https://danger.systems/js/). This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your teams norms. Leaving humans to think about harder problems.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/pr-review.yml",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Danger.js"]
     },
     {
       "name": "Automation Seed example",
       "description": "Different workflows to validate the code and deploy an automation report page.",
       "url": "https://github.com/nanlabs/automation-seed/tree/main/.github/workflows",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "Automation"]
     },
     {
       "name": "React Boilerplate",
       "description": "Different workflows to validate the code and deploy a React application.",
       "url": "https://github.com/nanlabs/react-boilerplate/tree/main/.github/workflows",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": ["GitHub Actions", "React"]
     },
     {
@@ -256,9 +272,7 @@
       "name": "AWS Amplify + NextJS 13",
       "description": "AWS Amplify example to deploy a NextJS v13 application to the Cloud.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/amplify/amplify-nextjs-deployment/",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > AWS Amplify"
-      ],
+      "tags": ["Examples > DevOps > Infrastructure as Code > AWS Amplify"],
       "labels": ["AWS Amplify", "NextJS", "NextJS 13"]
     },
     {
@@ -305,6 +319,21 @@
         "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Serverless S3 Local"]
+    },
+    {
+      "name": "Serverless SQS offline + TypeScript + ElasticMQ Example",
+      "description": "Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-nodejs-offline-with-elasticmq/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+      ],
+      "labels": [
+        "Serverless Framework",
+        "SQS",
+        "Serverless Offline",
+        "Serverless Offline SQS",
+        "ElasticMQ"
+      ]
     },
     {
       "name": "DocumentDB Cluster",

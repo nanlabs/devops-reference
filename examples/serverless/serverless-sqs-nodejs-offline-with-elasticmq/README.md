@@ -1,4 +1,4 @@
-# Serverless SQS offline + TypeScript Example
+# Serverless SQS offline + TypeScript + ElasticMQ Example
 
 We use Serverless Framework to do production ready deployments and local development using
 *serverless-offline*.
@@ -35,19 +35,32 @@ It will start the following services:
 - AWS Lambda at `http://localhost:3000`
 - AWS SQS at `http://localhost:9324`
 
-After that you can run
+After that you can run the following commands:
+
+- `listQueues` - List all queues
+
+```sh
+npm run invoke:local listQueues
+```
+
+or using `curl`
+
+```sh
+curl http://localhost:3000/list
+
+- `sendToQueue` - Enqueue a message on the queue
+
+> NOTE: This command will enqueue the message on the queue, and after some seconds you will see
+the `readFromQueue` lambda getting the message and deleting it.
 
 ```sh
 npm run invoke:local sendToQueue --data '{ "message": "value"}'
 ```
 
-The command above will enqueue the message on the queue, and after some seconds you will see
-the readFromFirstQueue lambda getting the message and deleting it.
-
-You can also list the available queues with the command below
+or using `curl`
 
 ```sh
-npm run invoke:local listQueues
+curl -X POST http://localhost:3000/send -d '{ "message": "value"}'
 ```
 
 ## Lambda Deployment
