@@ -1,10 +1,10 @@
-version: "2"
-services:
+version: "3.7"
 
+services:
   queue:
     image: softwaremill/elasticmq:latest
     ports:
       - 9324:9324
-      
+
     volumes:
       - ./elasticmq.conf:/opt/elasticmq.conf

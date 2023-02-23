@@ -10,7 +10,7 @@
     "sls": "serverless",
     "start": "serverless offline start --stage local",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "elasticmq": "cd src/elasticMQ && docker-compose up -d"
+    "elasticmq": "docker-compose -f local/elasticmq/docker-compose.yml up -d"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,6 @@
     "@aws-sdk/client-sqs": "^3.264.0",
     "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1310.0",
-    "http-errors": "^2.0.0",
     "serverless-offline-sqs": "^7.3.2"
   }
 }

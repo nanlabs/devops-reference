@@ -1,5 +1,7 @@
 service: ${env:SERVICE_NAME, 'sqs-nodejs'}
 
+frameworkVersion: '3'
+
 plugins:
   - serverless-plugin-typescript
   - serverless-offline-sqs
@@ -14,16 +16,19 @@ package:
     - elasticMQ
 
 custom:
+  sqs:
+    queueName: ${self:service}-${self:provider.stage}-myFirstQueue
+
   serverless-offline:
     httpPort: 3000
     port: 3000
     useChildProcesses: true
     noPrependStageInUrl: true
-  
+
   serverless-offline-sqs:
     autoCreate: true
     apiVersion: "2012-11-05"
-    endpoint: ${env:ELASTICMQ_ENDPOINT, 'http://0.0.0.0:9324'} # elasticMQ
+    endpoint: ${env:SQS_CLIENT_URL, 'http://localstack:9324'} # elasticMQ
     region: ${opt:region, env:AWS_REGION, 'us-east-1'}
     skipCacheInvalidation: false
 
@@ -33,8 +38,10 @@ provider:
   stage: ${opt:stage, env:STAGE, 'local'}
   region: ${opt:region, env:AWS_REGION, 'us-east-1'}
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
-  environment: 
-    SQS_CLIENT_URL: ${env:SQS_CLIENT_URL, 'http://localhost:9324'}
+  environment:
+    STAGE: ${self:provider.stage}
+    SQS_CLIENT_URL: ${env:SQS_CLIENT_URL, ''}
+    SQS_QUEUE_NAME: ${self:custom.sqs.queueName}
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -52,7 +59,7 @@ provider:
         - SQS:ReceiveMessage
         - SQS:GetQueueUrl
         - SQS:ListQueues
-      Resource: "*"     
+      Resource: "*"
 
 functions:
   listQueues:
@@ -61,8 +68,7 @@ functions:
     events:
       - http:
           path: /list
-          method: get
-          cors: true
+          method: GET
 
   sendToQueue:
     handler: src/handlers/sendToQueue.handler
@@ -70,11 +76,10 @@ functions:
     events:
       - http:
           path: /invoke
-          method: post
-          cors: true
+          method: POST
 
-  readFromFirstQueue:
-    handler: src/handlers/readFromFirstQueue.handler
+  readFromQueue:
+    handler: src/handlers/readFromQueue.handler
     description: Log messages on sqs queue and delete them
     events:
       - sqs:
@@ -88,4 +93,4 @@ resources:
     myFirstQueue:
       Type: AWS::SQS::Queue
       Properties:
-        QueueName: ${self:service}-${self:provider.stage}-myFirstQueue
+        QueueName: ${self:custom.sqs.queueName}
