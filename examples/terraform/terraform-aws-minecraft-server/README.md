@@ -57,7 +57,7 @@ You can find examples in the [examples](./examples) directory.
 
 ## Reference
 
-You can find a tutorial on how to create a AWS EKS Fargate using Terraform [here](https://antonputra.com/amazon/create-aws-eks-fargate-using-terraform/
+You can find a tutorial on how to create a AWS EKS Fargate using Terraform [here](https://antonputra.com/amazon/create-aws-eks-fargate-using-terraform/).
 
 ## Aknowledgements
 
