@@ -40,6 +40,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
     - [Infrastructure as Code](#infrastructure-as-code)
       - [AWS Amplify](#aws-amplify)
       - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
+      - [Terraform](#terraform)
 
 - [Contributing](#contributing)
 - [Contributors](#contributors)
@@ -115,6 +116,10 @@ among other resources that are used in different projects here at [NaN Labs](htt
 - [Serverless Middy with Custom Middleware](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy, Custom Middleware_
 - [Serverless S3 Local](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-s3-local/) - Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local). _Keywords: Serverless Framework, Serverless S3 Local_
 - [Serverless SQS offline + TypeScript + ElasticMQ Example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-nodejs-offline-with-elasticmq/) - Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, SQS, Serverless Offline, Serverless Offline SQS, ElasticMQ_
+
+##### Terraform
+
+- [Terraform AWS Minecraft Server](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform/terraform-aws-minecraft-server/) - Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker. _Keywords: Terraform, AWS, Minecraft, Docker, EC2_
 
 ## Contributing
 
