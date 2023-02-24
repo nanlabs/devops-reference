@@ -12,6 +12,13 @@ module "minecraft" {
 }
 ```
 
+## Examples
+
+You can find examples in the [examples](./examples) directory.
+
+- [existing-s3-bucket](./examples/existing-s3-bucket) - Use an existing S3 bucket for persisting the Minecraft world
+- [full example](./examples/full) - Full example with all options set. This is the default example that will create a new S3 bucket for persisting the Minecraft world.
+
 ## Inputs
 
 | Name                        | Description                                                                                                                                                                                                               |               Default                | Required |
