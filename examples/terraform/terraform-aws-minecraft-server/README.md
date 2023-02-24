@@ -55,10 +55,6 @@ You can find examples in the [examples](./examples) directory.
 | vpc_id               | VPC ID for instance                |
 | ec2_ssh              | SSH command to connect to instance |
 
-## Reference
-
-You can find a tutorial on how to create a AWS EKS Fargate using Terraform [here](https://antonputra.com/amazon/create-aws-eks-fargate-using-terraform/).
-
 ## Aknowledgements
 
 This project is based on [terraform-aws-minecraft](https://github.com/darrelldavis/terraform-aws-minecraft) by [Darrell Davis](https://github.com/darrelldavis).
