@@ -34,7 +34,7 @@ write_files:
       ClientAliveCountMax 0
   - path: /etc/cron.d/minecraft
     content: |
-      */${minecraft_backup_freq} * * * * ubuntu aws s3 sync --exclude "*" --include "world/*" --include "logs/*" ${minecraft_root} s3://${minecraft_bucket}
+      */${minecraft_backup_freq} * * * * ubuntu aws s3 sync --exclude "*" --include "server.properties" --include "world/*" --include "logs/*" ${minecraft_root} s3://${minecraft_bucket}
   - path: /opt/aws/amazon-cloudwatch-agent/bin/config.json
     content: |
       {
@@ -101,7 +101,7 @@ runcmd:
   - dpkg -i -E amazon-cloudwatch-agent.deb
   - rm -f amazon-cloudwatch-agent.deb
   - mkdir ${minecraft_root}
-  - aws s3 sync --exclude "*" --include "world/*" --include "logs/*" s3://${minecraft_bucket} ${minecraft_root}
+  - aws s3 sync --exclude "*" --include "server.properties" --include "world/*" --include "logs/*" s3://${minecraft_bucket} ${minecraft_root}
   - chmod 644 /var/log/cloud-init-output.log
   - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
   - docker run
