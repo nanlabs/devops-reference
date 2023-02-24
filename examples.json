@@ -370,6 +370,15 @@
         "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Middy", "Custom Middleware"]
+    },
+    {
+      "name": "Terraform AWS Minecraft Server",
+      "description": "Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform/terraform-aws-minecraft-server/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Terraform"
+      ],
+      "labels": ["Terraform", "AWS", "Minecraft", "Docker", "EC2"]
     }
   ]
 }
