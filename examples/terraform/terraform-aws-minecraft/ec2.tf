@@ -27,12 +27,12 @@ module "ec2_minecraft" {
   key_name             = local._ssh_key_name
   ami                  = var.ami != "" ? var.ami : data.aws_ami.ubuntu.image_id
   instance_type        = var.instance_type
-  iam_instance_profile = aws_iam_instance_profile.mc.id
+  iam_instance_profile = aws_iam_instance_profile.docker-instance-profile.id
   user_data            = data.template_file.user_data.rendered
 
   # network
-  subnet_id                   = local.subnet_id
-  vpc_security_group_ids      = [module.ec2_security_group.this_security_group_id]
+  subnet_id                   = local.public_subnet_id
+  vpc_security_group_ids      = [module.ec2_security_group.security_group_id]
   associate_public_ip_address = var.associate_public_ip_address
 
   tags = module.label.tags

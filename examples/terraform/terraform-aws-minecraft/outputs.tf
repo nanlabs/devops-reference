@@ -14,12 +14,8 @@ output "instance_id" {
   value = module.ec2_minecraft.id
 }
 
-output "zzz_ec2_ssh" {
-  value = length(var.key_name) > 0 ? "" : <<EOT
-
-ssh -i ${path.module}/ec2-private-key.pem ubuntu@${module.ec2_minecraft.public_ip[0]}
-
-EOT
+output "ec2_ssh" {
+  value = length(var.key_name) > 0 ? "" : "ssh -i ${path.module}/ec2-private-key.pem ubuntu@${module.ec2_minecraft.public_ip}"
 }
 
 output "ec2_instance_profile" {
@@ -27,5 +23,5 @@ output "ec2_instance_profile" {
 }
 
 output "minecraft_server" {
-  value = "${module.ec2_minecraft.public_ip[0]}:${var.minecraft_port}"
+  value = "${module.ec2_minecraft.public_ip}:${var.minecraft_port}"
 }

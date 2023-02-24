@@ -12,9 +12,9 @@ locals {
 
 module "s3" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "3.7.0"
+  version = "~> 3.0"
 
-  create_bucket = local.using_existing_bucket ? false : true
+  create_bucket = local.use_existing_bucket ? false : true
 
   bucket = local.bucket
   acl    = "private"

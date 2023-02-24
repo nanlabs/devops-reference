@@ -16,11 +16,11 @@ module "vpc" {
 
   create_vpc = local.use_existing_vpc ? false : true
 
-  cidr                 = var.vpc_cidr
+  cidr                 = var.vpc_cidr_block
   create_igw           = true
   enable_nat_gateway   = false
   azs                  = ["${var.region}a"]
-  public_subnets       = [var.public_subnet_cidr]
+  public_subnets       = [var.public_subnet_cidr_block]
   private_subnets      = []
   enable_dns_hostnames = true
 

@@ -13,7 +13,7 @@ variable "vpc_id" {
 variable "vpc_cidr_block" {
   description = "VPC CIDR Block"
   type        = string
-  default     = ""
+  default     = "10.0.0.0/16"
 }
 
 variable "public_subnet_id" {
@@ -25,7 +25,7 @@ variable "public_subnet_id" {
 variable "public_subnet_cidr_block" {
   description = "VPC subnet CIDR Block"
   type        = string
-  default     = ""
+  default     = "10.0.101.0/24"
 }
 
 variable "key_name" {
