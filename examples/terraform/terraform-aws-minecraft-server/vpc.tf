@@ -12,7 +12,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 3.0"
 
-  name = "my-vpc"
+  name = "${module.label.id}-vpc"
 
   create_vpc = local.use_existing_vpc ? false : true
 
@@ -26,6 +26,3 @@ module "vpc" {
 
   tags = module.label.tags
 }
-
-
-
