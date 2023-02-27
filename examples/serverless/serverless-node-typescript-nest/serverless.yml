@@ -1,8 +1,9 @@
 service: ${env:SERVICE_NAME, 'Nest'}
 
+frameworkVersion: '3'
+
 plugins:
   - serverless-plugin-typescript
-  - serverless-plugin-optimize
   - serverless-offline
 
 useDotenv: true

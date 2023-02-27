@@ -19,7 +19,7 @@ To simulate the app running on Lambda locally, run the following:
 npm run sls:offline
 ```
 
-The application will be available at `http://localhost:3000/dev/hello`.
+The application will be available at `http://localhost:3000/hello`.
 
 ## Deployment the app
 

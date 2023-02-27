@@ -1,5 +1,7 @@
 service: ${env:SERVICE_NAME, 'S3LocalExample'}
 
+frameworkVersion: '3'
+
 plugins:
   - serverless-python-requirements
   - serverless-s3-local

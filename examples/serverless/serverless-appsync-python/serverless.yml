@@ -1,5 +1,7 @@
 service: ${env:SERVICE_NAME, 'AppSync'}
 
+frameworkVersion: '3'
+
 plugins:
   - serverless-python-requirements
   - serverless-appsync-plugin

@@ -1,5 +1,7 @@
 service: ${env:SERVICE_NAME, 'GlueExample'}
 
+frameworkVersion: '3'
+
 plugins:
   - serverless-plugin-scripts
   - serverless-glue
