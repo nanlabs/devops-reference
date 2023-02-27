@@ -278,9 +278,9 @@
     {
       "name": "AWS AppSync + TypeScript",
       "description": "Serverless Framework example to deploy an AWS AppSync API using TypeScript. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-nodejs/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-node-typescript/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS AppSync", "TypeScript"]
     },
@@ -289,7 +289,7 @@
       "description": "Serverless Framework example to deploy an AWS AppSync API using Python. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-python/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS AppSync", "Python"]
     },
@@ -298,7 +298,7 @@
       "description": "Serverless Framework example to deploy an AWS Glue job using Python Shell and PySpark.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-glue/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS Glue", "Python Shell", "PySpark"]
     },
@@ -307,7 +307,7 @@
       "description": "Serverless Framework example to deploy a Neo4j instance in EC2.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-neo4j-ec2/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Neo4j", "EC2"]
     },
@@ -316,16 +316,16 @@
       "description": "Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-s3-local/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Serverless S3 Local"]
     },
     {
       "name": "Serverless SQS offline + TypeScript + ElasticMQ Example",
       "description": "Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-nodejs-offline-with-elasticmq/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-node-typescript-offline-with-elasticmq/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": [
         "Serverless Framework",
@@ -340,7 +340,7 @@
       "description": "Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-documentdb/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "DocumentDB"]
     },
@@ -349,27 +349,36 @@
       "description": "Serverless Framework example to deploy a RDS Postgres cluster with all the necessary resources.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-rds-postgres/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "RDS Postgres"]
     },
     {
       "name": "Serverless Middy",
       "description": "Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Middy"]
     },
     {
       "name": "Serverless Middy with Custom Middleware",
       "description": "Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy-custom-middleware/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy-custom-middleware/",
       "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework and CloudFormation"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Middy", "Custom Middleware"]
+    },
+    {
+      "name": "Serverless Nest Application with TypeScript",
+      "description": "Serverless Framework example to deploy a NestJS application using TypeScript.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-nest/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": ["Serverless Framework", "NestJS", "TypeScript"]
     },
     {
       "name": "Terraform AWS Minecraft Server",

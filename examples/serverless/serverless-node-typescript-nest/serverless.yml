@@ -1,0 +1,22 @@
+service:
+  name: basic-starter-nestjs
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  Runtime: nodejs18.x
+
+functions:
+  main:
+    handler: src/lambda.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
