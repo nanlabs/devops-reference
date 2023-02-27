@@ -39,7 +39,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
       - [Kubernetes](#kubernetes)
     - [Infrastructure as Code](#infrastructure-as-code)
       - [AWS Amplify](#aws-amplify)
-      - [Serverless Framework and CloudFormation](#serverless-framework-and-cloudformation)
+      - [Serverless Framework, SAM and CloudFormation](#serverless-framework-sam-and-cloudformation)
       - [Terraform](#terraform)
 
 - [Contributing](#contributing)
@@ -104,18 +104,19 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 - [AWS Amplify + NextJS 13](https://github.com/nanlabs/devops-reference/tree/main/examples/amplify/amplify-nextjs-deployment/) - AWS Amplify example to deploy a NextJS v13 application to the Cloud. _Keywords: AWS Amplify, NextJS, NextJS 13_
 
-##### Serverless Framework and CloudFormation
+##### Serverless Framework, SAM and CloudFormation
 
 - [AWS AppSync + Python](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-python/) - Serverless Framework example to deploy an AWS AppSync API using Python. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, Python_
-- [AWS AppSync + TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-nodejs/) - Serverless Framework example to deploy an AWS AppSync API using TypeScript. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, TypeScript_
+- [AWS AppSync + TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-node-typescript/) - Serverless Framework example to deploy an AWS AppSync API using TypeScript. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, TypeScript_
 - [AWS Glue with Python Shell and PySpark Jobs](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-glue/) - Serverless Framework example to deploy an AWS Glue job using Python Shell and PySpark. _Keywords: Serverless Framework, AWS Glue, Python Shell, PySpark_
 - [DocumentDB Cluster](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-documentdb/) - Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources. _Keywords: Serverless Framework, DocumentDB_
 - [Neo4j in EC2](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-neo4j-ec2/) - Serverless Framework example to deploy a Neo4j instance in EC2. _Keywords: Serverless Framework, Neo4j, EC2_
 - [RDS Postgres Instance](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-rds-postgres/) - Serverless Framework example to deploy a RDS Postgres cluster with all the necessary resources. _Keywords: Serverless Framework, RDS Postgres_
-- [Serverless Middy](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy_
-- [Serverless Middy with Custom Middleware](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy, Custom Middleware_
+- [Serverless Middy](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy_
+- [Serverless Middy with Custom Middleware](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy, Custom Middleware_
+- [Serverless Nest Application with TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-nest/) - Serverless Framework example to deploy a NestJS application using TypeScript. _Keywords: Serverless Framework, NestJS, TypeScript_
 - [Serverless S3 Local](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-s3-local/) - Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local). _Keywords: Serverless Framework, Serverless S3 Local_
-- [Serverless SQS offline + TypeScript + ElasticMQ Example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-nodejs-offline-with-elasticmq/) - Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, SQS, Serverless Offline, Serverless Offline SQS, ElasticMQ_
+- [Serverless SQS offline + TypeScript + ElasticMQ Example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-node-typescript-offline-with-elasticmq/) - Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, SQS, Serverless Offline, Serverless Offline SQS, ElasticMQ_
 
 ##### Terraform
 
