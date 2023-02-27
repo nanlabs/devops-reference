@@ -77,7 +77,7 @@ provider:
     serverSideEncryption: AES256
   # vpc:
   #   securityGroupIds:
-  #     - ${env:VPC_SECURITY_GROUP_ID}
+  #     - ${env:SECURITY_GROUP_ID}
   #     - !Ref SecurityGroup
   #   subnetIds:
   #     - ${env:SUBNET_ID}

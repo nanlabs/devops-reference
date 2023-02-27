@@ -22,7 +22,7 @@ provider:
   profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   vpc:
     securityGroupIds:
-      - ${env:VPC_SECURITY_GROUP_ID, ''}
+      - ${env:SECURITY_GROUP_ID, ''}
       - !Ref SecurityGroup
     subnetIds:
       - ${env:SUBNET_ID}
