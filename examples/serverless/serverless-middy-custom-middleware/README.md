@@ -42,8 +42,6 @@ to set your credentials, for more information refer to the [AWS documentation](h
 
 Once set you can deploy your app using the serverless framework with:
 
-Then run the following command:
-
 ```sh
 npm run deploy -- --verbose --stage <stage>
 ```
