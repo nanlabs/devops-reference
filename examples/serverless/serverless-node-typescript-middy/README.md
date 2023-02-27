@@ -8,7 +8,7 @@ We use Serverless Framework to do production ready deployments and local develop
 To install this example to bootstrap your project, run the following command:
 
 ```sh
-npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-middy -n my-project
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy -n my-project
 ```
 
 ## Requirements
