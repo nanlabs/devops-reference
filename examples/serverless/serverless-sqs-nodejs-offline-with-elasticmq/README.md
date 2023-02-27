@@ -65,22 +65,10 @@ curl -X POST http://localhost:3000/send -d '{ "message": "value"}'
 
 ## Lambda Deployment
 
-Set up the following environment variables:
+To deploy the app to AWS, you'll first need to configure your AWS credentials. There are many ways
+to set your credentials, for more information refer to the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
-```sh
-export AWS_ACCESS_KEY_ID=<your-access-key-id>
-export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
-export AWS_REGION=<your-default-region>
-```
-
-or setup your AWS credentials in your `~/.aws/credentials` file. Then you can
-define the environment variable `AWS_PROFILE` to point to the profile you want to use.
-
-```sh
-export AWS_PROFILE=<your-profile-name>
-```
-
-> You can include these environment variables in your project’s env files at: `.env` or `.env.<stage>`.
+Once set you can deploy your app using the serverless framework with:
 
 Then run the following command:
 
