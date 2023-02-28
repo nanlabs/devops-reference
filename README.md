@@ -96,7 +96,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 ##### Kubernetes
 
-- [Ingress](https://github.com/nanlabs/devops-reference/tree/main/examples/k8s-ingress-example/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/). _Keywords: Kubernetes, Ingress, NGINX Ingress Controller_
+- [Ingress](https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes-ingress-example/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/). _Keywords: Kubernetes, Ingress, NGINX Ingress Controller_
 
 #### Infrastructure as Code
 
