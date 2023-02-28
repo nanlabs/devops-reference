@@ -6,7 +6,7 @@ Terraform module to provision a Minecraft server on AWS EC2 using Docker.
 
 ```hcl
 module "minecraft" {
-  source = "github.com/nanlabs/devops-reference/examples/terraform/terraform-aws-minecraft-server"
+  source = "github.com/nanlabs/devops-reference/examples/terraform-aws-minecraft-server"
 
   minecraft_version = "1.19.3"
 }

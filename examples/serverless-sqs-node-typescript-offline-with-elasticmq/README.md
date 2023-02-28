@@ -78,4 +78,4 @@ npm run deploy -- --verbose --stage <stage>
 
 We recommend the following resources to add local development tools to your project:
 
-- [LocalStack](../../docker/localstack/)
+- [LocalStack](../../compose-localstack/)
