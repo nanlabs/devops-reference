@@ -262,7 +262,7 @@
     {
       "name": "Ingress",
       "description": "Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/k8s-ingress-example/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes-ingress-example/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
       ],
