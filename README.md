@@ -47,7 +47,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 ## Applications
 
-- [Complete AWS Glue ETL](https://github.com/nanlabs/devops-reference/tree/main/examples/_apps/serverless-glue/) - A complete example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark. _Keywords: Python, AWS, Glue, ETL, Serverless, DevContainers, Docker Compose_
+- [Complete AWS Glue ETL](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-basic-boilerplate/) - A complete example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark. _Keywords: Python, AWS, Glue, ETL, Serverless, DevContainers, Docker Compose_
 
 ## Examples
 
@@ -55,14 +55,14 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 #### A/B Testing
 
-- [AWS CloudWatch Evidently](https://github.com/nanlabs/devops-reference/tree/main/examples/services/aws-cloudwatch-evidently/) - A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application. _Keywords: Node.js, AWS, CloudWatch, CloudWatch Evidently, A/B Testing, Feature Flags_
+- [AWS CloudWatch Evidently](https://github.com/nanlabs/devops-reference/tree/main/examples/aws-cloudwatch-evidently/) - A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application. _Keywords: Node.js, AWS, CloudWatch, CloudWatch Evidently, A/B Testing, Feature Flags_
 - [Feature flags post](https://www.atlassian.com/continuous-delivery/principles/feature-flags) - How to progressively expose your features with feature flags by IAN BUCHANNAN. _Keywords: Feature Flags_
 
 #### Shell Scripting and CLI Tools
 
-- [Bash as a Wrapper Utility](https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/bash-as-a-wrapper-utility-basic/) - Bash as a wrapper utility for other languages and tools. _Keywords: Shell Scripting, Utilities_
-- [Bash as a Wrapper Utility with Easy Options](https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/bash-as-a-wrapper-utility-with-easy-options/) - Bash as a wrapper utility for other languages and tools using Easy Options. _Keywords: Shell Scripting, Utilities, Easy Options_
-- [Easy Options](https://github.com/nanlabs/devops-reference/tree/main/examples/scripts/easy-options/) - Easy options for shell scripts. _Keywords: Shell Scripting, Utilities, Easy Options_
+- [Bash as a Wrapper Utility](https://github.com/nanlabs/devops-reference/tree/main/examples/bash-as-a-wrapper-utility-basic/) - Bash as a wrapper utility for other languages and tools. _Keywords: Shell Scripting, Utilities_
+- [Bash as a Wrapper Utility with Easy Options](https://github.com/nanlabs/devops-reference/tree/main/examples/bash-as-a-wrapper-utility-with-easy-options/) - Bash as a wrapper utility for other languages and tools using Easy Options. _Keywords: Shell Scripting, Utilities, Easy Options_
+- [Easy Options](https://github.com/nanlabs/devops-reference/tree/main/examples/easy-options/) - Easy options for shell scripts. _Keywords: Shell Scripting, Utilities, Easy Options_
 - [When to use shell](https://google.github.io/styleguide/shellguide.html#when-to-use-shell) - A guide from Google on when to use shell scripts. _Keywords: Shell Scripting, Utilities_
 
 #### Continuous Integration, Delivery and Deployment
@@ -80,47 +80,47 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 ##### Containers and Compositions (Docker, Docker Compose, Buildpacks and more)
 
-- [Airflow and Spark environment using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/airflow/) - Dockerfile and compose.yml to run Airflow locally with initialization scripts. _Keywords: Docker, Docker Compose, Airflow, Spark_
-- [AWS Glue using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/glue/) - Dockerfile and compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools. _Keywords: Docker, Docker Compose, AWS Glue, Spark, Jupyter Notebook, AWS CLI_
-- [AWS Neptune using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/neptune/) - Dockerfile and compose.yml to run AWS Neptune locally with initialization scripts. _Keywords: Docker, Docker Compose, AWS Neptune_
-- [Localstack using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/localstack/) - Dockerfile and compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis. _Keywords: Docker, Docker Compose, Localstack, DynamoDB, S3, SQS, Kinesis_
-- [Microsoft SQL Server using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/mssql/) - Dockerfile and compose.yml to run Microsoft SQL Server locally with initialization scripts. _Keywords: Docker, Docker Compose, Microsoft SQL Server_
-- [MongoDB + Mongo Express using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/mongodb/) - Dockerfile and compose.yml to run MongoDB and Mongo Express locally with initialization scripts. _Keywords: Docker, Docker Compose, MongoDB, Mongo Express_
-- [PostgreSQL using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/postgres/) - Dockerfile and compose.yml to run PostgreSQL locally with initialization scripts. _Keywords: Docker, Docker Compose, PostgreSQL_
-- [Python Buildpack](https://github.com/nanlabs/devops-reference/tree/main/examples/buildpacks/python#readme) - Buildpack example for Python applications. _Keywords: Buildpack, Python_
+- [Airflow and Spark environment using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-airflow/) - Dockerfile and compose.yml to run Airflow locally with initialization scripts. _Keywords: Docker, Docker Compose, Airflow, Spark_
+- [AWS Glue using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-glue/) - Dockerfile and compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools. _Keywords: Docker, Docker Compose, AWS Glue, Spark, Jupyter Notebook, AWS CLI_
+- [AWS Neptune using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-neptune/) - Dockerfile and compose.yml to run AWS Neptune locally with initialization scripts. _Keywords: Docker, Docker Compose, AWS Neptune_
+- [Localstack using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-localstack/) - Dockerfile and compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis. _Keywords: Docker, Docker Compose, Localstack, DynamoDB, S3, SQS, Kinesis_
+- [Microsoft SQL Server using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-mssql/) - Dockerfile and compose.yml to run Microsoft SQL Server locally with initialization scripts. _Keywords: Docker, Docker Compose, Microsoft SQL Server_
+- [MongoDB + Mongo Express using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-mongodb/) - Dockerfile and compose.yml to run MongoDB and Mongo Express locally with initialization scripts. _Keywords: Docker, Docker Compose, MongoDB, Mongo Express_
+- [PostgreSQL using Docker and Docker Compose](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-postgres/) - Dockerfile and compose.yml to run PostgreSQL locally with initialization scripts. _Keywords: Docker, Docker Compose, PostgreSQL_
+- [Python Buildpack](https://github.com/nanlabs/devops-reference/tree/main/examples/buildpacks-python) - Buildpack example for Python applications. _Keywords: Buildpack, Python_
 
 ##### DevContainers and Codespaces
 
-- [AWS Glue](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers/glue/) - DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools. _Keywords: Docker, Docker Compose, DevContainer, VSCode DevContainer, GitHub Codespaces, AWS Glue, Spark, Jupyter Notebook, AWS CLI_
-- [Node.js](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers/nodejs/) - DevContainer for Node.js development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop Node.js applications. _Keywords: Docker, Docker Compose, DevContainer, VSCode DevContainer, GitHub Codespaces, Node.js_
+- [AWS Glue](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-glue/) - DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools. _Keywords: Docker, Docker Compose, DevContainer, VSCode DevContainer, GitHub Codespaces, AWS Glue, Spark, Jupyter Notebook, AWS CLI_
+- [Node.js](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-nodejs/) - DevContainer for Node.js development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop Node.js applications. _Keywords: Docker, Docker Compose, DevContainer, VSCode DevContainer, GitHub Codespaces, Node.js_
 
 ##### Kubernetes
 
-- [Ingress](https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes/ingress/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/). _Keywords: Kubernetes, Ingress, NGINX Ingress Controller_
+- [Ingress](https://github.com/nanlabs/devops-reference/tree/main/examples/k8s-ingress-example/) - Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/). _Keywords: Kubernetes, Ingress, NGINX Ingress Controller_
 
 #### Infrastructure as Code
 
 ##### AWS Amplify
 
-- [AWS Amplify + NextJS 13](https://github.com/nanlabs/devops-reference/tree/main/examples/amplify/amplify-nextjs-deployment/) - AWS Amplify example to deploy a NextJS v13 application to the Cloud. _Keywords: AWS Amplify, NextJS, NextJS 13_
+- [AWS Amplify + NextJS 13](https://github.com/nanlabs/devops-reference/tree/main/examples/amplify-nextjs-deployment/) - AWS Amplify example to deploy a NextJS v13 application to the Cloud. _Keywords: AWS Amplify, NextJS, NextJS 13_
 
 ##### Serverless Framework, SAM and CloudFormation
 
-- [AWS AppSync + Python](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-python/) - Serverless Framework example to deploy an AWS AppSync API using Python. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, Python_
-- [AWS AppSync + TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-node-typescript/) - Serverless Framework example to deploy an AWS AppSync API using TypeScript. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, TypeScript_
-- [AWS Glue with Python Shell and PySpark Jobs](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-glue/) - Serverless Framework example to deploy an AWS Glue job using Python Shell and PySpark. _Keywords: Serverless Framework, AWS Glue, Python Shell, PySpark_
-- [DocumentDB Cluster](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-documentdb/) - Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources. _Keywords: Serverless Framework, DocumentDB_
-- [Neo4j in EC2](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-neo4j-ec2/) - Serverless Framework example to deploy a Neo4j instance in EC2. _Keywords: Serverless Framework, Neo4j, EC2_
-- [RDS Postgres Instance](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-rds-postgres/) - Serverless Framework example to deploy a RDS Postgres cluster with all the necessary resources. _Keywords: Serverless Framework, RDS Postgres_
-- [Serverless Middy](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy_
-- [Serverless Middy with Custom Middleware](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy, Custom Middleware_
-- [Serverless Nest Application with TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-node-typescript-nest/) - Serverless Framework example to deploy a NestJS application using TypeScript. _Keywords: Serverless Framework, NestJS, TypeScript_
-- [Serverless S3 Local](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-s3-local/) - Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local). _Keywords: Serverless Framework, Serverless S3 Local_
-- [Serverless SQS offline + TypeScript + ElasticMQ Example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-sqs-node-typescript-offline-with-elasticmq/) - Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, SQS, Serverless Offline, Serverless Offline SQS, ElasticMQ_
+- [AWS AppSync + Python](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-appsync-python/) - Serverless Framework example to deploy an AWS AppSync API using Python. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, Python_
+- [AWS AppSync + TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-appsync-node-typescript/) - Serverless Framework example to deploy an AWS AppSync API using TypeScript. It also has a local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, AWS AppSync, TypeScript_
+- [AWS Glue with Python Shell and PySpark Jobs](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-deployment/) - Serverless Framework example to deploy an AWS Glue job using Python Shell and PySpark. _Keywords: Serverless Framework, AWS Glue, Python Shell, PySpark_
+- [DocumentDB Cluster](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-documentdb/) - Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources. _Keywords: Serverless Framework, DocumentDB_
+- [Neo4j in EC2](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-neo4j-ec2/) - Serverless Framework example to deploy a Neo4j instance in EC2. _Keywords: Serverless Framework, Neo4j, EC2_
+- [RDS Postgres Instance](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-rds-postgres/) - Serverless Framework example to deploy a RDS Postgres cluster with all the necessary resources. _Keywords: Serverless Framework, RDS Postgres_
+- [Serverless Middy](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-node-typescript-middy/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy_
+- [Serverless Middy with Custom Middleware](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-node-typescript-middy-custom-middleware/) - Serverless Framework example to deploy a lambda function using [Middy](https://middy.js.org/), the stylish Node.js middleware engine for AWS Lambda. _Keywords: Serverless Framework, Middy, Custom Middleware_
+- [Serverless Nest Application with TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-node-typescript-nest/) - Serverless Framework example to deploy a NestJS application using TypeScript. _Keywords: Serverless Framework, NestJS, TypeScript_
+- [Serverless S3 Local](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-s3-local/) - Serverless Framework example to run a lambda function locally using [Serverless S3 Local](https://www.serverless.com/plugins/serverless-s3-local). _Keywords: Serverless Framework, Serverless S3 Local_
+- [Serverless SQS offline + TypeScript + ElasticMQ Example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-sqs-node-typescript-offline-with-elasticmq/) - Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs) with ElasticMQ. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline). _Keywords: Serverless Framework, SQS, Serverless Offline, Serverless Offline SQS, ElasticMQ_
 
 ##### Terraform
 
-- [Terraform AWS Minecraft Server](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform/terraform-aws-minecraft-server/) - Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker. _Keywords: Terraform, AWS, Minecraft, Docker, EC2_
+- [Terraform AWS Minecraft Server](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-aws-minecraft-server/) - Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker. _Keywords: Terraform, AWS, Minecraft, Docker, EC2_
 
 ## Contributing
 
