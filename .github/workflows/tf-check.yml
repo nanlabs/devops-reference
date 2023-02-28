@@ -1,0 +1,16 @@
+name: Terraform Check
+
+on:
+  workflow_call:
+
+jobs:
+  tf-fmt-check:
+    name: Check Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Begin CI...
+        uses: actions/checkout@v3
+      - name: Terraform Fmt
+        uses: dflook/terraform-fmt-check@v1.24
+        with:
+          path: .
