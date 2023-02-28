@@ -9,7 +9,7 @@ We use Serverless Framework to do production ready deployments and local develop
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/serverless/serverless-sqs-nodejs
+cd devops-reference/examples/serverless-sqs-nodejs
 fnm use
 npm install
 ```

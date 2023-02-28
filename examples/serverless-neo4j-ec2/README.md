@@ -7,7 +7,7 @@ We use Serverless Framework to do production ready deployments.
 To install this example to bootstrap your project, run the following command:
 
 ```sh
-npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-neo4j-ec2 -n my-project
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-neo4j-ec2 -n my-project
 ```
 
 ## Requirements

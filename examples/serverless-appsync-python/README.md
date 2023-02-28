@@ -8,7 +8,7 @@ _serverless-offline_.
 To install this example to bootstrap your project, run the following command:
 
 ```sh
-npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-appsync-python -n my-project
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-appsync-python -n my-project
 ```
 
 ## Requirements

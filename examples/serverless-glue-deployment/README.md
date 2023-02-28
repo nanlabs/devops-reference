@@ -7,7 +7,7 @@ We use Serverless Framework to do production ready deployments.
 To install this example to bootstrap your project, run the following command:
 
 ```sh
-npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless/serverless-glue -n my-project
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-deployment -n my-project
 ```
 
 ## Requirements

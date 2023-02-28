@@ -47,7 +47,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 ## Applications
 
-- [Complete AWS Glue ETL](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-basic-boilerplate/) - A complete example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark. _Keywords: Python, AWS, Glue, ETL, Serverless, DevContainers, Docker Compose_
+- [Complete AWS Glue ETL](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-full-boilerplate/) - A complete example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark. _Keywords: Python, AWS, Glue, ETL, Serverless, DevContainers, Docker Compose_
 
 ## Examples
 
