@@ -1,7 +1,7 @@
 {
   "Servers": {
     "1": {
-      "Name": "AWS Glue Boilerplate",
+      "Name": "Postgres Example",
       "Group": "Servers",
       "Host": "postgresql",
       "Port": 5432,
