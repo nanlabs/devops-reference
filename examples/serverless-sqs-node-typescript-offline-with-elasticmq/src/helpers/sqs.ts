@@ -20,7 +20,7 @@ export const getSqsClient = () => {
 };
 
 export const getSqsQueueUrl = async (queueName: string) => {
-  if (process.env.STAGE === "local") {
+  if (process.env.STAGE === "local" || process.env.STAGE === "offline") {
     return `${getSqsLocalQueueUrlPrefix()}/${queueName}`;
   }
 
