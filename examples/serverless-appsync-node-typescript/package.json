@@ -4,9 +4,10 @@
   "description": "Serverless AppSync + Python example",
   "main": "index.js",
   "scripts": {
-    "deploy": "serverless deploy",
     "sls": "serverless",
-    "start": "serverless offline start --stage local",
+    "sls:deploy": "serverless deploy",
+    "sls:offline": "serverless offline start",
+    "sls:package": "serverless package",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

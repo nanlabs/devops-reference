@@ -4,11 +4,11 @@
   "description": "Serverless sqs with local stack example",
   "main": "index.js",
   "scripts": {
-    "deploy": "serverless deploy",
+    "sls:deploy": "serverless deploy",
     "invoke": "serverless invoke --function",
     "invoke:local": "serverless invoke local --function",
     "sls": "serverless",
-    "start": "serverless offline start --stage local",
+    "sls:offline": "serverless offline start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "elasticmq": "docker-compose -f local/elasticmq/docker-compose.yml up -d"
   },

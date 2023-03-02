@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sls": "serverless",
-    "deploy": "serverless deploy",
+    "sls:deploy": "serverless deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
