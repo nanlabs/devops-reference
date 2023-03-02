@@ -11,7 +11,7 @@
     "sls:offline": "serverless offline start",
     "sls:package": "serverless package",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "docker-compose -f ./local-dev/compose.yml up -d"
+    "local": "docker-compose -f ./local-dev/compose.yml up"
   },
   "repository": {
     "type": "git",
