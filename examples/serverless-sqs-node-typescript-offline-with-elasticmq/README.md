@@ -20,7 +20,7 @@ This example uses elasticMQ as the interface for the SQS queues.
 Run the following command to start the compose with elasticMQ:
 
 ```sh
-npm run local
+npm run local:up
 ```
 
 This repo has a local development set up that uses the file `.env.local` to configure the local environment.
