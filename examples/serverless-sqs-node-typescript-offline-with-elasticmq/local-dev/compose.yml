@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  queue:
+    extends:
+      file: ./elasticmq/compose.yml
+      service: queue

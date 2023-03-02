@@ -17,10 +17,10 @@ npm install
 ## Local Development
 
 This example uses elasticMQ as the interface for the SQS queues.
-Run the following command to start the docker image
+Run the following command to start the compose with elasticMQ:
 
 ```sh
-npm run elasticmq
+npm run local
 ```
 
 This repo has a local development set up that uses the file `.env.local` to configure the local environment.
@@ -40,13 +40,14 @@ After that you can run the following commands:
 - `listQueues` - List all queues
 
 ```sh
-npm run invoke:local listQueues
+npm run sls:invoke:local listQueues
 ```
 
 or using `curl`
 
 ```sh
 curl http://localhost:3000/list
+```
 
 - `sendToQueue` - Enqueue a message on the queue
 
@@ -54,7 +55,7 @@ curl http://localhost:3000/list
 the `readFromQueue` lambda getting the message and deleting it.
 
 ```sh
-npm run invoke:local sendToQueue --data '{ "message": "value"}'
+npm run sls:invoke:local sendToQueue --data '{ "message": "value"}'
 ```
 
 or using `curl`
