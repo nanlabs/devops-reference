@@ -28,7 +28,7 @@ custom:
   serverless-offline-sqs:
     autoCreate: true
     apiVersion: "2012-11-05"
-    endpoint: ${env:SQS_CLIENT_URL, 'http://localstack:9324'} # elasticMQ
+    endpoint: ${env:SQS_CLIENT_URL, 'http://localhost:9324'} # elasticMQ
     region: ${opt:region, env:AWS_REGION, 'us-east-1'}
     skipCacheInvalidation: false
 
