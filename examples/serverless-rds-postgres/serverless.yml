@@ -32,6 +32,6 @@ resources:
   - ${file(./resource/VPCSubnets.yml)}
   - ${file(./resource/VPCRoutes.yml)}
   - ${file(./resource/RDSPostgres.yml)}
-  - ${file(./resource/RDSPostgresSecrets.${env:STACK_TYPE, 'stack'}.yml)}
+  - ${file(./resource/RDSPostgresSecrets.yml)}
   - ${file(./resource/Cloud9env.yml)}
   - ${file(./resource/Outputs.yml)}

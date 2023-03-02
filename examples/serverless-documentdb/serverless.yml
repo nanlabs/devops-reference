@@ -33,6 +33,6 @@ resources:
   - ${file(./resource/VPCSubnets.yml)}
   - ${file(./resource/VPCRoutes.yml)}
   - ${file(./resource/DocumentDB.yml)}
-  - ${file(./resource/DocumentDBSecrets.${env:STACK_TYPE, 'stack'}.yml)}
+  - ${file(./resource/DocumentDBSecrets.yml)}
   - ${file(./resource/Cloud9env.yml)}
   - ${file(./resource/Outputs.yml)}
