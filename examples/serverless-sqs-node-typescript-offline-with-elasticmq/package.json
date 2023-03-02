@@ -6,7 +6,7 @@
   "scripts": {
     "local": "docker-compose -f ./local-dev/compose.yml",
     "local:down": "npm run local down",
-    "local:up": "npm run local up -d",
+    "local:up": "npm run local up -- -d",
     "sls": "serverless",
     "sls:deploy": "serverless deploy",
     "sls:invoke": "serverless invoke --function",
