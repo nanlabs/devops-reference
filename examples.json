@@ -336,6 +336,15 @@
       ]
     },
     {
+      "name": "Start and Stop EC2 Instances with AWS Lambda",
+      "description": "Serverless Framework example to start and stop EC2 instances using AWS Lambda.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-start-stop-ec2-instance/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": ["Serverless Framework", "EC2", "AWS Lambda"]
+    },
+    {
       "name": "DocumentDB Cluster",
       "description": "Serverless Framework example to deploy a DocumentDB cluster with all the necessary resources.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-documentdb/",
