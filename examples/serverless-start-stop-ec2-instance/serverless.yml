@@ -1,0 +1,46 @@
+service: ${env:SERVICE_NAME, 'StartStopEC2Instance'}
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+    useChildProcesses: true
+    noPrependStageInUrl: true
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+
+functions:
+  startInstance:
+    handler: src/handlers/start.handler
+    events:
+      - schedule: ${env:START_INSTANCE_CRON, 'cron(0 0 * * ? *)'}
+    environment:
+      EC2_INSTANCE_ID: ${env:EC2_INSTANCE_ID}
+  stopInstance:
+    handler: src/handlers/stop.handler
+    events:
+      - schedule: ${env:STOP_INSTANCE_CRON, 'cron(0 0 * * ? *)'}
+    environment:
+      EC2_INSTANCE_ID: ${env:EC2_INSTANCE_ID}
+

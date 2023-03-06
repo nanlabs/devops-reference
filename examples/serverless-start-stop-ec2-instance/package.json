@@ -1,0 +1,33 @@
+{
+  "name": "nan-start-stop-ec2",
+  "version": "1.0.0",
+  "description": "Start and Stop EC2 instances",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "sls:deploy": "serverless deploy",
+    "sls:offline": "serverless offline start",
+    "sls:package": "serverless package",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
+  },
+  "author": "darioscrivano",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/devops-reference#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.108",
+    "@types/aws-sdk": "^2.7.0",
+    "serverless": "^3.23.0",
+    "serverless-offline": "^11.1.3",
+    "serverless-plugin-typescript": "^2.1.4",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1329.0",
+    "http-errors": "^2.0.0"
+  }
+}
