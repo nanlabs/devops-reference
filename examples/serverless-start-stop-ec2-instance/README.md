@@ -1,7 +1,7 @@
 # Start and Stop EC2 Instance with Serverless Lambda
 
 We use Serverless Framework to do production ready deployments and local development using
-*serverless-offline*.
+*serverless-offline*. This project is a reference for how to use Serverless Framework to start and stop EC2 instances.
 
 ## Usage
 
