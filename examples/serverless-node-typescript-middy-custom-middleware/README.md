@@ -17,7 +17,7 @@ npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/serverless-middy-custom-middleware
+cd devops-reference/examples/serverless-node-typescript-middy-custom-middleware
 fnm use
 npm install
 ```

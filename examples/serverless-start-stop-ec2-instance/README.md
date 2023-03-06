@@ -17,7 +17,7 @@ npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/serverless-middy
+cd devops-reference/examples/serverless-start-stop-ec2-instance
 fnm use
 npm install
 ```
