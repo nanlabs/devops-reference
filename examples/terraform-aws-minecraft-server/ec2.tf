@@ -11,8 +11,7 @@ data "template_file" "user_data" {
     minecraft_bucket      = local.bucket
     minecraft_backup_freq = var.minecraft_backup_freq
     minecraft_version     = var.minecraft_version
-    java_mx_mem           = var.java_mx_mem
-    java_ms_mem           = var.java_ms_mem
+    minecraft_memory      = var.minecraft_memory
   }
 }
 

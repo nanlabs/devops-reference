@@ -103,14 +103,8 @@ variable "minecraft_backup_freq" {
 }
 
 // You'll want to tune these next two based on the instance type
-variable "java_ms_mem" {
+variable "minecraft_memory" {
   description = "Java initial and minimum heap size"
-  type        = string
-  default     = "2G"
-}
-
-variable "java_mx_mem" {
-  description = "Java maximum heap size"
   type        = string
   default     = "2G"
 }

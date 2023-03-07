@@ -17,9 +17,7 @@ module "minecraft" {
   minecraft_version     = "1.19.3"
   minecraft_backup_freq = 10
 
-  java_ms_mem = "2G"
-  java_mx_mem = "2G"
-
+  minecraft_memory = "2G"
 
   tags = { By = "me" }
 }

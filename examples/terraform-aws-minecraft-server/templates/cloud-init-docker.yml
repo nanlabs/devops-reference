@@ -108,6 +108,7 @@ runcmd:
     -d
     -e EULA=TRUE
     -e VERSION=${minecraft_version}
+    -e MEMORY=${minecraft_memory}
     -p 25565:25565
     --restart=always
     -v ${minecraft_root}:/data
