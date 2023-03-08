@@ -15,8 +15,8 @@ export const handler: ScheduledHandler = async (event) => {
     InstanceIds: [instanceId],
   }).promise();
 
-  if (instanceStatus?.InstanceStatuses && instanceStatus?.InstanceStatuses[0].InstanceState?.Name !== "running") {
-    console.log("Instance not running. Skipping");
+  if (instanceStatus?.InstanceStatuses?.length === 0 || (instanceStatus?.InstanceStatuses && instanceStatus?.InstanceStatuses[0].InstanceState?.Name !== "running")) {
+    console.log("Instance is not running. Nothing to do");
     return;
   }
 
