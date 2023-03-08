@@ -30,10 +30,19 @@ provider:
     versioning: true
     serverSideEncryption: AES256
   iamRoleStatements:
+    iamRoleStatements:
     - Effect: Allow
       Action:
-        - ec2:DescribeInstances
         - ec2:DescribeInstanceStatus
+      Resource:
+        - Fn::Join:
+            - ":"
+            - - "arn:aws:ec2"
+              - Ref: AWS::Region
+              - Ref: AWS::AccountId
+              - "*"
+    - Effect: Allow
+      Action:
         - ec2:StartInstances
         - ec2:StopInstances
       Resource:
