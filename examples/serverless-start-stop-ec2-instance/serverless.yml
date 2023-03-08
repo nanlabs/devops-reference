@@ -35,12 +35,7 @@ provider:
       Action:
         - ec2:DescribeInstanceStatus
       Resource:
-        - Fn::Join:
-            - ":"
-            - - "arn:aws:ec2"
-              - Ref: AWS::Region
-              - Ref: AWS::AccountId
-              - "*"
+        - "*"
     - Effect: Allow
       Action:
         - ec2:StartInstances
