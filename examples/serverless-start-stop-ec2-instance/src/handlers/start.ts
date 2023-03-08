@@ -15,7 +15,7 @@ export const handler: ScheduledHandler = async (event) => {
     InstanceIds: [instanceId],
   }).promise();
 
-  if (instanceStatus?.InstanceStatuses && instanceStatus?.InstanceStatuses[0].InstanceState?.Name === "running") {
+  if (instanceStatus?.InstanceStatuses && instanceStatus?.InstanceStatuses[0]?.InstanceState?.Name === "running") {
     console.log("Instance is already running");
     return;
   }
