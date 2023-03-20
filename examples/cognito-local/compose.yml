@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  cognito-local:
+    image: jagregory/cognito-local:latest
+    volumes:
+      - ./.cognito:/app/.cognito
+    network_mode: host
+

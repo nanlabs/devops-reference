@@ -1,0 +1,28 @@
+{
+  "LambdaClient": {
+    "endpoint": "http://localhost:4000",
+    "credentials": {
+      "accessKeyId": "local",
+      "secretAccessKey": "local"
+    },
+    "region": "local"
+  },
+  "TokenConfig": {
+    "IssuerDomain": "http://localhost:9229"
+  },
+  "TriggerFunctions": {
+    "PreSignUp": "cognito-local-lambdas-dev-preSignUp"
+  },
+  "UserPoolDefaults": {
+    "UsernameAttributes": [
+      "email"
+    ]
+  },
+  "KMSConfig": {
+    "credentials": {
+      "accessKeyId": "local",
+      "secretAccessKey": "local"
+    },
+    "region": "local"
+  }
+}

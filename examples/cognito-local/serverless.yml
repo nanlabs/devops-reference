@@ -1,0 +1,24 @@
+service: cognito-local-lambdas
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  preSignUp:
+    handler: src/handlers/handler.preSignUp
+    events:
+      - cognitoUserPool:
+          pool: MyUserPool
+          trigger: PreSignUp
+
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    lambdaPort: 4000
+

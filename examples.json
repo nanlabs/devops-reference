@@ -397,6 +397,15 @@
         "Examples > DevOps > Infrastructure as Code > Terraform"
       ],
       "labels": ["Terraform", "AWS", "Minecraft", "Docker", "EC2"]
+    },
+    {
+      "name": "AWS Cognito Local Example",
+      "description": "AWS Cognito local enviroment with Docker and Serverless offline",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/cognito-local/",
+      "tags": [
+        "Examples > DevOps > Serverless Framework > Containers"
+      ],
+      "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Cognito", "Docker"]
     }
   ]
 }
