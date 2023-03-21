@@ -15,22 +15,6 @@
       "Username": "test",
       "UserStatus": "UNCONFIRMED",
       "ConfirmationCode": "979877"
-    },
-    "test5": {
-      "Attributes": [
-        {
-          "Name": "sub",
-          "Value": "f5035038-5f67-400d-bbb5-e6762779c92d"
-        }
-      ],
-      "Enabled": true,
-      "Password": "NaNlabs20203",
-      "RefreshTokens": [],
-      "UserCreateDate": "2023-03-21T14:20:17.124Z",
-      "UserLastModifiedDate": "2023-03-21T14:20:17.124Z",
-      "Username": "test5",
-      "UserStatus": "UNCONFIRMED",
-      "ConfirmationCode": "052401"
     }
   },
   "Options": {

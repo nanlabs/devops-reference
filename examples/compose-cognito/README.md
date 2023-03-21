@@ -22,4 +22,3 @@ This will start the following services:
 1. a User Pool with ID local_3IUPq2kI, see file ./db/local_3IUPq2kI.json
 2. a User with username test-user, see file ./db/local_3IUPq2kI.json
 3. a User Pool Client with ID e1kcys1v2s6tr4u69ig3nqb27, see file ./db/clients.json
-
