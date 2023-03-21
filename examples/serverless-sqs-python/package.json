@@ -1,0 +1,33 @@
+{
+  "name": "nan-sqs-python",
+  "version": "1.0.0",
+  "description": "Serverless sqs with local stack and python example",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "invoke": "serverless invoke --function",
+    "invoke:local": "serverless invoke local --function",
+    "sls": "serverless",
+    "start": "serverless offline start --stage local",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "localstack-up": "docker-compose -f compose-localstack/docker-compose.yml up",
+    "localstack-up-d": "docker-compose -f compose-localstack/docker-compose.yml up -d",
+    "localstack-down": "docker-compose -f compose-localstack/docker-compose.yml down"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
+  },
+  "author": "julianpalmerio",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/devops-reference#readme",
+  "devDependencies": {
+    "serverless": "^3.23.0",
+    "serverless-offline": "^11.1.3",
+    "serverless-python-requirements": "^5.4.0"
+  },
+  "dependencies": {
+    "serverless-offline-sqs-external": "^1.0.6"
+  }
+}
