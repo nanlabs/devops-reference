@@ -2,7 +2,10 @@
   "name": "serverless-cognito-lambda-triggers",
   "version": "1.0.0",
   "scripts": {
-    "dev": "docker-compose up & sls offline"
+    "sls": "serverless",
+    "sls:deploy": "serverless deploy",
+    "sls:offline": "serverless offline start",
+    "sls:package": "serverless package"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.101",

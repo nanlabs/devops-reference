@@ -15,6 +15,26 @@
       "Username": "test",
       "UserStatus": "UNCONFIRMED",
       "ConfirmationCode": "979877"
+    },
+    "test5": {
+      "Attributes": [
+        {
+          "Name": "sub",
+          "Value": "db7a37a5-a940-4e86-9c25-f16549e6094f"
+        },
+        {
+          "Name": "email",
+          "Value": "test5"
+        }
+      ],
+      "Enabled": true,
+      "Password": "NaNlabs20203",
+      "RefreshTokens": [],
+      "UserCreateDate": "2023-03-21T14:19:37.843Z",
+      "UserLastModifiedDate": "2023-03-21T14:19:37.843Z",
+      "Username": "test5",
+      "UserStatus": "UNCONFIRMED",
+      "ConfirmationCode": "420256"
     }
   },
   "Options": {
@@ -254,7 +274,9 @@
       "AllowAdminCreateUserOnly": false,
       "UnusedAccountValidityDays": 7
     },
-    "UsernameAttributes": ["email"],
+    "UsernameAttributes": [
+      "email"
+    ],
     "Arn": "arn:aws:cognito-idp:local:local:userpool/local_3IUPq2kI",
     "CreationDate": "2023-03-17T16:36:07.141Z",
     "Id": "local_3IUPq2kI",
