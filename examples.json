@@ -403,7 +403,7 @@
       "description": "AWS Cognito local enviroment with Docker and Serverless offline",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-cognito-local/",
       "tags": [
-        "Examples > DevOps > Serverless Framework > Containers"
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Cognito", "Docker"]
     },
