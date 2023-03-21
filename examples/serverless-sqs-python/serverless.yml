@@ -1,0 +1,105 @@
+service: ${env:SERVICE_NAME, 'sqs-python'}
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-python-requirements
+  - serverless-offline-sqs-external
+  - serverless-offline
+  - ./plugins/serverless-offline-python-requirements
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+  include:
+    - '!./**'
+    - '**/*.py'
+  exclude:
+    - '**'
+
+custom:
+  myFirstQueue:
+    Arn:
+      local: 'arn:aws:sqs:us-east-1:000000000000:${self:service}-${self:provider.stage}-myFirstQueue'
+      other: !GetAtt myFirstQueue.Arn
+    Url:
+      local: 'http://localhost.com/000000000000/${self:service}-${self:provider.stage}-myFirstQueue' 
+      other: !GetAtt myFirstQueue.QueueUrl
+
+  pythonRequirements:
+    layer: true
+    usePipenv: true
+    noDeploy:
+      - pytest
+
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+    useChildProcesses: true
+    noPrependStageInUrl: true
+
+  serverless-offline-sqs-external:
+    autoCreate: true                 # create queue if not exists
+    apiVersion: '2012-11-05'
+    endpoint: ${env:SQS_CLIENT_URL}
+    region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+    accessKeyId: ${env:AWS_ACCESS_KEY_ID}
+    secretAccessKey: ${env:AWS_SECRET_ACCESS_KEY}
+    skipCacheInvalidation: false
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  environment:
+    STAGE: ${self:provider.stage}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - SQS:SendMessage
+        - SQS:DeleteMessage
+        - SQS:ReceiveMessage
+        - SQS:GetQueueUrl
+        - SQS:ListQueues
+      Resource: "*"
+
+functions:
+  compute:
+    runtime: python3.9
+    module: app/compute
+    handler: handler.compute
+    description: This lambda will
+    events:
+      - sqs: ${self:custom.myFirstQueue.Arn.${self:provider.stage}}
+
+  sendToQueue:
+    runtime: python3.9
+    module: app/send_to_queue
+    handler: handler.send_to_queue
+    environment:
+      SQS_CLIENT_URL: ${env:SQS_CLIENT_URL}
+      SQS_QUEUE_URL: ${self:custom.myFirstQueue.Url.${self:provider.stage}}
+    description: This lambda will enqueue a message
+    events:
+      - http:
+          path: /send-to-queue
+          method: POST
+
+resources:
+  Resources:
+    myFirstQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: ${self:service}-${self:provider.stage}-myFirstQueue
