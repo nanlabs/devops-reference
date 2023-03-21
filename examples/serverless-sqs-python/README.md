@@ -11,7 +11,6 @@ If you need to create a queue without a lambda event consuming it look in the lo
 
 To use a queue in a lambda event we have to specify its arn, and to consume a queue in a lambda function we have to pass its url. So, to simplify this we can add a custom resource per queue by specifying the local arn and the local url (for the other stages we get the value of the cloudformation resource) and then we can pass the custom resource to the lambdas by taking advantage of the stage variable. So we have to create the queues in cloudformation resources and specify them in custom resources as well.
 
-
 ## Requirements
 
 **You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
@@ -44,6 +43,7 @@ npm run localstack-d
 ```
 
 Run the following command to stop the docker container
+
 ```sh
 npm run localstack-down
 ```
@@ -55,6 +55,7 @@ npm run localstack-down
 ```sh
 npm run sls requirements install
 ```
+
 #### Run the Application
 
 This repo has a local development set up that uses the file `.env.local` to configure the local environment.
@@ -79,6 +80,7 @@ curl http://localhost:3000/send-to-queue -d '{ "message": "value"}'
 > NOTE: This will enqueue the message on the queue, and after some seconds you will see
 the `compute` lambda getting the message and deleting it.
 ```
+
 ## Deployment
 
 To deploy the app to AWS, you'll first need to configure your AWS credentials. There are many ways
