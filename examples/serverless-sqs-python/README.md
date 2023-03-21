@@ -12,7 +12,7 @@ We use Localstack to emulate AWS SQS locally and need to use the serverless-offl
 
 Queues defined in resources, e.g. myFirstQueue are deployed in cloud environments. they are not deployed by default in localstack. The serverless-offline-sqs-external plugin creates the queues automatically in localstack if they are part of a lambda event.
 
-If you need to create a queue without a lambda event consuming it look in the localstack docker-compose.yml file. There is commented code to run a configuration script.
+If you need to create a queue without a lambda event consuming it look in the localstack docker-compose.yml file. There is commented code to run a set-up script.
 
 To use a queue in a lambda event we have to specify its arn, and to consume a queue in a lambda function we have to pass its url. So, to simplify this we can add a custom resource per queue by specifying the local arn and the local url (for the other stages we get the value of the cloudformation resource) and then we can pass the custom resource to the lambdas by taking advantage of the stage variable. So we have to create the queues in cloudformation resources and specify them in custom resources as well.
 
