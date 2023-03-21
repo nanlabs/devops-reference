@@ -1,0 +1,31 @@
+service: ${env:SERVICE_NAME, 'CognitoLocalLambdas'}
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+
+functions:
+  preSignUp:
+    handler: src/handlers/handler.preSignUp
+    events:
+      - cognitoUserPool:
+          pool: MyUserPool
+          trigger: PreSignUp
+
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    lambdaPort: 4000
+

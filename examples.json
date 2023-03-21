@@ -397,6 +397,24 @@
         "Examples > DevOps > Infrastructure as Code > Terraform"
       ],
       "labels": ["Terraform", "AWS", "Minecraft", "Docker", "EC2"]
+    },
+    {
+      "name": "AWS Cognito Local Example",
+      "description": "AWS Cognito local enviroment with Docker and Serverless offline",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-cognito-local/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Cognito", "Docker"]
+    },
+    {
+      "name": "AWS Cognito local using Docker Compose",
+      "description": "compose.yml to run Cognito locally.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-cognito/",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
+      ],
+      "labels": ["Docker", "Docker Compose", "Cognito", "AWS"]
     }
   ]
 }
