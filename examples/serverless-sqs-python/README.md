@@ -1,8 +1,3 @@
-pyenv install 3.9.0
-pyenv install local
-npm run sls requirements install
-npm run start
-
 # Serverless SQS offline + Python + Localstack
 
 We use Serverless Framework to do production ready deployments and local development using
