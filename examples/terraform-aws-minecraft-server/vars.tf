@@ -116,6 +116,12 @@ variable "associate_public_ip_address" {
   default     = true
 }
 
+variable "associat_eip" {
+  description = "Use an EIP for the instance"
+  type        = bool
+  default     = false
+}
+
 variable "ami" {
   description = "AMI to use for the instance - will default to latest Ubuntu"
   type        = string

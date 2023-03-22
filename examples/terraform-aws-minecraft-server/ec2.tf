@@ -61,3 +61,15 @@ module "ec2_security_group" {
 
   tags = module.label.tags
 }
+
+module "eip" {
+  source  = "terraform-aws-modules/eip/aws"
+  version = "2.2.0"
+
+  count = var.associat_eip ? 1 : 0
+
+  vpc      = true
+  instance = module.ec2_minecraft.this_instance_id
+
+  tags = module.label.tags
+}
