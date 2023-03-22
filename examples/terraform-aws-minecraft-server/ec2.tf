@@ -63,7 +63,7 @@ module "ec2_security_group" {
 }
 
 resource "aws_eip" "eip" {
-  count = var.associat_eip ? 1 : 0
+  count = var.associate_elastic_ip_address ? 1 : 0
 
   instance = module.ec2_minecraft.id
   vpc      = true

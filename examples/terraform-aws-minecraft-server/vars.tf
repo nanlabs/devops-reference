@@ -116,7 +116,7 @@ variable "associate_public_ip_address" {
   default     = true
 }
 
-variable "associat_eip" {
+variable "associate_elastic_ip_address" {
   description = "Use an EIP for the instance"
   type        = bool
   default     = false
