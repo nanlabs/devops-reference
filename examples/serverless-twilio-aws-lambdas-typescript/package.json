@@ -1,0 +1,36 @@
+{
+  "name": "nan-twilio-aws-lambas-typescript",
+  "version": "1.0.0",
+  "description": "Serverless Twilio + Typescript Lambda example",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "invoke": "serverless invoke --function",
+    "invoke:local": "serverless invoke local --function",
+    "sls": "serverless",
+    "start": "serverless offline start --stage local",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
+  },
+  "author": "julianpalmerio",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/devops-reference#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.108",
+    "serverless": "^3.23.0",
+    "serverless-offline": "^11.1.3",
+    "serverless-plugin-typescript": "^2.1.4",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@middy/core": "^3.6.2",
+    "@middy/http-header-normalizer": "^4.2.8",
+    "@middy/http-json-body-parser": "^3.6.2",
+    "aws-lambda": "^1.0.7",
+    "http-errors": "^2.0.0",
+    "twilio": "^4.9.0"
+  }
+}
