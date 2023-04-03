@@ -1,0 +1,43 @@
+service: ${env:SERVICE_NAME, 'TwilioAwsLambdasTypescript'}
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+    useChildProcesses: true
+    noPrependStageInUrl: true
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+
+functions:
+  sendTwilioSMS:
+    handler: src/handlers/sendTwilioSMS.handler
+    environment:
+      TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${env:TWILIO_AUTH_TOKEN}
+      TWILIO_PHONE_NUMBER: ${env:TWILIO_PHONE_NUMBER}
+    events:
+      - http:
+           path: /send-twilio-sms
+           method: POST
