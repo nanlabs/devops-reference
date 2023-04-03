@@ -408,6 +408,15 @@
       "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Cognito", "Docker"]
     },
     {
+      "name": "Serverless Twilio + Typescript Lambda example",
+      "description": "Serverless Framework example to deploy a lambda function using Twilio and TypeScript.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-twilio-aws-lambdas-typescript/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Twilio", "TypeScript"]
+    },
+    {
       "name": "AWS Cognito local using Docker Compose",
       "description": "compose.yml to run Cognito locally.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-cognito/",
