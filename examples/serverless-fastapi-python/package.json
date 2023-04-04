@@ -1,0 +1,9 @@
+{
+    "name": "serverless-fastapi-app",
+    "version": "1.0.0",
+    "author": "nanlabs",
+    "devDependencies": {
+        "serverless-dotenv-plugin": "^4.0.2",
+        "serverless-python-requirements": "^6.0.0"
+    }
+}
