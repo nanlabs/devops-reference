@@ -336,6 +336,22 @@
       ]
     },
     {
+      "name": "Serverless SQS offline + Python + Localstack Example",
+      "description": "Serverless Framework example to run lambda functions locally using [Serverless Offline SQS](https://www.serverless.com/plugins/serverless-offline-sqs-external) with Localstack. It provides a full local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-sqs-python/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": [
+        "Serverless Framework",
+        "SQS",
+        "Serverless Offline",
+        "Serverless Offline SQS",
+        "Localstack",
+        "Python"
+      ]
+    },
+    {
       "name": "Start and Stop EC2 Instances with AWS Lambda",
       "description": "Serverless Framework example to start and stop EC2 instances using AWS Lambda.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-start-stop-ec2-instance/",
