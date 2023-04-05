@@ -1,4 +1,10 @@
 #  Serverless FastAPI
+
+Serverless Framework + FastAPI example with the following features:
+
+- production ready deployment
+- local development out of the box
+
 ## Requirements
 
 **You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
