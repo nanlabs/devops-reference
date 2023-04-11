@@ -46,7 +46,7 @@ This repo has a local development set up that uses the file `.env.local` to conf
 Run the following command to start the local development server:
 
 ```sh
-npm run offline:start -- --stage local
+npm run sls:offline
 ```
 
 ### Triggering AWS Events offline
@@ -59,7 +59,7 @@ aws_secret_access_key = S3RVER
 ```
 
 ```sh
-aws --endpoint-url=http://localhost:8000 s3 cp .gitignore s3://c2sec-domains/ --profile s3local
+aws --endpoint-url=http://localhost:8000 s3 cp .gitignore s3://customBucket/ --profile s3local
 ```
 
 ### Testing pointing to the Cloud
@@ -74,3 +74,14 @@ export AWS_DEFAULT_REGION=<your-default-region>
 ```
 
 and the run the previous commands.
+
+## Deployment
+
+To deploy the app to AWS, you'll first need to configure your AWS credentials. There are many ways
+to set your credentials, for more information refer to the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
+
+Once set you can deploy your app using the serverless framework with:
+
+```sh
+npm run sls:deploy -- --verbose --stage <stage>
+```

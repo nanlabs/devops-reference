@@ -6,7 +6,8 @@
   "scripts": {
     "sls": "serverless",
     "sls:deploy": "serverless deploy",
-    "offline:start": "serverless offline start",
+    "sls:offline": "serverless offline start",
+    "sls:package": "serverless package",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
