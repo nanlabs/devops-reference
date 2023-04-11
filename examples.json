@@ -409,9 +409,7 @@
       "name": "Terraform AWS Minecraft Server",
       "description": "Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-aws-minecraft-server/",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": ["Terraform", "AWS", "Minecraft", "Docker", "EC2"]
     },
     {
@@ -421,7 +419,13 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Cognito", "Docker"]
+      "labels": [
+        "Serverless Framework",
+        "Serverless Offline",
+        "AWS",
+        "Cognito",
+        "Docker"
+      ]
     },
     {
       "name": "Serverless Twilio + Typescript Lambda example",
@@ -430,7 +434,13 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": ["Serverless Framework", "Serverless Offline", "AWS", "Twilio", "TypeScript"]
+      "labels": [
+        "Serverless Framework",
+        "Serverless Offline",
+        "AWS",
+        "Twilio",
+        "TypeScript"
+      ]
     },
     {
       "name": "AWS Cognito local using Docker Compose",
@@ -440,6 +450,20 @@
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
       "labels": ["Docker", "Docker Compose", "Cognito", "AWS"]
+    },
+    {
+      "name": "Serverless + FastAPI",
+      "description": "Serverless Framework example to deploy a FastAPI application using Python. It also has local development environment using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline).",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-python-fastapi/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": [
+        "Serverless Framework",
+        "Serverless Offline",
+        "FastAPI",
+        "Python"
+      ]
     }
   ]
 }
