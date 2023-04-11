@@ -24,7 +24,7 @@ custom:
       local: 'arn:aws:sqs:us-east-1:000000000000:${self:service}-${self:provider.stage}-myFirstQueue'
       other: !GetAtt myFirstQueue.Arn
     Url:
-      local: 'http://localhost.com/000000000000/${self:service}-${self:provider.stage}-myFirstQueue' 
+      local: 'http://localhost.com/000000000000/${self:service}-${self:provider.stage}-myFirstQueue'
       other: !GetAtt myFirstQueue.QueueUrl
 
   pythonRequirements:
@@ -36,7 +36,6 @@ custom:
   serverless-offline:
     httpPort: 3000
     port: 3000
-    useChildProcesses: true
     noPrependStageInUrl: true
 
   serverless-offline-sqs-external:
