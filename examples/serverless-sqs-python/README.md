@@ -62,7 +62,7 @@ This repo has a local development set up that uses the file `.env.local` to conf
 Run the following command to start the local development server:
 
 ```sh
-npm run start
+npm run sls:offline
 ```
 
 It will start the following services:
@@ -89,7 +89,7 @@ to set your credentials, for more information refer to the [AWS documentation](h
 Once set you can deploy your app using the serverless framework with:
 
 ```sh
-npm run deploy -- --verbose --stage <stage>
+npm run sls:deploy -- --verbose --stage <stage>
 ```
 
 ## Useful links
