@@ -1,4 +1,4 @@
-#  Serverless FastAPI
+# Serverless FastAPI
 
 Serverless Framework + FastAPI example with the following features:
 
