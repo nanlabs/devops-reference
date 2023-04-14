@@ -11,7 +11,7 @@
     "sls:deploy": "serverless deploy",
     "sls:invoke": "serverless invoke --function",
     "sls:invoke:local": "serverless invoke local --function",
-    "sls:offline": "serverless offline",
+    "sls:offline": "serverless offline start",
     "sls:package": "serverless package",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
