@@ -31,6 +31,8 @@ custom:
     directory: ${env:LOCAL_S3_PATH, '/tmp'}
     accessKeyId: S3RVER
     secretAccessKey: S3RVER
+    buckets:
+      - ${env:S3_EXTRA_BUCKET_NAME}
 
 provider:
   name: aws
@@ -47,8 +49,10 @@ provider:
       Action:
         - s3:*
       Resource:
-        - arn:aws:s3:::${env:S3_BUCKET_NAME}
-        - arn:aws:s3:::${env:S3_BUCKET_NAME}/*
+        - arn:aws:s3:::${env:S3_LAMBDA_TRIGGER_BUCKET_NAME}
+        - arn:aws:s3:::${env:S3_LAMBDA_TRIGGER_BUCKET_NAME}/*
+        - arn:aws:s3:::${env:S3_EXTRA_BUCKET_NAME}
+        - arn:aws:s3:::${env:S3_EXTRA_BUCKET_NAME}/*
 
 functions:
   slsS3LocalExampleResolver:
@@ -57,7 +61,7 @@ functions:
     module: src/handlers/s3
     events:
       - s3:
-          bucket: ${env:S3_BUCKET_NAME}
+          bucket: ${env:S3_LAMBDA_TRIGGER_BUCKET_NAME}
           event: s3:ObjectCreated:*
           # rules:
           #   - prefix: uploads/
@@ -68,7 +72,7 @@ resources:
     S3Bucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${env:S3_BUCKET_NAME}
+        BucketName: ${env:S3_EXTRA_BUCKET_NAME}
 
   Outputs:
     S3BucketNameOutputKey:
