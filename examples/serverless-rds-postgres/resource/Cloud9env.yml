@@ -8,4 +8,4 @@ Resources:
       Description: Cloud9 instance to access Cloud9
       InstanceType: t2.small
       Name: RDSCloud9${self:service}${self:provider.stage}
-      SubnetId: ${self:variables.values.PrivateSubnetOne}
+      SubnetId: ${self:variables.values.PublicSubnetOne}
