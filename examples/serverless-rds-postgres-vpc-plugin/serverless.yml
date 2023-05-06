@@ -42,7 +42,7 @@ custom:
     createFlowLogs: false
 
     # Whether to create a bastion host
-    createBastionHost: true
+    createBastionHost: false
     bastionHostKeyName: bastion-key # required if creating a bastion host
 
     # Whether to create a NAT instance
