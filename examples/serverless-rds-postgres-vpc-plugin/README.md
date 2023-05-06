@@ -1,10 +1,5 @@
 # Serverless RDS Postgres Deployment
 
-> IMPORTANT: A new version of this example is available at [nanlabs/devops-reference/examples/serverless-rds-postgres-vpc-plugin](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-rds-postgres-vpc-plugin).
-> We recommend using the new version as it is more flexible and easier to use.
-
----
-
 We use Serverless Framework to do production ready deployments.
 
 ## Usage

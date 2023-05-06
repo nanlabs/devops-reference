@@ -1,0 +1,22 @@
+{
+  "name": "serverless-vpc-plugin-with-rds-postgres",
+  "version": "1.0.0",
+  "description": "Serverless RDS Postgres example",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "sls:deploy": "serverless deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
+  },
+  "author": "ulises-jeremias",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/devops-reference#readme",
+  "devDependencies": {
+    "serverless": "^3.19.0",
+    "serverless-vpc-plugin": "^1.0.6"
+  }
+}

@@ -1,0 +1,79 @@
+service: ${env:SERVICE_NAME, 'RDSPostgres'}
+
+useDotenv: true
+
+plugins:
+  - serverless-vpc-plugin
+
+provider:
+  name: aws
+  stage: ${opt:stage, env:STAGE, 'local'}
+  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
+  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+
+custom:
+  postgres:
+    masterUsername: ${param:PostgresMasterUsername, env:RDS_POSTGRES_MASTER_USERNAME}
+    database: ${param:PostgresDatabaseName, env:RDS_POSTGRES_DATABASE_NAME}
+
+  vpcConfig:
+    # Whether plugin is enabled. Can be used to selectively disable plugin
+    # on certain stages or configurations. Defaults to true.
+    enabled: true
+
+    cidrBlock: ${param:VpcCidrBlock, env:VPC_CIDR_BLOCK, '10.0.0.0/16'}
+
+    # if createNatGateway is a boolean "true", a NAT Gateway and EIP will be provisioned in each zone
+    # if createNatGateway is a number, that number of NAT Gateways will be provisioned
+    createNatGateway: ${param:VpcCreateNatGateway, env:VPC_CREATE_NAT_GATEWAY, '2'}
+
+    # When enabled, the DB subnet will only be accessible from the Application subnet
+    # Both the Public and Application subnets will be accessible from 0.0.0.0/0
+    createNetworkAcl: false
+
+    # Whether to create the DB subnet
+    createDbSubnet: true
+
+    # Whether to enable VPC flow logging to an S3 bucket
+    createFlowLogs: false
+
+    # Whether to create a bastion host
+    createBastionHost: true
+    bastionHostKeyName: bastion-key # required if creating a bastion host
+
+    # Whether to create a NAT instance
+    createNatInstance: false
+
+    # Whether to create AWS Systems Manager (SSM) Parameters
+    createParameters: true
+
+    # Optionally specify AZs (defaults to auto-discover all availabile AZs)
+    zones:
+      - ${self:provider.region}a
+      - ${self:provider.region}b
+      - ${self:provider.region}c
+
+    # By default, S3 and DynamoDB endpoints will be available within the VPC
+    # see https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html
+    # for a list of available service endpoints to provision within the VPC
+    # (varies per region)
+    services:
+      - kms
+      - secretsmanager
+      - rds-data
+
+    # Optionally specify subnet groups to create. If not provided, subnet groups
+    # for RDS, Redshift, ElasticCache and DAX will be provisioned.
+    subnetGroups:
+      - rds
+
+    # Whether to export stack outputs so it may be consumed by other stacks
+    exportOutputs: true
+
+resources:
+  - ${file(./resource/RDSPostgres.yml)}
+  - ${file(./resource/RDSPostgresSecrets.yml)}

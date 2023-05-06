@@ -1,0 +1,50 @@
+Resources:
+  RDSPostgresInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      MasterUsername:
+        Fn::Sub:
+          - "{{resolve:secretsmanager:${SecretName}:SecretString:username}}"
+          - SecretName: !Ref RDSPostgresConnectionSecret
+      MasterUserPassword:
+        Fn::Sub:
+          - "{{resolve:secretsmanager:${SecretName}:SecretString:password}}"
+          - SecretName: !Ref RDSPostgresConnectionSecret
+      AllocatedStorage: 20
+      DBName: ${self:custom.postgres.database}
+      DBInstanceClass: db.t4g.small
+      DBSubnetGroupName: !Ref RDSSubnetGroup
+      Engine: postgres
+      PubliclyAccessible: false
+      VPCSecurityGroups:
+        - !Ref RDSPostgresSecurityGroup
+
+  RDSPostgresSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow HTTP and HTTPS from anywhere
+      VpcId: !Ref VPC
+      SecurityGroupEgress:
+        - Description: "deny all outbound"
+          IpProtocol: "-1"
+          CidrIp: "127.0.0.1/32"
+      SecurityGroupIngress:
+        - Description: "permit PostgreSQL (5432) from AppSecurityGroup"
+          IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          CidrIp: !GetAtt AppSecurityGroup.GroupId
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-RDS-security-group
+
+Outputs:
+  RDSPostgresSecurityGroup:
+    Description: The security group of the RDS Postgres instance
+    Value: !Ref RDSPostgresSecurityGroup
+  RDSPostgresEndpoint:
+    Description: The endpoint of the RDS Postgres instance
+    Value: !GetAtt RDSPostgresInstance.Endpoint.Address
+  RDSPostgresPort:
+    Description: The port of the RDS Postgres instance
+    Value: !GetAtt RDSPostgresInstance.Endpoint.Port
