@@ -379,7 +379,7 @@
       "labels": ["Serverless Framework", "RDS Postgres"]
     },
     {
-      "name": "Serverless VPC Plugin with RDS Postgres",
+      "name": "RDS Postgres Instance with Serverless VPC Plugin",
       "description": "Serverless Framework example to deploy a RDS Postgres instance with all the necessary resources using [Serverless VPC Plugin](https://www.serverless.com/plugins/serverless-vpc-plugin).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-rds-postgres-vpc-plugin/",
       "tags": [
