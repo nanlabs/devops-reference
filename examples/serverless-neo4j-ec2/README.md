@@ -1,5 +1,7 @@
 # Serverless Neo4j Deployment
 
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+
 We use Serverless Framework to do production ready deployments.
 
 ## Usage
