@@ -26,7 +26,7 @@ custom:
 
     # if createNatGateway is a boolean "true", a NAT Gateway and EIP will be provisioned in each zone
     # if createNatGateway is a number, that number of NAT Gateways will be provisioned
-    createNatGateway: ${param:VpcCreateNatGateway, env:VPC_CREATE_NAT_GATEWAY, '2'}
+    createNatGateway: true
 
     # When enabled, the DB subnet will only be accessible from the Application subnet
     # Both the Public and Application subnets will be accessible from 0.0.0.0/0
