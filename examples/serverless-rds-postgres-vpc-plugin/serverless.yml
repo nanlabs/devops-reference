@@ -7,9 +7,6 @@ plugins:
 
 provider:
   name: aws
-  stage: ${opt:stage, env:STAGE, 'local'}
-  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
-  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -53,9 +50,9 @@ custom:
 
     # Optionally specify AZs (defaults to auto-discover all availabile AZs)
     zones:
-      - ${self:provider.region}a
-      - ${self:provider.region}b
-      - ${self:provider.region}c
+      - ${aws:region}a
+      - ${aws:region}b
+      - ${aws:region}c
 
     # By default, S3 and DynamoDB endpoints will be available within the VPC
     # see https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html

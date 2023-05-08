@@ -1,4 +1,4 @@
-bucketDeploy: ${self:service}-${self:provider.stage}-glue-bucket-deploy
+bucketDeploy: ${self:service}-${sls:stage}-glue-bucket-deploy
 createBucket: true
 s3Prefix: ""
 jobs:
@@ -21,11 +21,11 @@ jobs:
       enableMetrics: true
       enableContinuousCloudwatchLog: true
       enableContinuousLogFilter: true
-      continuousLogLogGroup: ${self:service}-${self:provider.stage}-logs
+      continuousLogLogGroup: ${self:service}-${sls:stage}-logs
       enableSparkUi: true
-      sparkEventLogsPath: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/pyspark/spark-events-logs/
-      tempDir: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/tmp/
-      extraPyFiles: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/package.zip
+      sparkEventLogsPath: s3://${self:service}-${sls:stage}-glue-bucket-deploy/pyspark/spark-events-logs/
+      tempDir: s3://${self:service}-${sls:stage}-glue-bucket-deploy/tmp/
+      extraPyFiles: s3://${self:service}-${sls:stage}-glue-bucket-deploy/package.zip
       customArguments:
         # Install additional python packages
         "additional-python-modules": "tldextract==3.3.0"
@@ -33,7 +33,7 @@ jobs:
         "CUSTOM_ARGUMENT": "CUSTOM_VALUE"
     SupportFiles:
       - local_path: package.zip
-        s3_bucket: ${self:service}-${self:provider.stage}-glue-bucket-deploy
+        s3_bucket: ${self:service}-${sls:stage}-glue-bucket-deploy
         s3_prefix: ""
         execute_upload: true
   - name: pythonshell
@@ -54,9 +54,9 @@ jobs:
       enableMetrics: true
       enableContinuousCloudwatchLog: true
       enableContinuousLogFilter: true
-      continuousLogLogGroup: ${self:service}-${self:provider.stage}-logs
-      tempDir: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/tmp/
-      extraPyFiles: s3://${self:service}-${self:provider.stage}-glue-bucket-deploy/package.zip
+      continuousLogLogGroup: ${self:service}-${sls:stage}-logs
+      tempDir: s3://${self:service}-${sls:stage}-glue-bucket-deploy/tmp/
+      extraPyFiles: s3://${self:service}-${sls:stage}-glue-bucket-deploy/package.zip
       customArguments:
         # Install additional python packages
         "additional-python-modules": "tldextract==3.3.0"
@@ -64,7 +64,7 @@ jobs:
         "CUSTOM_ARGUMENT": "CUSTOM_VALUE"
     SupportFiles:
       - local_path: package.zip
-        s3_bucket: ${self:service}-${self:provider.stage}-glue-bucket-deploy
+        s3_bucket: ${self:service}-${sls:stage}-glue-bucket-deploy
         s3_prefix: ""
         execute_upload: true
 triggers:

@@ -36,7 +36,7 @@ values:
   RDSPostgresConnectionSecretName:
     Fn::If:
       - CreateRDSPostgres
-      - ${self:provider.stage}/${self:service}
+      - ${sls:stage}/${self:service}
       - ${self:variables.defaults.rdsPostgresConnectionSecretName}
   VpcId:
     Fn::If:

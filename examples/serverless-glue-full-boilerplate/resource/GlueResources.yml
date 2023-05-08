@@ -17,11 +17,11 @@ Resources:
   GlueAccessLogs:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: ${self:service}-${self:provider.stage}-logs
+      LogGroupName: ${self:service}-${sls:stage}-logs
   GlueSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupName: ${self:service}-${self:provider.stage}-security-group
+      GroupName: ${self:service}-${sls:stage}-security-group
       GroupDescription: NaNGlue Security Group
       SecurityGroupIngress:
         - IpProtocol: -1
@@ -76,7 +76,7 @@ Resources:
                       - - "arn:aws:s3"
                         - ""
                         - ""
-                        - "${self:service}-${self:provider.stage}-glue-bucket-deploy/*"
+                        - "${self:service}-${sls:stage}-glue-bucket-deploy/*"
               - Effect: Allow
                 Action:
                   - ec2:CreateTags

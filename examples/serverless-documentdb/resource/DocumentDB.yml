@@ -39,7 +39,7 @@ Resources:
       DBInstanceClass: db.r5.large
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-documentdb-instance-reader1
+          Value: ${self:service}-${sls:stage}-documentdb-instance-reader1
 
   DocumentDBInstanceReaderTwo:
     Type: AWS::DocDB::DBInstance
@@ -50,7 +50,7 @@ Resources:
       DBInstanceClass: db.r5.large
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-documentdb-instance-reader2
+          Value: ${self:service}-${sls:stage}-documentdb-instance-reader2
 
   DocumentDBInstanceWriter:
     Type: AWS::DocDB::DBInstance
@@ -61,7 +61,7 @@ Resources:
       DBInstanceClass: db.r5.large
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-documentdb-instance-writer
+          Value: ${self:service}-${sls:stage}-documentdb-instance-writer
 
   DocumentDBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -80,17 +80,17 @@ Resources:
           CidrIp: ${env:GLUE_VPC_CIDR}
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-documentdb-security-group
+          Value: ${self:service}-${sls:stage}-documentdb-security-group
 
   DocumentDBSubnetGroup:
     Type: AWS::DocDB::DBSubnetGroup
     Condition: CreateDocumentDBCluster
     Properties:
-      DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-documentdb-subnet-group
-      DBSubnetGroupName: ${self:service}-${self:provider.stage}-DocumentDB-subnet-group
+      DBSubnetGroupDescription: ${self:service}-${sls:stage}-documentdb-subnet-group
+      DBSubnetGroupName: ${self:service}-${sls:stage}-DocumentDB-subnet-group
       SubnetIds:
         - ${self:variables.values.PrivateSubnetOne}
         - ${self:variables.values.PrivateSubnetTwo}
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-documentdb-subnet-group
+          Value: ${self:service}-${sls:stage}-documentdb-subnet-group

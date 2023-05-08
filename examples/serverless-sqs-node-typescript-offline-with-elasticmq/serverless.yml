@@ -17,7 +17,7 @@ package:
 
 custom:
   sqs:
-    queueName: ${self:service}-${self:provider.stage}-myFirstQueue
+    queueName: ${self:service}-${sls:stage}-myFirstQueue
 
   serverless-offline:
     httpPort: 3000
@@ -34,11 +34,8 @@ custom:
 provider:
   name: aws
   runtime: nodejs16.x
-  stage: ${opt:stage, env:STAGE, 'local'}
-  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
-  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   environment:
-    STAGE: ${self:provider.stage}
+    STAGE: ${sls:stage}
     SQS_CLIENT_URL: ${env:SQS_CLIENT_URL, ''}
     SQS_QUEUE_NAME: ${self:custom.sqs.queueName}
   deploymentBucket:

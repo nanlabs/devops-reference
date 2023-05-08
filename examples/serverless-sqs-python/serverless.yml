@@ -21,10 +21,10 @@ package:
 custom:
   myFirstQueue:
     Arn:
-      local: 'arn:aws:sqs:us-east-1:000000000000:${self:service}-${self:provider.stage}-myFirstQueue'
+      local: 'arn:aws:sqs:us-east-1:000000000000:${self:service}-${sls:stage}-myFirstQueue'
       other: !GetAtt myFirstQueue.Arn
     Url:
-      local: 'http://localhost.com/000000000000/${self:service}-${self:provider.stage}-myFirstQueue'
+      local: 'http://localhost.com/000000000000/${self:service}-${sls:stage}-myFirstQueue'
       other: !GetAtt myFirstQueue.QueueUrl
 
   pythonRequirements:
@@ -50,11 +50,8 @@ custom:
 provider:
   name: aws
   runtime: python3.9
-  stage: ${opt:stage, env:STAGE, 'local'}
-  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
-  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   environment:
-    STAGE: ${self:provider.stage}
+    STAGE: ${sls:stage}
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -81,7 +78,7 @@ functions:
     handler: handler.compute
     description: This lambda will
     events:
-      - sqs: ${self:custom.myFirstQueue.Arn.${self:provider.stage}}
+      - sqs: ${self:custom.myFirstQueue.Arn.${sls:stage}}
 
   sendToQueue:
     runtime: python3.9
@@ -89,7 +86,7 @@ functions:
     handler: handler.send_to_queue
     environment:
       SQS_CLIENT_URL: ${env:SQS_CLIENT_URL}
-      SQS_QUEUE_URL: ${self:custom.myFirstQueue.Url.${self:provider.stage}}
+      SQS_QUEUE_URL: ${self:custom.myFirstQueue.Url.${sls:stage}}
     description: This lambda will enqueue a message
     events:
       - http:
@@ -101,4 +98,4 @@ resources:
     myFirstQueue:
       Type: AWS::SQS::Queue
       Properties:
-        QueueName: ${self:service}-${self:provider.stage}-myFirstQueue
+        QueueName: ${self:service}-${sls:stage}-myFirstQueue

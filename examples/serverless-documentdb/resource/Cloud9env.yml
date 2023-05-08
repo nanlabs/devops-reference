@@ -7,5 +7,5 @@ Resources:
       AutomaticStopTimeMinutes: 60
       Description: Cloud9 instance to access Cloud9
       InstanceType: t2.small
-      Name: DocumentDBCloud9${self:service}${self:provider.stage}
+      Name: DocumentDBCloud9${self:service}${sls:stage}
       SubnetId: ${self:variables.values.PublicSubnetOne}

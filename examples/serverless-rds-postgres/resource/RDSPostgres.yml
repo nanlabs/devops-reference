@@ -33,17 +33,17 @@ Resources:
           CidrIp: ${self:custom.vpc.cidr}
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-RDS-security-group
+          Value: ${self:service}-${sls:stage}-RDS-security-group
 
   RDSPostgresSubnetGroup:
     Type: AWS::RDS::DBSubnetGroup
     Condition: CreateRDSPostgres
     Properties:
-      DBSubnetGroupDescription: ${self:service}-${self:provider.stage}-RDS-subnet-group
-      DBSubnetGroupName: ${self:service}-${self:provider.stage}-RDS-subnet-group
+      DBSubnetGroupDescription: ${self:service}-${sls:stage}-RDS-subnet-group
+      DBSubnetGroupName: ${self:service}-${sls:stage}-RDS-subnet-group
       SubnetIds:
         - ${self:variables.values.PrivateSubnetOne}
         - ${self:variables.values.PrivateSubnetTwo}
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-RDS-subnet-group
+          Value: ${self:service}-${sls:stage}-RDS-subnet-group

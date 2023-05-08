@@ -8,4 +8,4 @@ Resources:
       EnableDnsHostnames: true
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-vpc
+          Value: ${self:service}-${sls:stage}-vpc

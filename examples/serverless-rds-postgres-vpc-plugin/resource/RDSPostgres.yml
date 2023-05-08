@@ -36,7 +36,7 @@ Resources:
           CidrIp: !GetAtt AppSecurityGroup.GroupId
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-RDS-security-group
+          Value: ${self:service}-${sls:stage}-RDS-security-group
 
 Outputs:
   RDSPostgresSecurityGroup:

@@ -14,7 +14,7 @@ Resources:
       AvailabilityZone: !Select [0, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-private-subnet-1
+          Value: ${self:service}-${sls:stage}-private-subnet-1
 
   PrivateSubnetOneRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
@@ -38,7 +38,7 @@ Resources:
       AvailabilityZone: !Select [1, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-private-subnet-2
+          Value: ${self:service}-${sls:stage}-private-subnet-2
 
   PrivateSubnetTwoRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
@@ -62,7 +62,7 @@ Resources:
       AvailabilityZone: !Select [0, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-public-subnet-1
+          Value: ${self:service}-${sls:stage}-public-subnet-1
 
   PublicSubnetOneRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
@@ -86,7 +86,7 @@ Resources:
       AvailabilityZone: !Select [1, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: ${self:service}-${self:provider.stage}-public-subnet-2
+          Value: ${self:service}-${sls:stage}-public-subnet-2
 
   PublicSubnetTwoRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation

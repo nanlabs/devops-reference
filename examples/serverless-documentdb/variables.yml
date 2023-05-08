@@ -38,7 +38,7 @@ values:
   DocumentDBConnectionSecretName:
     Fn::If:
       - CreateDocumentDBCluster
-      - ${self:provider.stage}/${self:service}
+      - ${sls:stage}/${self:service}
       - ${self:variables.defaults.documentDBConnectionSecretName}
   VpcId:
     Fn::If:

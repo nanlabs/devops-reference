@@ -4,7 +4,7 @@ useDotenv: true
 
 custom:
   documentdb:
-    clusterIdentifier: ${self:service}-${self:provider.stage}-${param:DocumentDBClusterIdentifier, env:DOCUMENTDB_CLUSTER_IDENTIFIER}
+    clusterIdentifier: ${self:service}-${sls:stage}-${param:DocumentDBClusterIdentifier, env:DOCUMENTDB_CLUSTER_IDENTIFIER}
     masterUsername: ${param:DocumentDBMasterUsername, env:DOCUMENTDB_MASTER_USERNAME}
     database: ${param:DocumentDBDatabaseName, env:DOCUMENTDB_DATABASE_NAME}
   vpc:
@@ -12,9 +12,6 @@ custom:
 
 provider:
   name: aws
-  stage: ${opt:stage, env:STAGE, 'local'}
-  region: ${opt:region, env:AWS_REGION, 'us-east-1'}
-  profile: ${opt:aws-profile, env:AWS_PROFILE, ''}
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
