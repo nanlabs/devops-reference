@@ -71,5 +71,3 @@ Replace {region} with the appropriate AWS region where your Cognito user pool is
 "IssuerDomain": "https://cognito-idp.us-west-2.amazonaws.com"
 }
 ```
-
-

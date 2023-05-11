@@ -95,4 +95,3 @@ npm run sls:deploy
 ```
 
 This command will not only deploy the lambda triggers but also create the required Cognito user pool in your AWS account. Make sure you have the necessary AWS credentials properly configured before running this command.
-
