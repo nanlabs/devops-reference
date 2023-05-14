@@ -22,7 +22,7 @@ services:
       timeout: 10s
       retries: 3
     networks:
-      - sh-local-net
+      - mongodb-local-net
 
   mongo-express:
     container_name: mongo-express
@@ -43,10 +43,10 @@ services:
       timeout: 10s
       retries: 3
     networks:
-      - sh-local-net
+      - mongodb-local-net
 
 networks:
-  sh-local-net:
+  mongodb-local-net:
     driver: bridge
 
 volumes:
