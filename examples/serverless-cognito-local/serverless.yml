@@ -14,9 +14,8 @@ functions:
     handler: src/handlers/handler.preSignUp
     events:
       - cognitoUserPool:
-          pool: MyUserPool
+          pool: ${env:COGNITO_POOL_NAME, 'MyUserPool'}
           trigger: PreSignUp
-
 
 plugins:
   - serverless-plugin-typescript

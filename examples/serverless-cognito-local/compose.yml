@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 services:
   cognito-local:
     image: jagregory/cognito-local:latest
@@ -6,3 +6,16 @@ services:
       - ./.cognito:/app/.cognito
     network_mode: host
 
+  setup-resources:
+    image: amazon/aws-cli:latest
+    env_file: .env.local
+    volumes:
+      - ./:/project
+    entrypoint: /bin/sh -c
+    command:
+      - -c
+      - |
+        chmod +x /project/setup-resources.sh && /project/setup-resources.sh     
+    network_mode: host
+    depends_on:
+      - cognito-local

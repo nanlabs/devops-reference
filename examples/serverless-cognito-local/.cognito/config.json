@@ -11,7 +11,7 @@
     "IssuerDomain": "http://localhost:9229"
   },
   "TriggerFunctions": {
-    "PreSignUp": "cognito-local-lambdas-local-preSignUp"
+    "PreSignUp": "CognitoLocalLambdas-local-preSignUp"
   },
   "UserPoolDefaults": {
     "UsernameAttributes": [
