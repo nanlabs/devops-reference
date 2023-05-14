@@ -272,7 +272,7 @@
       "name": "AWS Amplify + NextJS 13",
       "description": "AWS Amplify example to deploy a NextJS v13 application to the Cloud.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/amplify-nextjs-deployment/",
-      "tags": ["Examples > DevOps > Infrastructure as Code > AWS Amplify"],
+      "tags": ["Examples > DevOps > Low Code solutions > AWS Amplify"],
       "labels": ["AWS Amplify", "NextJS", "NextJS 13"]
     },
     {
