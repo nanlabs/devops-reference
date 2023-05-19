@@ -33,6 +33,7 @@ custom:
 
 provider:
   name: aws
+  stage: local
   runtime: nodejs16.x
   environment:
     STAGE: ${sls:stage}

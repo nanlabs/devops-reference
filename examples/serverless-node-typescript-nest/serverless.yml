@@ -20,6 +20,7 @@ custom:
 
 provider:
   name: aws
+  stage: local
   runtime: nodejs18.x
   deploymentBucket:
     blockPublicAccess: true

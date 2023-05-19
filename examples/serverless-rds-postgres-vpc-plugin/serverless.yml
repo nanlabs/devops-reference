@@ -7,6 +7,7 @@ plugins:
 
 provider:
   name: aws
+  stage: local
   deploymentBucket:
     blockPublicAccess: true
     versioning: true

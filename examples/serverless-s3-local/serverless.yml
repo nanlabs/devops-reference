@@ -36,6 +36,7 @@ custom:
 
 provider:
   name: aws
+  stage: local
   runtime: python3.9
   deploymentBucket:
     blockPublicAccess: true

@@ -32,6 +32,7 @@ custom:
 
 provider:
   name: aws
+  stage: local
   runtime: python3.9
   environment:
     STAGE: ${sls:stage}
