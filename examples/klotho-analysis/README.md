@@ -21,14 +21,14 @@ Furthermore, it generates the necessary files for deploying, running, and operat
 
 ## Analysis
 
-We did a research on which are the Pros and Cons of using this service. You can read the full analysis (here)[./ANALYSIS.md].
+We did a research on which are the Pros and Cons of using this service. You can read the full analysis [here](./ANALYSIS.md).
 
 
 ## Proof of Concept
 
-We created a proof of concept to test the service. (here)[./klotho-go-example/README.md].
+We created a proof of concept to test the service. [here](./klotho-go-example/README.md).
 
 
 ## Reference Documentation
 
-- (Klotho Docks)[https://klo.dev/]
+- [Klotho Docks](https://klo.dev/)
