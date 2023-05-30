@@ -26,7 +26,7 @@ custom:
     apiKey: da2-fakeApiId123456
     watch:
       - '*.graphql'
-      - '*.vtl'
+      - 'mapping-templates/*.vtl'
   appSync:
     name: AppSyncExample
     authenticationType: API_KEY
@@ -69,38 +69,10 @@ provider:
     blockPublicAccess: true
     versioning: true
     serverSideEncryption: AES256
-  # vpc:
-  #   securityGroupIds:
-  #     - ${env:SECURITY_GROUP_ID}
-  #     - !Ref SecurityGroup
-  #   subnetIds:
-  #     - ${env:SUBNET_ID}
 
 functions:
   AppSyncExampleResolver:
     handler: src/resolvers/handler.graphqlHandler
-
-# resources:
-#   Resources:
-#     AppSyncSecurityGroup:
-#       Type: AWS::EC2::SecurityGroup
-#       Properties:
-#         GroupName: AppSyncExampleSG
-#         GroupDescription: AppSync Security Group
-#         SecurityGroupIngress:
-#           - IpProtocol: tcp
-#             FromPort: 8182
-#             ToPort: 8182
-#             CidrIp: 0.0.0.0/0
-#         Tags:
-#           - Key: name
-#             Value: AppSyncExampleSG
-#         VpcId: ${env:VPC_ID}
-
-#   Outputs:
-#     SecurityGroup:
-#       Description: AppSync Security Group
-#       Value: !GetAtt AppSyncSecurityGroup.GroupId
 
 resources:
   Outputs:
