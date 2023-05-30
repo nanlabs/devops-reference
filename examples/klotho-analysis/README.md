@@ -18,16 +18,13 @@ Klotho leverages static analysis to create an adaptive architecture based on in-
 
 Furthermore, it generates the necessary files for deploying, running, and operating the application in your preferred cloud environment.
 
-
 ## Analysis
 
 We did a research on which are the Pros and Cons of using this service. You can read the full analysis [here](./ANALYSIS.md).
 
-
 ## Proof of Concept
 
 We created a proof of concept to test the service. [here](./klotho-go-example/README.md).
-
 
 ## Reference Documentation
 
