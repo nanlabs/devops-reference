@@ -14,9 +14,12 @@ useDotenv: true
 package:
   individually: true
   excludeDevDependencies: true
-  patterns:
+  include:
+    - '**/*.py'
     - '*.graphql'
     - 'mapping-templates/*.vtl'
+  exclude:
+    - requirements.txt
 
 custom:
   pythonRequirements:
