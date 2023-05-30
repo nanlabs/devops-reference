@@ -524,6 +524,18 @@
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
       "labels": ["Docker", "Docker Compose", "NestJS", "NodeJS"]
+    },
+    {
+      "name": "Klotho",
+      "description": "A complete analysis of the service and a Proof of Concept on how to integrate it with a GO application.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/klotho-analysis/",
+      "tags": ["Examples > DevOps > Infrastructure > Pulumi > Klotho"],
+      "labels": [
+        "AWS",
+        "Pulumi",
+        "Deployment",
+        "Klotho"
+      ]
     }
   ]
 }
