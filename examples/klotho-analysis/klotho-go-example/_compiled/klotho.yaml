@@ -1,0 +1,70 @@
+app: my-first-app
+provider: aws
+path: .
+out_dir: _compiled
+defaults:
+    execution_unit:
+        type: lambda
+        pulumi_params_by_type:
+            ecs:
+                cpu: 256
+                memory: 512
+            eks:
+                nodeType: fargate
+                replicas: 2
+            lambda:
+                memorySize: 512
+                timeout: 180
+    static_unit:
+        type: s3
+        pulumi_params_by_type:
+            s3:
+                cloudFrontEnabled: true
+    expose:
+        kinddefaults:
+            type: apigateway
+        api_type: REST
+    persist:
+        kv:
+            type: dynamodb
+        fs:
+            type: s3
+        secret:
+            type: s3
+        orm:
+            type: rds_postgres
+            pulumi_params_by_type:
+                cockroachdb_serverless: {}
+                rds_postgres:
+                    allocatedStorage: 20
+                    engineVersion: "13.7"
+                    instanceClass: db.t4g.micro
+                    skipFinalSnapshot: true
+        redis_node:
+            type: elasticache
+            pulumi_params_by_type:
+                elasticache:
+                    nodeType: cache.t3.micro
+                    numCacheNodes: 1
+        redis_cluster:
+            type: memorydb
+            pulumi_params_by_type:
+                memorydb:
+                    nodeType: db.t4g.small
+                    numReplicasPerShard: "1"
+                    numShards: "2"
+    pubsub:
+        type: sns
+    config:
+        type: s3
+execution_units:
+    main:
+        type: lambda
+        network_placement: private
+        pulumi_params:
+            memorySize: 512
+            timeout: 180
+exposed:
+    app:
+        type: apigateway
+        api_type: REST

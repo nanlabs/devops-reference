@@ -1,0 +1,191 @@
+[
+  {
+    "Files": [
+      "go.mod",
+      "go.sum",
+      "main.go",
+      "README.md"
+    ],
+    "Type": "input_files"
+  },
+  {
+    "Name": "InternalKlothoPayloads"
+  },
+  {},
+  {
+    "Files": [
+      "Dockerfile",
+      "main.go",
+      "go.mod"
+    ],
+    "Name": "main",
+    "Type": "exec_unit"
+  },
+  {
+    "Name": "app",
+    "Routes": [
+      {
+        "Path": "/hello",
+        "ExecUnitName": "main",
+        "Verb": "Get",
+        "HandledInFile": "main.go"
+      },
+      {
+        "Path": "/hello/{name}",
+        "ExecUnitName": "main",
+        "Verb": "Get",
+        "HandledInFile": "main.go"
+      }
+    ],
+    "DefinedIn": "main.go",
+    "ExportVarName": "r"
+  },
+  {
+    "Name": "my-first-app"
+  },
+  {
+    "ConfigPath": "klotho.yaml",
+    "HasKV": false,
+    "Secrets": null,
+    "ORMs": null,
+    "Redis": null,
+    "PubSubs": null,
+    "ExecUnits": [
+      {
+        "Name": "main",
+        "Type": "lambda",
+        "MemReqMB": 0,
+        "KeepWarm": false,
+        "NetworkPlacement": "private",
+        "Schedules": null,
+        "HelmOptions": {},
+        "Params": {
+          "memorySize": 512,
+          "timeout": 180
+        },
+        "EnvironmentVariables": null,
+        "DockerfilePath": "Dockerfile"
+      }
+    ],
+    "HelmCharts": null,
+    "StaticUnits": null,
+    "Gateways": null,
+    "Topology": {
+      "topologyIconData": [
+        {
+          "id": "InternalKlothoPayloads_internal",
+          "title": "InternalKlothoPayloads",
+          "image": "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/generic/blank/blank.png",
+          "kind": "internal",
+          "type": ""
+        },
+        {
+          "id": "main_exec_unit",
+          "title": "main",
+          "image": "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/aws/compute/lambda.png",
+          "kind": "exec_unit",
+          "type": "lambda"
+        },
+        {
+          "id": "app_gateway",
+          "title": "app",
+          "image": "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/aws/network/api-gateway.png",
+          "kind": "gateway",
+          "type": "apigateway"
+        }
+      ],
+      "topologyEdgeData": [
+        {
+          "source": "app_gateway",
+          "target": "main_exec_unit"
+        }
+      ]
+    },
+    "Results": {},
+    "Datadog": false,
+    "Lumigo": false,
+    "AppName": "my-first-app",
+    "PayloadsBucketName": "",
+    "UseVPC": false,
+    "CloudfrontDistributions": null,
+    "APIGateways": [
+      {
+        "Name": "app",
+        "Routes": [
+          {
+            "execUnitName": "main",
+            "path": "/hello",
+            "verb": "Get"
+          },
+          {
+            "execUnitName": "main",
+            "path": "/hello/{name}",
+            "verb": "Get"
+          }
+        ],
+        "ApiType": "REST"
+      }
+    ],
+    "ALBs": null,
+    "Buckets": [
+      {
+        "Name": "InternalKlothoPayloads",
+        "Type": "",
+        "Params": null
+      }
+    ],
+    "SecretManagerSecrets": null,
+    "RdsInstances": null
+  },
+  {
+    "Files": [
+      "iac/k8s/add_ons/alb_controller/index.ts",
+      "iac/sanitization/sanitizer.ts",
+      "iac/sanitization/aws/cloud_watch.ts",
+      "iac/sanitization/aws/ec2.ts",
+      "iac/sanitization/aws/memorydb.ts",
+      "index.ts",
+      "iac/analytics.ts",
+      "iac/k8s/add_ons/alb_controller/target_group_binding.yaml",
+      "iac/sanitization/aws/rds.ts",
+      "iac/sanitization/aws/service_discovery.ts",
+      "iac/api_gateway.ts",
+      "iac/sanitization/aws/index.ts",
+      "iac/sanitization/aws/lambda.ts",
+      "Pulumi.yaml",
+      "iac/k8s/add_ons/metrics_server/index.ts",
+      "iac/sanitization/aws/common.ts",
+      "iac/sanitization/aws/app_runner.ts",
+      "iac/sanitization/aws/s3.ts",
+      "iac/memorydb.ts",
+      "iac/cockroachdb.ts",
+      "iac/k8s/helm_chart.ts",
+      "iac/sanitization/aws/ecs.ts",
+      "iac/sanitization/aws/eventbridge.ts",
+      "iac/sanitization/aws/secrets_manager.ts",
+      "iac/kubernetes.ts",
+      "iac/load_balancing.ts",
+      "iac/k8s/add_ons/cloud_map_controller/cloudmap_cluster_set.yaml",
+      "iac/sanitization/aws/dynamodb.ts",
+      "iac/sanitization/aws/eks.ts",
+      "iac/sanitization/aws/sns.ts",
+      "klotho.yaml",
+      "Pulumi.my-first-app.yaml",
+      "iac/k8s/horizontal-pod-autoscaling.ts",
+      "iac/k8s/add_ons/cloud_map_controller/cloudmap_export_service.yaml",
+      "iac/k8s/add_ons/cloud_map_controller/index.ts",
+      "iac/sanitization/aws/iam.ts",
+      "deploylib.ts",
+      "package.json",
+      "iac/eks.ts",
+      "iac/k8s/add_ons/index.ts",
+      "iac/sanitization/aws/elasticache.ts",
+      "iac/sanitization/aws/elb.ts",
+      "tsconfig.json",
+      "iac/elasticache.ts",
+      "iac/k8s/add_ons/external_dns/index.ts"
+    ],
+    "Name": "Pulumi (AWS)",
+    "Type": "infra_as_code"
+  }
+]

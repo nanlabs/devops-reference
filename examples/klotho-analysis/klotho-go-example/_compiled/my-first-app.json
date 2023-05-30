@@ -1,0 +1,31 @@
+{
+	"topologyIconData": [
+		{
+			"id": "InternalKlothoPayloads_internal",
+			"title": "InternalKlothoPayloads",
+			"image": "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/generic/blank/blank.png",
+			"kind": "internal",
+			"type": ""
+		},
+		{
+			"id": "main_exec_unit",
+			"title": "main",
+			"image": "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/aws/compute/lambda.png",
+			"kind": "exec_unit",
+			"type": "lambda"
+		},
+		{
+			"id": "app_gateway",
+			"title": "app",
+			"image": "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/aws/network/api-gateway.png",
+			"kind": "gateway",
+			"type": "apigateway"
+		}
+	],
+	"topologyEdgeData": [
+		{
+			"source": "app_gateway",
+			"target": "main_exec_unit"
+		}
+	]
+}
