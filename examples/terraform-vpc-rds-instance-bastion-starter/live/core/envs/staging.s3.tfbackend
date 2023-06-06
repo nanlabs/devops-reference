@@ -1,4 +1,4 @@
-region         = "us-east-2"
+region         = "us-east-1"
 bucket         = "nanlabs-terraform-state"
 key            = "staging-terraform.tfstate"
 encrypt        = "true"

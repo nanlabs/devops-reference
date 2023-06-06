@@ -1,4 +1,4 @@
-region             = "us-east-2"
+region             = "us-east-1"
 name               = "nanlabs"
 namespace          = "example-namespace"
 environment        = "staging"
