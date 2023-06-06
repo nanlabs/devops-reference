@@ -148,9 +148,10 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 ##### Terraform
 
-| Name                                                                                                                             | Description                                                                      | Keywords                                         |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
-| [Terraform AWS Minecraft Server](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-aws-minecraft-server/) | Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker. | _Terraform_, _AWS_, _Minecraft_, _Docker_, _EC2_ |
+| Name                                                                                                                                                      | Description                                                                                                                  | Keywords                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| [Terraform AWS Minecraft Server](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-aws-minecraft-server/)                          | Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker.                                             | _Terraform_, _AWS_, _Minecraft_, _Docker_, _EC2_ |
+| [Terraform Starter Kit for AWS Infrastructure](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter) | Terraform Starter kit for creating AWS infrastructure using Terraform that contains a VPC, RDS instance, and a bastion host. | _Terraform_, _AWS_, _VPC_, _RDS_, _Bastion_      |
 
 ## Contributing
 
