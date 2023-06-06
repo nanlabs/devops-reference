@@ -477,6 +477,13 @@
         "FastAPI",
         "Python"
       ]
+    },
+    {
+      "name": "Terraform Starter Kit for AWS Infrastructure",
+      "description": "Terraform Starter kit for creating AWS infrastructure using Terraform that contains a VPC, RDS instance, and a bastion host.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "VPC", "RDS", "Bastion"]
     }
   ]
 }
