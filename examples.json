@@ -479,11 +479,32 @@
       ]
     },
     {
-      "name": "Terraform Starter Kit for AWS Infrastructure",
+      "name": "Terraform Starter Kit for AWS VPC, RDS instance, and Bastion Host",
       "description": "Terraform Starter kit for creating AWS infrastructure using Terraform that contains a VPC, RDS instance, and a bastion host.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter",
       "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": ["Terraform", "AWS", "VPC", "RDS", "Bastion"]
+    },
+    {
+      "name": "Terraform AWS VPC resources",
+      "description": "Terraform module for creating AWS VPC resources.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/vpc",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "VPC"]
+    },
+    {
+      "name": "Terraform AWS RDS Postgres instance",
+      "description": "Terraform module for creating AWS RDS Postgres instance.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/rds",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "RDS"]
+    },
+    {
+      "name": "Terraform Bastion Host",
+      "description": "Terraform module which creates an EC2 instance acting as a bastion host",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/bastion",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "Bastion"]
     }
   ]
 }
