@@ -26,7 +26,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 
 ## Contents
 
-- [Applications](#applications)
+- [Apps and Boilerplates](#apps-and-boilerplates)
 - [Examples](#examples)
 
   - [DevOps](#devops)
@@ -46,7 +46,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
-## Applications
+## Apps and Boilerplates
 
 | Name                                                                                                                               | Description                                                                                                                                                                                                                                                                                                                                   | Keywords                                                                        |
 | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
