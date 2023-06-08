@@ -1,4 +1,4 @@
-# Cognito Local Development with Docker Compose and Serverless
+# Cognito Local Development with Docker Compose
 
 This repository provides a local development environment for Cognito using [cognito-local](https://github.com/jagregory/cognito-local) and the serverless framework for managing lambda trigger functions.
 
