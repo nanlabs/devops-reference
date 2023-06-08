@@ -17,12 +17,12 @@ resource "aws_iam_role" "bastion_host_iam_role" {
 
 resource "aws_iam_instance_profile" "bastion_instance_profile" {
   name = "${var.name}-bastion-instance-profile"
-  role = aws_iam_role.bastion_host_iam_rol.name
+  role = aws_iam_role.bastion_host_iam_role.name
 }
 
 resource "aws_iam_role_policy" "bastion_host_iam_role" {
   name = "${var.name}-bastion-host-iam-role"
-  role = aws_iam_role.bastion_host_iam_rol.id
+  role = aws_iam_role.bastion_host_iam_role.id
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
