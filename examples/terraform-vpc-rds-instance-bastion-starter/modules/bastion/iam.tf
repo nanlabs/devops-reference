@@ -1,5 +1,5 @@
-resource "aws_iam_role" "docker_allow_ec2_to_s3_and_cloudwatch" {
-  name = "${var.name}-docker_allow_ec2_to_s3_and_cloudwatch"
+resource "aws_iam_role" "bastion_host_iam_role" {
+  name = "${var.name}-bastion-host-iam-role"
   assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
@@ -15,14 +15,14 @@ resource "aws_iam_role" "docker_allow_ec2_to_s3_and_cloudwatch" {
   })
 }
 
-resource "aws_iam_instance_profile" "docker-instance-profile" {
-  name = "${var.name}-docker-instance-profile"
-  role = aws_iam_role.docker_allow_ec2_to_s3_and_cloudwatch.name
+resource "aws_iam_instance_profile" "bastion-instance-profile" {
+  name = "${var.name}-bastion-instance-profile"
+  role = aws_iam_role.bastion_host_iam_rol.name
 }
 
-resource "aws_iam_role_policy" "docker_allow_ec2_to_s3_and_cloudwatch" {
-  name = "docker_allow_ec2_to_s3_and_cloudwatch"
-  role = aws_iam_role.docker_allow_ec2_to_s3_and_cloudwatch.id
+resource "aws_iam_role_policy" "bastion_host_iam_role" {
+  name = "${var.name}-bastion-host-iam-role"
+  role = aws_iam_role.bastion_host_iam_rol.id
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
