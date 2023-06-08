@@ -11,12 +11,12 @@ This is where we keep our infrastructure as code for our cloud infrastructure.
 ### Bootstrap
 
 ```sh
-terraform init -backend-config ./envs/staging.s3.tfbackend
+terraform init -backend-config ./backends/staging.s3.tfbackend
 ```
 
 ### Validate and apply
 
 ```sh
-terraform plan -var-file ./envs/staging.tfvars -out ./staging.tfplan
+terraform plan -var-file ./configs/staging.tfvars -out ./staging.tfplan
 terraform apply ./staging.tfplan
 ```
