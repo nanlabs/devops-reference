@@ -15,7 +15,7 @@ resource "aws_iam_role" "bastion_host_iam_role" {
   })
 }
 
-resource "aws_iam_instance_profile" "bastion-instance-profile" {
+resource "aws_iam_instance_profile" "bastion_instance_profile" {
   name = "${var.name}-bastion-instance-profile"
   role = aws_iam_role.bastion_host_iam_rol.name
 }

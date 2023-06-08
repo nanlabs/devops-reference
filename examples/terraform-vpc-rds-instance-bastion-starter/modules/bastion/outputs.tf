@@ -7,5 +7,5 @@ output "ec2_ssh" {
 }
 
 output "ec2_instance_profile" {
-  value = aws_iam_instance_profile.docker-instance-profile.name
+  value = aws_iam_instance_profile.bastion_instance_profile.name
 }

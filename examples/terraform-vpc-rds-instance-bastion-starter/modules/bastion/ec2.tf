@@ -18,7 +18,7 @@ module "bastion" {
   key_name             = local._ssh_key_name
   ami                  = var.ami != "" ? var.ami : data.aws_ami.ubuntu.image_id
   instance_type        = var.instance_type
-  iam_instance_profile = aws_iam_instance_profile.docker-instance-profile.id
+  iam_instance_profile = aws_iam_instance_profile.bastion_instance_profile.id
   user_data            = data.template_file.user_data.rendered
 
   # network
