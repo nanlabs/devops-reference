@@ -1,0 +1,12 @@
+{
+  "name": "serverless-terraform-ssm-parameters",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "dependencies": {
+    "serverless-mysql": "^1.2.0"
+  },
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "author": "ulises-jeremias"
+}

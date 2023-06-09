@@ -1,0 +1,18 @@
+service: terraform-serverless-integration
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  rdsConnector:
+    handler: handler.handle
+    environment:
+      DATABASE_ENDPOINT: ${ssm:/database/testdb/endpoint~true}
+      DATABASE_NAME: ${ssm:/database/testdb/name~true}
+      DATABASE_USER: ${ssm:/database/testdb/user~true}
+      DATABASE_PASSWORD: ${ssm:/database/testdb/password~true}
+    events:
+      - http:
+          method: GET
+          path: /

@@ -505,6 +505,16 @@
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/bastion",
       "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": ["Terraform", "AWS", "Bastion"]
+    },
+    {
+      "name": "Using Serverless Framework with Terraform",
+      "description": "The definitive example of how to use Terraform and Serverless Framework together.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-terraform-example",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation",
+        "Examples > DevOps > Infrastructure as Code > Terraform"
+      ],
+      "labels": ["Serverless Framework", "Terraform", "AWS"]
     }
   ]
 }

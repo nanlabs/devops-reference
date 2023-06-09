@@ -1,0 +1,6 @@
+*.tfstate
+serverless/node_modules
+serverless/.serverless
+terraform/.terraform
+*.backup
+*.lock.info
