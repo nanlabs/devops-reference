@@ -17,7 +17,7 @@ module "vpc" {
 }
 
 resource "aws_security_group" "main" {
-  vpc_id = "${module.vpc.default_vpc_id}"
+  vpc_id = module.vpc.default_vpc_id
 
   name        = "${var.name}-sg"
   description = "Allow all inbound traffic to MySQL"
