@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@aws-sdk/client-evidently": "^3.44.0",
+    "@aws-sdk/client-evidently": "^3.348.0",
     "aws-sdk": "^2.1046.0",
     "node-uuid": ">= 1.4.1"
   }
