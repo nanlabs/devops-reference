@@ -2,7 +2,7 @@ module "rds" {
   source = "../../modules/rds"
   region = var.region
 
-  name   = module.label.id
+  name = module.label.id
 
   vpc_id          = module.vpc.vpc_id
   db_subnet_group = module.vpc.database_subnet_group
