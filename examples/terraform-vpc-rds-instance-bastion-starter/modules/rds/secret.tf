@@ -13,7 +13,7 @@ locals {
 
 resource "aws_secretsmanager_secret" "secret" {
   description = "RDS Postgres Credentials of ${var.db_name} service"
-  name        = "${var.name}/rds-postgres-connection-secret"
+  name        = "${var.name}/rds-postgresql-connection-secret"
 }
 
 resource "aws_secretsmanager_secret_version" "secret" {

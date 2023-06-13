@@ -81,6 +81,12 @@ variable "db_storage_type" {
   default     = "gp2"
 }
 
+variable "storage_encrypted" {
+  description = "Enable storage encryption."
+  type        = bool
+  default     = true
+}
+
 variable "db_allocated_storage" {
   description = "Storage size in GB."
   type        = number

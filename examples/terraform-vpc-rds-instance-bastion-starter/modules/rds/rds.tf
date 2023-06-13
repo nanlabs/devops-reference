@@ -11,6 +11,7 @@ module "db" {
   instance_class       = var.db_instance
 
   storage_type          = var.db_storage_type
+  storage_encrypted     = var.storage_encrypted
   allocated_storage     = var.db_allocated_storage
   max_allocated_storage = var.db_max_allocated_storage
 
