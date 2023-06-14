@@ -8,7 +8,7 @@
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/docker/postgres
+cd devops-reference/examples/compose-postgres
 cp .env.example .env
 docker compose up
 ```
