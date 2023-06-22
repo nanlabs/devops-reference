@@ -129,12 +129,6 @@ variable "enable_public_access" {
   default     = true
 }
 
-variable "enable_rds_secrets_rotation" {
-  description = "Boolean to decide whether to read from AWS Secret Manager or not."
-  type        = bool
-  default     = false
-}
-
 variable "name" {
   description = "Name to be used on all the resources as identifier"
   type        = string
