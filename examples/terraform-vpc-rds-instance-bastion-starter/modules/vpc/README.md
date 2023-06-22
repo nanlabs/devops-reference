@@ -7,9 +7,9 @@ Terraform module to bootstrap a VPC for use with our shared infrastructure.
 ```hcl
 module "vpc" {
   source = "../../modules/vpc"
-  region = "us-east-2"
+  region = "us-east-1"
 
-  name = "amalgam"
+  name = "shared-vpc"
 
   vpc_cidr_block = "10.0.0.0/16"
 }
