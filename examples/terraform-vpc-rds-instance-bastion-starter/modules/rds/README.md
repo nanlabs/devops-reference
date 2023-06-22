@@ -7,9 +7,9 @@ Terraform module to bootstrap a RDS Postgres instance.
 ```hcl
 module "db" {
   source = "../../modules/rds"
-  region = "us-east-2"
+  region = "us-east-1"
 
-  name = module.label.id
+  name = "exampled-rds-instance"
 
   vpc_id          = "vpc-1234567890"
   db_subnet_group = "db-subnet-group-1234567890"
