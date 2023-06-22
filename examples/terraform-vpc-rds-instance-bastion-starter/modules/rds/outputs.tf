@@ -1,8 +1,3 @@
-output "db_cluster_identifier" {
-  description = "The identifier of the RDS cluster"
-  value       = module.db.db_instance_id
-}
-
 output "db_instance_address" {
   description = "The address of the RDS instance"
   value       = module.db.db_instance_address
