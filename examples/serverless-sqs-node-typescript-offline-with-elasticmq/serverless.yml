@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'sqs-nodejs'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-plugin-typescript

@@ -41,6 +41,12 @@ variable "environment" {
   default     = "development"
 }
 
+variable "stage" {
+  description = "Stage, e.g. 'build', 'test', 'deploy', 'release'"
+  type        = string
+  default     = "development"
+}
+
 variable "tags" {
   description = "Any extra tags to assign to objects"
   type        = map(any)

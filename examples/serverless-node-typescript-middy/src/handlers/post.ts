@@ -27,4 +27,3 @@ export const postHandler = async (
 export const officialMiddlewareHandler = middy(postHandler).use(
   jsonBodyParser()
 );
-

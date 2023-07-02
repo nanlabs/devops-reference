@@ -60,7 +60,9 @@ export const deleteFromQueue = async (
 ) => {
   const client = getSqsClient();
 
-  const { QueueUrl } = await client.send(new GetQueueUrlCommand({ QueueName: queueName }));
+  const { QueueUrl } = await client.send(
+    new GetQueueUrlCommand({ QueueName: queueName })
+  );
 
   const params = {
     QueueUrl,

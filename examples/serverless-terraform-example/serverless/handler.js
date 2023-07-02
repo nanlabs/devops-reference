@@ -3,15 +3,15 @@ const mysql = require("serverless-mysql")({
     host: process.env.DATABASE_ENDPOINT,
     database: process.env.DATABASE_NAME,
     user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD
-  }
+    password: process.env.DATABASE_PASSWORD,
+  },
 });
 
 exports.handle = async (event, context) => {
   if (!event.queryStringParameters.name) {
     return {
       statusCode: 200,
-      body: "Please provide name query param!"
+      body: "Please provide name query param!",
     };
   }
 
@@ -31,7 +31,7 @@ exports.handle = async (event, context) => {
   return {
     statusCode: 200,
     headers: {
-      "Content-Type": "text/html"
+      "Content-Type": "text/html",
     },
     body: `
     <html>
@@ -49,7 +49,7 @@ exports.handle = async (event, context) => {
             <th>Name</th> 
           </tr>
           ${results.map(
-            item =>
+            (item) =>
               `<tr>
               <th>${item.id}</th>
               <th>${item.name}</th>
@@ -58,6 +58,6 @@ exports.handle = async (event, context) => {
         </table>
       </body>
     </html>
-    `
+    `,
   };
 };

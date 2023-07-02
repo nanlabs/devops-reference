@@ -70,7 +70,7 @@ Running `docker-compose up` will automatically create the following resources:
 - The `setup-resources` service will create a user pool and a user pool client on the first run. If you want to reset the user pool, you can delete the `./.cognito/db/local_XXXXXX.json` file and restart the service.
 - If you only want to run the `cognito-local` service, you can use the command `docker-compose up cognito-local`.
 - If you are using a JWT validation library like [aws-jwt-verify](https://www.npmjs.com/package/aws-jwt-verify), make sure to change the user pool ID from `local_XXXXXX` to a matching ID from a user pool created in your AWS account.
-You will also need to add the following code to your `./.cognito/config.json` file:
+  You will also need to add the following code to your `./.cognito/config.json` file:
 
 ```json
 "TokenConfig": {

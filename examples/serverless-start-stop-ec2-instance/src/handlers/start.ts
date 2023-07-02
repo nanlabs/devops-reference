@@ -11,16 +11,23 @@ export const handler: ScheduledHandler = async (event) => {
   }
 
   // check if instance is running. If not, start it
-  const instanceStatus = await ec2.describeInstanceStatus({
-    InstanceIds: [instanceId],
-  }).promise();
+  const instanceStatus = await ec2
+    .describeInstanceStatus({
+      InstanceIds: [instanceId],
+    })
+    .promise();
 
-  if (instanceStatus?.InstanceStatuses && instanceStatus?.InstanceStatuses[0]?.InstanceState?.Name === "running") {
+  if (
+    instanceStatus?.InstanceStatuses &&
+    instanceStatus?.InstanceStatuses[0]?.InstanceState?.Name === "running"
+  ) {
     console.log("Instance is already running");
     return;
   }
 
-  const result = await ec2.startInstances({ InstanceIds: [instanceId] }).promise();
+  const result = await ec2
+    .startInstances({ InstanceIds: [instanceId] })
+    .promise();
   if (result.$response.error) {
     throw result.$response.error;
   }

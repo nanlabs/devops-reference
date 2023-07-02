@@ -5,7 +5,7 @@ This example exposes an AWS Lambda function that sends an SMS using [Twilio](htt
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 We use Serverless Framework to do production ready deployments and local development using
-*serverless-offline*.
+_serverless-offline_.
 
 ## Setup Twilio Account
 

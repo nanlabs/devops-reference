@@ -8,14 +8,14 @@ spec:
     - secretName: example-com-tls
       hosts:
         - example.com
-  rules: 
+  rules:
     - host: example.com
       http:
         paths:
           - path: /
             pathType: Exact
             backend:
-              service: 
+              service:
                 name: theapp
                 port:
                   number: 80

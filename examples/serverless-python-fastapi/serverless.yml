@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'serverless-fastapi-example'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-python-requirements
@@ -13,10 +13,10 @@ package:
   individually: true
   excludeDevDependencies: true
   include:
-    - '!./**'
-    - '**/*.py'
+    - "!./**"
+    - "**/*.py"
   exclude:
-    - '**'
+    - "**"
 
 custom:
   pythonRequirements:
@@ -52,17 +52,17 @@ functions:
     runtime: python3.9
     package:
       patterns:
-        - 'src/**'
-        - 'env.providers.json'
-        - '!requirements.txt'
-        - '!requirements.dev.txt'
-        - '!README.md'
-        - '!setup.cfg'
-        - '!package.json'
-        - '!package-lock.json'
-        - '!.serverless/**'
-        - '!venv/**'
-        - '!node_modules/**'
+        - "src/**"
+        - "env.providers.json"
+        - "!requirements.txt"
+        - "!requirements.dev.txt"
+        - "!README.md"
+        - "!setup.cfg"
+        - "!package.json"
+        - "!package-lock.json"
+        - "!.serverless/**"
+        - "!venv/**"
+        - "!node_modules/**"
     module: src
     handler: main.handler
     events:

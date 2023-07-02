@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'sqs-python'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-python-requirements
@@ -13,18 +13,18 @@ package:
   individually: true
   excludeDevDependencies: true
   include:
-    - '!./**'
-    - '**/*.py'
+    - "!./**"
+    - "**/*.py"
   exclude:
-    - '**'
+    - "**"
 
 custom:
   myFirstQueue:
     Arn:
-      local: 'arn:aws:sqs:us-east-1:000000000000:${self:service}-${sls:stage}-myFirstQueue'
+      local: "arn:aws:sqs:us-east-1:000000000000:${self:service}-${sls:stage}-myFirstQueue"
       other: !GetAtt myFirstQueue.Arn
     Url:
-      local: 'http://localhost.com/000000000000/${self:service}-${sls:stage}-myFirstQueue'
+      local: "http://localhost.com/000000000000/${self:service}-${sls:stage}-myFirstQueue"
       other: !GetAtt myFirstQueue.QueueUrl
 
   pythonRequirements:
@@ -39,8 +39,8 @@ custom:
     noPrependStageInUrl: true
 
   serverless-offline-sqs-external:
-    autoCreate: true                 # create queue if not exists
-    apiVersion: '2012-11-05'
+    autoCreate: true # create queue if not exists
+    apiVersion: "2012-11-05"
     endpoint: ${env:SQS_CLIENT_URL}
     region: ${opt:region, env:AWS_REGION, 'us-east-1'}
     accessKeyId: ${env:AWS_ACCESS_KEY_ID}

@@ -32,4 +32,3 @@ Outputs:
   Cloud9env:
     Description: The name of the Cloud9 environment
     Value: ${self:variables.values.Cloud9env}
-  

@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "ES2019",
     "module": "commonjs",
-    "lib": [
-      "es2019"
-    ],
+    "lib": ["es2019"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": false,
@@ -20,15 +18,9 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "typeRoots": ["./node_modules/@types"]
   },
-  "exclude": [
-    "node_modules",
-  ],
-  "include": [
-    "src/**/*"
-  ],
-  "baseUrl": "./src",
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"],
+  "baseUrl": "./src"
 }

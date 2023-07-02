@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'TwilioAwsLambdasTypescript'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-plugin-typescript
@@ -36,5 +36,5 @@ functions:
       TWILIO_PHONE_NUMBER: ${env:TWILIO_PHONE_NUMBER}
     events:
       - http:
-           path: /send-twilio-sms
-           method: POST
+          path: /send-twilio-sms
+          method: POST

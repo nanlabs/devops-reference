@@ -15,7 +15,7 @@ services:
     command:
       - -c
       - |
-        chmod +x /project/setup-resources.sh && /project/setup-resources.sh     
+        chmod +x /project/setup-resources.sh && /project/setup-resources.sh
     network_mode: host
     depends_on:
       - cognito-local

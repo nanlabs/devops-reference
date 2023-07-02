@@ -7,7 +7,8 @@ const twilioNumber = process.env.TWILIO_PHONE_NUMBER;
 
 const client = new Twilio(accountSid, authToken);
 
-export const sendSMS = (to: string, body: string): Promise<MessageInstance> => client.messages.create({
+export const sendSMS = (to: string, body: string): Promise<MessageInstance> =>
+  client.messages.create({
     body,
     from: twilioNumber,
     to,

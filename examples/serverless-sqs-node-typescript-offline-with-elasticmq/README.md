@@ -3,7 +3,7 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 We use Serverless Framework to do production ready deployments and local development using
-*serverless-offline*.
+_serverless-offline_.
 
 ## Requirements
 
@@ -54,7 +54,7 @@ curl http://localhost:3000/list
 - `sendToQueue` - Enqueue a message on the queue
 
 > NOTE: This command will enqueue the message on the queue, and after some seconds you will see
-the `readFromQueue` lambda getting the message and deleting it.
+> the `readFromQueue` lambda getting the message and deleting it.
 
 ```sh
 npm run sls:invoke:local sendToQueue --data '{ "message": "value"}'

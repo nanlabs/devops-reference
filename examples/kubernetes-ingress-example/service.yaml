@@ -9,8 +9,8 @@ spec:
   # even it is the default value here, it is worth noticing this ip type is enough since we are accessing through Ingress
   type: ClusterIP
   ports:
-  - port: 80
-    targetPort: 8080
-    protocol: TCP
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
   selector:
     app: theapp

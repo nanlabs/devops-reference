@@ -1,5 +1,5 @@
 service: ${env:SERVICE_NAME, 'CognitoLocalLambdas'}
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 provider:
   name: aws
@@ -25,4 +25,3 @@ plugins:
 custom:
   serverless-offline:
     lambdaPort: 4000
-

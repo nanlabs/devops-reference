@@ -14,9 +14,7 @@
     "PreSignUp": "CognitoLocalLambdas-local-preSignUp"
   },
   "UserPoolDefaults": {
-    "UsernameAttributes": [
-      "email"
-    ]
+    "UsernameAttributes": ["email"]
   },
   "KMSConfig": {
     "credentials": {

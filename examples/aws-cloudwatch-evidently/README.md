@@ -2,25 +2,25 @@
 
 Amazon CloudWatch Evidently is a service that allows you to run experiments and feature management. It is a service that is part of the AWS CloudWatch suite of services. It is a service that is still in preview and it is not available in all regions. It is available in the following regions:
 
-* US East (N. Virginia)
-* US East (Ohio)
-* US West (Oregon)
-* EU (Ireland)
-* EU (Frankfurt)
-* Asia Pacific (Tokyo)
-* Asia Pacific (Singapore)
-* Asia Pacific (Sydney)
-* Asia Pacific (Seoul)
-* Asia Pacific (Mumbai)
-* Canada (Central)
-* South America (São Paulo)
+- US East (N. Virginia)
+- US East (Ohio)
+- US West (Oregon)
+- EU (Ireland)
+- EU (Frankfurt)
+- Asia Pacific (Tokyo)
+- Asia Pacific (Singapore)
+- Asia Pacific (Sydney)
+- Asia Pacific (Seoul)
+- Asia Pacific (Mumbai)
+- Canada (Central)
+- South America (São Paulo)
 
 ## How does it work?
 
 The service is composed of two main components:
 
-* Experiments
-* Feature Management
+- Experiments
+- Feature Management
 
 ### Experiments
 

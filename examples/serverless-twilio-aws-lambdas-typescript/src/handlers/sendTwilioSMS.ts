@@ -1,7 +1,7 @@
 import { APIGatewayProxyResult } from "aws-lambda";
 import middy from "@middy/core";
 import jsonBodyParser from "@middy/http-json-body-parser";
-import httpHeaderNormalizer from '@middy/http-header-normalizer'
+import httpHeaderNormalizer from "@middy/http-header-normalizer";
 import { sendSMS } from "../twilio/client";
 
 interface APIGatewayEventMiddyNormalised {
@@ -18,11 +18,12 @@ export const sendTwilioSMS = async (
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(`The message was successfully sent with the sid: ${messageResponse.sid}`),
+    body: JSON.stringify(
+      `The message was successfully sent with the sid: ${messageResponse.sid}`
+    ),
   };
 };
 
-export const handler = middy(sendTwilioSMS).use(httpHeaderNormalizer()).use(
-  jsonBodyParser()
-);
-
+export const handler = middy(sendTwilioSMS)
+  .use(httpHeaderNormalizer())
+  .use(jsonBodyParser());

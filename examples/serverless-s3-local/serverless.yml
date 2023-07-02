@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'S3LocalExample'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-python-requirements
@@ -14,10 +14,10 @@ package:
   individually: true
   excludeDevDependencies: true
   include:
-    - '!./**'
-    - '**/*.py'
+    - "!./**"
+    - "**/*.py"
   exclude:
-    - '**'
+    - "**"
 
 custom:
   pythonRequirements:

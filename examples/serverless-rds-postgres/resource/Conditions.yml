@@ -17,11 +17,11 @@ Conditions:
     Fn::And:
       - Condition: CreateRDSPostgres
       - Fn::Equals:
-        - ${param:skipCloud9Environment, env:SKIP_RDS_POSTGRES_CLOUD9_ENVIRONMENT, 'false'}
-        - "false"
+          - ${param:skipCloud9Environment, env:SKIP_RDS_POSTGRES_CLOUD9_ENVIRONMENT, 'false'}
+          - "false"
   CreateNatGateways:
     Fn::And:
       - Condition: CreateNetworkResources
       - Fn::Equals:
-        - ${param:skipNatGatewayCreation, env:SKIP_NAT_GATEWAY_CREATION, 'false'}
-        - "false"
+          - ${param:skipNatGatewayCreation, env:SKIP_NAT_GATEWAY_CREATION, 'false'}
+          - "false"

@@ -17,7 +17,7 @@ services:
       AWS_REGION: ${AWS_REGION:-}
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
-      DISABLE_SSL: 'true'
+      DISABLE_SSL: "true"
     volumes:
       - ~/.aws:/home/glue_user/.aws:ro
       - .:/home/glue_user/workspace/

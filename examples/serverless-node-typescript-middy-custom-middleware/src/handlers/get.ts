@@ -8,8 +8,6 @@ interface APIGatewayEventMiddyNormalised {
   body: { [msg: string]: string };
 }
 
-
-
 // Example with official middleware, you need to do a POST request in order to send the body
 export const getHandler = async (
   event: APIGatewayEventMiddyNormalised

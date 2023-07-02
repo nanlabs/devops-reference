@@ -8,8 +8,8 @@ Resources:
         - Ref: PrivateSubnetTwo
       SecurityGroupIds:
         - Fn::GetAtt:
-          - VPC
-          - DefaultSecurityGroup
+            - VPC
+            - DefaultSecurityGroup
       VpcEndpointType: Interface
       ServiceName:
         Fn::Sub: com.amazonaws.${AWS::Region}.secretsmanager

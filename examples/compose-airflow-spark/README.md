@@ -51,7 +51,7 @@ airflow-init_1       | 2.3.3
 start_airflow-init_1 exited with code 0
 ```
 
-The account created has the login *airflow* and the password *airflow*, this can be changed by adding the following variables to the .env file:
+The account created has the login _airflow_ and the password _airflow_, this can be changed by adding the following variables to the .env file:
 
 ```sh
 _AIRFLOW_WWW_USER_USERNAME

@@ -68,7 +68,7 @@ module "db" {
 | db_instance_engine                  | Database instance engine                  |
 | db_instance_engine_version_actual   | Database instance engine version actual   |
 | db_instance_hosted_zone_id          | Database instance hosted zone ID          |
-| db_instance_id                      | Database instance ID                      |
+| db_instance_identifier              | Database instance ID                      |
 | db_instance_resource_id             | Database instance resource ID             |
 | db_instance_status                  | Database instance status                  |
 | db_instance_name                    | Database instance name                    |

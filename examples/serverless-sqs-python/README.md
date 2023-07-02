@@ -3,7 +3,7 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 We use Serverless Framework to do production ready deployments and local development using
-*serverless-offline*.
+_serverless-offline_.
 
 We use Localstack to emulate AWS SQS locally and need to use the serverless-offline-sqs-external plugin to consume the localstack emulation on lambda events.
 
@@ -34,7 +34,7 @@ pyenv local
 ## Local Development
 
 In order to develop locally, you'll need to install the dependencies and run the application using Serverless Offline.
-This example uses *localstack* to emulate AWS SQS.
+This example uses _localstack_ to emulate AWS SQS.
 
 ### Localstack SQS
 

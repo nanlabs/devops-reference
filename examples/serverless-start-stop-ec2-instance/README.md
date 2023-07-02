@@ -3,7 +3,7 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 We use Serverless Framework to do production ready deployments and local development using
-*serverless-offline*. This project is a reference for how to use Serverless Framework to start and stop EC2 instances.
+_serverless-offline_. This project is a reference for how to use Serverless Framework to start and stop EC2 instances.
 
 ## Usage
 

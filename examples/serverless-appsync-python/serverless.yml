@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'AppSync'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-python-requirements
@@ -15,9 +15,9 @@ package:
   individually: true
   excludeDevDependencies: true
   include:
-    - '**/*.py'
-    - '*.graphql'
-    - 'mapping-templates/*.vtl'
+    - "**/*.py"
+    - "*.graphql"
+    - "mapping-templates/*.vtl"
   exclude:
     - requirements.txt
 
@@ -33,8 +33,8 @@ custom:
   appsync-simulator:
     apiKey: da2-fakeApiId123456
     watch:
-      - '*.graphql'
-      - 'mapping-templates/*.vtl'
+      - "*.graphql"
+      - "mapping-templates/*.vtl"
   appSync:
     name: AppSyncExample
     authenticationType: API_KEY
@@ -45,7 +45,7 @@ custom:
         - throttle: 200
     apiKeys:
       - name: AppSyncExample-api-key
-        description: 'NaN AppSync API Key'
+        description: "NaN AppSync API Key"
         expiresAfter: 1y
     defaultMappingTemplates:
       request: false
@@ -63,7 +63,7 @@ custom:
     dataSources:
       - type: AWS_LAMBDA
         name: AppSyncExample_lambdaDataSource
-        description: 'NaN AppSync Lambda DataSource'
+        description: "NaN AppSync Lambda DataSource"
         config:
           functionName: AppSyncExampleResolver
     tags:

@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'Middy'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-plugin-typescript
@@ -32,11 +32,11 @@ functions:
     handler: src/handlers/post.officialMiddlewareHandler
     events:
       - http:
-           path: /
-           method: POST
+          path: /
+          method: POST
   customMiddlewareExample:
     handler: src/handlers/get.customMiddlewareHandler
     events:
       - http:
-           path: /
-           method: GET
+          path: /
+          method: GET

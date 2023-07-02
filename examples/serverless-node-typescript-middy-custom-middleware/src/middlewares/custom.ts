@@ -19,7 +19,7 @@ export const customMiddleware = (): middy.MiddlewareObj<
     }
     throw createHttpError(401, "Unauthorized Request");
   };
-  
+
   const onError: middy.MiddlewareFn<
     APIGatewayProxyEvent,
     APIGatewayProxyResult

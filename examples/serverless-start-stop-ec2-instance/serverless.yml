@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME, 'StartStopEC2Instance'}
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 plugins:
   - serverless-plugin-typescript
@@ -28,23 +28,23 @@ provider:
     serverSideEncryption: AES256
   iamRoleStatements:
     iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - ec2:DescribeInstanceStatus
-        - ec2:DescribeInstances
-      Resource:
-        - "*"
-    - Effect: Allow
-      Action:
-        - ec2:StartInstances
-        - ec2:StopInstances
-      Resource:
-        - Fn::Join:
-            - ":"
-            - - "arn:aws:ec2"
-              - Ref: AWS::Region
-              - Ref: AWS::AccountId
-              - "instance/${env:EC2_INSTANCE_ID}"
+      - Effect: Allow
+        Action:
+          - ec2:DescribeInstanceStatus
+          - ec2:DescribeInstances
+        Resource:
+          - "*"
+      - Effect: Allow
+        Action:
+          - ec2:StartInstances
+          - ec2:StopInstances
+        Resource:
+          - Fn::Join:
+              - ":"
+              - - "arn:aws:ec2"
+                - Ref: AWS::Region
+                - Ref: AWS::AccountId
+                - "instance/${env:EC2_INSTANCE_ID}"
 
 functions:
   startInstance:
@@ -59,4 +59,3 @@ functions:
       - schedule: ${env:STOP_INSTANCE_CRON, 'cron(0 0 * * ? *)'}
     environment:
       EC2_INSTANCE_ID: ${env:EC2_INSTANCE_ID}
-

@@ -1,5 +1,6 @@
 module "db" {
   source = "terraform-aws-modules/rds/aws"
+  version = "6.0.0"
 
   identifier = "${var.name}-rds-${var.db_name}"
 
