@@ -529,7 +529,7 @@
       "name": "Klotho",
       "description": "A complete analysis of the service and a Proof of Concept on how to integrate it with a GO application.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/klotho-analysis/",
-      "tags": ["Examples > DevOps > Infrastructure > Pulumi > Klotho"],
+      "tags": ["Examples > DevOps > Infrastructure from Code > Klotho and more!"],
       "labels": [
         "AWS",
         "Pulumi",
