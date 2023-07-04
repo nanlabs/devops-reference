@@ -28,4 +28,4 @@ We created a proof of concept to test the service. [here](./klotho-go-example/RE
 
 ## Reference Documentation
 
-- [Klotho Docks](https://klo.dev/)
+- [Klotho Docs](https://klo.dev/)
