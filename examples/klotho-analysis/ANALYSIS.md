@@ -4,7 +4,7 @@
 
 Klotho is an open-source Architecture/Infrastructure-from-Code tool designed to enable developers to build adaptable systems that can evolve over time.
 
-IMPORTANT - This analysis was made on 2023-05-16. The service was still in beta at that time.
+> IMPORTANT - This analysis was made on 2023-05-16. The service was still in beta at that time.
 
 ## Analysis
 
