@@ -17,7 +17,7 @@ To quickly get started, follow these steps:
 
    ```sh
    git clone https://github.com/nanlabs/devops-reference.git
-   cd devops-reference/examples/docker/neptune
+   cd devops-reference/examples/compose-nestjs
    ```
 
 2. Start the development environment:
