@@ -515,6 +515,15 @@
         "Examples > DevOps > Infrastructure as Code > Terraform"
       ],
       "labels": ["Serverless Framework", "Terraform", "AWS"]
+    },
+    {
+      "name": "Docker Compose NestJS Starter App",
+      "description": "Docker Compose starter app for NestJS.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-nestjs",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
+      ],
+      "labels": ["Docker", "Docker Compose", "NestJS", "NodeJS"]
     }
   ]
 }
