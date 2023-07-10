@@ -33,7 +33,7 @@ This will start the necessary containers and set up the Nestjs project.
 If you want to test the project in a production environment, use the following command:
 
 ```sh
-docker-compose -f compose.yml -f compose.prod.yml up
+docker compose -f compose.prod.yml up
 ```
 
 This will run the project with additional configurations suitable for production.

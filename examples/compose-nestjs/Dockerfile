@@ -36,7 +36,7 @@ RUN npm run build
 ENV NODE_ENV=production
 
 # Install production dependencies and clean up the cache
-RUN npm install --frozen-lockfile --prod
+RUN npm ci
 
 # Use the node user from the image as the user to run the app
 USER node
