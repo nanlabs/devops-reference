@@ -23,7 +23,7 @@ To quickly get started, follow these steps:
 2. Start the development environment:
 
    ```sh
-   docker-compose -f compose.yml up
+   docker-compose up
    ```
 
 This will start the necessary containers and set up the Nestjs project.
