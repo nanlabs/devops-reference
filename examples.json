@@ -523,7 +523,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": ["Docker", "Docker Compose", "NestJS", "NodeJS"]
+      "labels": ["Docker", "Docker Compose", "NestJS", "Node.js"]
     },
     {
       "name": "Klotho",
