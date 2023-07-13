@@ -2,31 +2,13 @@
 
 ## Install Klotho
 
-### In linux
+### Installation guide
 
-Run
+Check the documentation according your OS: [LINK HERE](https://klo.dev/docs/download-klotho)
 
-```bash
-curl -fsSL "http://srv.klo.dev/update/latest/linux/x86_64?stream=pro:latest" -o klotho
-```
+### Docker image
 
-And then:
-
-```bash
-sudo chmod +x klotho
-```
-
-Finally add Klotho to Path:
-
-```bash
-PATH=$PATH:~/klotho
-```
-
-This is because I've downloaded Klotho in my root user folder.
-
-### In other OS
-
-Check the documentation: [LINK HERE](https://klo.dev/docs/download-klotho)
+Check this [link](https://hub.docker.com/r/klothoplatform/klotho) to get the latest docker image.
 
 ## Run Server
 
