@@ -42,6 +42,8 @@ among other resources that are used in different projects here at [NaN Labs](htt
     - [Infrastructure as Code](#infrastructure-as-code)
       - [Serverless Framework, SAM and CloudFormation](#serverless-framework-sam-and-cloudformation)
       - [Terraform](#terraform)
+    - [Infrastructure from Code](#infrastructure-from-code)
+      - [Klotho and more!](#klotho-and-more)
 
 - [Contributing](#contributing)
 - [Contributors](#contributors)
@@ -158,6 +160,14 @@ among other resources that are used in different projects here at [NaN Labs](htt
 | [Terraform Bastion Host](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/bastion)                            | Terraform module which creates an EC2 instance acting as a bastion host                                                      | _Terraform_, _AWS_, _Bastion_                    |
 | [Terraform Starter Kit for AWS VPC, RDS instance, and Bastion Host](https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter) | Terraform Starter kit for creating AWS infrastructure using Terraform that contains a VPC, RDS instance, and a bastion host. | _Terraform_, _AWS_, _VPC_, _RDS_, _Bastion_      |
 | [Using Serverless Framework with Terraform](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-terraform-example)                                       | The definitive example of how to use Terraform and Serverless Framework together.                                            | _Serverless Framework_, _Terraform_, _AWS_       |
+
+#### Infrastructure from Code
+
+##### Klotho and more
+
+| Name                                                                                      | Description                                                                                             | Keywords                                |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| [Klotho](https://github.com/nanlabs/devops-reference/tree/main/examples/klotho-analysis/) | A complete analysis of the service and a Proof of Concept on how to integrate it with a GO application. | _AWS_, _Pulumi_, _Deployment_, _Klotho_ |
 
 ## Contributing
 
