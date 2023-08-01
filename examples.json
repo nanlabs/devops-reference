@@ -536,6 +536,21 @@
         "Deployment",
         "Klotho"
       ]
+    },
+    {
+      "name": "Stripe Integration with Node.js and TypeScript",
+      "description": "This project offers a seamless Stripe integration with Node.js and TypeScript, providing a powerful API for managing basic operations like customer creation, checkout sessions, and portal sessions. It empowers developers to effortlessly handle payment-related tasks with the Stripe API.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/stripe-integration-nodejs-typescript/",
+      "tags": ["Examples > DevOps > ThirdParty Integrations > Stripe"],
+      "labels": [
+        "Node.js",
+        "TypeScript",
+        "Stripe",
+        "Payment Gateway",
+        "API",
+        "Integration",
+        "Webhooks"
+      ]
     }
   ]
 }
