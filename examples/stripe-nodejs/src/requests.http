@@ -1,0 +1,101 @@
+### Create a new Stripe Checkout Session - Using customer id
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "customerId": "cus_OGPMgZkXyXLkod",
+  "lineItems": [
+    {
+      "price": "price_1NTnsyBw7boqKQQGj8XMsMTx",
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "payment"
+}
+
+### Create a new Stripe Checkout Session - Using email
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "email": "test2@email.com",
+  "lineItems": [
+    {
+      "price": "price_1NTnsyBw7boqKQQGj8XMsMTx",
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "payment",
+  "createCustomer": true
+}
+
+### Create a new Stripe Checkout Session - Without customer and email
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "lineItems": [
+    {
+      "price": "price_1NTnsyBw7boqKQQGj8XMsMTx",
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "payment",
+  "createCustomer": true
+}
+
+### Bad request with both customerId and email
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "customerId": "cus_OGPMgZkXyXLkod",
+  "email": "testcust@mail.com",
+  "lineItems": [
+    {
+      "price": "price_1NTnsyBw7boqKQQGj8XMsMTx",
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "payment",
+  "createCustomer": true
+}
+
+### Bad request - createCustomer missing
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "lineItems": [
+    {
+      "price": "price_1NTnsyBw7boqKQQGj8XMsMTx",
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "payment"
+}
+
+### Bad request - createCustomer missing with email
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "email": "testcust@mail.com",
+  "lineItems": [
+    {
+      "price": "price_1NTnsyBw7boqKQQGj8XMsMTx",
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "payment"
+}
+
+### Bad request - lineItems empty
+POST http://localhost:3000/checkout-session
+content-type: application/json
+
+{
+  "lineItems": [],
+  "paymentMethod": "payment",
+  "createCustomer": true
+}
