@@ -244,22 +244,6 @@
       ]
     },
     {
-      "name": "Node.js",
-      "description": "DevContainer for Node.js development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop Node.js applications.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-nodejs/",
-      "tags": [
-        "Examples > DevOps > Containers, Orchestration and Serverless > DevContainers and Codespaces"
-      ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "DevContainer",
-        "VSCode DevContainer",
-        "GitHub Codespaces",
-        "Node.js"
-      ]
-    },
-    {
       "name": "Ingress",
       "description": "Ingress example using NGINX Ingress Controller. You can run this example locally using [Minikube](https://minikube.sigs.k8s.io/docs/start/).",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes-ingress-example/",
