@@ -1,4 +1,4 @@
-# Automating Pull Request Review using DangerJS and GitHub Actions 😎
+# Automating Pull Request Review using DangerJS and GitHub Actions 😎🚀
 
 In this tutorial, you will learn how to automate Pull Request (PR) reviews using DangerJS and GitHub Actions. 🔧 DangerJS is a powerful tool that allows you to define custom rules and checks for PR reviews, while GitHub Actions enables you to run these checks automatically whenever a new PR is opened or updated. By automating PR reviews, you can save time ⏳, enforce coding standards 📝, catch potential issues early on 🚨, and ultimately improve the overall code quality in your GitHub repository. 🚀
 
