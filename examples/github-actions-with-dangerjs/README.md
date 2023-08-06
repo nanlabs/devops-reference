@@ -43,9 +43,9 @@ npm install --save-dev danger
 // dangerfile.ts
 import { danger, warn, fail, message, TextDiff } from "danger";
 
-<!-- No PR is too small to include a description of why you made a change -->
-<!-- To do so, add a # What's this PR do? section to your PR description. -->
-<!-- This is a good place to explain the motivation for making this change. -->
+// No PR is too small to include a description of why you made a change
+// To do so, add a # What's this PR do? section to your PR description.
+// This is a good place to explain the motivation for making this change.
 if (
   !danger.github.pr.body ||
   !danger.github.pr.body.includes("# What's this PR do?")
@@ -58,7 +58,7 @@ if (
   message(`${title} - <i>${idea}</i>`);
 }
 
-<!-- Define more custom rules here based on your project's requirements -->
+// Define more custom rules here based on your project's requirements
 ```
 
 ### Step 4: Setting up GitHub Actions
@@ -68,7 +68,7 @@ if (
 3. In the `pr-review.yml`, configure the workflow to trigger whenever a new PR is opened or updated. You can use the `on` field to specify the events that should trigger the workflow.
 
 ```yaml
-<!-- .github/workflows/pr-review.yml -->
+# .github/workflows/pr-review.yml
 name: Pull Request Validation
 
 on:
@@ -84,7 +84,7 @@ on:
 2. Define the jobs that will be executed as part of the workflow. For automated PR reviews, you will have a single job that includes steps to checkout the code, set up DangerJS, install dependencies, and run DangerJS to perform the PR review.
 
 ```yaml
-<!-- .github/workflows/pr-review.yml -->
+# .github/workflows/pr-review.yml
 name: Pull Request Validation
 
 on:
