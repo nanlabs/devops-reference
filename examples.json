@@ -537,7 +537,7 @@
       "name": "Automating Pull Request Review using DangerJS and GitHub Actions",
       "description": "Learn how to automate Pull Request (PR) reviews using DangerJS and GitHub Actions. Automating PR reviews helps enforce coding standards, catch potential issues, and improve code quality in your GitHub repository.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment > GitHub Actions"],
+      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Tutorial",
         "GitHub Actions",
