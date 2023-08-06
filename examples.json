@@ -102,13 +102,13 @@
       "labels": ["GitHub Actions", "Terraform"]
     },
     {
-      "name": "Todo to Issue",
-      "description": "This workflow scans new commits on the main branch looking for `TODO`s in the code and creates new GitHub issues.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/todo.yml",
+      "name": "TODOs to GitHub Issues",
+      "description": "This tutorial shows how to create a GitHub Action that converts TODO comments into GitHub issues.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/",
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Todo"]
+      "labels": ["GitHub Actions", "TODOs", "Issues"]
     },
     {
       "name": "Automate Pull Requests Reviews using Danger",
