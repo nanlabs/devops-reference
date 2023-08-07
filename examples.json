@@ -225,11 +225,26 @@
       "labels": ["Docker", "Docker Compose", "Airflow", "Spark"]
     },
     {
+      "name": "Exploring DevContainers: A Versatile Development Environment Solution",
+      "description": "Introduction to Development Containers (DevContainers), a solution to create development environments with a unique approach to address specific development environment needs",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-intro/",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Development and Cloud Environments"
+      ],
+      "labels": [
+        "DevContainer",
+        "VSCode DevContainer",
+        "GitHub Codespaces",
+        "Docker",
+        "Docker Compose"
+      ]
+    },
+    {
       "name": "AWS Glue",
       "description": "DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-glue/",
       "tags": [
-        "Examples > DevOps > Containers, Orchestration and Serverless > DevContainers and Codespaces"
+        "Examples > DevOps > Containers, Orchestration and Serverless > Development and Cloud Environments"
       ],
       "labels": [
         "Docker",
