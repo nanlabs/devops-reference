@@ -537,7 +537,9 @@
       "name": "Automating Pull Request Review using DangerJS and GitHub Actions",
       "description": "Learn how to automate Pull Request (PR) reviews using DangerJS and GitHub Actions. Automating PR reviews helps enforce coding standards, catch potential issues, and improve code quality in your GitHub repository.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs",
-      "tags": ["Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "tags": [
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
       "labels": [
         "Tutorial",
         "GitHub Actions",
@@ -545,6 +547,13 @@
         "Pull Request",
         "Automation"
       ]
+    },
+    {
+      "name": "ShellCheck for Shell Scripting",
+      "description": "Learn how to use ShellCheck to lint your shell scripts and catch potential issues before they become a problem.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/shellcheck-for-shell-scripting",
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
+      "labels": ["Tutorial", "ShellCheck", "Shell Scripting", "Automation"]
     }
   ]
 }
