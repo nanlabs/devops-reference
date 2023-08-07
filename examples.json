@@ -45,7 +45,7 @@
       "labels": ["Shell Scripting", "Utilities"]
     },
     {
-      "name": "Easy Options",
+      "name": "Parsing Shell Script Arguments with Easy Options",
       "description": "Easy options for shell scripts.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/easy-options/",
       "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
