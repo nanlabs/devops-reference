@@ -1,6 +1,6 @@
 # Using ShellCheck for Shell Scripting 🐚 🔍
 
-ShellCheck is a powerful tool that helps you write better shell scripts by analyzing and providing suggestions for improvements. It detects common errors and best practices in shell scripts, making them more reliable, secure, and maintainable. Let's explore why you should use ShellCheck and how to add it to your projects. Additionally, we'll demonstrate how to integrate ShellCheck with GitHub Actions and Visual Studio Code for seamless development. 🚀
+[ShellCheck](https://www.shellcheck.net/) is a powerful tool that helps you write better shell scripts by analyzing and providing suggestions for improvements. It detects common errors and best practices in shell scripts, making them more reliable, secure, and maintainable. Let's explore why you should use ShellCheck and how to add it to your projects. Additionally, we'll demonstrate how to integrate ShellCheck with GitHub Actions and Visual Studio Code for seamless development. 🚀
 
 ## Why Use ShellCheck? 💡
 
@@ -22,67 +22,56 @@ Using ShellCheck offers several benefits for your shell scripting projects:
 
 ShellCheck is a command-line tool that can be installed on most operating systems, including Linux, macOS, and Windows Subsystem for Linux (WSL). Here's how to add ShellCheck to your projects:
 
-1. **Linux/macOS**:
+### Install to run locally
 
-   You can install ShellCheck on Linux and macOS using package managers like `apt` or `brew`.
+The easiest way to install ShellCheck locally is through your package manager.
 
-   ```bash
-   # On Debian/Ubuntu
-   sudo apt-get update
-   sudo apt-get install shellcheck
+You can find the installation instructions for your operating system [here](https://github.com/koalaman/shellcheck#installing)! 📦
 
-   # On macOS (with Homebrew)
-   brew install shellcheck
-   ```
+### Integration with GitHub Actions
 
-2. **Windows**:
+To automatically check your shell scripts on every push using GitHub Actions, you can add the following workflow to your repository.
 
-   If you're using Windows, you can install ShellCheck via WSL or use tools like Git Bash, which provide access to a Unix-like environment.
+**Create a file** (e.g., `.github/workflows/shellcheck.yml`) with the following content:
 
-3. **Integration with GitHub Actions**:
+```yaml
+name: ShellCheck 🐚
 
-   To automatically check your shell scripts on every push using GitHub Actions, you can add the following workflow to your repository.
+on:
+  push:
+    branches:
+      - main
 
-   **Create a file** (e.g., `.github/workflows/shellcheck.yml`) with the following content:
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
 
-   ```yaml
-   name: ShellCheck 🐚
+    steps:
+      - name: Begin CI... 🏃
+        uses: actions/checkout@v3
 
-   on:
-     push:
-       branches:
-         - main
+      - name: Run ShellCheck 🔨
+        uses: ludeeus/action-shellcheck@1.1.0
+        with:
+          severity: error
+```
 
-   jobs:
-     shellcheck:
-       name: Shellcheck
-       runs-on: ubuntu-latest
+You can find more information about the `action-shellcheck` GitHub Action [here](https://github.com/ludeeus/action-shellcheck). 📚
 
-       steps:
-         - name: Begin CI... 🏃
-           uses: actions/checkout@v3
+### Integration with Visual Studio Code
 
-         - name: Run ShellCheck 🔨
-           uses: ludeeus/action-shellcheck@1.1.0
-           with:
-             severity: error
-   ```
+You can use ShellCheck with Visual Studio Code to get real-time feedback while writing shell scripts. To do this, follow these steps:
 
-   Replace `your_script.sh` with the actual name of your shell script. This workflow will run ShellCheck on every push to the `main` branch.
+- Install the [ShellCheck extension](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) for Visual Studio Code. ⬇️
 
-4. **Integration with Visual Studio Code**:
+- Open your shell script file in Visual Studio Code.
 
-   You can use ShellCheck with Visual Studio Code to get real-time feedback while writing shell scripts. To do this, follow these steps:
+- As you write your script, the extension will automatically analyze it and display suggestions and warnings. 👀
 
-   - Install the [ShellCheck extension](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) for Visual Studio Code. ⬇️
+- Hover over the underlined code to see the detailed description of the issue and the suggested fix. 💬
 
-   - Open your shell script file in Visual Studio Code.
-
-   - As you write your script, the extension will automatically analyze it and display suggestions and warnings. 👀
-
-   - Hover over the underlined code to see the detailed description of the issue and the suggested fix. 💬
-
-   - The extension also provides quick-fix options for some common issues, making it easier to implement improvements. 🔧
+- The extension also provides quick-fix options for some common issues, making it easier to implement improvements. 🔧
 
 ## Conclusion 👏
 
