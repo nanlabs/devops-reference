@@ -1,7 +1,6 @@
 version: "3.9"
 services:
   awsglue:
-    container_name: awsglue
     restart: always
     build:
       context: .

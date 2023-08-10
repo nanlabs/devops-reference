@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   mongo:
-    container_name: mongo-db
     image: mongo:5.0.9
     restart: unless-stopped
     environment:
@@ -25,7 +24,6 @@ services:
       - mongodb-local-net
 
   mongo-express:
-    container_name: mongo-express
     image: mongo-express:1.0.0-alpha.4
     restart: unless-stopped
     environment:
