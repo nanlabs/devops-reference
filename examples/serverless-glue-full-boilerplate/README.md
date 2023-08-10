@@ -16,7 +16,7 @@ and a Glue job using PySpark.
 To install this example to bootstrap your project, run the following command:
 
 ```sh
-npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/serverless-glue-full-boilerplate -n my-project
+npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-full-boilerplate -n my-project
 ```
 
 ## Overview
