@@ -1,7 +1,17 @@
 #!/bin/sh
 
-# Needed so all localstack components will startup correctly (i'm sure there's a better way to do this)
-sleep 10
+# Lets check if localstack is available. If we can't reach to localstack
+# in 60 seconds we error out
+counter=0
+until nc -z localstack 4566; do
+    if [ ${counter} -eq 60 ]; then
+        echo "Timeout: Failed to reach localstack."
+        exit 1
+    fi
+    counter=$((counter + 1))
+    printf '.'
+    sleep 1
+done
 
 aws dynamodb create-table --endpoint-url=http://localstack:4566 --table-name my_table \
     --attribute-definitions AttributeName=key,AttributeType=S \
