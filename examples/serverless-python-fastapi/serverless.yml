@@ -12,11 +12,11 @@ useDotenv: true
 package:
   individually: true
   excludeDevDependencies: true
+  exclude:
+    - "**"
   include:
     - "!./**"
     - "**/*.py"
-  exclude:
-    - "**"
 
 custom:
   pythonRequirements:
@@ -24,7 +24,6 @@ custom:
     layer: true
     noDeploy:
       - pytest
-
   serverless-offline:
     httpPort: 3000
     port: 3000
@@ -40,32 +39,17 @@ provider:
     blockPublicAccess: true
     versioning: true
     serverSideEncryption: AES256
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - lambda:InvokeFunction
-        - lambda:InvokeAsync
-      Resource: "*"
 
 functions:
   app:
     runtime: python3.9
-    package:
-      patterns:
-        - "src/**"
-        - "env.providers.json"
-        - "!requirements.txt"
-        - "!requirements.dev.txt"
-        - "!README.md"
-        - "!setup.cfg"
-        - "!package.json"
-        - "!package-lock.json"
-        - "!.serverless/**"
-        - "!venv/**"
-        - "!node_modules/**"
     module: src
     handler: main.handler
     events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
       - http:
           path: /{proxy+}
           method: ANY
