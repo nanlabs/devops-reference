@@ -5,7 +5,7 @@ from mangum import Mangum
 from src.router.routes import router as api_router
 
 ALLOWED_ORIGINS = [
-    "",
+    "*",
 ]
 app = FastAPI()
 app.add_middleware(

@@ -1,5 +1,5 @@
 {
-  "name": "serverless-fastapi-app",
+  "name": "serverless-api",
   "version": "1.0.0",
   "description": "Serverless fastapi example",
   "main": "index.js",
@@ -15,11 +15,10 @@
     "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
   },
   "author": "nanlabs",
-  "license": "MIT",
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
-    "serverless": "^3.23.0",
-    "serverless-offline": "^11.1.3",
+    "serverless": "^3.34.0",
+    "serverless-offline": "^11.6.0",
     "serverless-python-requirements": "^6.0.0"
   }
 }

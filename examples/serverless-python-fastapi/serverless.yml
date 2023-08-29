@@ -5,7 +5,6 @@ frameworkVersion: "3"
 plugins:
   - serverless-python-requirements
   - serverless-offline
-  - ./plugins/serverless-offline-python-requirements
 
 useDotenv: true
 
@@ -20,7 +19,7 @@ package:
 
 custom:
   pythonRequirements:
-    dockerizePip: true
+    usePipenv: true
     layer: true
     noDeploy:
       - pytest
@@ -43,8 +42,9 @@ provider:
 functions:
   app:
     runtime: python3.9
-    module: src
-    handler: main.handler
+    handler: src/main.handler
+    layers:
+      - Ref: PythonRequirementsLambdaLayer
     events:
       - http:
           path: /
