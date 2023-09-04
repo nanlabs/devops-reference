@@ -584,6 +584,13 @@
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/shellcheck-for-shell-scripting",
       "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
       "labels": ["Tutorial", "ShellCheck", "Shell Scripting", "Automation"]
+    },
+    {
+      "name": "Node Package Managers",
+      "description": "Comparison of the most popular Node Package Managers: npm, yarn, pnpm.",
+      "url": "https://github.com/nanlabs/frontend-reference/tree/main/examples/node-package-managers/",
+      "tags": ["Examples > DevOps > Dependency Management"],
+      "labels": ["Node", "npm", "yarn", "pnpm"]
     }
   ]
 }
