@@ -46,6 +46,7 @@ among other resources that are used in different projects here at [NaN Labs](htt
       - [Klotho and more!](#klotho-and-more)
     - [ThirdParty Integrations](#thirdparty-integrations)
       - [Stripe](#stripe)
+    - [Dependency Management](#dependency-management)
 
 - [Contributing](#contributing)
 - [Contributors](#contributors)
@@ -181,6 +182,12 @@ among other resources that are used in different projects here at [NaN Labs](htt
 | Name                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                    | Keywords                                                                               |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Stripe Integration with Node.js and TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/stripe-integration-node-typescript/) | This project offers a seamless Stripe integration with Node.js and TypeScript, providing a powerful API for managing basic operations like customer creation, checkout sessions, and portal sessions. It empowers developers to effortlessly handle payment-related tasks with the Stripe API. | _Node.js_, _TypeScript_, _Stripe_, _Payment Gateway_, _API_, _Integration_, _Webhooks_ |
+
+#### Dependency Management
+
+| Name                                                                                                             | Description                                                            | Keywords                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------- |
+| [Node Package Managers](https://github.com/nanlabs/frontend-reference/tree/main/examples/node-package-managers/) | Comparison of the most popular Node Package Managers: npm, yarn, pnpm. | _Node_, _npm_, _yarn_, _pnpm_ |
 
 ## Contributing
 
