@@ -44,8 +44,6 @@ among other resources that are used in different projects here at [NaN Labs](htt
       - [Terraform](#terraform)
     - [Infrastructure from Code](#infrastructure-from-code)
       - [Klotho and more!](#klotho-and-more)
-    - [ThirdParty Integrations](#thirdparty-integrations)
-      - [Stripe](#stripe)
     - [Dependency Management](#dependency-management)
 
 - [Contributing](#contributing)
@@ -174,14 +172,6 @@ among other resources that are used in different projects here at [NaN Labs](htt
 | Name                                                                                      | Description                                                                                             | Keywords                                |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------- |
 | [Klotho](https://github.com/nanlabs/devops-reference/tree/main/examples/klotho-analysis/) | A complete analysis of the service and a Proof of Concept on how to integrate it with a GO application. | _AWS_, _Pulumi_, _Deployment_, _Klotho_ |
-
-#### ThirdParty Integrations
-
-##### Stripe
-
-| Name                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                    | Keywords                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Stripe Integration with Node.js and TypeScript](https://github.com/nanlabs/devops-reference/tree/main/examples/stripe-integration-node-typescript/) | This project offers a seamless Stripe integration with Node.js and TypeScript, providing a powerful API for managing basic operations like customer creation, checkout sessions, and portal sessions. It empowers developers to effortlessly handle payment-related tasks with the Stripe API. | _Node.js_, _TypeScript_, _Stripe_, _Payment Gateway_, _API_, _Integration_, _Webhooks_ |
 
 #### Dependency Management
 
