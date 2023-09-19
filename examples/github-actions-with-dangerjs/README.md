@@ -99,20 +99,21 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "14.x"
+          node-version: "18.x"
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Run DangerJS
-        run: npx danger ci
+      - name: Danger JS Action
+        uses: danger/danger-js@9.1.8
         env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
 ```
 
 ### Step 6: Pushing to the Repository
