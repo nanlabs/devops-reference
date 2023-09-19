@@ -549,21 +549,6 @@
       "labels": ["AWS", "Pulumi", "Deployment", "Klotho"]
     },
     {
-      "name": "Stripe Integration with Node.js and TypeScript",
-      "description": "This project offers a seamless Stripe integration with Node.js and TypeScript, providing a powerful API for managing basic operations like customer creation, checkout sessions, and portal sessions. It empowers developers to effortlessly handle payment-related tasks with the Stripe API.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/stripe-integration-node-typescript/",
-      "tags": ["Examples > DevOps > ThirdParty Integrations > Stripe"],
-      "labels": [
-        "Node.js",
-        "TypeScript",
-        "Stripe",
-        "Payment Gateway",
-        "API",
-        "Integration",
-        "Webhooks"
-      ]
-    },
-    {
       "name": "Automating Pull Request Review using DangerJS and GitHub Actions",
       "description": "Learn how to automate Pull Request (PR) reviews using DangerJS and GitHub Actions. Automating PR reviews helps enforce coding standards, catch potential issues, and improve code quality in your GitHub repository.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs",
