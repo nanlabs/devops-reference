@@ -16,6 +16,7 @@
 </div>
 <div align="center">
 
+[![Awesome](https://awesome.re/mentioned-badge.svg)](https://github.com/nanlabs/awesome-nan)
 [![Continious Integration][cibadge]][ciurl]
 [![License: MIT][licensebadge]][licenseurl]
 
