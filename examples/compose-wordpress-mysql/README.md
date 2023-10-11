@@ -1,4 +1,4 @@
-## 🌟 WordPress Wonderland with MariaDB 🌈
+## 🌟 WordPress Wonderland with MySQL 🌈
 
 Embark on an exhilarating journey into the WordPress Wonderland, now powered by the enchanting MariaDB! 🚀 This example brings to life a captivating WordPress setup, with a dash of magic from MariaDB. Feel free to swap the enchantment to MySQL by simply unraveling a line in the mystical `compose.yaml` file.
 
