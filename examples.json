@@ -573,9 +573,26 @@
     {
       "name": "Node Package Managers",
       "description": "Comparison of the most popular Node Package Managers: npm, yarn, pnpm.",
-      "url": "https://github.com/nanlabs/frontend-reference/tree/main/examples/node-package-managers/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/node-package-managers",
       "tags": ["Examples > DevOps > Dependency Management"],
       "labels": ["Node", "npm", "yarn", "pnpm"]
+    },
+    {
+      "name": "WordPress Docker Compose Magic",
+      "description": "Experience the magic of WordPress with this Docker Compose configuration. It seamlessly combines the power of Nginx, WordPress, and MySQL/MariaDB to create a delightful web environment. The lightweight Nginx handles incoming requests, custom configurations shape the entrance to the WordPress realm, and MariaDB ensures a robust database foundation. Explore the enchanting WordPress Wonderland locally or deploy it to the cloud effortlessly.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-wordpress-mysql",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
+      ],
+      "labels": [
+        "Docker Compose",
+        "Web Hosting",
+        "Content Management",
+        "PHP",
+        "Nginx Configuration",
+        "MariaDB Database",
+        "MySQL Database"
+      ]
     }
   ]
 }
