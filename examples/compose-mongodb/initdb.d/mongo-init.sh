@@ -14,7 +14,7 @@ if [ -n "${MONGO_NON_ROOT_USERNAME:-}" ] && [ -n "${MONGO_NON_ROOT_PASSWORD:-}" 
     pwd: $(_js_escape "$MONGO_NON_ROOT_PASSWORD"),
     roles: [ { role: $(_js_escape "$MONGO_NON_ROOT_ROLE"), db: $(_js_escape "$MONGO_INITDB_DATABASE") } ]
   })
-	EOJS
+EOJS
 else
   # print warning or kill temporary mongo and exit non-zero
   exit 1
