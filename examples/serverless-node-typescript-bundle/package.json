@@ -1,0 +1,33 @@
+{
+  "name": "nan-middy",
+  "version": "1.0.0",
+  "description": "Serverless Bundle example",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "sls:deploy": "serverless deploy",
+    "sls:offline": "serverless offline start",
+    "sls:package": "serverless package",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
+  },
+  "author": "darioscrivano",
+  "license": "MIT",
+  "homepage": "https://github.com/nanlabs/devops-reference#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.108",
+    "serverless": "^3.23.0",
+    "serverless-bundle": "^6.0.0",
+    "serverless-offline": "^11.1.3",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@middy/core": "^3.6.2",
+    "@middy/http-json-body-parser": "^3.6.2",
+    "aws-lambda": "^1.0.7",
+    "http-errors": "^2.0.0"
+  }
+}

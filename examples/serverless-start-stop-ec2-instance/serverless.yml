@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'StartStopEC2Instance'}
+service: ${env:SERVICE_NAME}
 
 frameworkVersion: "3"
 
@@ -26,25 +26,26 @@ provider:
     blockPublicAccess: true
     versioning: true
     serverSideEncryption: AES256
-  iamRoleStatements:
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - ec2:DescribeInstanceStatus
-          - ec2:DescribeInstances
-        Resource:
-          - "*"
-      - Effect: Allow
-        Action:
-          - ec2:StartInstances
-          - ec2:StopInstances
-        Resource:
-          - Fn::Join:
-              - ":"
-              - - "arn:aws:ec2"
-                - Ref: AWS::Region
-                - Ref: AWS::AccountId
-                - "instance/${env:EC2_INSTANCE_ID}"
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - ec2:DescribeInstanceStatus
+            - ec2:DescribeInstances
+          Resource:
+            - "*"
+        - Effect: Allow
+          Action:
+            - ec2:StartInstances
+            - ec2:StopInstances
+          Resource:
+            - Fn::Join:
+                - ":"
+                - - "arn:aws:ec2"
+                  - Ref: AWS::Region
+                  - Ref: AWS::AccountId
+                  - "instance/${env:EC2_INSTANCE_ID}"
 
 functions:
   startInstance:

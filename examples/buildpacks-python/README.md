@@ -10,7 +10,8 @@
 In order to package the app and build the OCI image as hello-buildpacks, run the following command
 
 ```sh
-pack build hello-buildpacks --buildpack paketo-buildpacks/python \
+pack build hello-buildpacks \
+  --buildpack paketo-buildpacks/python \
   --builder paketobuildpacks/builder:base
 ```
 
@@ -22,10 +23,10 @@ docker run --rm hello-buildpacks
 
 ### Files
 
-- Procfile: defines how to run the app
-- project.toml: settings for the environment (i.e. The Python's version)
-- main.py: simple python app
-- requirements.txt: as it is a python project, this file gets autodetected, installing the required dependencies
+- `Procfile`: defines how to run the app
+- `project.toml: settings for the environment (i.e. The Python's version)
+- `main.py`: simple python app
+- `requirements.txt`: as it is a python project, this file gets autodetected, installing the required dependencies
 
 ### Tools
 

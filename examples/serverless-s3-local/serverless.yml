@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'S3LocalExample'}
+service: ${env:SERVICE_NAME}
 
 frameworkVersion: "3"
 

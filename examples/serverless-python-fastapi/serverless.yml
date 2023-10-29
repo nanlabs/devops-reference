@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'serverless-fastapi-example'}
+service: ${env:SERVICE_NAME}
 
 frameworkVersion: "3"
 
@@ -44,7 +44,7 @@ functions:
     runtime: python3.9
     handler: src/main.handler
     layers:
-      - Ref: PythonRequirementsLambdaLayer
+      - !Ref PythonRequirementsLambdaLayer
     events:
       - http:
           path: /

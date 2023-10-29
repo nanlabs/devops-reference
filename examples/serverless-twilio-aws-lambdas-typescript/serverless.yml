@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'TwilioAwsLambdasTypescript'}
+service: ${env:SERVICE_NAME}
 
 frameworkVersion: "3"
 

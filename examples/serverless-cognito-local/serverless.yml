@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'CognitoLocalLambdas'}
+service: ${env:SERVICE_NAME}
 frameworkVersion: "3"
 
 provider:

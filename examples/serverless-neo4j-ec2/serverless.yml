@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'Neo4jEC2Example'}
+service: ${env:SERVICE_NAME}
 
 useDotenv: true
 

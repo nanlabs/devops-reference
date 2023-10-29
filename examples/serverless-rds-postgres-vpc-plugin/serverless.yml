@@ -1,4 +1,4 @@
-service: ${env:SERVICE_NAME, 'RDSPostgres'}
+service: ${env:SERVICE_NAME}
 
 useDotenv: true
 
