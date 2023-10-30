@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/nanlabs/devops-reference.git"
   },
-  "author": "darioscrivano",
+  "author": "ulises-jeremias <ulisescf.24@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
