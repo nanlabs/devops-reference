@@ -1,0 +1,13 @@
+---
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${env:PROGRAMS_S3_BUCKET_NAME}
+
+Outputs:
+  S3BucketNameOutputKey:
+    Value: !Ref S3Bucket
+    Description: S3 bucket for programs
+    Export:
+      Name: ${self:service}-${sls:stage}-programs-s3-bucket

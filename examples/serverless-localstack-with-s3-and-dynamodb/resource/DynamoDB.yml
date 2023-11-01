@@ -1,0 +1,22 @@
+---
+Resources:
+  ProgramsCache:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:service}-${sls:stage}-programs-cache
+      AttributeDefinitions:
+        - AttributeName: key
+          AttributeType: S
+      KeySchema:
+        - AttributeName: key
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+Outputs:
+  ProgramsCache:
+    Value: !Ref ProgramsCache
+    Description: DynamoDB table for programs cache
+    Export:
+      Name: ${self:service}-${sls:stage}-programs-cache

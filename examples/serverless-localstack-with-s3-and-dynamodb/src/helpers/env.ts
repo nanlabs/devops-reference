@@ -1,0 +1,29 @@
+// getStage is used to determine the stage of the application
+export const getStage = () => process.env.STAGE;
+
+// getPackageVersion is used to determine the version of the application
+export const getPackageVersion = () => process.env.PACKAGE_VERSION;
+
+// getAwsRegion is used to determine the region of the application
+export const getAwsRegion = () => process.env.AWS_REGION;
+
+// getAwsAccountId is used to determine the account id of the application
+export const getAwsAccountId = () => process.env.AWS_ACCOUNT_ID;
+
+// getAwsAccessKeyId is used to determine the access key id of the application
+export const getAwsAccessKeyId = () => process.env.AWS_ACCESS_KEY_ID;
+
+// getAwsSecretAccessKey is used to determine the secret access key of the application
+export const getAwsSecretAccessKey = () => process.env.AWS_SECRET_ACCESS_KEY;
+
+// getAwsLambdaEndpoint is used to determine the lambda endpoint of the application
+export const getAwsS3Endpoint = () => process.env.AWS_S3_ENDPOINT || undefined;
+
+// getAwsLambdaEndpoint is used to determine the lambda endpoint of the application
+export const getAwsDynanmoDbEndpoint = () => process.env.AWS_DYNAMODB_ENDPOINT || undefined;
+
+// getAwsLambdaEndpoint is used to determine the lambda endpoint of the application
+export const getProgramsS3BucketName = () => process.env.PROGRAMS_S3_BUCKET_NAME;
+
+// getAwsLambdaEndpoint is used to determine the lambda endpoint of the application
+export const getProgramsCacheTableName = () => process.env.PROGRAMS_CACHE_TABLE_NAME;

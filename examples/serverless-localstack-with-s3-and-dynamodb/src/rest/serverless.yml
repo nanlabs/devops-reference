@@ -1,0 +1,7 @@
+---
+program:
+  handler: src/rest/program.handler
+  events:
+    - http:
+        method: POST
+        path: /program

@@ -602,6 +602,23 @@
         "MariaDB Database",
         "MySQL Database"
       ]
+    },
+    {
+      "name": "Serverless LocalStack with S3 and DynamoDB",
+      "description": "Serverless Framework example to run lambda functions locally using [Serverless Offline](https://www.serverless.com/plugins/serverless-offline) with LocalStack. It provides a full local development environment using [Serverless LocalStack](https://www.serverless.com/plugins/serverless-localstack).",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-localstack-with-s3-and-dynamodb/",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation",
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
+      ],
+      "labels": [
+        "Serverless Framework",
+        "Serverless Offline",
+        "Serverless LocalStack",
+        "LocalStack",
+        "S3",
+        "DynamoDB"
+      ]
     }
   ]
 }

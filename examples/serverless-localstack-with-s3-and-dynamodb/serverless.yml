@@ -1,0 +1,75 @@
+service: ${env:SERVICE_NAME}
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-localstack
+  - serverless-offline
+
+useDotenv: true
+
+package:
+  individually: true
+  excludeDevDependencies: true
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    port: 3000
+    noPrependStageInUrl: true
+    reloadHandler: true
+  localstack:
+    stages:
+      - local
+    host: http://127.0.0.1
+    edgePort: 4566
+  config:
+    local:
+      AWS_DYNAMODB_ENDPOINT: http://localhost:4566
+      AWS_S3_ENDPOINT: http://localhost:4566
+
+provider:
+  name: aws
+  stage: local
+  region: us-east-1
+  runtime: nodejs18.x
+  deploymentBucket:
+    blockPublicAccess: true
+    versioning: true
+    serverSideEncryption: AES256
+  apiGateway:
+    shouldStartNameWithService: true
+  environment:
+    STAGE: ${sls:stage}
+    PACKAGE_VERSION: ${file(package.json):version}
+    PROGRAMS_S3_BUCKET_NAME: ${env:PROGRAMS_S3_BUCKET_NAME}
+    PROGRAMS_CACHE_TABLE_NAME: ${self:service}-${sls:stage}-programs-cache
+    AWS_DYNAMODB_ENDPOINT: ${self:custom.config.${sls:stage}.AWS_DYNAMODB_ENDPOINT, ''}
+    AWS_S3_ENDPOINT: ${self:custom.config.${sls:stage}.AWS_S3_ENDPOINT, ''}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+          Resource:
+            - 'arn:aws:dynamodb:::table/${self:service}-${sls:stage}-programs-cache'
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:GetObject
+          Resource:
+            - 'arn:aws:s3:::${env:PROGRAMS_S3_BUCKET_NAME}/*'
+        - Effect: Allow
+          Action:
+            - s3:PutObjects
+          Resource:
+            - 'arn:aws:s3:::${env:PROGRAMS_S3_BUCKET_NAME}'
+
+functions:
+  - ${file(src/rest/serverless.yml)}
+
+resources:
+  - ${file(resource/S3.yml)}
+  - ${file(resource/DynamoDB.yml)}
