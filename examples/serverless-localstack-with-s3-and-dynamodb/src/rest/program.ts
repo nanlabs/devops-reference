@@ -4,10 +4,10 @@ import validator from '@middy/validator';
 import { transpileSchema } from '@middy/validator/transpile';
 import httpHeaderNormalizer from '@middy/http-header-normalizer';
 import httpJsonBodyParser from '@middy/http-json-body-parser';
-import { getPackageVersion, getProgramsS3BucketName } from '../helpers/env';
+import { getPackageVersion, getS3BucketName } from '../helpers/env';
 import { uploadFileToS3 } from '../lib/s3';
 
-type PostProgramEvent = APIGatewayProxyEvent & {
+type PostEvent = APIGatewayProxyEvent & {
   body: {
     content: string;
     filePath: string;
@@ -48,7 +48,7 @@ const responseSchema = {
 
 // TODO: Get rid of the explicit partial type middy.MiddyfiedHandler
 //      and use the implicit type instead.
-const handler: middy.MiddyfiedHandler = middy<PostProgramEvent, APIGatewayProxyResult>()
+const handler: middy.MiddyfiedHandler = middy<PostEvent, APIGatewayProxyResult>()
   .use(httpHeaderNormalizer())
   .use(httpJsonBodyParser())
   .use(
@@ -60,18 +60,18 @@ const handler: middy.MiddyfiedHandler = middy<PostProgramEvent, APIGatewayProxyR
   .handler(async (event) => {
     const { content, filePath } = event.body;
 
-    console.log(`Received program ${filePath} with content: ${content}`);
+    console.log(`Received ${filePath} with content: ${content}`);
 
-    const programsS3BucketName = getProgramsS3BucketName();
-    if (!programsS3BucketName) throw new Error('Programs S3 Bucket Name is not defined.');
+    const s3BucketName = getS3BucketName();
+    if (!s3BucketName) throw new Error(' S3 Bucket Name is not defined.');
 
     const packageVersion = getPackageVersion();
     if (!packageVersion) throw new Error('Package Version is not defined.');
 
-    console.log(`Uploading to s3://${programsS3BucketName}/${filePath}...`);
+    console.log(`Uploading to s3://${s3BucketName}/${filePath}...`);
 
     await uploadFileToS3({
-      bucketName: programsS3BucketName,
+      bucketName: s3BucketName,
       filePath,
       fileContent: Buffer.from(event.body.content, 'utf8'),
     });
@@ -79,7 +79,7 @@ const handler: middy.MiddyfiedHandler = middy<PostProgramEvent, APIGatewayProxyR
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: 'Program uploaded successfully to S3.',
+        message: ' uploaded successfully to S3.',
       }),
     };
   });

@@ -1,7 +1,7 @@
 ---
-program:
-  handler: src/rest/program.handler
+example:
+  handler: src/rest/example.handler
   events:
     - http:
         method: POST
-        path: /program
+        path: /

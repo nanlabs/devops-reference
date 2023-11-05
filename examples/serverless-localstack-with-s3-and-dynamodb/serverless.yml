@@ -43,8 +43,8 @@ provider:
   environment:
     STAGE: ${sls:stage}
     PACKAGE_VERSION: ${file(package.json):version}
-    PROGRAMS_S3_BUCKET_NAME: ${env:PROGRAMS_S3_BUCKET_NAME}
-    PROGRAMS_CACHE_TABLE_NAME: ${self:service}-${sls:stage}-programs-cache
+    S3_BUCKET_NAME: ${env:S3_BUCKET_NAME}
+    TABLE_NAME: ${self:service}-${sls:stage}-table
     AWS_DYNAMODB_ENDPOINT: ${self:custom.config.${sls:stage}.AWS_DYNAMODB_ENDPOINT, ''}
     AWS_S3_ENDPOINT: ${self:custom.config.${sls:stage}.AWS_S3_ENDPOINT, ''}
   iam:
@@ -54,18 +54,18 @@ provider:
           Action:
             - dynamodb:*
           Resource:
-            - 'arn:aws:dynamodb:::table/${self:service}-${sls:stage}-programs-cache'
+            - 'arn:aws:dynamodb:::table/${self:service}-${sls:stage}-table'
         - Effect: Allow
           Action:
             - s3:PutObject
             - s3:GetObject
           Resource:
-            - 'arn:aws:s3:::${env:PROGRAMS_S3_BUCKET_NAME}/*'
+            - 'arn:aws:s3:::${env:S3_BUCKET_NAME}/*'
         - Effect: Allow
           Action:
             - s3:PutObjects
           Resource:
-            - 'arn:aws:s3:::${env:PROGRAMS_S3_BUCKET_NAME}'
+            - 'arn:aws:s3:::${env:S3_BUCKET_NAME}'
 
 functions:
   - ${file(src/rest/serverless.yml)}

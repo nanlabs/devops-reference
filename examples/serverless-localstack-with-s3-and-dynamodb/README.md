@@ -39,14 +39,16 @@ pnpm install
 # Run the Local Stack using Docker Compose
 docker-compose up -d
 
-# Run the application locally
+# Set env variables and run the serverless offline
+export AWS_ACCESS_KEY_ID="dummy-value"
+export AWS_SECRET_ACCESS_KEY="dummy-value"
 pnpm run sls:offline
 ```
 
 ## Testing locally
 
 ```sh
-curl -X POST http://localhost:3000/program --header 'Content-Type': 'application/json' --data '{
+curl -X POST http://localhost:3000/ --header 'Content-Type: application/json' --data '{
   "content": "console.log(\"Hello World\");",
   "filePath": "example/file.js"
 }'
