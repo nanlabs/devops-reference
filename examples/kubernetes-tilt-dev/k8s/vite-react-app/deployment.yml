@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-tilt-dev-example-vite-react-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: k8s-tilt-dev-example
+      tier: vite-react-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: k8s-tilt-dev-example
+        tier: vite-react-app
+    spec:
+      containers:
+        - name: k8s-tilt-dev-example-vite-react-app
+          image: k8s-tilt-dev-example-vite-react-app
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "200m"
+              memory: "512Mi"
+          ports:
+            - containerPort: 4000
+          env:
+            - name: PORT
+              value: "4000"

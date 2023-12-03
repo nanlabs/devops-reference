@@ -1,0 +1,8 @@
+services:
+  frontend:
+    build:
+      context: .
+      target: production
+    ports:
+      - '80:80'
+    restart: always

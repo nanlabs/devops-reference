@@ -1,0 +1,39 @@
+version_settings(constraint='>=0.22.2')
+
+k8s_yaml(['k8s/namespaces.yml'])
+
+docker_build(
+    'k8s-tilt-dev-example-node-nestjs-api',
+    context='./apps/node-nestjs-api/',
+    dockerfile='./apps/node-nestjs-api/Dockerfile',
+    target='development',
+    only=['./apps/node-nestjs-api/'],
+    live_update=[
+        sync('./apps/node-nestjs-api/', '/app/'),
+        run(
+            'npm install',
+            trigger=['./apps/node-nestjs-api/package.json']
+        )
+    ]
+)
+
+k8s_yaml(['k8s/node-nestjs-api/deployment.yml', 'k8s/node-nestjs-api/service.yml'])
+
+docker_build(
+  'k8s-tilt-dev-example-vite-react-app',
+  context='./apps/vite-react-app/',
+  dockerfile='./apps/vite-react-app/Dockerfile',
+  target='development',
+  only=['./apps/vite-react-app/'],
+  live_update=[
+      sync('./apps/vite-react-app/', '/app/'),
+      run(
+          'npm install',
+          trigger=['./apps/vite-react-app/package.json']
+      )
+  ]
+)
+
+k8s_yaml(['k8s/vite-react-app/deployment.yml', 'k8s/vite-react-app/service.yml'])
+
+k8s_yaml('k8s/ingress.yml')
