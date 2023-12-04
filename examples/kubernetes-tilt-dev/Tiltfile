@@ -1,0 +1,21 @@
+version_settings(constraint='>=0.22.2')
+
+k8s_yaml(['k8s/namespace.yml'])
+
+docker_build(
+    'k8s-tilt-dev-example-node-nestjs-app',
+    'apps/node-nestjs-app/',
+    target='development',
+)
+
+k8s_yaml(['apps/node-nestjs-app/k8s/deployment.yml', 'apps/node-nestjs-app/k8s/service.yml'])
+
+docker_build(
+  'k8s-tilt-dev-example-python-fastapi-app',
+  'apps/python-fastapi-app/',
+  target='development',
+)
+
+k8s_yaml(['apps/python-fastapi-app/k8s/deployment.yml', 'apps/python-fastapi-app/k8s/service.yml'])
+
+k8s_yaml('k8s/ingress.yml')

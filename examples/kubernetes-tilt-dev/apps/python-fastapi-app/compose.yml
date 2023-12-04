@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/code/app
+    networks:
+      - api-local-net
+
+networks:
+  api-local-net:
+    driver: bridge

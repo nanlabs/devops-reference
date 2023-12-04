@@ -1,0 +1,146 @@
+##### IDE's #####
+# VisualStudioCode
+/.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history
+
+# IntelliJ IDEA
+.idea/*
+
+##### Database #####
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+
+##### Logs #####
+*.log
+*.log*
+
+##### Python #####
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+bin/
+
+# Environments
+Makefile
+.env
+.env.*
+!.env.example
+!.env.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.flaskenv
+pyvenv.cfg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PEP 582
+__pypackages__/
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# C extensions
+*.so
+
+##### Heroku (old) #####
+Procfile
+
+###
+postgres-calculate/
+
+app/authentication/test_view.py
+
+# Serverless
+node_modules/
+.serverless/
+
+# wsgi
+wsgi_handler.py
+serverless_wsgi.py
+.serverless-wsgi

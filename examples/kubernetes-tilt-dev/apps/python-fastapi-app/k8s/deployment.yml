@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-tilt-dev-example-python-fastapi-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: k8s-tilt-dev-example
+      tier: python-fastapi-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: k8s-tilt-dev-example
+        tier: python-fastapi-app
+    spec:
+      containers:
+        - name: k8s-tilt-dev-example-python-fastapi-app
+          image: k8s-tilt-dev-example-python-fastapi-app
+          ports:
+            - containerPort: 80
+          env:
+            - name: ROOT_PATH
+              value: "/api/python-fastapi"
