@@ -4,23 +4,23 @@ metadata:
   name: ingress-service
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /
+          - path: /api/node-nestjs/?(.*)
             pathType: Prefix
             backend:
               service:
-                name: k8s-tilt-dev-example-vite-react-app-service
-                port:
-                  number: 4000
-          - path: /api/
-            pathType: Prefix
-            backend:
-              service:
-                name: k8s-tilt-dev-example-node-nestjs-api-service
+                name: k8s-tilt-dev-example-node-nestjs-app-service
                 port:
                   number: 3000
+          - path: /api/python-fastapi/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: k8s-tilt-dev-example-python-fastapi-app-service
+                port:
+                  number: 80
