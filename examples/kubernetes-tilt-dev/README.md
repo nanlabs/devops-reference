@@ -74,7 +74,7 @@ Use the Tilt dashboard to explore your microservices, view logs, and more. Click
 
 ### Ingress
 
-The `k8s/ingress.yml` routes traffic to the microservices. Enable it with:
+The `k8s/ingress.yml` routes traffic to the microservices.
 
 ### Namespaces
 
