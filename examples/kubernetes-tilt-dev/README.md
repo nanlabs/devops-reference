@@ -22,20 +22,18 @@ In this repository, you'll find two remarkable microservices waiting for you:
 .
 ├── apps
 │   ├── node-nestjs-app
-│   │   ├── ...
+│   │   ├── k8s
+│   │   │   ├── deployment.yml
+│   │   │   └── service.yml
 │   │   ├── Dockerfile
 │   │   └── README.md
 │   └── python-fastapi-app
-│       ├── ...
+│       ├── k8s
+│       │   ├── deployment.yml
+│       │   └── service.yml
 │       ├── Dockerfile
 │       └── README.md
 ├── k8s
-│   ├── node-nestjs-app
-│   │   ├── deployment.yml
-│   │   └── service.yml
-│   ├── python-fastapi-app
-│   │   ├── deployment.yml
-│   │   └── service.yml
 │   ├── ingress.yml
 │   └── namespaces.yml
 ├── README.md
@@ -82,7 +80,18 @@ Organize microservices using the `k8s/namespaces.yml` file, making management a 
 
 ### Microservices
 
-Each microservice in `k8s/` has a Deployment and Service resource, handling deployment and exposure.
+Each microservice in the `apps` directory has the following key components:
+
+#### Dockerfile 🐳
+
+The `Dockerfile` defines the microservice's Docker image. Customize it to your liking!
+
+#### Kubernetes YAML Files 📄
+
+The `k8s` directory contains the Kubernetes YAML files for each microservice. Each microservice has a `deployment.yml` and `service.yml` file:
+
+- `deployment.yml`: Defines the microservice's deployment. A deployment is a Kubernetes object that manages a replicated application. It creates Pods and ReplicaSets to ensure the desired number of Pods are running and available.
+- `service.yml`: Defines the microservice's service. A service is a Kubernetes object that exposes an application running on a set of Pods as a network service.
 
 ## Tiltfile 📜
 
