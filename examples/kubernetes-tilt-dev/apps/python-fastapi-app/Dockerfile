@@ -9,21 +9,8 @@ COPY requirements*.txt ./
 # Install development dependencies
 RUN pip install --no-cache-dir -r requirements.dev.txt
 
-# Stage 2: Build production dependencies
-FROM python:3.12.0-alpine AS builder-prod
-
-WORKDIR /code
-
-# Copy production requirements file
-COPY requirements.txt ./
-
-# Install production dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
+# Stage 2: Build development dependencies and run the application in development mode
 FROM builder-dev AS development
-
-# Copy development dependencies from builder-dev stage
-COPY --from=builder-dev /usr/local /usr/local
 
 # Copy the application code
 COPY ./app ./app
@@ -37,7 +24,18 @@ USER nonroot
 # Command to run the application
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
 
-# Stage 3: Final image
+# Stage 3: Build production dependencies
+FROM python:3.12.0-alpine AS builder-prod
+
+WORKDIR /code
+
+# Copy production requirements file
+COPY requirements.txt ./
+
+# Install production dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Stage 4: Final image
 FROM python:3.12.0-alpine as production
 
 WORKDIR /code
