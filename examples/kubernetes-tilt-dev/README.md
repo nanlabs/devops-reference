@@ -8,7 +8,9 @@ This demo isn't just about showcasing two impressive microservices. It's about e
 
 ## What's Inside? 🏗️
 
-In this repository, you'll find two remarkable microservices waiting for you:
+In this example, you'll find the following components:
+
+### Microservices 📦
 
 1. **Node.js with Nest.js** 🟢
    A beautifully crafted Nest.js API, complete with Swagger integration for effortless exploration.
@@ -16,35 +18,25 @@ In this repository, you'll find two remarkable microservices waiting for you:
 2. **Python with FastAPI** 🐍
    Dive into FastAPI's high-performance world! Another RESTful API flaunting a Swagger interface for swift exploration.
 
-### Directory Structure 📁
+### Kubernetes 🚢
 
-```txt
-.
-├── apps
-│   ├── node-nestjs-app
-│   │   ├── k8s
-│   │   │   ├── deployment.yml
-│   │   │   └── service.yml
-│   │   ├── Dockerfile
-│   │   └── README.md
-│   └── python-fastapi-app
-│       ├── k8s
-│       │   ├── deployment.yml
-│       │   └── service.yml
-│       ├── Dockerfile
-│       └── README.md
-├── k8s
-│   ├── ingress.yml
-│   └── namespaces.yml
-├── README.md
-└── Tiltfile
-```
+1. **Ingress** 🛣️
+   Easily route traffic to your microservices with Ingress.
+
+2. **Namespaces** 📁
+   Organize your microservices with namespaces.
+
+### Tilt 🚀
+
+1. **Tiltfile** 📜
+   Configure your development environment with Tilt.
 
 ## Getting Started 🚦
 
 1. **Clone This Repository**
-2. **Install Minikube**: Follow [Minikube's installation guide](https://minikube.sigs.k8s.io/docs/start/) if you haven't already.
-3. **Install Tilt**: Refer to [Tilt's installation guide](https://docs.tilt.dev/install.html).
+2. **Move Into the Example Directory**
+3. **Install Minikube**: Follow [Minikube's installation guide](https://minikube.sigs.k8s.io/docs/start/) if you haven't already.
+4. **Install Tilt**: Refer to [Tilt's installation guide](https://docs.tilt.dev/install.html).
 
 ### Starting Minikube and Tilt
 
@@ -68,7 +60,7 @@ minikube tunnel
 
 Use the Tilt dashboard to explore your microservices, view logs, and more. Click the `View` button next to each service to access its Swagger UI.
 
-## Understanding Kubernetes ⚙️
+## Understanding the Code 🧐
 
 ### Ingress
 
@@ -96,3 +88,29 @@ The `k8s` directory contains the Kubernetes YAML files for each microservice. Ea
 ## Tiltfile 📜
 
 The `Tiltfile` configures Tilt. Customize your dev environment and add more microservices here.
+
+### Directory Structure 📁
+
+Summarizing everything above, here's the directory structure of this repository:
+
+```txt
+.
+├── apps
+│   ├── node-nestjs-app
+│   │   ├── k8s
+│   │   │   ├── deployment.yml
+│   │   │   └── service.yml
+│   │   ├── Dockerfile
+│   │   └── README.md
+│   └── python-fastapi-app
+│       ├── k8s
+│       │   ├── deployment.yml
+│       │   └── service.yml
+│       ├── Dockerfile
+│       └── README.md
+├── k8s
+│   ├── ingress.yml
+│   └── namespaces.yml
+├── README.md
+└── Tiltfile
+```
