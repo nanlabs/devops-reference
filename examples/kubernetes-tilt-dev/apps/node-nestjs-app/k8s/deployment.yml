@@ -1,7 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-tilt-dev-example-node-nestjs-app-deployment
+  name: node-nestjs-app
+  labels:
+    name: node-nestjs-app
+  namespace: k8s-tilt-dev-example
 spec:
   selector:
     matchLabels:
@@ -15,7 +18,7 @@ spec:
         tier: node-nestjs-app
     spec:
       containers:
-        - name: k8s-tilt-dev-example-node-nestjs-app
+        - name: node-nestjs-app
           image: k8s-tilt-dev-example-node-nestjs-app
           ports:
             - containerPort: 3000

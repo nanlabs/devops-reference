@@ -1,7 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-tilt-dev-example-python-fastapi-app-deployment
+  name: python-fastapi-app
+  labels:
+    name: python-fastapi-app
+  namespace: k8s-tilt-dev-example
 spec:
   selector:
     matchLabels:
@@ -15,7 +18,7 @@ spec:
         tier: python-fastapi-app
     spec:
       containers:
-        - name: k8s-tilt-dev-example-python-fastapi-app
+        - name: python-fastapi-app
           image: k8s-tilt-dev-example-python-fastapi-app
           ports:
             - containerPort: 80

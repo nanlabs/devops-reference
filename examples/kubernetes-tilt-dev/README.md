@@ -46,14 +46,15 @@ This demo isn't just about showcasing two impressive microservices. It's about e
 3. **Install Minikube**: Follow [Minikube's installation guide](https://minikube.sigs.k8s.io/docs/start/) if you haven't already.
 4. **Install Tilt**: Refer to [Tilt's installation guide](https://docs.tilt.dev/install.html).
 
-### Starting Minikube and Tilt
+### Starting Minikube
+
+Start Minikube with the following command:
+
+> NOTE: tested on standard docker installation. If you use rootless mode, check [minikube documentation](https://minikube.sigs.k8s.io/docs/drivers/docker/#requirements) and [rootless documentation](https://rootlesscontaine.rs/getting-started/kubernetes/#minikube)
 
 ```sh
-minikube start
-tilt up
+minikube start --kubernetes-version=v1.27.4
 ```
-
-Once initiated, visit [http://localhost:10350/](http://localhost:10350/) to explore the Tilt dashboard.
 
 ### Enable Ingress and Tunnel
 
@@ -62,6 +63,24 @@ To access your microservices, you'll need to enable Ingress and tunnel to your c
 ```sh
 minikube addons enable ingress
 minikube tunnel
+```
+
+### Starting Tilt
+
+On other terminal, start Tilt with the following command:
+
+```sh
+tilt up
+```
+
+Once initiated, visit [http://localhost:10350/](http://localhost:10350/) to explore the Tilt dashboard.
+
+### Setup our custom DNS
+
+To access our microservices, we need to setup our custom DNS. Run the following command to do so:
+
+```sh
+echo "$(minikube ip) k8s-tilt-dev-example.local" | sudo tee -a /etc/hosts
 ```
 
 ## Explore the Microservices

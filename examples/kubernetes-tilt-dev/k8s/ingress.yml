@@ -1,26 +1,30 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-service
+  namespace: k8s-tilt-dev-example
+  name: ingress-nginx
+  labels:
+    name: ingress-nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: nginx
   rules:
-    - http:
+    - host: k8s-tilt-dev-example.local
+      http:
         paths:
           - path: /api/node-nestjs/?(.*)
             pathType: Prefix
             backend:
               service:
-                name: k8s-tilt-dev-example-node-nestjs-app-service
+                name: node-nestjs-app
                 port:
                   number: 3000
           - path: /api/python-fastapi/?(.*)
             pathType: Prefix
             backend:
               service:
-                name: k8s-tilt-dev-example-python-fastapi-app-service
+                name: python-fastapi-app
                 port:
                   number: 80
