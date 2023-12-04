@@ -26,6 +26,12 @@ In this example, you'll find the following components:
 2. **Namespaces** 📁
    Organize your microservices with namespaces.
 
+3. **Deployments** 🚀
+   Deploy your microservices with ease.
+
+4. **Services** 📡
+   Expose your microservices with services.
+
 ### Tilt 🚀
 
 1. **Tiltfile** 📜
