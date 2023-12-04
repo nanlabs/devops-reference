@@ -2,13 +2,13 @@
 
 Welcome to a seamless, efficient, and developer-friendly Kubernetes development experience! This repository combines the power of [Tilt](https://tilt.dev/) and [Minikube](https://minikube.sigs.k8s.io/) to supercharge your microservices development. Say goodbye to complex configurations and hello to streamlined development!
 
-## Why This Demo Matters
+## Why This POC Matters
 
 This demo isn't just about showcasing two impressive microservices. It's about empowering developers to harness the agility of Kubernetes without the steep learning curve. We've crafted an environment that's easy to set up, intuitive to navigate, and accelerates your development workflow.
 
 ## What's Inside? 🏗️
 
-In this example, you'll find the following components:
+<details><summary>Eager to see what's inside? Click here!</summary>
 
 ### Microservices 📦
 
@@ -36,6 +36,8 @@ In this example, you'll find the following components:
 
 1. **Tiltfile** 📜
    Configure your development environment with Tilt.
+
+</details>
 
 ## Getting Started 🚦
 
@@ -68,6 +70,8 @@ Use the Tilt dashboard to explore your microservices, view logs, and more. Click
 
 ## Understanding the Code 🧐
 
+<details><summary>Curious about the code? Click here!</summary>
+
 ### Ingress
 
 The `k8s/ingress.yml` routes traffic to the microservices. Enable it with:
@@ -95,7 +99,9 @@ The `k8s` directory contains the Kubernetes YAML files for each microservice. Ea
 
 The `Tiltfile` configures Tilt. Customize your dev environment and add more microservices here.
 
-### Directory Structure 📁
+</details>
+
+## Directory Structure 📁
 
 Summarizing everything above, here's the directory structure of this repository:
 
