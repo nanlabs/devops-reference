@@ -56,13 +56,12 @@ Start Minikube with the following command:
 minikube start --kubernetes-version=v1.27.4
 ```
 
-### Enable Ingress and Tunnel
+### Enable Ingress
 
-To access your microservices, you'll need to enable Ingress and tunnel to your cluster. Run the following commands to do so:
+To access your microservices, you'll need to enable Ingress into your cluster. Run the following commands to do so:
 
 ```sh
 minikube addons enable ingress
-minikube tunnel
 ```
 
 ### Starting Tilt
