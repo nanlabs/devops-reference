@@ -412,7 +412,12 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": ["Serverless Framework", "Middy", "Serverless Bundle Plugin", "TypeScript"]
+      "labels": [
+        "Serverless Framework",
+        "Middy",
+        "Serverless Bundle Plugin",
+        "TypeScript"
+      ]
     },
     {
       "name": "Serverless Middy",
@@ -618,6 +623,21 @@
         "LocalStack",
         "S3",
         "DynamoDB"
+      ]
+    },
+    {
+      "name": "Tilt + Minikube Development Environment",
+      "description": "Seamless, efficient, and developer-friendly Kubernetes development environment using Tilt and Minikube.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes-tilt-dev/",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
+      ],
+      "labels": [
+        "Kubernetes",
+        "Tilt",
+        "Minikube",
+        "Development Environment",
+        "MicroServices"
       ]
     }
   ]
