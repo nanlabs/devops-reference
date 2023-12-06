@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:5
+    container_name: verdaccio-c2-common-ui
+    restart: always
+    ports:
+      - "4873:4873"
+    volumes:
+      - "./storage:/verdaccio/storage"
+      - "./conf:/verdaccio/conf"
+volumes:
+  verdaccio:
+    driver: local
