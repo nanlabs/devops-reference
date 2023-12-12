@@ -1,3 +1,4 @@
+---
 storage: /verdaccio/storage
 max_body_size: 500mb
 uplinks:
@@ -13,4 +14,6 @@ middlewares:
   audit:
     enabled: true
 logs:
-  - { type: stdout, format: pretty, level: trace }
+  - type: stdout
+    format: pretty
+    level: trace
