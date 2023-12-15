@@ -639,6 +639,30 @@
         "Development Environment",
         "MicroServices"
       ]
+    },
+    {
+      "name": "Terraform AWS Starter",
+      "description": "Get started quickly with AWS infrastructure using a robust Terraform starter kit incorporating secure state management, VPC configuration, security groups, RDS provisioning, secrets management, SSM parameter store, and GitHub Actions integration!",
+      "url": "https://github.com/nanlabs/terraform-aws-starter",
+      "tags": [
+        "Apps and Boilerplates",
+        "Examples > DevOps > Infrastructure as Code > Terraform"
+      ],
+      "labels": [
+        "Terraform",
+        "Terraform Modules",
+        "Infrastructure as Code",
+        "AWS",
+        "VPC",
+        "RDS",
+        "RDS Aurora",
+        "MongoDB",
+        "GitHub Actions",
+        "SSM Parameter Store",
+        "Secrets Management",
+        "Security Groups",
+        "Super Linter"
+      ]
     }
   ]
 }
