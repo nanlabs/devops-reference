@@ -674,6 +674,16 @@
         "Security Groups",
         "Super Linter"
       ]
+    },
+    {
+      "name": "The Ultimate Code to Code Review Tools",
+      "description": "A guide where we present a curated selection of modern tools designed to revolutionize your code review process!",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-code-to-code-review-tools",
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
+      "labels": ["Code Review", "Code Review Tools"]
     }
   ]
 }
