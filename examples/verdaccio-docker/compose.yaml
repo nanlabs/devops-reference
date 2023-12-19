@@ -1,3 +1,4 @@
+---
 version: "2.1"
 services:
   verdaccio:
@@ -7,8 +8,7 @@ services:
     ports:
       - "4873:4873"
     volumes:
-      - "./storage:/verdaccio/storage"
+      - "verdaccio:/verdaccio/storage"
       - "./conf:/verdaccio/conf"
 volumes:
   verdaccio:
-    driver: local
