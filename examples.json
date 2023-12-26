@@ -684,6 +684,21 @@
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
       "labels": ["Code Review", "Code Review Tools"]
+    },
+    {
+      "name": "Verdaccio with Docker Compose Example",
+      "description": "Verdaccio is a lightweight private npm proxy registry. This example shows how to run Verdaccio locally using Docker Compose.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-verdaccio/",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)",
+        "Examples > DevOps > Dependency Management"
+      ],
+      "labels": [
+        "Docker",
+        "Docker Compose",
+        "Verdaccio",
+        "Node Package Manager"
+      ]
     }
   ]
 }

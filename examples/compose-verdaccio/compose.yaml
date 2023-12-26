@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:6
+    container_name: verdaccio-c2-common-ui
+    restart: always
+    ports:
+      - "4873:4873"
+    volumes:
+      - "verdaccio:/verdaccio/storage"
+      - "./conf:/verdaccio/conf"
+
+volumes:
+  verdaccio:
