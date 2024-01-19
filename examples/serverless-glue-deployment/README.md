@@ -36,7 +36,7 @@ npm run sls:deploy
 
 We recommend the following resources to add local development tools to your project:
 
-- [AWS Glue docker example](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/glue/)
+- [AWS Glue docker example](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-glue/)
 - [VSCode DevContainer example](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainer/glue/)
 
 Check out the [Complete AWS Glue example app](https://github.com/nanlabs/devops-reference/tree/main/examples/_apps/serverless-glue/) to see

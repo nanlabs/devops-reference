@@ -8,11 +8,11 @@
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/docker/localstack
+cd devops-reference/examples/compose-localstack
 docker compose up
 ```
 
-It will execute the script `setup-resources.sh` to setup the resources.
+It will execute the scripts located in the `init.d/` folder to bootstrap the resources.
 
 ## Resources
 

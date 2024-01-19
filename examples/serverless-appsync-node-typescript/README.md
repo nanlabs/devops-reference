@@ -53,4 +53,4 @@ npm run sls:deploy
 
 We recommend the following resources to add local development tools to your project:
 
-- [LocalStack](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/localstack/)
+- [LocalStack](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-localstack/)

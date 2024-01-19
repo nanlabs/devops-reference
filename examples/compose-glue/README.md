@@ -8,7 +8,7 @@
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/docker/glue
+cd devops-reference/examples/compose-glue
 docker compose up
 ```
 

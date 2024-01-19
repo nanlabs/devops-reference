@@ -24,7 +24,7 @@ npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/
 This example was created as a composition of the following examples:
 
 - [Serverless Glue example](https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue/)
-- [AWS Glue docker example](https://github.com/nanlabs/devops-reference/tree/main/examples/docker/glue/)
+- [AWS Glue docker example](https://github.com/nanlabs/devops-reference/tree/main/examples/compose-glue/)
 - [VSCode DevContainer example](https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainer/glue/)
 
 ## Local Development

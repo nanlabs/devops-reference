@@ -8,7 +8,7 @@
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/docker/mssql
+cd devops-reference/examples/compose-mssql
 cp .env.example .env
 docker compose up
 ```
