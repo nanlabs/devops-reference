@@ -1,4 +1,12 @@
+<p align="center">
+    <img src="./localstack-readme-banner.svg" alt="LocalStack Banner" />
+</p>
+
+<div align="center">
+
 # Embracing the Power of LocalStack for AWS Emulation: Transform Your DevOps Journey 🚀
+
+</div>
 
 ## Unveiling LocalStack - Your Local AWS Environment
 
