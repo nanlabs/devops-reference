@@ -51,7 +51,7 @@ LocalStack's versatility shines across various use cases:
 
 ## Making it even easier with LocalStack Desktop 🖥️
 
-LocalStack Desktop is a GUI application that makes it even easier to use LocalStack. It's available for Windows, macOS, and Linux, and it's free to use! 🎉
+[LocalStack Desktop](https://docs.localstack.cloud/user-guide/tools/localstack-desktop/) is a GUI application that makes it even easier to use LocalStack. It's available for Windows, macOS, and Linux, and it's free to use! 🎉
 
 ![LocalStack Desktop](./localstack-desktop-resource-browser.png)
 
