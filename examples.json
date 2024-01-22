@@ -699,6 +699,25 @@
         "Verdaccio",
         "Node Package Manager"
       ]
+    },
+    {
+      "name": "Embracing the Power of LocalStack for AWS Emulation",
+      "description": "A comprehensive guide highlighting the benefits of using LocalStack for AWS service emulation. The blog post covers various LocalStack examples for Docker and Serverless setups and explores its application in local development, CI, and more.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/embracing-the-power-of-localstack-for-aws-emulation",
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)",
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": [
+        "LocalStack",
+        "AWS",
+        "Docker",
+        "Serverless",
+        "DevOps",
+        "CI",
+        "Local Development"
+      ]
     }
   ]
 }
