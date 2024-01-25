@@ -67,7 +67,7 @@ Here's how you'll see the results obtained in each scan:
 
 ## Git Workflow
 
-En esta seccion se mencionaran herramientas que nos permitiran realizar distintos tipos de scans en nuestro git workflow. De esta forma, todavia estando en early stages de nuestro proceso de desarrollo, podremos detectar vulnerabilidades y corregirlas.
+In this section we will mention tools that will allow us to perform different types of scans in our git workflow. This way, even being in early stages of our development process, we will be able to detect vulnerabilities and fix them.
 
 ### Pre-commit/Pre-push with Snyk/Trivy
 
