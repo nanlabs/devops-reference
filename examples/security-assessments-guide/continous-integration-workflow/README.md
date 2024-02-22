@@ -161,3 +161,66 @@ jobs:
 ```
 
 ![Snyk GitHub Code Scanning](examples/security-assessments-guide/assets/snyk-github.jpeg)
+
+## Gitlab
+
+## Snyk
+
+All the information detailed below is based on this [official documentation](https://docs.snyk.io/integrate-with-snyk/git-repositories-scms-integrations-with-snyk/snyk-gitlab-integration).
+
+### Snyk GitLab Integration Features
+
+The Snyk GitLab integration allows you to:
+
+1. Check for vulnerabilities in your pull requests.
+2. Trigger a Snyk pull request for the fixes listed from the Report page or the Project page on the Snyk Web UI.
+3. Receive email alerts when new vulnerabilities that affect your repository arise and fixes for those vulnerabilities are shown.
+4. Receive email alerts containing a new pull request if a new upgrade or patch is available for a vulnerability.
+
+### Prerequisites for Snyk GitLab Integration
+
+- GitLab versions 9.5 and above (API v4).
+- A public or private GitLab group or project.
+
+Additionally, you will need a GitLab access token to perform the integration between GitLab and Snyk.
+
+To set up the GitLab integration with Snyk, create a GitLab access token and enter this into the Snyk application.
+
+Typically, the first user in a Snyk Organization, a [Snyk admin](https://docs.snyk.io/snyk-admin/introduction-to-snyk-administration#member-user-types), and GitLab Owner or Maintainer set up an integration with a GitLab Personal Access Token or Group Access Token. This token is then authenticated with GitLab, enabling access by Snyk to the repositories in that GitLab account.
+
+### How to Set Up the Snyk GitLab Integration
+
+Add a GitLab Personal Access Token in GitLab
+
+1. Generate a GitLab Personal Access Token in a GitLab instance.
+   Select the profile icon, then Edit Profile > Access Tokens.
+   Set the token name, for example, Snyk, and select the api scope.
+
+![Gitlab-integration-1](examples/security-assessments-guide/assets/gitlab-integration-1.png)
+
+2. Navigate to the Snyk [Integrations](https://app.snyk.io/integrations?_gl=1*117zdop*_ga*MTE0NDg5NDA5MC4xNzA2MDAyOTQ2*_ga_X9SH3KP7B4*MTcwODYyMjI2NC4zLjEuMTcwODYyMzIzNC4wLjAuMA..) page, select the GitLab integration tile, and enter the URL of the GitLab instance and the token you generated.
+
+![Gitlab-integration-2](examples/security-assessments-guide/assets/gitlab-integration-2.png)
+
+3. Click Save.
+
+4. When the tile on the Integrations page indicates the integration is Configured, click the tile and select the GitLab projects to test or select Add projects from the Snyk Dashboard.
+
+### Uses of the Snyk GitLab Integration
+
+### Fix Vulnerabilities with Snyk Merge Requests
+
+When viewing a Snyk test report for a Snyk Project that you own or when looking at a GitLab Project that you are watching with Snyk, you see two options for fixing a vulnerability:
+
+- Fix these vulnerabilities: generate a Snyk merge request with the minimal changes needed to fix all the Snyk Project's detected vulnerabilities.
+- Fix this vulnerability: generate a Snyk merge request on an individual issue that fixes the vulnerability.
+
+You can review the vulnerabilities that will be fixed, change your selection with the checkboxes, and choose to ignore any vulnerabilities that cannot be fixed now before opening the merge request on the Open a Fix Merge Request page.
+
+### Receive Email Alerts for New Vulnerabilities
+
+When a new vulnerability is detected on a Snyk Project you are watching, Snyk will send you an email with a generated Snyk merge request to address the vulnerability.
+
+### Receive Email Alerts for New Upgrades or Patches
+
+You may find yourself in a situation where no upgrade is found for a vulnerability, and only a patch is available. When a fix does become available, Snyk notifies you by email and generates a merge request containing the new fix.
