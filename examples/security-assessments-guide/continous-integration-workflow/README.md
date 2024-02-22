@@ -224,3 +224,95 @@ When a new vulnerability is detected on a Snyk Project you are watching, Snyk wi
 ### Receive Email Alerts for New Upgrades or Patches
 
 You may find yourself in a situation where no upgrade is found for a vulnerability, and only a patch is available. When a fix does become available, Snyk notifies you by email and generates a merge request containing the new fix.
+
+## AWS CodePipeline
+
+## Snyk
+
+All the information detailed below is available in this [official documentation](https://docs.snyk.io/integrate-with-snyk/snyk-ci-cd-integrations/aws-codepipeline-integration-by-adding-a-snyk-scan-stage).
+
+Snyk integrates seamlessly with AWS CodePipeline to scan your application for open-source security vulnerabilities and help you deliver secure applications with the continuous delivery service. This integration allows CodePipeline users to make security an automated part of their build, test, and deploy phases.
+
+As of the date of this documentation (February 2024), Snyk integration is currently available in AWS regions sa-east-1, ca-central-1, ap-southeast-1, ap-southeast-2, ap-south-1, ap-northeast-2, ap-northeast-1, eu-west-3, eu-west-1, eu-north-1, us-east-1, us-west-2, eu-west-2, eu-central-1.
+
+### Language support for AWS CodePipeline
+
+- JavaScript
+- Java
+- .NET
+- Python
+- Ruby
+- PHP
+- Scala
+- Swift/Objective-C
+- Go
+
+### Setup requirements for AWS CodePipeline
+
+Check if your project must be built before the scan in the CodePipeline. If the project needs to be built, you must add a CodeBuild step before the Snyk Step.
+
+![aws-codepipeline-1](examples/security-assessments-guide/assets/aws-codepipeline-1.png)
+
+### AWS CodePipeline CodeBuild step example
+
+Example of Javascript CodeBuild (buildspec.yml)
+
+```yaml
+version: 0.2
+phases:
+  build:
+    commands:
+      - npm install
+artifacts:
+  files:
+    - "**/*"
+```
+
+### Setup steps for AWS CodePipeline integration
+
+Warning: Snyk integration with CodePipeline requires a UI based authentication step as part of the setup. This is not compatible with automation with non-interactive setup methods such as CloudFormation or Terraform.
+
+1. Add stage
+   At any point after the Source stage, you can add a Snyk scan stage, allowing you to test your application at different stages of the CI/CD pipeline.
+   Click Edit, and Add a Scan Stage.
+
+![aws-codepipeline-step1](examples/security-assessments-guide/assets/aws-codepipeline-2.png)
+
+2. Add action group
+   Click Add an Action Group to open the Edit Action window:
+
+![aws-codepipeline-step2](examples/security-assessments-guide/assets/aws-codepipeline-3.png)
+
+Name the action, then select Snyk as the Action Provider.
+
+Click Connect with Snyk to begin the connection process.
+
+3. Connect to Snyk
+   Select how you would like to authenticate with Snyk to give AWS CodePipeline permission to begin scanning your open-source code.
+
+![aws-codepipeline-step3](examples/security-assessments-guide/assets/aws-codepipeline-4.png)
+
+4. Configure settings
+   The following options are available for configuration:
+
+![aws-codepipeline-step4](examples/security-assessments-guide/assets/aws-codepipeline-5.png)
+
+- Snyk organization: Select the Snyk organization where reports of findings are saved.
+
+- Vulnerability handling: Define the pipeline behavior if a vulnerability is found. If the Block deployment when Snyk finds an error checkbox is checked, the pipeline fails and does not proceed to the next stage in the CodePipeline.
+
+- Block deployment for vulnerabilities with a minimum severity of: Low|Medium|High|Critical: Report only vulnerabilities of the specified level or higher.
+
+- Monitoring behavior on build: Set the criteria to monitor projects from the AWS CodePipeline. The available options are:
+
+  - Always monitor: The project snapshot is created independent of the test results.
+  - When test fails: The project snapshot is created only when the test fails.
+  - When test passes: The project snapshot is created only when the test is successful.
+  - Never monitor: The project snapshot is never created.
+    Unless the Never monitor option is selected, the Project to monitor field is mandatory. This is to prevent any unintentional project overrides due to naming conflicts. The report is created and associated with the selected Snyk organization.
+
+- Project to monitor: Specify the project group name for your projects. This is the same as using the remote-repo-url option in the CLI. The field does not allow any spaces in the names. This field is mandatory except when the Never monitor option has been selected.
+
+- Auto-detect all projects in the working directory: Check this checkbox to auto-detect all projects in the AWS CodePipeline. If this option is not selected the plugin tests the first project it finds because it is using the --all-projects option to detect all projects.
+
+Por ultimo, confirm the connection to Snyk when prompted.
