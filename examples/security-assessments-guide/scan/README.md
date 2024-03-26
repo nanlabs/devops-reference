@@ -19,7 +19,7 @@ Snyk supports most major languages: Javascript, Typescript, Python, Go, Java. Yo
 
 The following shows an example of Snyk CLI test command output:
 
-![Snyk Scan]("../assets/scan-snyk.png")
+![Snyk Scan]("examples/security-assessments-guide/assets/scan-snyk.png")
 
 ### Installation
 
@@ -76,7 +76,7 @@ Scanning Terraform files gives you security feedback on everything that is stati
   Integrations are managed per Organization.
 - Toggle the setting to enable Snyk to detect Infrastructure as code files as shown:
 
-![Snyk iac-1](examples/security-assessments-guide/assets/snyk-iac-1.png)
+![Snyk iac-1]("examples/security-assessments-guide/assets/snyk-iac-1.png")
 
 - If needed, review and adjust the Infrastructure as code Severity settings on the AWS tab in the example.
   Check to select the file types to scan, CloudFormation, Terraform, or both, and from the pulldown selection, choose the severity level for each API Gateway.
