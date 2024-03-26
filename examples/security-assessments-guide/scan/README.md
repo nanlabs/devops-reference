@@ -15,18 +15,18 @@ We will show some of the main ways available to perform scans directly on our so
 ## Snyk
 
 The Snyk CLI brings the functionality of Snyk into your development workflow. You can run the CLI locally from the command line or in an IDE.
-Snyk supports most major languages: Javascript, Typescript, Python, Go, Java. You can see the details of which languages are accepted ([here](https://docs.snyk.io/getting-started/supported-languages-and-frameworks))
+Snyk supports most major languages: Javascript, Typescript, Python, Go, Java. You can see the details of which languages are accepted [here](https://docs.snyk.io/getting-started/supported-languages-and-frameworks)
 
 The following shows an example of Snyk CLI test command output:
 
-![Snyk Scan](examples/security-assessments-guide/assets/scan-snyk.png)
+![Snyk Scan]("../assets/scan-snyk.png")
 
 ### Installation
 
 To use Snyk CLI, you must follow these steps:
 
-- ([Installation](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli))
-- ([Authentication](https://docs.snyk.io/snyk-cli/authenticate-the-cli-with-your-account))
+- [Installation](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli)
+- [Authentication](https://docs.snyk.io/snyk-cli/authenticate-the-cli-with-your-account)
 
 ### Test your installation
 
@@ -41,9 +41,9 @@ In addition, depending on the language of your open-source Project, you may need
 
 After you have installed the CLI and authenticated your machine, to scan an open-source Project, use cd /my/project/ to change the current directory to a folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run snyk test. All vulnerabilities identified are listed, including their path and fix guidance.
 
-To scan your source code run snyk code test. More information ([here](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source))
+To scan your source code run snyk code test. More information [here](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source)
 
-You can scan a Docker image by its tag running, for example: `snyk container test ubuntu:18.04`. More information ([here](https://docs.snyk.io/snyk-cli/commands/container))
+You can scan a Docker image by its tag running, for example: `snyk container test ubuntu:18.04`. More information [here](https://docs.snyk.io/snyk-cli/commands/container)
 
 ### Monitor your Open Source or Container Project
 
@@ -51,13 +51,13 @@ Snyk can monitor your Open Source or Container integrated SCM Project periodical
 
 This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the snyk monitor command.
 
-You can log in to your Snyk account and navigate to the ([Projects page](https://app.snyk.io/projects?_gl=1*18cfs1o*_ga*MjA0MzE3ODY5Mi4xNzA4NjIzNzk4*_ga_X9SH3KP7B4*MTcxMTQ3NTk5OC40LjEuMTcxMTQ3NjkzNy4wLjAuMA..)) to find the latest snapshot and scan results:
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects?_gl=1*18cfs1o*_ga*MjA0MzE3ODY5Mi4xNzA4NjIzNzk4*_ga_X9SH3KP7B4*MTcxMTQ3NTk5OC40LjEuMTcxMTQ3NjkzNy4wLjAuMA..) to find the latest snapshot and scan results:
 
 ![Snyk Snapshots](examples/security-assessments-guide/assets/snyk-snapshots.png)
 
 ## Infra as Code
 
-All the information in this section was obtained from this ([documentation](https://docs.snyk.io/scan-with-snyk/snyk-iac/scan-your-iac-source-code))
+All the information in this section was obtained from this [documentation](https://docs.snyk.io/scan-with-snyk/snyk-iac/scan-your-iac-source-code)
 
 ## Snyk + Terraform
 
