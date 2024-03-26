@@ -50,8 +50,8 @@ SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 By integrating this `yml` file to our project, it will cause the following actions to be executed in our project:
 
-![Snyk CI/CD](examples/security-assessments-guide/assets/snyk-cicd-example.png)
-![Snyk CI/CD vulnerabilities](examples/security-assessments-guide/assets/snyk-cicd-check-vulnerabilites.png)
+![Snyk CI/CD](../assets/snyk-cicd-example.png)
+![Snyk CI/CD vulnerabilities](../assets/snyk-cicd-check-vulnerabilites.png)
 
 Note that this example was executed on a React app created with Vite.
 
@@ -160,7 +160,7 @@ jobs:
           sarif_file: snyk.sarif
 ```
 
-![Snyk GitHub Code Scanning](examples/security-assessments-guide/assets/snyk-github.jpeg)
+![Snyk GitHub Code Scanning](../assets/snyk-github.jpeg)
 
 ## Gitlab
 
@@ -196,11 +196,11 @@ Add a GitLab Personal Access Token in GitLab
    Select the profile icon, then Edit Profile > Access Tokens.
    Set the token name, for example, Snyk, and select the api scope.
 
-![Gitlab-integration-1](examples/security-assessments-guide/assets/gitlab-integration-1.png)
+![Gitlab-integration-1](../assets/gitlab-integration-1.png)
 
 2. Navigate to the Snyk [Integrations](https://app.snyk.io/integrations?_gl=1*117zdop*_ga*MTE0NDg5NDA5MC4xNzA2MDAyOTQ2*_ga_X9SH3KP7B4*MTcwODYyMjI2NC4zLjEuMTcwODYyMzIzNC4wLjAuMA..) page, select the GitLab integration tile, and enter the URL of the GitLab instance and the token you generated.
 
-![Gitlab-integration-2](examples/security-assessments-guide/assets/gitlab-integration-2.png)
+![Gitlab-integration-2](../assets/gitlab-integration-2.png)
 
 3. Click Save.
 
@@ -251,7 +251,7 @@ As of the date of this documentation (February 2024), Snyk integration is curren
 
 Check if your project must be built before the scan in the CodePipeline. If the project needs to be built, you must add a CodeBuild step before the Snyk Step.
 
-![aws-codepipeline-1](examples/security-assessments-guide/assets/aws-codepipeline-1.png)
+![aws-codepipeline-1](../assets/aws-codepipeline-1.png)
 
 ### AWS CodePipeline CodeBuild step example
 
@@ -276,12 +276,12 @@ Warning: Snyk integration with CodePipeline requires a UI based authentication s
    At any point after the Source stage, you can add a Snyk scan stage, allowing you to test your application at different stages of the CI/CD pipeline.
    Click Edit, and Add a Scan Stage.
 
-![aws-codepipeline-step1](examples/security-assessments-guide/assets/aws-codepipeline-2.png)
+![aws-codepipeline-step1](../assets/aws-codepipeline-2.png)
 
 2. Add action group
    Click Add an Action Group to open the Edit Action window:
 
-![aws-codepipeline-step2](examples/security-assessments-guide/assets/aws-codepipeline-3.png)
+![aws-codepipeline-step2](../assets/aws-codepipeline-3.png)
 
 Name the action, then select Snyk as the Action Provider.
 
@@ -290,12 +290,12 @@ Click Connect with Snyk to begin the connection process.
 3. Connect to Snyk
    Select how you would like to authenticate with Snyk to give AWS CodePipeline permission to begin scanning your open-source code.
 
-![aws-codepipeline-step3](examples/security-assessments-guide/assets/aws-codepipeline-4.png)
+![aws-codepipeline-step3](../assets/aws-codepipeline-4.png)
 
 4. Configure settings
    The following options are available for configuration:
 
-![aws-codepipeline-step4](examples/security-assessments-guide/assets/aws-codepipeline-5.png)
+![aws-codepipeline-step4](../assets/aws-codepipeline-5.png)
 
 - Snyk organization: Select the Snyk organization where reports of findings are saved.
 

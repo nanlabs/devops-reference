@@ -28,7 +28,7 @@ Follow the steps below to install Snyk in Visual Studio Code:
 
 Example of how you will see snyk in Visual Studio Code:
 
-![Snyk VsCode Extension](examples/security-assessments-guide/assets/snyk-vscode.png)
+![Snyk VsCode Extension](../assets/snyk-vscode.png)
 
 Once you have installed the extension and made the required configurations, you can scan the repository you are working on. The analyses you can perform include:
 
@@ -41,7 +41,7 @@ Once you have installed the extension and made the required configurations, you 
 
 All the above mentioned scans will give results according to the level of criticality, which may have different severities:
 
-![Severity in Snyk](examples/security-assessments-guide/assets/severity-snyk.png)
+![Severity in Snyk](../assets/severity-snyk.png)
 
 If you want to learn more about analyzing the results obtained, you can check this [link](https://docs.snyk.io/integrate-with-snyk/ide-tools/visual-studio-code-extension/view-analysis-results-from-visual-studio-code-extension).
 
@@ -59,7 +59,7 @@ Trivy performs a scan on your entire code, providing results aimed at preventing
 
 Here's how you'll see the results obtained in each scan:
 
-![Trivy scan](examples/security-assessments-guide/assets/trivy.png)
+![Trivy scan](../assets/trivy.png)
 
 ## JetBrains
 
