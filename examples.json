@@ -720,7 +720,7 @@
       ]
     },
     {
-      "name": "Secrets Management Mastery for Developers",
+      "name": "The Ultimate Guide to Secrets Management for Developers",
       "description": "Unlock the arcane art of secrets management with our comprehensive guide! Tailored for the average dev, this post is a treasure map leading to the best practices for storing and accessing sensitive data. Learn to navigate tools like AWS Parameter Store, `direnv`, `teller`, and more, with easy-to-follow examples that bring the theory to life. Perfect for those who've never realized the gravity of a leaked secret, this guide will be your enchanted scroll of wisdom.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-secrets-management-for-developers",
       "tags": [
