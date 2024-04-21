@@ -2,6 +2,24 @@
 
 Hello, Developer Friend! Welcome to your exciting journey into the _mystical lands_ of Secrets Management. If you're the kind of person who thinks that `password123` is an unbreakable password, buckle up! We're about to revolutionize the way you handle secrets 🌟
 
+## Table of Contents 📚
+
+- [The Ultimate Guide to Secrets Management for Developers 😎🔐](#the-ultimate-guide-to-secrets-management-for-developers-)
+  - [Table of Contents 📚](#table-of-contents-)
+  - [Introduction to Secrets Management](#introduction-to-secrets-management)
+  - [Where to Store Your Secrets](#where-to-store-your-secrets)
+    - [Using Cloud Providers](#using-cloud-providers)
+    - [Encrypting Files for Non-Cloud Environments](#encrypting-files-for-non-cloud-environments)
+  - [Reading Secrets in Your Application](#reading-secrets-in-your-application)
+    - [Avoiding `.env` for Sensitive Data](#avoiding-env-for-sensitive-data)
+    - [Secure Alternatives](#secure-alternatives)
+      - [Using `direnv` for Local Development](#using-direnv-for-local-development)
+      - [Using `direnv` for Local Development](#using-direnv-for-local-development-1)
+        - [Managing Different Stages with `direnv`](#managing-different-stages-with-direnv)
+      - [Using `teller` for a Unified Approach](#using-teller-for-a-unified-approach)
+      - [Using SDKs for Dynamic Retrieval](#using-sdks-for-dynamic-retrieval)
+  - [Conclusion](#conclusion)
+
 ## Introduction to Secrets Management
 
 Imagine your application's secrets as the precious ring from "The Lord of the Rings". You wouldn't just leave it lying around, would you? Secrets management is the art of storing, retrieving, and using these precious pieces of information securely. It's essential because the bad guys are always on the lookout, and you need to protect your treasure! 🐉
