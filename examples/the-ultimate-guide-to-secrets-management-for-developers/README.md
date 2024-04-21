@@ -130,7 +130,9 @@ But remember, the most powerful spells (production secrets) should never be stor
 
 Meet `teller`, the wandering wizard of secret managers. It pulls secrets from different realms (providers) into your local spellbook (environment).
 
-Set up your `teller` spell in `teller.yml`:
+![Teller Demo](https://github.com/tellerops/teller/blob/master/media/teller.gif)
+
+To use `teller` for this example, you'd need to create a `teller.yml` file in your project directory with the following configuration:
 
 ```yaml
 # teller.yml example
@@ -155,8 +157,6 @@ providers:
 ```
 
 🧙‍♂️ To conjure secrets with `teller`, you'll want to follow the ancient tomes: [Teller Documentation](https://github.com/tellerops/teller).
-
-![Teller Demo](https://github.com/tellerops/teller/blob/master/media/teller.gif)
 
 #### Using SDKs for Dynamic Retrieval
 
