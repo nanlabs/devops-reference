@@ -8,7 +8,7 @@
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/docker/localstack
+cd devops-reference/examples/compose-localstack
 docker compose up
 ```
 

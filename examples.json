@@ -46,17 +46,23 @@
       ]
     },
     {
-      "name": "Feature flags post",
+      "name": "Feature flags post by Atlassian",
       "description": "How to progressively expose your features with feature flags by IAN BUCHANNAN.",
       "url": "https://www.atlassian.com/continuous-delivery/principles/feature-flags",
-      "tags": ["Examples > DevOps > A/B Testing"],
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > A/B Testing"
+      ],
       "labels": ["Feature Flags"]
     },
     {
       "name": "When to use Shell Scripts",
       "description": "A guide from Google on when to use shell scripts.",
       "url": "https://google.github.io/styleguide/shellguide.html#when-to-use-shell",
-      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Shell Scripting and CLI Tools"
+      ],
       "labels": ["Shell Scripting", "Utilities"]
     },
     {
@@ -121,6 +127,7 @@
       "description": "This tutorial shows how to create a GitHub Action that converts TODO comments into GitHub issues.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/",
       "tags": [
+        "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
       "labels": ["GitHub Actions", "TODOs", "Issues"]
@@ -130,6 +137,7 @@
       "description": "This workflow automates the initial review of Pull Requests using [Danger.js](https://danger.systems/js/). This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your teams norms. Leaving humans to think about harder problems.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/pr-review.yml",
       "tags": [
+        "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
       "labels": ["GitHub Actions", "Danger.js"]
@@ -244,6 +252,7 @@
       "description": "Introduction to Development Containers (DevContainers), a solution to create development environments with a unique approach to address specific development environment needs",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-intro/",
       "tags": [
+        "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Containers, Orchestration and Serverless > Development and Cloud Environments"
       ],
       "labels": [
@@ -539,6 +548,7 @@
       "description": "The definitive example of how to use Terraform and Serverless Framework together.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-terraform-example",
       "tags": [
+        "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation",
         "Examples > DevOps > Infrastructure as Code > Terraform"
       ],
@@ -630,6 +640,7 @@
       "description": "Seamless, efficient, and developer-friendly Kubernetes development environment using Tilt and Minikube.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/kubernetes-tilt-dev/",
       "tags": [
+        "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
       ],
       "labels": [
@@ -638,6 +649,97 @@
         "Minikube",
         "Development Environment",
         "MicroServices"
+      ]
+    },
+    {
+      "name": "Terraform AWS Starter",
+      "description": "Get started quickly with AWS infrastructure using a robust Terraform starter kit incorporating secure state management, VPC configuration, security groups, RDS provisioning, secrets management, SSM parameter store, and GitHub Actions integration!",
+      "url": "https://github.com/nanlabs/terraform-aws-starter",
+      "tags": [
+        "Apps and Boilerplates",
+        "Examples > DevOps > Infrastructure as Code > Terraform"
+      ],
+      "labels": [
+        "Terraform",
+        "Terraform Modules",
+        "Infrastructure as Code",
+        "AWS",
+        "VPC",
+        "RDS",
+        "RDS Aurora",
+        "MongoDB",
+        "GitHub Actions",
+        "SSM Parameter Store",
+        "Secrets Management",
+        "Security Groups",
+        "Super Linter"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Code Review Tools",
+      "description": "A guide where we present a curated selection of modern tools designed to revolutionize your code review process!",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-code-review-tools",
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
+      "labels": ["Code Review", "Code Review Tools"]
+    },
+    {
+      "name": "Verdaccio with Docker Compose Example",
+      "description": "Verdaccio is a lightweight private npm proxy registry. This example shows how to run Verdaccio locally using Docker Compose.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-verdaccio/",
+      "tags": [
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)",
+        "Examples > DevOps > Dependency Management"
+      ],
+      "labels": [
+        "Docker",
+        "Docker Compose",
+        "Verdaccio",
+        "Node Package Manager"
+      ]
+    },
+    {
+      "name": "Embracing the Power of LocalStack for AWS Emulation",
+      "description": "A comprehensive guide highlighting the benefits of using LocalStack for AWS service emulation. The blog post covers various LocalStack examples for Docker and Serverless setups and explores its application in local development, CI, and more.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/embracing-the-power-of-localstack-for-aws-emulation",
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)",
+        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
+      ],
+      "labels": [
+        "LocalStack",
+        "AWS",
+        "Docker",
+        "Serverless",
+        "DevOps",
+        "CI",
+        "Local Development"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Secrets Management for Developers",
+      "description": "Unlock the arcane art of secrets management with our comprehensive guide! Tailored for the average dev, this post is a treasure map leading to the best practices for storing and accessing sensitive data. Learn to navigate tools like AWS Parameter Store, `direnv`, `teller`, and more, with easy-to-follow examples that bring the theory to life. Perfect for those who've never realized the gravity of a leaked secret, this guide will be your enchanted scroll of wisdom.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-secrets-management-for-developers",
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Security and Compliance",
+        "Examples > DevOps > Infrastructure as Code > Secrets Management"
+      ],
+      "labels": [
+        "Secrets Management",
+        "Cloud Secrets Management",
+        "direnv",
+        "teller",
+        "Security",
+        "DevOps",
+        "Best Practices",
+        "Environment Variables",
+        "Encryption",
+        "SOPS",
+        "Secure Configuration"
       ]
     }
   ]

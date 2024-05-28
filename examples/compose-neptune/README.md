@@ -10,7 +10,7 @@ Imitate AWS Neptune using Docker for local dev
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/docker/neptune
+cd devops-reference/examples/compose-neptune
 docker compose up
 ```
 
