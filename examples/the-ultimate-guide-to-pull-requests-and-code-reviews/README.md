@@ -48,8 +48,11 @@ This guide provides an index of best practices, tools, and methodologies for cre
 
 ## Pull Request Templates
 
+Most Git hosting platforms, such as GitHub, support pull request templates. Pull request templates help standardize the information provided in a PR, making it easier for reviewers to understand the changes and context.
+
 Using pull request templates ensures that all necessary information is provided consistently.
-You can create a `.github` folder in your repository and add a `PULL_REQUEST_TEMPLATE.md` file with the following content:
+
+For example, on GitHub, you can create a `PULL_REQUEST_TEMPLATE.md` file in the `.github` directory of your repository. This template can include sections for description, type of change, testing instructions, checklist, etc.
 
 **Example Pull Request Template:**
 
@@ -88,6 +91,8 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 This template ensures that all PRs include essential information and follow the same structure.
 
 In the section below, we provide a detailed guide on how to [automate PR validation using DangerJS and TypeScript](#example-automate-pr-validation-with-dangerjs-and-typescript).
+
+You could also use templates to manage different aspects of the Issue and PR lifecycle. For example, you could have a template for bug reports, feature requests, and other types of issues. You can check out one complete example of how to manage this in the [Issues section of the DevOps Reference repository](https://github.com/nanlabs/devops-reference/issues/new/choose) where we have templates for different types of issues. You can also check out we made it possible in the [source of the issue templates](https://github.com/nanlabs/devops-reference/tree/main/.github/ISSUE_TEMPLATE).
 
 ## Review Workflow
 
@@ -131,8 +136,9 @@ At NaNLABS we have created a series of guides and examples to help you automate 
 
 - **[Ultimate Guide to Code Review Tools](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-code-review-tools):** Comprehensive overview of tools to streamline code reviews.
 - **[Automaing Code Review using DangerJS and GitHub Actions](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs):** Automates PR reviews using custom rules, saving time by automating initial validations.
-- **[TODOs to GitHub Issues](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/):** Converts TODO comments in code to GitHub Issues. This allow reviewers to suggest improvements using TODO comments that are automatically converted to issues as soon as the PR is merged.
 - **[Security Assessment Tools](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-security-assessment-tools):** Guides on integrating security tools in the entire development lifecycle including code reviews to enhance security.
+- **[Ultimate Guide to Secrets Management for Developers](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-secrets-management-for-developers):** Learn how to manage secrets securely and integrate them into your CI/CD pipelines. Having this knowledge will help you ensure that your secrets are secure and your code is safe while doing code reviews.
+- **[TODOs to GitHub Issues](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/):** Converts TODO comments in code to GitHub Issues. This allow reviewers to suggest improvements using TODO comments that are automatically converted to issues as soon as the PR is merged.
 
 ## Example: Automate PR Validation with DangerJS and TypeScript
 
