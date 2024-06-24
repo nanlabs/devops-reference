@@ -241,7 +241,7 @@
     {
       "name": "Airflow and Spark environment using Docker and Docker Compose",
       "description": "Dockerfile and compose.yml to run Airflow locally with initialization scripts.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-airflow/",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-airflow-spark/",
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
