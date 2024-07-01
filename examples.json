@@ -2,6 +2,22 @@
   "$schema": "https://raw.githubusercontent.com/nanlabs/awesome-nan/main/examples.schema.json",
   "list": [
     {
+      "name": "Automation Seed",
+      "description": "Automation Seed is a e2e automation framework built on top of WebdriverIO v7 and Selenium that uses Selenoid for execution",
+      "url": "https://github.com/nanlabs/automation-seed",
+      "tags": ["Apps and Boilerplates"],
+      "labels": [
+        "Automation",
+        "Selenium",
+        "WebdriverIO",
+        "Selenoid",
+        "Allure",
+        "Typescript",
+        "GitHub Actions",
+        "GitHub Pages"
+      ]
+    },
+    {
       "name": "AWS Glue ETL Boilerplate",
       "description": "A complete example of an AWS Glue ETL job that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark.",
       "url": "https://github.com/nanlabs/aws-glue-etl-boilerplate",
