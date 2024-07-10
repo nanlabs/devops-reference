@@ -138,7 +138,7 @@ At NaNLABS we have created a series of guides and examples to help you automate 
 - **[Automaing Code Review using DangerJS and GitHub Actions](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs):** Automates PR reviews using custom rules, saving time by automating initial validations.
 - **[Security Assessment Tools](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-security-assessment-tools):** Guides on integrating security tools in the entire development lifecycle including code reviews to enhance security.
 - **[Ultimate Guide to Secrets Management for Developers](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-secrets-management-for-developers):** Learn how to manage secrets securely and integrate them into your CI/CD pipelines. Having this knowledge will help you ensure that your secrets are secure and your code is safe while doing code reviews.
-- **[TODOs to GitHub Issues](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/):** Converts TODO comments in code to GitHub Issues. This allow reviewers to suggest improvements using TODO comments that are automatically converted to issues as soon as the PR is merged.
+- **[TODOs to GitHub Issues](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/):** Converts TODO comments in code to GitHub Issues. This allows reviewers to suggest improvements using TODO comments that are automatically converted to issues as soon as the PR is merged.
 
 ## Example: Automate PR Validation with DangerJS and TypeScript
 
