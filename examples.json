@@ -757,6 +757,21 @@
         "SOPS",
         "Secure Configuration"
       ]
+    },
+    {
+      "name": "The Ultimate Guide to Security Assessment Tools",
+      "description": "Comprehensive guides for integrating security tools at different stages of the development lifecycle, including IDE integrations, Git workflows, and CI/CD pipelines.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-security-assessment-tools",
+      "tags": ["Examples > DevOps > Security and Compliance"],
+      "labels": [
+        "Security",
+        "DevOps",
+        "Snyk",
+        "Trivy",
+        "Super Linter",
+        "Mega Linter",
+        "Shift Left"
+      ]
     }
   ]
 }
