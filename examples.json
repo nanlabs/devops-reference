@@ -772,6 +772,24 @@
         "Mega Linter",
         "Shift Left"
       ]
+    },
+    {
+      "name": "The Ultimate Guide to Pull Requests and Code Reviews",
+      "description": "Comprehensive guide on creating effective pull requests and conducting thorough code reviews. This guide provides an overview of best practices, common pitfalls, and tools to automate and streamline the review process.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-pull-requests-and-code-reviews",
+      "tags": [
+        "Guides, Tutorials and Best Practices",
+        "Examples > DevOps > Security and Compliance",
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
+      "labels": [
+        "Pull Requests",
+        "Code Reviews",
+        "Best Practices",
+        "Automation",
+        "GitHub Actions",
+        "DangerJS"
+      ]
     }
   ]
 }
