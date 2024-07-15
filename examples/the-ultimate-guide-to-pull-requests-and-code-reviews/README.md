@@ -41,7 +41,7 @@ This guide provides an index of best practices, tools, and methodologies for cre
 ## Additional Tips for Code Reviews
 
 - **Limit Review Duration:** Keep sessions to 1 hour to avoid fatigue.
-- **Focus on Small Code Blocks:** Review 200-400 lines at a time.
+- **Focus on Small Code Blocks:** Review 200-400 lines of code (LoC) at a time.
 - **Actionable Feedback:** Provide examples to illustrate suggestions.
 - **Verify Bug Fixes:** Test changes in a live environment if possible.
 - **Use Templates:** Ensure all necessary information is consistently included.
@@ -96,11 +96,11 @@ You could also use templates to manage different aspects of the Issue and PR lif
 
 ## Review Workflow
 
-- **Comprehend the Issue and Solution:** Ensure that the solution aligns with the identified problem.
+- **Comprehend the Issue and Solution:** Ensure that the solution aligns with the identified issue to solve.
 - **Keep Reviews Short:** Limit reviews to 1 hour to maintain quality.
 - **Focus on Manageable Sections:** Review 200-400 lines of code at a time for efficiency.
 - **Give Clear, Actionable Feedback:** Use examples to clarify suggestions.
-- **Test Bug Fixes:** Verify changes in a live environment when possible.
+- **Test new Features and Bug Fixes:** Verify changes in a live environment when possible.
 
 ## Communication and Precision
 
@@ -135,7 +135,7 @@ You could also use templates to manage different aspects of the Issue and PR lif
 At NaNLABS we have created a series of guides and examples to help you automate code reviews and streamline the PR process. Here are some of the resources available:
 
 - **[Ultimate Guide to Code Review Tools](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-code-review-tools):** Comprehensive overview of tools to streamline code reviews.
-- **[Automaing Code Review using DangerJS and GitHub Actions](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs):** Automates PR reviews using custom rules, saving time by automating initial validations.
+- **[Automating Code Review using DangerJS and GitHub Actions](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-with-dangerjs):** Automates PR reviews using custom rules, saving time by automating initial validations.
 - **[Security Assessment Tools](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-security-assessment-tools):** Guides on integrating security tools in the entire development lifecycle including code reviews to enhance security.
 - **[Ultimate Guide to Secrets Management for Developers](https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-secrets-management-for-developers):** Learn how to manage secrets securely and integrate them into your CI/CD pipelines. Having this knowledge will help you ensure that your secrets are secure and your code is safe while doing code reviews.
 - **[TODOs to GitHub Issues](https://github.com/nanlabs/devops-reference/tree/main/examples/github-actions-todo-to-issue/):** Converts TODO comments in code to GitHub Issues. This allows reviewers to suggest improvements using TODO comments that are automatically converted to issues as soon as the PR is merged.
