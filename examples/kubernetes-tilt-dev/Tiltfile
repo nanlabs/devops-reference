@@ -2,7 +2,7 @@ version_settings(constraint='>=0.22.2')
 
 k8s_yaml(['k8s/namespace.yml'])
 
-sync_node_src = sync('apps/node-nestjs-app/src', 'app/')
+sync_node_src = sync('apps/node-nestjs-app/src', '/app')
 
 docker_build(
     'k8s-tilt-dev-example-node-nestjs-app',
@@ -15,10 +15,15 @@ docker_build(
 
 k8s_yaml(['apps/node-nestjs-app/k8s/deployment.yml', 'apps/node-nestjs-app/k8s/service.yml'])
 
+sync_python_src = sync('apps/python-fastapi-app/src', '/code')
+
 docker_build(
   'k8s-tilt-dev-example-python-fastapi-app',
   'apps/python-fastapi-app/',
   target='development',
+  live_update=[
+    sync_python_src,
+  ],
 )
 
 k8s_yaml(['apps/python-fastapi-app/k8s/deployment.yml', 'apps/python-fastapi-app/k8s/service.yml'])
