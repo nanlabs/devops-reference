@@ -3,140 +3,141 @@
   "list": [
     {
       "name": "Automation Seed",
-      "description": "Automation Seed is a e2e automation framework built on top of WebdriverIO v7 and Selenium that uses Selenoid for execution",
+      "description": "A robust end-to-end automation framework built on WebdriverIO v7 and Selenium, leveraging Selenoid for execution. It includes features like Allure reporting, TypeScript support, and CI/CD integration with GitHub Actions.",
       "url": "https://github.com/nanlabs/automation-seed",
       "tags": ["Apps and Boilerplates"],
       "labels": [
-        "Automation",
+        "Automation Framework",
         "Selenium",
         "WebdriverIO",
         "Selenoid",
-        "Allure",
-        "Typescript",
+        "Allure Reporting",
+        "TypeScript",
         "GitHub Actions",
         "GitHub Pages"
       ]
     },
     {
       "name": "AWS Glue ETL Boilerplate",
-      "description": "A complete example of an AWS Glue ETL job that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark.",
+      "description": "A comprehensive boilerplate for AWS Glue ETL jobs, featuring infrastructure deployment with the Serverless Framework and local development using DevContainers or Docker Compose. Includes Python Shell and PySpark job examples.",
       "url": "https://github.com/nanlabs/aws-glue-etl-boilerplate",
       "tags": ["Apps and Boilerplates"],
       "labels": [
-        "Python",
-        "AWS",
-        "Glue",
+        "AWS Glue",
         "ETL",
-        "Serverless",
+        "Python",
+        "PySpark",
+        "Serverless Framework",
         "DevContainers",
-        "Docker Compose"
+        "Docker Compose",
+        "Jupyter Notebook"
       ]
     },
     {
       "name": "Basic AWS Glue ETL example app",
-      "description": "A basic but useful example of an AWS Glue application that uses the [Serverless Framework](https://www.serverless.com/) to deploy the infrastructure and DevContainers and/or Docker Compose to run the application locally with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI, among other tools. It provides jobs using Python Shell and PySpark.",
+      "description": "A simplified yet practical example of an AWS Glue application. It uses the Serverless Framework for infrastructure deployment and supports local development with DevContainers or Docker Compose.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-full-boilerplate/",
       "tags": ["Apps and Boilerplates"],
       "labels": [
-        "Python",
-        "AWS",
-        "Glue",
+        "AWS Glue",
         "ETL",
-        "Serverless",
+        "Python",
+        "PySpark",
+        "Serverless Framework",
         "DevContainers",
-        "Docker Compose"
+        "Docker Compose",
+        "Jupyter Notebook"
       ]
     },
     {
       "name": "AWS CloudWatch Evidently",
-      "description": "A complete analysis of the service and a Proof of Concept on how to integrate it with a Node.js application.",
+      "description": "An in-depth analysis and proof of concept demonstrating how to integrate AWS CloudWatch Evidently with a Node.js application for A/B testing and feature flag management.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/aws-cloudwatch-evidently/",
       "tags": ["Examples > DevOps > A/B Testing"],
       "labels": [
-        "Node.js",
-        "AWS",
-        "CloudWatch",
+        "AWS CloudWatch",
         "CloudWatch Evidently",
         "A/B Testing",
-        "Feature Flags"
+        "Feature Flags",
+        "Node.js"
       ]
     },
     {
       "name": "Feature flags post by Atlassian",
-      "description": "How to progressively expose your features with feature flags by IAN BUCHANNAN.",
+      "description": "A guide by Atlassian on progressively exposing features using feature flags, authored by Ian Buchanan.",
       "url": "https://www.atlassian.com/continuous-delivery/principles/feature-flags",
       "tags": [
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > A/B Testing"
       ],
-      "labels": ["Feature Flags"]
+      "labels": ["Feature Flags", "Best Practices"]
     },
     {
       "name": "When to use Shell Scripts",
-      "description": "A guide from Google on when to use shell scripts.",
+      "description": "A Google guide outlining best practices for determining when to use shell scripts in development and operations.",
       "url": "https://google.github.io/styleguide/shellguide.html#when-to-use-shell",
       "tags": [
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Shell Scripting and CLI Tools"
       ],
-      "labels": ["Shell Scripting", "Utilities"]
+      "labels": ["Shell Scripting", "Best Practices", "Utilities"]
     },
     {
       "name": "Parsing Shell Script Arguments with Easy Options",
-      "description": "Easy options for shell scripts.",
+      "description": "An example demonstrating how to simplify shell script argument parsing using the Easy Options library.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/easy-options/",
       "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
       "labels": ["Shell Scripting", "Utilities", "Easy Options"]
     },
     {
       "name": "Bash as a Wrapper Utility",
-      "description": "Bash as a wrapper utility for other languages and tools.",
+      "description": "An example showcasing how to use Bash as a wrapper utility for other languages and tools, enhancing script reusability and modularity.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/bash-as-a-wrapper-utility-basic/",
       "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
-      "labels": ["Shell Scripting", "Utilities"]
+      "labels": ["Shell Scripting", "Utilities", "Bash"]
     },
     {
       "name": "Bash as a Wrapper Utility with Easy Options",
-      "description": "Bash as a wrapper utility for other languages and tools using Easy Options.",
+      "description": "An advanced example of using Bash as a wrapper utility, incorporating Easy Options for argument parsing.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/bash-as-a-wrapper-utility-with-easy-options/",
       "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
-      "labels": ["Shell Scripting", "Utilities", "Easy Options"]
+      "labels": ["Shell Scripting", "Utilities", "Easy Options", "Bash"]
     },
     {
       "name": "Actionlint Playground",
-      "description": "Static checker for GitHub Actions workflow files.",
+      "description": "A static checker for GitHub Actions workflow files, helping to identify syntax and logic issues.",
       "url": "https://rhysd.github.io/actionlint/",
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Actionlint"]
+      "labels": ["GitHub Actions", "Actionlint", "CI/CD"]
     },
     {
       "name": "Markdown Lint",
-      "description": "This workflow validates the Markdown files in the repository using the [markdownlint action](https://github.com/marketplace/actions/markdown-lint).",
+      "description": "This workflow validates the Markdown files in the repository using the markdownlint action.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/markdownlint.yml",
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Markdown Lint"]
+      "labels": ["GitHub Actions", "Markdown Lint", "CI/CD"]
     },
     {
       "name": "Shell Check",
-      "description": "This workflow validates the shell scripts in the repository using the [shellcheck action](https://github.com/ludeeus/action-shellcheck).",
+      "description": "This workflow validates the shell scripts in the repository using the shellcheck action.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/shellcheck.yml",
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Shell Check"]
+      "labels": ["GitHub Actions", "Shell Check", "CI/CD"]
     },
     {
       "name": "Terraform Check",
-      "description": "This workflow validates the Terraform files in the repository using the [terraform action](https://github.com/dflook/terraform-fmt-check).",
+      "description": "This workflow validates the Terraform files in the repository using the terraform action.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/tf-check.yml",
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Terraform"]
+      "labels": ["GitHub Actions", "Terraform", "CI/CD"]
     },
     {
       "name": "TODOs to GitHub Issues",
@@ -146,17 +147,17 @@
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "TODOs", "Issues"]
+      "labels": ["GitHub Actions", "TODOs", "Issues", "Automation"]
     },
     {
       "name": "Automate Pull Requests Reviews using Danger",
-      "description": "This workflow automates the initial review of Pull Requests using [Danger.js](https://danger.systems/js/). This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your teams norms. Leaving humans to think about harder problems.",
+      "description": "This workflow automates the initial review of Pull Requests using Danger.js. It helps lint rote tasks in daily code review and codifies team norms.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/.github/workflows/pr-review.yml",
       "tags": [
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Danger.js"]
+      "labels": ["GitHub Actions", "Danger.js", "Code Review", "Automation"]
     },
     {
       "name": "Automation Seed example",
@@ -165,7 +166,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "Automation"]
+      "labels": ["GitHub Actions", "Automation", "CI/CD"]
     },
     {
       "name": "React Boilerplate",
@@ -174,7 +175,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": ["GitHub Actions", "React"]
+      "labels": ["GitHub Actions", "React", "CI/CD"]
     },
     {
       "name": "AWS Glue using Docker and Docker Compose",
