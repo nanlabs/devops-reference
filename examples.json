@@ -791,6 +791,158 @@
         "GitHub Actions",
         "DangerJS"
       ]
+    },
+    {
+      "name": "nanlabs/terraform-modules",
+      "description": "A comprehensive collection of reusable, production-ready Terraform modules and infrastructure examples for AWS and MongoDB Atlas, following best practices for security, scalability, and cost optimization.",
+      "url": "https://github.com/nanlabs/terraform-modules",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": [
+        "Modules Library",
+        "Examples",
+        "Best Practices",
+        "Production Ready"
+      ]
+    },
+    {
+      "name": "Terraform Modules by nanlabs",
+      "description": "Battle-tested, security-first, and cost-optimized Terraform modules for AWS and MongoDB Atlas. Includes VPC, EKS, RDS, Aurora, MSK, Bastion, IAM, Amplify, and more.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": [
+        "aws-vpc",
+        "aws-eks",
+        "aws-rds",
+        "aws-rds-aurora",
+        "aws-msk",
+        "aws-bastion",
+        "aws-docdb",
+        "aws-iam-role",
+        "aws-amplify-app",
+        "mongodb-atlas-cluster"
+      ]
+    },
+    {
+      "name": "Terraform Examples by nanlabs",
+      "description": "End-to-end infrastructure examples using the nanlabs Terraform modules, covering simple web apps, medium-complexity microservices, and full enterprise setups.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/examples",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": [
+        "simple-web-app",
+        "medium-complexity-infrastructure",
+        "complete-enterprise-setup"
+      ]
+    },
+    {
+      "name": "aws-vpc (Terraform Module)",
+      "description": "Complete wrapper around the official terraform-aws-modules/vpc/aws module with opinionated defaults, security best practices, and SSM Parameter Store integration.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-vpc",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Networking", "Parameter Store", "Security", "Best Practices"]
+    },
+    {
+      "name": "aws-eks (Terraform Module)",
+      "description": "Opinionated wrapper for EKS clusters with VPC CNI optimization, node group management, OIDC integration, and production-ready defaults.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-eks",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Terraform",
+        "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
+      ],
+      "labels": ["Kubernetes", "OIDC", "Node Groups", "Monitoring"]
+    },
+    {
+      "name": "aws-rds (Terraform Module)",
+      "description": "Complete wrapper for RDS with enhanced security, monitoring, SSM Parameter Store integration, and simplified configuration for PostgreSQL/MySQL.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-rds",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Parameter Store", "Security", "Monitoring"]
+    },
+    {
+      "name": "aws-rds-aurora (Terraform Module)",
+      "description": "Fully customizable wrapper for Aurora clusters, supporting Serverless v2, SSM integration, and production-grade configuration.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-rds-aurora",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Aurora", "Serverless", "SSM"]
+    },
+    {
+      "name": "aws-msk (Terraform Module)",
+      "description": "Opinionated wrapper for Amazon MSK (Kafka) with enhanced security, DNS integration, logging, and production defaults.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-msk",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Streaming", "Security", "DNS", "Logging"]
+    },
+    {
+      "name": "aws-bastion (Terraform Module)",
+      "description": "Custom implementation for a secure, zero-trust bastion host using SSM, EC2 Instance Connect, VPC endpoints, and CloudWatch logging.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-bastion",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Security", "Zero Trust", "Session Manager", "CloudWatch"]
+    },
+    {
+      "name": "aws-docdb (Terraform Module)",
+      "description": "Custom DocumentDB cluster module with integrated AWS Secrets Manager, SSM Parameter Store, and production-ready defaults.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-docdb",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Secrets Manager", "SSM", "Security"]
+    },
+    {
+      "name": "aws-iam-role (Terraform Module)",
+      "description": "Flexible IAM role module supporting custom trust policies, inline/managed policies, and advanced security conditions.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-iam-role",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["IAM", "Security", "Policies", "RBAC"]
+    },
+    {
+      "name": "aws-amplify-app (Terraform Module)",
+      "description": "Opinionated wrapper for AWS Amplify App with integrated GitHub PAT management, optimized for React/Node.js apps.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/aws-amplify-app",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Terraform",
+        "Examples > DevOps > Low Code solutions > AWS Amplify"
+      ],
+      "labels": ["Frontend", "CI/CD", "GitHub Integration", "Parameter Store"]
+    },
+    {
+      "name": "mongodb-atlas-cluster (Terraform Module)",
+      "description": "Custom MongoDB Atlas cluster module with project/team management, VPC peering, AWS integration, and secure connection details.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/modules/mongodb-atlas-cluster",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Atlas", "VPC Peering", "Secrets Manager", "SSM"]
+    },
+    {
+      "name": "Simple Web App (Terraform Example)",
+      "description": "Deploy a simple web application using AWS Amplify and a custom VPC. Demonstrates frontend hosting, GitHub integration, and secure infrastructure.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/examples/simple-web-app",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Terraform",
+        "Examples > DevOps > Low Code solutions > AWS Amplify"
+      ],
+      "labels": ["Frontend", "Amplify", "VPC", "Parameter Store"]
+    },
+    {
+      "name": "Medium Complexity Infrastructure (Terraform Example)",
+      "description": "Medium-complexity setup with EKS, RDS, Bastion, and custom IAM. Shows microservices infrastructure with best practices.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/examples/medium-complexity-infrastructure",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Terraform",
+        "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
+      ],
+      "labels": ["Kubernetes", "Database", "Bastion", "IAM"]
+    },
+    {
+      "name": "Complete Enterprise Setup (Terraform Example)",
+      "description": "Enterprise-grade infrastructure example with EKS, Aurora, MSK, DocumentDB, Bastion, IAM, monitoring, and security best practices.",
+      "url": "https://github.com/nanlabs/terraform-modules/tree/main/examples/complete-enterprise-setup",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": [
+        "EKS",
+        "Aurora",
+        "MSK",
+        "DocumentDB",
+        "Bastion",
+        "IAM",
+        "Monitoring"
+      ]
     }
   ]
 }
