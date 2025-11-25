@@ -107,6 +107,22 @@ GitHub Copilot for Code Reviews isn't just an AI tool; it's your smart coding co
 - **AI Imperfections**: It's smart, but not perfect.
 - **Understanding AI**: Knowing its capabilities and limitations is key.
 
+## 🧩 LinearB gitStream
+> Precise, Low-Noise Reviews with Config Control
+
+LinearB takes a smart, disciplined approach to code reviews. With YAML-based rules and slash commands, it gives teams precise control over when and how reviews happen.
+
+### Why LinearB Stands Out
+
+- **Conversational Interaction**: Developers can re-run reviews, ask for clarifications, or trigger actions through conversational feedback and slash commands.
+- **High Bug Detection**: Performs on par with CodeRabbit in detection quality while keeping comments focused and easy to navigate.
+- **Smart Automation**: When you push a fix, it recognizes the change, resolves its own comments, and responds with a friendly “Looks good to me.”
+- **Flexible Rule-Based Control**: YAML config and .cm rules let teams customize the review process at a granular level.
+
+### But Keep in Mind
+- **Config-Intensive**: Unlocking its strengths requires a detailed initial setup.
+- **Requires Stable Processes**: Works best in teams with consistent branching, PR habits, and review flows.
+- **Platform Disparity**: Certain advanced features like slash commands are currently limited to specific platforms (e.g., GitHub).
 ---
 
 Feel the power of modern code review tools and choose the one that fits your team's needs. Dive in and revolutionize your code review process today!

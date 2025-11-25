@@ -1,0 +1,7 @@
+# CodeRabbit configuration
+# Exclude benchmark files from code review
+
+paths:
+  ignore:
+    - "examples/the-ultimate-guide-to-code-review-tools/code-review-benchmark/**"
+
