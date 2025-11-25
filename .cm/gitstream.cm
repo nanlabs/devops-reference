@@ -24,3 +24,29 @@ automations:
       - {{ not (is.bot_author or is.bot_branch) }}
     run:
       - action: code-review@v1
+
+  linearb_ai_desc:
+    if:
+      - {{ not pr.draft }}
+    run:
+      - action: describe-changes@v1
+        args:
+          concat_mode: append
+
+  estimated_time_to_review:
+    if:
+      - true
+    run:
+      - action: add-label@v1
+        args:
+          label: "{{ calc.etr }} min review"
+          color: {{ colors.red if (calc.etr >= 20) else ( colors.yellow if (calc.etr >= 5) else colors.green ) }}
+
+calc:
+  etr: {{ branch | estimatedReviewTime }}
+
+
+colors:
+  red: 'b60205'
+  yellow: 'fbca04'
+  green: '0e8a16'
