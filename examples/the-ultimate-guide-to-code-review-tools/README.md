@@ -108,21 +108,64 @@ GitHub Copilot for Code Reviews isn't just an AI tool; it's your smart coding co
 - **Understanding AI**: Knowing its capabilities and limitations is key.
 
 ## 🧩 LinearB gitStream
-> Precise, Low-Noise Reviews with Config Control
+> Automation Powerhouse — but at a Cost
 
-LinearB takes a smart, disciplined approach to code reviews. With YAML-based rules and slash commands, it gives teams precise control over when and how reviews happen.
+gitStream offers a highly configurable, automation-heavy approach to improving pull requests. It shines when you know exactly what you want to enforce, but it demands more time and process maturity than most tools.
 
 ### Why LinearB Stands Out
 
-- **Conversational Interaction**: Developers can re-run reviews, ask for clarifications, or trigger actions through conversational feedback and slash commands.
-- **High Bug Detection**: Performs on par with CodeRabbit in detection quality while keeping comments focused and easy to navigate.
-- **Smart Automation**: When you push a fix, it recognizes the change, resolves its own comments, and responds with a friendly “Looks good to me.”
-- **Flexible Rule-Based Control**: YAML config and .cm rules let teams customize the review process at a granular level.
+- *Extensive Automations:* A large catalog of rules, triggers, and workflows you can tailor to almost any PR scenario.
+
+- *Strong When Paired with LinearB:* Delivers more value when used together with LinearB metrics and workflow tools.
+
+- *Deep Configurability:* If your team has mature processes and clear standards, gitStream lets you enforce them precisely.
 
 ### But Keep in Mind
-- **Config-Intensive**: Unlocking its strengths requires a detailed initial setup.
-- **Requires Stable Processes**: Works best in teams with consistent branching, PR habits, and review flows.
-- **Platform Disparity**: Certain advanced features like slash commands are currently limited to specific platforms (e.g., GitHub).
+- *Expensive:* Best suited for larger teams that can justify the cost through advanced metrics and automation needs.
+
+- *Hard Initial Setup:* Requires significant time investment. If you’re not sure what to configure, it’s easy to get lost.
+
+- *Visual Overload:* Feedback can get buried or feel scattered inside the PR.
+
+- *Partial Detection:* In our tests, it detected only some code smells and security issues—not all of them.
+
+### gitStream in Action
+Ideal for teams with stable branching strategies, well-defined workflows, and a need for strict, automated governance. Less helpful for small teams or evolving processes.
+
+You can see gitStream in action in the following Pull Request:
+
+- [gitStream Code Review Example](https://github.com/rosariosm/devops-reference/pull/4)
+
+To test the tool, a set of intentionally "smelly" files were created in the [`code-review-benchmark`](./code-review-benchmark) folder, containing code smells, poor patterns, and security vulnerabilities.
+
+## 🌿 Qodo Merge
+> Lightweight, Clean, and Surprisingly Pleasant to Use
+Qodo Merge focuses on providing a simple, clean, AI-assisted review experience with minimal setup effort.
+
+### Why Qodo Merge Is Great
+
+- *Very Easy to Set Up:* You can get started quickly without dealing with heavy configuration.
+
+- *Great Visual Experience:* Results feel cleaner and more readable compared to  other tools.
+
+- *Lower Configuration Load:* Less to tweak, less to maintain.
+
+- *Free for Open Source:* A strong advantage for public repos.
+
+### But Keep in Mind
+- *Shallow Detection:* Similar to gitStream, it only caught a subset of code smells and security issues in our tests.
+
+- *Less Control:* With fewer configuration options, it’s harder to enforce advanced or highly specific workflows.
+
+### Qodo Merge in Action
+
+Great when you want a no-friction, visually clean solution that “just works,” without the overhead of more complex tools.
+
+You can see Qodo Merge in action in the following Pull Request:
+
+- [Qodo Merge Code Review Example](https://github.com/rosariosm/devops-reference/pull/2)
+
+The same smelly and insecure test files from the [`code-review-benchmark`](./code-review-benchmark) folder used for gitStream were also used to evaluate Qodo Merge.
 ---
 
 Feel the power of modern code review tools and choose the one that fits your team's needs. Dive in and revolutionize your code review process today!
