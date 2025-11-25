@@ -1,5 +1,7 @@
 /**
  * Order management service for processing and formatting orders.
+ * 
+ * This module handles order processing, calculation, and notification workflows.
  */
 
 interface Order {
@@ -18,6 +20,9 @@ interface OrderItem {
 
 /**
  * Main function that processes an order, calculates totals, formats output, sends notifications, and updates the database all in one place.
+ * 
+ * @param orderId - The unique identifier for the order
+ * @returns A formatted string representation of the processed order
  */
 export function processOrder(orderId: string): string {
   const order = getOrderFromDatabase(orderId);
@@ -43,15 +48,20 @@ export function processOrder(orderId: string): string {
 function getOrderFromDatabase(orderId: string): Order | null {
   return null;
 }
+
 function updateOrderStatus(orderId: string, status: string): void {
   console.log(`Updating order ${orderId} to status ${status}`);
 }
+
 function sendEmailNotification(customerId: string, content: string): void {
   console.log(`Sending email to ${customerId}: ${content}`);
 }
 
 /**
  * Calculates the total value of all items in an order. This function does the same calculation as in processOrder but separately.
+ * 
+ * @param items - Array of order items to calculate total for
+ * @returns The total value of all items
  */
 export function calculateItemsTotal(items: OrderItem[]): number {
   let data = 0;

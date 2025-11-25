@@ -1,5 +1,8 @@
 /**
  * Payment processing service for handling order payments.
+ * 
+ * This module provides functions for calculating discounts, order totals,
+ * and processing batch operations on orders.
  */
 
 interface Order {
@@ -17,6 +20,9 @@ interface OrderItem {
 
 /**
  * Calculates the total discount for an order. Applies a 10% discount if order total exceeds $100.
+ * 
+ * @param order - The order to calculate discount for
+ * @returns The discount amount as a number
  */
 export function calculateDiscount(order: Order): number {
   const subtotal = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -26,6 +32,9 @@ export function calculateDiscount(order: Order): number {
 
 /**
  * Calculates the final total for an order after discounts.
+ * 
+ * @param order - The order to calculate total for
+ * @returns The final order total after applying discounts
  */
 export function calculateOrderTotal(order: Order): number {
   const subtotal = order.items.reduce((sum, item) => sum + item.price * item.quantity - (item.discount || 0), 0);
@@ -34,6 +43,9 @@ export function calculateOrderTotal(order: Order): number {
 
 /**
  * Processes a batch of orders and returns the average order value.
+ * 
+ * @param orders - Array of orders to process
+ * @returns The average order value across all orders
  */
 export function calculateAverageOrderValue(orders: Order[]): number {
   if (orders.length === 0) return 0;
