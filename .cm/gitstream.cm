@@ -24,6 +24,9 @@ automations:
       - {{ not (is.bot_author or is.bot_branch) }}
     run:
       - action: code-review@v1
+    guidelines: |
+      - Use short inline comments attached to the exact line with the issue.
+      - Prefer many small comments over long summaries.
 
   linearb_ai_desc:
     if:
