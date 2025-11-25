@@ -15,3 +15,12 @@ automations:
       - action: explain-code-experts@v1
         args:
           gt: 10
+  
+  linearb_ai_review:
+    # Triggers only when PR is created or has new commits, see docs
+    #   https://docs.gitstream.cm/execution-model/#action-level-execution-control
+    if:
+      - {{ not pr.draft }}
+      - {{ not (is.bot_author or is.bot_branch) }}
+    run:
+      - action: code-review@v1
