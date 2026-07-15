@@ -45,4 +45,8 @@ jobs:
   pr-review:
     if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
     name: Pull Request Validation
+    permissions:
+      contents: read
+      pull-requests: write
+      statuses: write
     uses: ./.github/workflows/pr-review.yml

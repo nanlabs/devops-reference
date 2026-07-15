@@ -11,6 +11,11 @@ jobs:
   pr-review:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pull-requests: write
+      statuses: write
+
     steps:
       - name: Begin CI...
         uses: actions/checkout@v4
