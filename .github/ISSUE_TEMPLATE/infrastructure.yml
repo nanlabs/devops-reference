@@ -1,0 +1,57 @@
+---
+name: "🛠️ Infrastructure, CI, or Tooling"
+description: Suggest CI, automation, tooling, or repository config changes
+title: "[INFRA]: short issue description"
+labels: [infrastructure]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for CI, GitHub Actions, tooling, dev containers,
+        linting, release, or repository configuration changes.
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this change needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Change
+      description: What should be added, changed, or removed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: How does this affect contributors, maintainers, CI, or DX?
+      placeholder: Faster CI, better DX, security improvement, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: Which commands, checks, or workflows should be run?
+      value: |
+        - [ ] Run the affected workflow or local check
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand this may affect all contributors
+          required: true
+        - label: This request does not include secrets or private project links
+          required: true

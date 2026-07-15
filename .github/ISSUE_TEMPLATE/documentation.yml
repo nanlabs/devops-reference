@@ -1,9 +1,15 @@
+---
 name: "📕 Documentation Issue"
 description: Report an issue in the Reference documentation or Developer Guide
 title: "(short issue description)"
 labels: [documentation]
 assignees: []
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve our documentation 📚
+
   - type: textarea
     id: description
     attributes:
@@ -20,3 +26,32 @@ body:
         Include links to affected documentation page(s).
     validations:
       required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Content
+      description: If you have a draft, outline, or examples, share them here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: How should the documentation change be checked?
+      value: |
+        - [ ] Verify all links resolve
+        - [ ] Run markdown lint checks if available
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: Acknowledgements
+      options:
+        - label: I may be able to submit a pull request for this documentation
+          required: false
+        - label: This issue does not include secrets or private project links
+          required: true

@@ -1,17 +1,34 @@
 ---
 name: "🐛 Bug Report"
 description: Report a bug
-title: "(short issue description)"
+title: "[BUG]: short issue description"
 labels: [bug]
 assignees: []
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report 🤗
+        Make sure there aren't any open/closed issues for this topic 😃
+        Please fill out the sections below to help us understand the issue.
+
+  - type: checkboxes
+    id: search
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists.
+      options:
+        - label: I have searched the existing issues
+          required: true
+
   - type: textarea
     id: description
     attributes:
       label: Describe the bug
-      description: What is the problem? A clear and concise description of the bug.
+      description: What is the problem? A clear and concise bug description.
     validations:
       required: true
+
   - type: textarea
     id: expected
     attributes:
@@ -20,6 +37,7 @@ body:
         What did you expect to happen?
     validations:
       required: true
+
   - type: textarea
     id: current
     attributes:
@@ -27,22 +45,29 @@ body:
       description: |
         What actually happened?
 
-        Please include full errors, uncaught exceptions, stack traces, and relevant logs.
-        If service/functions responses are relevant, please include wire logs.
+        Please include relevant errors, exceptions, stack traces, and logs.
+        Redact secrets, tokens, credentials, private URLs, account IDs, and
+        any personal or customer data before posting.
+
+        If wire logs are relevant, share only sanitized excerpts.
     validations:
       required: true
+
   - type: textarea
     id: reproduction
     attributes:
       label: Reproduction Steps
       description: |
-        Provide a self-contained, concise snippet of code that can be used to reproduce the issue.
-        For more complex issues provide a repo with the smallest sample that reproduces the bug.
+        Provide a self-contained, concise snippet of code that can be used to
+        reproduce the issue. For more complex issues provide a repo with the
+        smallest sample that reproduces the bug.
 
-        Avoid including business logic or unrelated code, it makes diagnosis more difficult.
-        The code sample should be an SSCCE. See http://sscce.org/ for details. In short, please provide a code sample that we can copy/paste, run and reproduce.
+        Avoid including business logic or unrelated code, it makes diagnosis
+        more difficult. The code sample should be an SSCCE. See
+        http://sscce.org/ for details.
     validations:
       required: true
+
   - type: textarea
     id: solution
     attributes:
@@ -51,14 +76,18 @@ body:
         Suggest a fix/reason for the bug
     validations:
       required: false
+
   - type: textarea
     id: context
     attributes:
       label: Additional Information/Context
       description: |
-        Anything else that might be relevant for troubleshooting this bug. Providing context helps us come up with a solution that is most useful in the real world.
+        Anything else that might be relevant for troubleshooting this bug.
+        Providing context helps us come up with a solution that is most useful
+        in the real world.
     validations:
       required: false
+
   - type: input
     id: version
     attributes:
@@ -67,9 +96,39 @@ body:
         Please provide the version of the repository or tool you are using.
     validations:
       required: true
-  - type: input
+
+  - type: textarea
     id: environment
     attributes:
       label: Environment details (OS name and version, etc.)
+      placeholder: |
+        - OS:
+        - Runtime/tool version:
+        - Package manager:
     validations:
       required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Copy and paste any relevant log output.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: public-safety
+    attributes:
+      label: Public issue checklist
+      options:
+        - label: This issue does not include secrets or private project links
+          required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I may be able to submit a pull request for this bug
+          required: false
