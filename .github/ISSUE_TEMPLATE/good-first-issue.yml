@@ -3,7 +3,6 @@ name: "🌱 Good First Issue"
 description: Propose a well-scoped task for new contributors
 title: "[GOOD FIRST ISSUE]: short issue description"
 labels: [good first issue, help wanted]
-assignees: []
 body:
   - type: markdown
     attributes:
