@@ -1,61 +1,85 @@
----
-name: 🚀 Feature Request
-description: Suggest an idea for this project
-title: "(short issue description)"
-labels: [feature-request]
-assignees: []
+name: Feature request
+description: Suggest an improvement or new capability
+title: "[Feature]: "
+labels: [enhancement, needs-triage]
+type: Feature
 body:
-  - type: textarea
-    id: description
+  - type: markdown
     attributes:
-      label: Describe the feature
-      description: A clear and concise description of the feature you are proposing.
+      value: |
+        Thanks for suggesting an improvement. Please keep the proposal public-safe and avoid private project links.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem does this solve?
+      placeholder: It is difficult to...
     validations:
       required: true
+
   - type: textarea
-    id: use-case
+    id: proposed-solution
     attributes:
-      label: Use Case
-      description: |
-        Why do you need this feature? For example: "I'm always frustrated when..."
+      label: Proposed solution
+      description: How should this work?
     validations:
       required: true
+
   - type: textarea
-    id: solution
+    id: scope
     attributes:
-      label: Proposed Solution
-      description: |
-        Suggest how to implement the addition or change. Please include prototype/workaround/sketch/reference implementation.
+      label: Scope
+      description: What should be included?
+      placeholder: |
+        - Add ...
+        - Update ...
+        - Document ...
     validations:
       required: false
+
   - type: textarea
-    id: other
+    id: alternatives
     attributes:
-      label: Other Information
-      description: |
-        Any alternative solutions or features you considered, a more detailed explanation, stack traces, related issues, links for context, etc.
+      label: Alternatives considered
+      description: What alternatives or workarounds did you consider?
     validations:
       required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: How will maintainers know this is complete?
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: Which tests, commands, or manual checks should pass?
+      value: |
+        - [ ] 
+    validations:
+      required: false
+
   - type: checkboxes
-    id: ack
+    id: public-safety
     attributes:
-      label: Acknowledgements
+      label: Public-safety confirmation
       options:
-        - label: I may be able to implement this feature request
-          required: false
-        - label: This feature might incur a breaking change
-          required: false
-  - type: input
-    id: version
+        - label: This request does not include secrets, private URLs, or internal-only project references
+          required: true
+
+  - type: checkboxes
+    id: contribution
     attributes:
-      label: Version used
-      description: |
-        Please provide the version of the repository or tool you are using.
-    validations:
-      required: true
-  - type: input
-    id: environment
-    attributes:
-      label: Environment details (OS name and version, etc.)
-    validations:
-      required: true
+      label: Contribution
+      options:
+        - label: I am willing to submit a pull request for this feature
+          required: false

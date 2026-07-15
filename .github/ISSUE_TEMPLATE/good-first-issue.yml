@@ -1,0 +1,87 @@
+name: Good first issue
+description: Propose a well-scoped task for new contributors
+title: "[Good First Issue]: "
+labels: [good first issue, help wanted, needs-triage]
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose small, well-scoped tasks that help new contributors get started.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be done?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why is this useful for the project and for contributors?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Keep this small and explicit.
+      value: |
+        - 
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: files
+    attributes:
+      label: Suggested files or areas
+      description: Point contributors to likely starting points.
+      placeholder: README.md, docs/..., examples/..., packages/...
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: Commands or manual checks a contributor can run locally.
+      value: |
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What should contributors avoid changing?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contributor-ready
+    attributes:
+      label: Contributor readiness
+      options:
+        - label: This task does not require private credentials or internal systems
+          required: true
+        - label: This task has a clear validation path
+          required: true
+        - label: This task is small enough for a first contribution
+          required: true

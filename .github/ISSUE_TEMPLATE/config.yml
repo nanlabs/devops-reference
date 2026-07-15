@@ -1,6 +1,5 @@
----
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 General Question
-    url: https://github.com/nanlabs/devops-reference/discussions/categories/q-a
-    about: Please ask and answer questions as a discussion thread
+  - name: NaNLABS GitHub organization
+    url: https://github.com/nanlabs
+    about: For general public information about NaNLABS open-source repositories.

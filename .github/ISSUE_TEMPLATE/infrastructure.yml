@@ -1,0 +1,65 @@
+name: Infrastructure, CI, or tooling
+description: Suggest changes to CI, automation, devcontainers, tooling, or repository configuration
+title: "[Infra]: "
+labels: [infrastructure, needs-triage]
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for public-safe CI, GitHub Actions, tooling, devcontainer, linting, release, or repository configuration changes.
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this change needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed change
+      description: What should be added, changed, or removed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Contributor impact
+      description: How does this affect contributors, maintainers, CI runtime, cost, or security?
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: Which commands, checks, or workflows should be run?
+      value: |
+        - [ ] 
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This request does not include secrets, private URLs, or internal-only project references
+          required: true
+        - label: I understand this may affect all contributors to the repository
+          required: true

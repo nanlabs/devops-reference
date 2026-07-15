@@ -1,75 +1,93 @@
----
-name: "🐛 Bug Report"
-description: Report a bug
-title: "(short issue description)"
-labels: [bug]
-assignees: []
+name: Bug report
+description: Report a reproducible bug or unexpected behavior
+title: "[Bug]: "
+labels: [bug, needs-triage]
+type: Bug
 body:
-  - type: textarea
-    id: description
+  - type: markdown
     attributes:
-      label: Describe the bug
-      description: What is the problem? A clear and concise description of the bug.
-    validations:
-      required: true
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Behavior
-      description: |
-        What did you expect to happen?
-    validations:
-      required: true
-  - type: textarea
-    id: current
-    attributes:
-      label: Current Behavior
-      description: |
-        What actually happened?
+      value: |
+        Thanks for reporting a bug. Please provide enough detail for a maintainer or contributor to reproduce it without access to private systems.
 
-        Please include full errors, uncaught exceptions, stack traces, and relevant logs.
-        If service/functions responses are relevant, please include wire logs.
+  - type: checkboxes
+    id: search
+    attributes:
+      label: Existing issues
+      description: Please search before opening a new issue.
+      options:
+        - label: I have searched existing open and closed issues
+          required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
     validations:
       required: true
+
   - type: textarea
     id: reproduction
     attributes:
-      label: Reproduction Steps
-      description: |
-        Provide a self-contained, concise snippet of code that can be used to reproduce the issue.
-        For more complex issues provide a repo with the smallest sample that reproduces the bug.
+      label: Steps to reproduce
+      description: Provide the smallest reproducible case.
+      placeholder: |
+        1. Clone the repository
+        2. Run `...`
+        3. See `...`
+    validations:
+      required: true
 
-        Avoid including business logic or unrelated code, it makes diagnosis more difficult.
-        The code sample should be an SSCCE. See http://sscce.org/ for details. In short, please provide a code sample that we can copy/paste, run and reproduce.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
     validations:
       required: true
+
   - type: textarea
-    id: solution
+    id: actual
     attributes:
-      label: Possible Solution
-      description: |
-        Suggest a fix/reason for the bug
-    validations:
-      required: false
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional Information/Context
-      description: |
-        Anything else that might be relevant for troubleshooting this bug. Providing context helps us come up with a solution that is most useful in the real world.
-    validations:
-      required: false
-  - type: input
-    id: version
-    attributes:
-      label: Version used
-      description: |
-        Please provide the version of the repository or tool you are using.
+      label: Actual behavior
+      description: What happened instead?
     validations:
       required: true
-  - type: input
+
+  - type: textarea
     id: environment
     attributes:
-      label: Environment details (OS name and version, etc.)
+      label: Environment
+      description: Include relevant versions and platform details.
+      value: |
+        - OS:
+        - Runtime/tool version:
+        - Package manager/version:
+        - Repository commit or release:
     validations:
-      required: true
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      description: Paste logs without secrets or tokens.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: public-safety
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: This report does not include secrets, tokens, private URLs, or internal-only project references
+          required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to submit a pull request with a fix
+          required: false
