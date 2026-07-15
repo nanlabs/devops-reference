@@ -1,88 +1,90 @@
 ---
-name: Feature request
-description: Suggest an improvement or new capability
-title: "[Feature]: "
-labels: [enhancement, needs-triage]
-type: Feature
+name: 🚀 Feature Request
+description: Suggest an idea for this project
+title: "(short issue description)"
+labels: [feature-request, enhancement]
+assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for suggesting an improvement. Please keep the proposal public
-        safe and avoid private project links.
-
   - type: textarea
-    id: problem
+    id: description
     attributes:
-      label: Problem statement
-      description: What problem does this solve?
-      placeholder: It is difficult to...
+      label: Describe the feature
+      description: A clear and concise description of the proposed feature.
     validations:
       required: true
 
   - type: textarea
-    id: proposed-solution
+    id: use-case
     attributes:
-      label: Proposed solution
-      description: How should this work?
+      label: Use Case
+      description: |
+        Why do you need this feature?
+        For example: "I'm always frustrated when..."
     validations:
       required: true
 
   - type: textarea
-    id: scope
+    id: solution
     attributes:
-      label: Scope
-      description: What should be included?
-      placeholder: |
-        - Add ...
-        - Update ...
-        - Document ...
-    validations:
-      required: false
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives considered
-      description: What alternatives or workarounds did you consider?
+      label: Proposed Solution
+      description: |
+        Suggest how to implement the addition or change. Please include a
+        prototype, workaround, sketch, or reference implementation.
     validations:
       required: false
 
   - type: textarea
     id: acceptance-criteria
     attributes:
-      label: Acceptance criteria
+      label: Acceptance Criteria
       description: How will maintainers know this is complete?
       value: |
         - [ ] Add the expected behavior
         - [ ] Update tests or docs when applicable
         - [ ] Document validation steps
     validations:
-      required: true
+      required: false
 
   - type: textarea
-    id: validation
+    id: other
     attributes:
-      label: Validation
-      description: Which tests, commands, or manual checks should pass?
-      value: |
-        - [ ] Run the relevant local checks
+      label: Other Information
+      description: |
+        Any alternative solutions or features you considered, a more detailed
+        explanation, stack traces, related issues, links for context, etc.
     validations:
       required: false
 
   - type: checkboxes
-    id: public-safety
+    id: ack
     attributes:
-      label: Public-safety confirmation
+      label: Acknowledgements
       options:
-        - label: This request does not include secrets, private URLs, or
-            internal-only project references
-          required: true
+        - label: I may be able to implement this feature request
+          required: false
+        - label: This feature might incur a breaking change
+          required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version used
+      description: |
+        Please provide the version of the repository or tool you are using.
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment details (OS name and version, etc.)
+    validations:
+      required: true
 
   - type: checkboxes
-    id: contribution
+    id: public-safety
     attributes:
-      label: Contribution
+      label: Public issue checklist
       options:
-        - label: I am willing to submit a pull request for this feature
-          required: false
+        - label: This request does not include secrets or private project links
+          required: true

@@ -1,21 +1,21 @@
 ---
-name: Good first issue
+name: "🌱 Good First Issue"
 description: Propose a well-scoped task for new contributors
-title: "[Good First Issue]: "
-labels: [good first issue, help wanted, needs-triage]
-type: Task
+title: "[GOOD FIRST ISSUE]: short issue description"
+labels: [good first issue, help wanted]
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Use this template to propose small, well scoped tasks that help new
+        Use this template to propose small, well-scoped tasks that help new
         contributors get started.
 
   - type: textarea
-    id: summary
+    id: description
     attributes:
-      label: Summary
-      description: What should be done?
+      label: Describe the task
+      description: A clear and concise description of what should be done.
     validations:
       required: true
 
@@ -48,17 +48,6 @@ body:
       required: false
 
   - type: textarea
-    id: acceptance-criteria
-    attributes:
-      label: Acceptance criteria
-      value: |
-        - [ ] The change is small and focused
-        - [ ] The expected output is documented
-        - [ ] Validation steps are included
-    validations:
-      required: true
-
-  - type: textarea
     id: validation
     attributes:
       label: Validation
@@ -71,7 +60,7 @@ body:
   - type: textarea
     id: out-of-scope
     attributes:
-      label: Out of scope
+      label: Out of Scope
       description: What should contributors avoid changing?
     validations:
       required: false
@@ -79,10 +68,9 @@ body:
   - type: checkboxes
     id: contributor-ready
     attributes:
-      label: Contributor readiness
+      label: Contributor Readiness
       options:
-        - label: This task does not require private credentials or internal
-            systems
+        - label: This task does not require private credentials or systems
           required: true
         - label: This task has a clear validation path
           required: true

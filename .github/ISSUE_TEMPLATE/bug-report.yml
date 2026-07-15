@@ -1,80 +1,116 @@
 ---
-name: Bug report
-description: Report a reproducible bug or unexpected behavior
-title: "[Bug]: "
-labels: [bug, needs-triage]
-type: Bug
+name: "🐛 Bug Report"
+description: Report a bug
+title: "[BUG]: short issue description"
+labels: [bug]
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a bug. Please provide enough detail for a
-        maintainer or contributor to reproduce it without access to private
-        systems.
+        Thanks for taking the time to fill out this bug report 🤗
+        Make sure there aren't any open/closed issues for this topic 😃
+        Please fill out the sections below to help us understand the issue.
 
   - type: checkboxes
     id: search
     attributes:
-      label: Existing issues
-      description: Please search before opening a new issue.
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists.
       options:
-        - label: I have searched existing open and closed issues
+        - label: I have searched the existing issues
           required: true
 
   - type: textarea
-    id: summary
+    id: description
     attributes:
-      label: Summary
-      description: What is broken?
-    validations:
-      required: true
-
-  - type: textarea
-    id: reproduction
-    attributes:
-      label: Steps to reproduce
-      description: Provide the smallest reproducible case.
-      placeholder: |
-        1. Clone the repository
-        2. Run `...`
-        3. See `...`
+      label: Describe the bug
+      description: What is the problem? A clear and concise bug description.
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: Expected behavior
-      description: What did you expect to happen?
+      label: Expected Behavior
+      description: |
+        What did you expect to happen?
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: current
     attributes:
-      label: Actual behavior
-      description: What happened instead?
+      label: Current Behavior
+      description: |
+        What actually happened?
+
+        Please include full errors, uncaught exceptions, stack traces, and
+        relevant logs. If service/functions responses are relevant, please
+        include wire logs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: |
+        Provide a self-contained, concise snippet of code that can be used to
+        reproduce the issue. For more complex issues provide a repo with the
+        smallest sample that reproduces the bug.
+
+        Avoid including business logic or unrelated code, it makes diagnosis
+        more difficult. The code sample should be an SSCCE. See
+        http://sscce.org/ for details.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Possible Solution
+      description: |
+        Suggest a fix/reason for the bug
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Information/Context
+      description: |
+        Anything else that might be relevant for troubleshooting this bug.
+        Providing context helps us come up with a solution that is most useful
+        in the real world.
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version used
+      description: |
+        Please provide the version of the repository or tool you are using.
     validations:
       required: true
 
   - type: textarea
     id: environment
     attributes:
-      label: Environment
-      description: Include relevant versions and platform details.
-      value: |
+      label: Environment details (OS name and version, etc.)
+      placeholder: |
         - OS:
         - Runtime/tool version:
-        - Package manager/version:
-        - Repository commit or release:
+        - Package manager:
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: logs
     attributes:
-      label: Relevant logs or screenshots
-      description: Paste logs without secrets or tokens.
+      label: Relevant log output
+      description: Copy and paste any relevant log output.
       render: shell
     validations:
       required: false
@@ -82,10 +118,9 @@ body:
   - type: checkboxes
     id: public-safety
     attributes:
-      label: Public-safety confirmation
+      label: Public issue checklist
       options:
-        - label: This report does not include secrets, tokens, private URLs,
-            or internal-only project references
+        - label: This issue does not include secrets or private project links
           required: true
 
   - type: checkboxes
@@ -93,5 +128,5 @@ body:
     attributes:
       label: Contribution
       options:
-        - label: I am willing to submit a pull request with a fix
+        - label: I may be able to submit a pull request for this bug
           required: false

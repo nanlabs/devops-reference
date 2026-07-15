@@ -1,51 +1,39 @@
 ---
-name: Documentation
-description: Report a documentation gap or improvement
-title: "[Docs]: "
-labels: [documentation, needs-triage]
-type: Task
+name: "📕 Documentation Issue"
+description: Report an issue in the Reference documentation or Developer Guide
+title: "(short issue description)"
+labels: [documentation]
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve the documentation. Please include public
-        links only.
+        Thanks for helping us improve our documentation 📚
 
   - type: textarea
-    id: gap
+    id: description
     attributes:
-      label: What needs to be documented?
-      description: Describe the missing or stale documentation.
+      label: Describe the issue
+      description: A clear and concise description of the issue.
     validations:
       required: true
 
   - type: textarea
-    id: location
+    id: links
     attributes:
-      label: Where should this live?
-      description: Specific file, section, or documentation area.
-      placeholder: README.md, CONTRIBUTING.md, docs/..., example README, etc.
+      label: Links
+      description: |
+        Include links to affected documentation page(s).
     validations:
       required: true
 
   - type: textarea
-    id: suggested-content
+    id: suggestion
     attributes:
-      label: Suggested content or outline
-      description: Share a draft, outline, or examples if available.
+      label: Suggested Content
+      description: If you have a draft, outline, or examples, share them here.
     validations:
       required: false
-
-  - type: textarea
-    id: acceptance-criteria
-    attributes:
-      label: Acceptance criteria
-      value: |
-        - [ ] The documentation explains ...
-        - [ ] Public links are valid
-        - [ ] Examples or commands are accurate
-    validations:
-      required: true
 
   - type: textarea
     id: validation
@@ -53,24 +41,17 @@ body:
       label: Validation
       description: How should the documentation change be checked?
       value: |
-        - [ ] Run markdown lint checks if available
         - [ ] Verify all links resolve
+        - [ ] Run markdown lint checks if available
     validations:
       required: false
 
   - type: checkboxes
-    id: public-safety
+    id: ack
     attributes:
-      label: Public-safety confirmation
+      label: Acknowledgements
       options:
-        - label: This request does not include secrets, private URLs, or
-            internal-only project references
-          required: true
-
-  - type: checkboxes
-    id: contribution
-    attributes:
-      label: Contribution
-      options:
-        - label: I would like to work on this
+        - label: I may be able to submit a pull request for this documentation
           required: false
+        - label: This issue does not include secrets or private project links
+          required: true

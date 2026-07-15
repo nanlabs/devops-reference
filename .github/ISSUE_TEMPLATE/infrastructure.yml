@@ -1,16 +1,15 @@
 ---
-name: Infrastructure, CI, or tooling
+name: "🛠️ Infrastructure, CI, or Tooling"
 description: Suggest CI, automation, tooling, or repository config changes
-title: "[Infra]: "
-labels: [infrastructure, needs-triage]
-type: Task
+title: "[INFRA]: short issue description"
+labels: [infrastructure]
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Use this template for public safe CI, GitHub Actions, tooling,
-        development container, linting, release, or repository configuration
-        changes.
+        Use this template for CI, GitHub Actions, tooling, dev containers,
+        linting, release, or repository configuration changes.
 
   - type: textarea
     id: motivation
@@ -21,9 +20,9 @@ body:
       required: true
 
   - type: textarea
-    id: proposed-change
+    id: proposal
     attributes:
-      label: Proposed change
+      label: Proposed Change
       description: What should be added, changed, or removed?
     validations:
       required: true
@@ -31,22 +30,11 @@ body:
   - type: textarea
     id: impact
     attributes:
-      label: Contributor impact
-      description: How does this affect contributors, maintainers, CI runtime,
-        cost, or security?
+      label: Impact
+      description: How does this affect contributors, maintainers, CI, or DX?
+      placeholder: Faster CI, better DX, security improvement, etc.
     validations:
       required: false
-
-  - type: textarea
-    id: acceptance-criteria
-    attributes:
-      label: Acceptance criteria
-      value: |
-        - [ ] Add the requested infrastructure or tooling change
-        - [ ] Document contributor impact
-        - [ ] Keep public configuration safe
-    validations:
-      required: true
 
   - type: textarea
     id: validation
@@ -56,15 +44,14 @@ body:
       value: |
         - [ ] Run the affected workflow or local check
     validations:
-      required: true
+      required: false
 
   - type: checkboxes
     id: confirmation
     attributes:
       label: Confirmation
       options:
-        - label: This request does not include secrets, private URLs, or
-            internal-only project references
+        - label: I understand this may affect all contributors
           required: true
-        - label: I understand this may affect all contributors to the repository
+        - label: This request does not include secrets or private project links
           required: true
