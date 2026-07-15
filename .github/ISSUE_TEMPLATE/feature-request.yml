@@ -54,9 +54,9 @@ body:
       label: Acceptance criteria
       description: How will maintainers know this is complete?
       value: |
-        - [ ] 
-        - [ ] 
-        - [ ] 
+        - [ ] Add the expected behavior
+        - [ ] Update tests or docs when applicable
+        - [ ] Document validation steps
     validations:
       required: true
 
@@ -66,7 +66,7 @@ body:
       label: Validation
       description: Which tests, commands, or manual checks should pass?
       value: |
-        - [ ] 
+        - [ ] Run the relevant local checks
     validations:
       required: false
 
