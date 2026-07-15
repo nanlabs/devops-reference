@@ -45,9 +45,11 @@ body:
       description: |
         What actually happened?
 
-        Please include full errors, uncaught exceptions, stack traces, and
-        relevant logs. If service/functions responses are relevant, please
-        include wire logs.
+        Please include relevant errors, exceptions, stack traces, and logs.
+        Redact secrets, tokens, credentials, private URLs, account IDs, and
+        any personal or customer data before posting.
+
+        If wire logs are relevant, share only sanitized excerpts.
     validations:
       required: true
 
