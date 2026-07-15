@@ -3,7 +3,6 @@ name: "🐛 Bug Report"
 description: Report a bug
 title: "[BUG]: short issue description"
 labels: [bug]
-assignees: []
 body:
   - type: markdown
     attributes:
@@ -63,8 +62,8 @@ body:
         smallest sample that reproduces the bug.
 
         Avoid including business logic or unrelated code, it makes diagnosis
-        more difficult. The code sample should be an SSCCE. See
-        http://sscce.org/ for details.
+        more difficult. The code sample should be a small reproducible
+        example.
     validations:
       required: true
 

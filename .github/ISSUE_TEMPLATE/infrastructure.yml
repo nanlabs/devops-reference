@@ -3,7 +3,6 @@ name: "🛠️ Infrastructure, CI, or Tooling"
 description: Suggest CI, automation, tooling, or repository config changes
 title: "[INFRA]: short issue description"
 labels: [infrastructure]
-assignees: []
 body:
   - type: markdown
     attributes:
