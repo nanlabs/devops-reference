@@ -13,23 +13,23 @@ jobs:
 
     steps:
       - name: Begin CI...
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Danger Files
         run: |
           echo "Setting up Danger files..."
           mv tools/danger/* .
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: "v16.13.2"
 
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
-          echo "::set-output name=dir::$(npm config get cache)"
+          echo "dir=$(npm config get cache)" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
