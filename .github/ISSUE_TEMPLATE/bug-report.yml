@@ -1,3 +1,4 @@
+---
 name: Bug report
 description: Report a reproducible bug or unexpected behavior
 title: "[Bug]: "
@@ -7,7 +8,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a bug. Please provide enough detail for a maintainer or contributor to reproduce it without access to private systems.
+        Thanks for reporting a bug. Please provide enough detail for a
+        maintainer or contributor to reproduce it without access to private
+        systems.
 
   - type: checkboxes
     id: search
@@ -81,7 +84,8 @@ body:
     attributes:
       label: Public-safety confirmation
       options:
-        - label: This report does not include secrets, tokens, private URLs, or internal-only project references
+        - label: This report does not include secrets, tokens, private URLs,
+            or internal-only project references
           required: true
 
   - type: checkboxes
