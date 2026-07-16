@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
-    "danger": "^13.0.0"
+    "danger": "^13.0.0",
+    "typescript": "^5.0.0"
   }
 }
