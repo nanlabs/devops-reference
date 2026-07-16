@@ -45,8 +45,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Compile Dangerfile
+        run: npx tsc --noEmit false --outDir . --esModuleInterop true --module commonjs --moduleResolution node --target es2020 --skipLibCheck true dangerfile.ts
+
       - name: Danger JS Action
-        run: npx danger ci
+        run: npx danger ci --dangerfile dangerfile.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
