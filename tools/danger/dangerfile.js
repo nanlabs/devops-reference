@@ -127,9 +127,9 @@ if (!packageJSON.modified && npmLockfile.modified) {
   const title = ":lock: package.json";
   const idea =
     "Changes were made to `package-lock.json`, but not to `package.json`. " +
-    "Please remove `package-lock.json` changes from your pull request. " +
-    "Try to run `git checkout master -- package-lock.json` and commit changes.";
-  fail(`${title} - <i>${idea}</i>`);
+    "Make sure these changes are intentional (e.g. transitive dependency updates). " +
+    "If they are unintended, run `git checkout main -- package-lock.json` and commit changes.";
+  warn(`${title} - <i>${idea}</i>`);
 }
 
 if (yarnLockfile.modified) {
