@@ -245,18 +245,18 @@ artifacts:
 
 ![AWS CodePipeline Step 1](../assets/aws-codepipeline-2.png)
 
-2. **Add Action Group**:
+1. **Add Action Group**:
    - Click Add an Action Group to open the Edit Action window:
 
 ![AWS CodePipeline Step 2](../assets/aws-codepipeline-3.png)
 
-3. **Name the Action**:
+2. **Name the Action**:
    - Select Snyk as the Action Provider.
    - Click Connect with Snyk to begin the connection process.
 
 ![AWS CodePipeline Step 3](../assets/aws-codepipeline-4.png)
 
-4. **Configure Settings**:
+3. **Configure Settings**:
    - Configure the settings such as the Snyk organization where reports of findings are saved, vulnerability handling options, and monitoring behavior on build.
 
 ![AWS CodePipeline Step 4](../assets/aws-codepipeline-5.png)
@@ -356,7 +356,7 @@ trivy_scan:
     - trivy fs --exit-code 1 --severity HIGH,CRITICAL .
 ```
 
-2. **Configure Severity Levels**:
+1. **Configure Severity Levels**:
    - Ensure that only high-severity and critical vulnerabilities break the build.
 
 ### AWS CodePipeline 🚀
