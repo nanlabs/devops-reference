@@ -5,7 +5,7 @@ const SMALL_PR_LINES = 200;
 
 const DOC_FILE_MATCH = "**/*.md";
 const SRC_FILE_REGEXP = /test.*\.([tj]s?)$/;
-const prBody = danger.github.pr.body ?? "";
+const prBody = danger.github.pr.body || "";
 const releasePrTitle = /^(version packages|chore: version packages|chore\(release\):|chore: release\b)/i;
 
 const hasIssueReference = (text: string) => {
@@ -20,12 +20,12 @@ const hasIssueReference = (text: string) => {
 // No PR is too small to include a description of why you made a change
 if (
   !danger.github.pr.body ||
-  !danger.github.pr.body.includes("# What's this PR do?")
+  !danger.github.pr.body.includes("## Description")
 ) {
   const title = ":clipboard: Missing Summary";
   const idea =
     "Can you add a Summary? " +
-    "To do so, add a `# What's this PR do?` section to your PR description. " +
+    "To do so, add a `## Description` section to your PR description. " +
     "This is a good place to explain the motivation for making this change.";
   message(`${title} - <i>${idea}</i>`);
 }
@@ -39,12 +39,12 @@ if (!danger.github.pr.title) {
 const isIssueReferenceExempt =
   danger.github.pr.user.login.endsWith("[bot]") ||
   danger.github.pr.user.login.startsWith("app/") ||
-  releasePrTitle.test(danger.github.pr.title ?? "");
+  releasePrTitle.test(danger.github.pr.title || "");
 
 if (
   !isIssueReferenceExempt &&
   !hasIssueReference(prBody) &&
-  !hasIssueReference(danger.github.pr.title ?? "")
+  !hasIssueReference(danger.github.pr.title || "")
 ) {
   fail(
     "This PR does not reference an issue. Please link the related issue with `Closes #N` or `Refs #N` in the PR description. If no issue exists, open one first so maintainers can review the change context."

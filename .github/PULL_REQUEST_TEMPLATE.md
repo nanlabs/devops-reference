@@ -1,32 +1,28 @@
-# What's this PR do?
+## Description
 
-_Summary of changes in this PR or what it accomplishes._
+Please include a summary of the changes and the related issue. List any dependencies that are required for this change.
 
-@ulises-jeremias
+Fixes # (issue)
 
-<!--
+## Type of Change
 
-Please title your PR as follows: `feature: fix foo bar`. 
-Always start with the thing you are fixing, then describe the fix.
-Don't use past tense (e.g. "fixed foo bar").
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
 
-Explain what your PR does and why.
+## How Has This Been Tested?
 
-If you are adding a new function, please document it and add tests:
+Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce.
 
-```
-code you added/updated
-```
+- [ ] Test A
+- [ ] Test B
 
-If you are fixing a bug, please add a test that covers it.
+## Checklist
 
-Before submitting a PR, please:
-  - specify the command to execute or steps to follow to know that the problem was solved
-
-We try to process PRs as soon as possible. They should be handled within 24 hours.
-
-Applying labels to PRs is not needed.
-
-Thanks a lot for your contribution!
-
-->
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have checked my code and corrected any misspellings
