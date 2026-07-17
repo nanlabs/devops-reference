@@ -19,9 +19,9 @@
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.108",
-    "serverless": "^3.23.0",
+    "serverless": "^4.39.0",
     "serverless-bundle": "^6.0.0",
-    "serverless-offline": "^11.1.3",
+    "serverless-offline": "^14.7.4",
     "typescript": "^4.8.4"
   },
   "dependencies": {
