@@ -18,7 +18,7 @@
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
     "bestzip": "^2.2.1",
-    "serverless": "^3.19.0",
+    "serverless": "^4.40.0",
     "serverless-glue": "^2.9.0",
     "serverless-plugin-scripts": "^1.0.2"
   }
