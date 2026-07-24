@@ -22,10 +22,10 @@
   },
   "devDependencies": {
     "cfn-resolver-lib": "1.1.7",
-    "serverless": "^3.19.0",
+    "serverless": "^4.40.0",
     "serverless-appsync-plugin": "^1.14.0",
     "serverless-appsync-simulator": "^0.20.0",
-    "serverless-offline": "^9.2.0",
-    "serverless-python-requirements": "^5.4.0"
+    "serverless-offline": "^14.7.4",
+    "serverless-python-requirements": "^6.1.2"
   }
 }
