@@ -16,6 +16,6 @@
   "license": "MIT",
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
-    "serverless": "^3.19.0"
+    "serverless": "^4.40.0"
   }
 }
