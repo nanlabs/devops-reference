@@ -3,6 +3,9 @@ name: Terraform Check
 on:
   workflow_call:
 
+permissions:
+  contents: read
+
 jobs:
   tf-fmt-check:
     name: Check Formatting
