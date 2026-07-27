@@ -1,5 +1,5 @@
 module github.com/Arsentau/klotho-example
 
-go 1.19
+go 1.22
 
-require github.com/go-chi/chi/v5 v5.0.8 // indirect
+require github.com/go-chi/chi/v5 v5.2.4
