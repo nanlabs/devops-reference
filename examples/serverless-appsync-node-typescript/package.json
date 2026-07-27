@@ -26,7 +26,7 @@
     "serverless": "^3.19.0",
     "serverless-appsync-plugin": "^1.14.0",
     "serverless-appsync-simulator": "^0.20.0",
-    "serverless-offline": "^9.2.0",
+    "serverless-offline": "^14.7.4",
     "serverless-plugin-typescript": "^2.1.2",
     "typescript": "^4.7.4"
   },
