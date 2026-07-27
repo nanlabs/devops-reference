@@ -3,6 +3,9 @@ name: Shellcheck
 on:
   workflow_call:
 
+permissions:
+  contents: read
+
 jobs:
   shellcheck:
     name: Shellcheck

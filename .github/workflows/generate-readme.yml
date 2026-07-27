@@ -3,6 +3,9 @@ name: Generate README
 on:
   workflow_call:
 
+permissions:
+  contents: write
+
 jobs:
   generate-readme:
     runs-on: ubuntu-latest
