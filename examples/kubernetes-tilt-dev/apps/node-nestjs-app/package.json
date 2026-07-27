@@ -38,8 +38,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@nestjs/common": "^10.2.10",
-    "@nestjs/config": "^3.1.1",
+    "@nestjs/common": "^11.1.28",
+    "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.1.28",
     "@nestjs/platform-express": "^11.1.28",
     "@nestjs/swagger": "^11.4.6",
