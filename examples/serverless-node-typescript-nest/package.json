@@ -29,7 +29,7 @@
     "@nestjs/common": "^9.3.9",
     "@nestjs/core": "^11.1.28",
     "@nestjs/platform-express": "^11.1.28",
-    "@nestjs/platform-fastify": "^11.1.28",
+    "@nestjs/platform-fastify": "^12.0.1",
     "@vendia/serverless-express": "^4.10.1",
     "aws-lambda": "^1.0.7",
     "aws-lambda-fastify": "^1.7.1",
