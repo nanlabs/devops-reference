@@ -49,4 +49,7 @@ jobs:
         run: npx danger ci --dangerfile dangerfile.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          # Fall back to GITHUB_TOKEN when the optional DANGER_GITHUB_API_TOKEN
+          # secret is not configured; an empty token makes Danger's
+          # unauthenticated API calls fail (e.g. ERR_STREAM_PREMATURE_CLOSE).
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN || secrets.GITHUB_TOKEN }}
