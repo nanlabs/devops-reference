@@ -29,5 +29,9 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_TYPESCRIPT_STANDARD: false
           DEFAULT_BRANCH: main
-          JSCPD_CONFIG_FILE: .jscpd.json
+          # JSCPD is disabled: catalog repos hold a generated index plus
+          # self-contained (vendored) examples, so duplication findings
+          # are inherent to the format, not defects. v5 ignores repo
+          # jscpd config, leaving no scoped alternative.
+          VALIDATE_JSCPD: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
