@@ -92,7 +92,11 @@ This template ensures that all PRs include essential information and follow the 
 
 In the section below, we provide a detailed guide on how to [automate PR validation using DangerJS and TypeScript](#example-automate-pr-validation-with-dangerjs-and-typescript).
 
-You could also use templates to manage different aspects of the Issue and PR lifecycle. For example, you could have a template for bug reports, feature requests, and other types of issues. You can check out one complete example of how to manage this in the [Issues section of the DevOps Reference repository](https://github.com/nanlabs/devops-reference/issues/new/choose) where we have templates for different types of issues. You can also check out we made it possible in the [source of the issue templates](https://github.com/nanlabs/devops-reference/tree/main/.github/ISSUE_TEMPLATE).
+You could also use templates to manage different aspects of the Issue and PR lifecycle. For example, you could have a template for bug reports,
+feature requests, and other types of issues. You can check out one complete example of how to manage this in the [Issues section of the DevOps
+Reference repository](https://github.com/nanlabs/devops-reference/issues/new/choose) where we have templates for different types of issues. You can
+also check out we made it possible in the [source of the issue
+templates](https://github.com/nanlabs/devops-reference/tree/main/.github/ISSUE_TEMPLATE).
 
 ## Review Workflow
 
@@ -197,46 +201,46 @@ To streamline the initial validation of Pull Requests and save valuable time, yo
    ```yaml
    name: Pull Request Validation
 
-    concurrency:
-      group: pull_request_${{ github.event.number }}
-      cancel-in-progress: true
+   concurrency:
+     group: pull_request_${{ github.event.number }}
+     cancel-in-progress: true
 
-    on:
-      pull_request:
-        branches:
-          - main
+   on:
+     pull_request:
+       branches:
+         - main
 
-    jobs:
-      pr-review:
-        name: Danger JS
+   jobs:
+     pr-review:
+       name: Danger JS
 
-        if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
+       if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
 
-        runs-on: ubuntu-latest
+       runs-on: ubuntu-latest
 
-        permissions:
-          actions: write
-          checks: write
-          contents: write
-          issues: write
-          pull-requests: write
-          statuses: write
+       permissions:
+         actions: write
+         checks: write
+         contents: write
+         issues: write
+         pull-requests: write
+         statuses: write
 
-        steps:
-          - name: Begin CI...
-            uses: actions/checkout@v4
+       steps:
+         - name: Begin CI...
+           uses: actions/checkout@v4
 
-          - uses: actions/setup-node@v4
-            with:
-              node-version: "v22"
+         - uses: actions/setup-node@v4
+           with:
+             node-version: "v22"
 
-          - name: Install dependencies
-            run: npm install
+         - name: Install dependencies
+           run: npm install
 
-          - name: Danger JS Action
-            uses: danger/danger-js@9.1.8
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         - name: Danger JS Action
+           uses: danger/danger-js@9.1.8
+           env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    ```
 
 5. **Run Danger:**

@@ -82,16 +82,16 @@ _Description..._
 
 Rate each attribute, then converge on a single number. If a story lands at 5+, split it.
 
-| Attribute      | 1 pt                        | 2 pts                 | 3 pts                     | 5 pts                           | 8 pts                      |
-| -------------- | --------------------------- | --------------------- | ------------------------- | ------------------------------- | -------------------------- |
-| Difficulty     | Trivial for a newcomer      | Done before           | Somewhat difficult        | Uncharted territory             | Extremely difficult        |
-| Complexity     | Single codebase, tiny diff  | Single codebase       | Multiple codebases, small | Significant multi-codebase work | Several codebases          |
-| Familiarity    | Anyone on the squad gets it | Mostly known          | Moderately known          | Somewhat known                  | Unknown codebase           |
-| Certainty      | No unknowns                 | Minor known unknowns  | Moderate known unknowns   | Unknown unknowns                | Lots of unknown unknowns   |
-| Risk           | Self-contained              | Very low blast radius | Possible side effects     | Needs safe window + backup plan | All hands + rollback plan  |
-| 3rd-party deps | None                        | Negligible            | One simple dependency     | Moderate dependency             | Multiple dependencies      |
-| Time           | ≤ half day                  | ≤ 1 day               | Depends on unknowns       | Depends on unknowns             | Unguessable                |
-| QA lift        | Minimal                     | Standard              | Beyond typical            | High                            | Massive, may need QA squad |
+| Attribute        | 1 pt                        | 2 pts                 | 3 pts                     | 5 pts                           | 8 pts                      |
+| ---------------- | --------------------------- | --------------------- | ------------------------- | ------------------------------- | -------------------------- |
+| Difficulty       | Trivial for a newcomer      | Done before           | Somewhat difficult        | Uncharted territory             | Extremely difficult        |
+| Complexity       | Single codebase, tiny diff  | Single codebase       | Multiple codebases, small | Significant multi-codebase work | Several codebases          |
+| Familiarity      | Anyone on the squad gets it | Mostly known          | Moderately known          | Somewhat known                  | Unknown codebase           |
+| Certainty        | No unknowns                 | Minor known unknowns  | Moderate known unknowns   | Unknown unknowns                | Lots of unknown unknowns   |
+| Risk             | Self-contained              | Very low blast radius | Possible side effects     | Needs safe window + backup plan | All hands + rollback plan  |
+| Third-party deps | None                        | Negligible            | One simple dependency     | Moderate dependency             | Multiple dependencies      |
+| Time             | ≤ half day                  | ≤ 1 day               | Depends on unknowns       | Depends on unknowns             | Unguessable                |
+| QA lift          | Minimal                     | Standard              | Beyond typical            | High                            | Massive, may need QA squad |
 
 **Techniques:** Planning Poker for consensus, T-shirt sizing (XS–XL) for quick relative sizing, Fibonacci spacing to reflect growing uncertainty.
 

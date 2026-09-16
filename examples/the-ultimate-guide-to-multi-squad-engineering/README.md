@@ -30,7 +30,7 @@ How to scale from one team to several autonomous squads without losing alignment
 
 **Phase 2 — Autonomy (months 2–4):** squads choose their delivery model; planning and docs go squad-local within agreed standards. Start biweekly PM/TL syncs (shared deliverables, blockers, cadence). Keep QA, observability, and incidents centralized.
 
-**Phase 3 — Governance (ongoing):** architecture council, product reviews, chapter meetings. Squads publish lessons learned, milestones, and spike findings. Review tooling maturity and shared-repo contributions periodically. Encourage mobility and pairing to prevent silos.
+**Phase 3 — Governance (ongoing):** architecture council, product reviews, chapter meetings. Squads publish lessons learned, milestones, and spike findings. Review tooling maturity and shared-repository contributions periodically. Encourage mobility and pairing to prevent silos.
 
 ## Sync Routines
 
@@ -38,9 +38,9 @@ How to scale from one team to several autonomous squads without losing alignment
 - **Engineering chapter (biweekly/monthly):** shared tooling, DevEx, observability.
 - **Product alignment (monthly):** OKR progress across squads.
 
-## Repo Governance
+## Repository Governance
 
-Every repo has a designated **maintainer squad**: enforces standards, owns CI/CD and security tooling, keeps README and onboarding docs current. Anyone may contribute; ownership never means exclusivity.
+Every repository has a designated **maintainer squad**: enforces standards, owns CI/CD and security tooling, keeps README and onboarding docs current. Anyone may contribute; ownership never means exclusivity.
 
 ## Risks to Watch
 
