@@ -41,7 +41,7 @@ If you're sailing in the cloud, each provider has its own secret chest:
 Not on the cloud? No sweat! Here's the stealth mode:
 
 1. **Encrypt config files**: Tools like [Secrets OPerationS (SOPS)](https://github.com/getsops/sops) are like your digital invisibility cloak, hiding your secrets in plain sight.
-   ![SOPS Demo](https://camo.githubusercontent.com/9728792a3d7a222f606519c2b64a546fa1bb7e14bdb76f81bfc64088ffc4a27d/68747470733a2f2f692e696d6775722e636f6d2f5830544d354e492e676966)
+    ![SOPS Demo](https://camo.githubusercontent.com/9728792a3d7a222f606519c2b64a546fa1bb7e14bdb76f81bfc64088ffc4a27d/68747470733a2f2f692e696d6775722e636f6d2f5830544d354e492e676966)
 
 2. **Key Management**: Keep the keys to your cloak in a vault like [LastPass](https://lastpass.com/) or [Bitwarden](https://bitwarden.com/), so only you know where and how to reveal the secrets.
 

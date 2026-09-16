@@ -155,97 +155,97 @@ To streamline the initial validation of Pull Requests and save valuable time, yo
 
 1. **Install DangerJS and TypeScript:**
 
-   ```sh
-   npm install --save-dev danger typescript
-   ```
+    ```sh
+    npm install --save-dev danger typescript
+    ```
 
 2. **Initialize a TypeScript configuration:**
 
-   ```sh
-   npx tsc --init
-   ```
+    ```sh
+    npx tsc --init
+    ```
 
 3. **Create a Dangerfile:**
-   Create a `dangerfile.ts` in the root of your project with the following content:
+    Create a `dangerfile.ts` in the root of your project with the following content:
 
-   ```typescript
-   import { danger, warn, fail, message } from "danger";
+    ```typescript
+    import { danger, warn, fail, message } from "danger";
 
-   // Check for a summary in the description
-   if (danger.github.pr.body.length === 0) {
-     fail("Please provide a description for your PR.");
-   }
+    // Check for a summary in the description
+    if (danger.github.pr.body.length === 0) {
+      fail("Please provide a description for your PR.");
+    }
 
-   // Check for linked issues
-   const issueRegex = /#[0-9]+/;
-   if (!issueRegex.test(danger.github.pr.body)) {
-     warn("Please link an issue in the description.");
-   }
+    // Check for linked issues
+    const issueRegex = /#[0-9]+/;
+    if (!issueRegex.test(danger.github.pr.body)) {
+      warn("Please link an issue in the description.");
+    }
 
-   // Check for a checklist
-   const checklistRegex = /## Checklist:/;
-   if (!checklistRegex.test(danger.github.pr.body)) {
-     warn("Please include a checklist in the PR description.");
-   }
+    // Check for a checklist
+    const checklistRegex = /## Checklist:/;
+    if (!checklistRegex.test(danger.github.pr.body)) {
+      warn("Please include a checklist in the PR description.");
+    }
 
-   // Example of a custom rule
-   if (danger.github.pr.additions + danger.github.pr.deletions > 500) {
-     warn("This PR is quite large, consider splitting it into smaller PRs.");
-   }
-   ```
+    // Example of a custom rule
+    if (danger.github.pr.additions + danger.github.pr.deletions > 500) {
+      warn("This PR is quite large, consider splitting it into smaller PRs.");
+    }
+    ```
 
 4. **Add Danger to your CI pipeline:**
 
-   Update your CI configuration (e.g., GitHub Actions) to run Danger on each PR:
+    Update your CI configuration (e.g., GitHub Actions) to run Danger on each PR:
 
-   ```yaml
-   name: Pull Request Validation
+    ```yaml
+    name: Pull Request Validation
 
-   concurrency:
-     group: pull_request_${{ github.event.number }}
-     cancel-in-progress: true
+    concurrency:
+      group: pull_request_${{ github.event.number }}
+      cancel-in-progress: true
 
-   on:
-     pull_request:
-       branches:
-         - main
+    on:
+      pull_request:
+        branches:
+          - main
 
-   jobs:
-     pr-review:
-       name: Danger JS
+    jobs:
+      pr-review:
+        name: Danger JS
 
-       if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
+        if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
 
-       runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
 
-       permissions:
-         actions: write
-         checks: write
-         contents: write
-         issues: write
-         pull-requests: write
-         statuses: write
+        permissions:
+          actions: write
+          checks: write
+          contents: write
+          issues: write
+          pull-requests: write
+          statuses: write
 
-       steps:
-         - name: Begin CI...
-           uses: actions/checkout@v4
+        steps:
+          - name: Begin CI...
+            uses: actions/checkout@v4
 
-         - uses: actions/setup-node@v4
-           with:
-             node-version: "v22"
+          - uses: actions/setup-node@v4
+            with:
+              node-version: "v22"
 
-         - name: Install dependencies
-           run: npm install
+          - name: Install dependencies
+            run: npm install
 
-         - name: Danger JS Action
-           uses: danger/danger-js@9.1.8
-           env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   ```
+          - name: Danger JS Action
+            uses: danger/danger-js@9.1.8
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    ```
 
 5. **Run Danger:**
 
-   Ensure Danger runs on every PR to automate initial checks and validations.
+    Ensure Danger runs on every PR to automate initial checks and validations.
 
 This setup will help enforce standards and save time by automating the initial validation process for PRs.
 
