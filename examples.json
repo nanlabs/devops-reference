@@ -140,7 +140,7 @@
       "labels": ["GitHub Actions", "Automation", "CI/CD"]
     },
     {
-      "name": "React Boilerplate",
+      "name": "React Boilerplate CI Workflows",
       "description": "Different workflows to validate the code and deploy a React application.",
       "url": "https://github.com/nanlabs/react-boilerplate/tree/main/.github/workflows",
       "tags": [
