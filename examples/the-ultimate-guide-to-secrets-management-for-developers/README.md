@@ -185,16 +185,17 @@ In our example, we'll use the AWS SDK for JavaScript to fetch a secret from AWS 
 A snippet of incantation in Node.js:
 
 ```javascript
-const AWS = require("aws-sdk");
-AWS.config.update({ region: "us-west-2" });
-const ssm = new AWS.SSM({ apiVersion: "2014-11-06" });
+import { SSMClient, GetParameterCommand } from "@aws-sdk/client-ssm";
+
+const ssm = new SSMClient({ region: "us-west-2" });
 
 const getSecret = async () => {
-  const params = {
-    Name: "SUPER_STRONG_AND_COMPLICATED_PASSWORD",
-    WithDecryption: true,
-  };
-  const { Parameter } = await ssm.getParameter(params).promise();
+  const { Parameter } = await ssm.send(
+    new GetParameterCommand({
+      Name: "SUPER_STRONG_AND_COMPLICATED_PASSWORD",
+      WithDecryption: true,
+    })
+  );
   return Parameter.Value;
 };
 
