@@ -34,35 +34,6 @@
       ]
     },
     {
-      "name": "Basic AWS Glue ETL example app",
-      "description": "A simplified yet practical example of an AWS Glue application. It uses the Serverless Framework for infrastructure deployment and supports local development with DevContainers or Docker Compose.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-full-boilerplate/",
-      "tags": ["Apps and Boilerplates"],
-      "labels": [
-        "AWS Glue",
-        "ETL",
-        "Python",
-        "PySpark",
-        "Serverless Framework",
-        "DevContainers",
-        "Docker Compose",
-        "Jupyter Notebook"
-      ]
-    },
-    {
-      "name": "AWS CloudWatch Evidently",
-      "description": "An in-depth analysis and proof of concept demonstrating how to integrate AWS CloudWatch Evidently with a Node.js application for A/B testing and feature flag management.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/aws-cloudwatch-evidently/",
-      "tags": ["Examples > DevOps > A/B Testing"],
-      "labels": [
-        "AWS CloudWatch",
-        "CloudWatch Evidently",
-        "A/B Testing",
-        "Feature Flags",
-        "Node.js"
-      ]
-    },
-    {
       "name": "Feature flags post by Atlassian",
       "description": "A guide by Atlassian on progressively exposing features using feature flags, authored by Ian Buchanan.",
       "url": "https://www.atlassian.com/continuous-delivery/principles/feature-flags",
@@ -178,22 +149,6 @@
       "labels": ["GitHub Actions", "React", "CI/CD"]
     },
     {
-      "name": "AWS Glue using Docker and Docker Compose",
-      "description": "Dockerfile and compose.yml for AWS Glue development with AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-glue/",
-      "tags": [
-        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
-      ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "AWS Glue",
-        "Spark",
-        "Jupyter Notebook",
-        "AWS CLI"
-      ]
-    },
-    {
       "name": "Localstack using Docker and Docker Compose",
       "description": "Dockerfile and compose.yml to run Localstack locally with all the necessary services. This example also includes a script to create the necessary resources in Localstack. The provided examples are for DynamoDB, S3, SQS and Kinesis.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-localstack/",
@@ -256,15 +211,6 @@
       "labels": ["Buildpack", "Python"]
     },
     {
-      "name": "Airflow and Spark environment using Docker and Docker Compose",
-      "description": "Dockerfile and compose.yml to run Airflow locally with initialization scripts.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/compose-airflow-spark/",
-      "tags": [
-        "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
-      ],
-      "labels": ["Docker", "Docker Compose", "Airflow", "Spark"]
-    },
-    {
       "name": "Exploring DevContainers: A Versatile Development Environment Solution",
       "description": "Introduction to Development Containers (DevContainers), a solution to create development environments with a unique approach to address specific development environment needs",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-intro/",
@@ -278,25 +224,6 @@
         "GitHub Codespaces",
         "Docker",
         "Docker Compose"
-      ]
-    },
-    {
-      "name": "AWS Glue",
-      "description": "DevContainer for AWS Glue development. Uses `docker-compose` to run VSCode attached to a container with all the necessary tools to develop AWS Glue jobs such us AWS Glue Libs, Spark, Jupyter Notebook, AWS CLI among other tools.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/devcontainers-glue/",
-      "tags": [
-        "Examples > DevOps > Containers, Orchestration and Serverless > Development and Cloud Environments"
-      ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "DevContainer",
-        "VSCode DevContainer",
-        "GitHub Codespaces",
-        "AWS Glue",
-        "Spark",
-        "Jupyter Notebook",
-        "AWS CLI"
       ]
     },
     {
@@ -332,15 +259,6 @@
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
       "labels": ["Serverless Framework", "AWS AppSync", "Python"]
-    },
-    {
-      "name": "AWS Glue with Python Shell and PySpark Jobs",
-      "description": "Serverless Framework example to deploy an AWS Glue job using Python Shell and PySpark.",
-      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/serverless-glue-deployment/",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
-      ],
-      "labels": ["Serverless Framework", "AWS Glue", "Python Shell", "PySpark"]
     },
     {
       "name": "Neo4j in EC2",

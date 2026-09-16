@@ -1,28 +1,6 @@
-# AWS Glue libs
+# Moved
 
-## Requirements
+This example has moved to
+[nanlabs/data-ai-reference](https://github.com/nanlabs/data-ai-reference/tree/main/examples/compose-glue).
 
-- [docker](https://www.docker.com/)
-
-## Quickstart
-
-```sh
-git clone https://github.com/nanlabs/devops-reference.git
-cd devops-reference/examples/compose-glue
-docker compose up
-```
-
-## Example
-
-You can test the example `pyspark_example.py` in the following way:
-
-```sh
-# attach to the container
-docker compose exec -it awsglue /bin/bash
-```
-
-and then run the following command inside the container:
-
-```sh
-glue-spark-submit pyspark_example.py --JOB_NAME job_example --CUSTOM_ARGUMENT custom_value
-```
+This redirect is temporary and will be removed after 2026-12-31.
