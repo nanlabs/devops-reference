@@ -6,6 +6,13 @@ Please note we have a [code of conduct](./.github/CODE_OF_CONDUCT.md), please fo
 
 You can help contribute to this project in many ways, including:
 
+## Examples catalog
+
+The root `README.md` is generated — do not edit it by hand. Add or update entries in
+`examples.json`, then regenerate with `./tools/readme-generator/main.ts README.md.tmpl examples.json`
+followed by `npx prettier --write README.md`. CI regenerates it automatically on push to `main`,
+so README-only edits would be overwritten.
+
 ## Reporting Bugs/Feature Requests
 
 We welcome you to use the GitHub issue tracker to report bugs or suggest features.
