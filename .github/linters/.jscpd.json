@@ -1,0 +1,12 @@
+{
+  "threshold": 0,
+  "reporters": ["console"],
+  "ignore": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/report/**",
+    "**/package-lock.json",
+    "README.md",
+    "examples/**"
+  ]
+}
