@@ -29,4 +29,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_TYPESCRIPT_STANDARD: false
           DEFAULT_BRANCH: main
+          LINTER_RULES_PATH: .github/linters
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
