@@ -29,5 +29,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_TYPESCRIPT_STANDARD: false
           DEFAULT_BRANCH: main
-          JSCPD_CONFIG_FILE: .jscpd.json
+          JSCPD_CONFIG_FILE: ${{ github.workspace }}/.jscpd.json
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
