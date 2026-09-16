@@ -1,4 +1,6 @@
 <!--lint disable double-link awesome-heading awesome-git-repo-age awesome-toc-->
+<!-- markdownlint-disable MD013 -->
+<!-- textlint-disable terminology -->
 
 <div align="center">
 <p>
