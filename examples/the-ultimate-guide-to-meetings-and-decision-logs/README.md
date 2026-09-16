@@ -72,7 +72,7 @@ below the app layer removes the class of bug.
 **Alternatives rejected:** app-only scoping (single layer of defense),
 separate database per tenant (cost, ops overhead).
 
-**Owner:** @tech-lead | **Status:** Accepted | **Task:** BACKEND-231
+**Owner:** @owner | **Status:** Accepted | **Task:** `<tracker>-123`
 ```
 
 Larger or cross-team agreements deserve an **agreement document**: summary, parties involved, terms (expectations, limits, responsibilities), and start/review dates.

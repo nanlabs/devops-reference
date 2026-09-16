@@ -104,7 +104,7 @@ as defense in depth.
 
 ## References
 
-- Task: BACKEND-231; PR: #412
+- Task: `<tracker>-123`; PR: `<n>`
 ```
 
 ## Process

@@ -5,9 +5,7 @@
       "name": "Automation Seed",
       "description": "A robust end-to-end automation framework built on WebdriverIO v7 and Selenium, leveraging Selenoid for execution. It includes features like Allure reporting, TypeScript support, and CI/CD integration with GitHub Actions.",
       "url": "https://github.com/nanlabs/automation-seed",
-      "tags": [
-        "Apps and Boilerplates"
-      ],
+      "tags": ["Apps and Boilerplates"],
       "labels": [
         "Automation Framework",
         "Selenium",
@@ -23,9 +21,7 @@
       "name": "AWS Glue ETL Boilerplate",
       "description": "A comprehensive boilerplate for AWS Glue ETL jobs, featuring infrastructure deployment with the Serverless Framework and local development using DevContainers or Docker Compose. Includes Python Shell and PySpark job examples.",
       "url": "https://github.com/nanlabs/aws-glue-etl-boilerplate",
-      "tags": [
-        "Apps and Boilerplates"
-      ],
+      "tags": ["Apps and Boilerplates"],
       "labels": [
         "AWS Glue",
         "ETL",
@@ -45,10 +41,7 @@
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > A/B Testing"
       ],
-      "labels": [
-        "Feature Flags",
-        "Best Practices"
-      ]
+      "labels": ["Feature Flags", "Best Practices"]
     },
     {
       "name": "When to use Shell Scripts",
@@ -58,51 +51,28 @@
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Shell Scripting and CLI Tools"
       ],
-      "labels": [
-        "Shell Scripting",
-        "Best Practices",
-        "Utilities"
-      ]
+      "labels": ["Shell Scripting", "Best Practices", "Utilities"]
     },
     {
       "name": "Parsing Shell Script Arguments with Easy Options",
       "description": "An example demonstrating how to simplify shell script argument parsing using the Easy Options library.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/easy-options/",
-      "tags": [
-        "Examples > DevOps > Shell Scripting and CLI Tools"
-      ],
-      "labels": [
-        "Shell Scripting",
-        "Utilities",
-        "Easy Options"
-      ]
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
+      "labels": ["Shell Scripting", "Utilities", "Easy Options"]
     },
     {
       "name": "Bash as a Wrapper Utility",
       "description": "An example showcasing how to use Bash as a wrapper utility for other languages and tools, enhancing script reusability and modularity.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/bash-as-a-wrapper-utility-basic/",
-      "tags": [
-        "Examples > DevOps > Shell Scripting and CLI Tools"
-      ],
-      "labels": [
-        "Shell Scripting",
-        "Utilities",
-        "Bash"
-      ]
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
+      "labels": ["Shell Scripting", "Utilities", "Bash"]
     },
     {
       "name": "Bash as a Wrapper Utility with Easy Options",
       "description": "An advanced example of using Bash as a wrapper utility, incorporating Easy Options for argument parsing.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/bash-as-a-wrapper-utility-with-easy-options/",
-      "tags": [
-        "Examples > DevOps > Shell Scripting and CLI Tools"
-      ],
-      "labels": [
-        "Shell Scripting",
-        "Utilities",
-        "Easy Options",
-        "Bash"
-      ]
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
+      "labels": ["Shell Scripting", "Utilities", "Easy Options", "Bash"]
     },
     {
       "name": "Actionlint Playground",
@@ -111,11 +81,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "Actionlint",
-        "CI/CD"
-      ]
+      "labels": ["GitHub Actions", "Actionlint", "CI/CD"]
     },
     {
       "name": "Markdown Lint",
@@ -124,11 +90,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "Markdown Lint",
-        "CI/CD"
-      ]
+      "labels": ["GitHub Actions", "Markdown Lint", "CI/CD"]
     },
     {
       "name": "Shell Check",
@@ -137,11 +99,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "Shell Check",
-        "CI/CD"
-      ]
+      "labels": ["GitHub Actions", "Shell Check", "CI/CD"]
     },
     {
       "name": "Terraform Check",
@@ -150,11 +108,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "Terraform",
-        "CI/CD"
-      ]
+      "labels": ["GitHub Actions", "Terraform", "CI/CD"]
     },
     {
       "name": "TODOs to GitHub Issues",
@@ -164,12 +118,7 @@
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "TODOs",
-        "Issues",
-        "Automation"
-      ]
+      "labels": ["GitHub Actions", "TODOs", "Issues", "Automation"]
     },
     {
       "name": "Automate Pull Requests Reviews using Danger",
@@ -179,12 +128,7 @@
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "Danger.js",
-        "Code Review",
-        "Automation"
-      ]
+      "labels": ["GitHub Actions", "Danger.js", "Code Review", "Automation"]
     },
     {
       "name": "Automation Seed example",
@@ -193,11 +137,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "Automation",
-        "CI/CD"
-      ]
+      "labels": ["GitHub Actions", "Automation", "CI/CD"]
     },
     {
       "name": "React Boilerplate CI Workflows",
@@ -206,11 +146,7 @@
       "tags": [
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "GitHub Actions",
-        "React",
-        "CI/CD"
-      ]
+      "labels": ["GitHub Actions", "React", "CI/CD"]
     },
     {
       "name": "Localstack using Docker and Docker Compose",
@@ -236,12 +172,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "MongoDB",
-        "Mongo Express"
-      ]
+      "labels": ["Docker", "Docker Compose", "MongoDB", "Mongo Express"]
     },
     {
       "name": "Microsoft SQL Server using Docker and Docker Compose",
@@ -250,11 +181,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "Microsoft SQL Server"
-      ]
+      "labels": ["Docker", "Docker Compose", "Microsoft SQL Server"]
     },
     {
       "name": "AWS Neptune using Docker and Docker Compose",
@@ -263,11 +190,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "AWS Neptune"
-      ]
+      "labels": ["Docker", "Docker Compose", "AWS Neptune"]
     },
     {
       "name": "PostgreSQL using Docker and Docker Compose",
@@ -276,11 +199,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "PostgreSQL"
-      ]
+      "labels": ["Docker", "Docker Compose", "PostgreSQL"]
     },
     {
       "name": "Python Buildpack",
@@ -289,10 +208,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Buildpack",
-        "Python"
-      ]
+      "labels": ["Buildpack", "Python"]
     },
     {
       "name": "Exploring DevContainers: A Versatile Development Environment Solution",
@@ -317,24 +233,14 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
       ],
-      "labels": [
-        "Kubernetes",
-        "Ingress",
-        "NGINX Ingress Controller"
-      ]
+      "labels": ["Kubernetes", "Ingress", "NGINX Ingress Controller"]
     },
     {
       "name": "AWS Amplify + NextJS 13",
       "description": "AWS Amplify example to deploy a NextJS v13 application to the Cloud.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/amplify-nextjs-deployment/",
-      "tags": [
-        "Examples > DevOps > Low Code solutions > AWS Amplify"
-      ],
-      "labels": [
-        "AWS Amplify",
-        "NextJS",
-        "NextJS 13"
-      ]
+      "tags": ["Examples > DevOps > Low Code solutions > AWS Amplify"],
+      "labels": ["AWS Amplify", "NextJS", "NextJS 13"]
     },
     {
       "name": "AWS AppSync + TypeScript",
@@ -343,11 +249,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "AWS AppSync",
-        "TypeScript"
-      ]
+      "labels": ["Serverless Framework", "AWS AppSync", "TypeScript"]
     },
     {
       "name": "AWS AppSync + Python",
@@ -356,11 +258,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "AWS AppSync",
-        "Python"
-      ]
+      "labels": ["Serverless Framework", "AWS AppSync", "Python"]
     },
     {
       "name": "Neo4j in EC2",
@@ -369,11 +267,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "Neo4j",
-        "EC2"
-      ]
+      "labels": ["Serverless Framework", "Neo4j", "EC2"]
     },
     {
       "name": "Serverless S3 Local",
@@ -382,10 +276,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "Serverless S3 Local"
-      ]
+      "labels": ["Serverless Framework", "Serverless S3 Local"]
     },
     {
       "name": "Serverless SQS offline + TypeScript + ElasticMQ Example",
@@ -425,11 +316,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "EC2",
-        "AWS Lambda"
-      ]
+      "labels": ["Serverless Framework", "EC2", "AWS Lambda"]
     },
     {
       "name": "DocumentDB Cluster",
@@ -438,10 +325,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "DocumentDB"
-      ]
+      "labels": ["Serverless Framework", "DocumentDB"]
     },
     {
       "name": "RDS Postgres Instance",
@@ -450,10 +334,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "RDS Postgres"
-      ]
+      "labels": ["Serverless Framework", "RDS Postgres"]
     },
     {
       "name": "RDS Postgres Instance with Serverless VPC Plugin",
@@ -489,10 +370,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "Middy"
-      ]
+      "labels": ["Serverless Framework", "Middy"]
     },
     {
       "name": "Serverless Middy with Custom Middleware",
@@ -501,11 +379,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "Middy",
-        "Custom Middleware"
-      ]
+      "labels": ["Serverless Framework", "Middy", "Custom Middleware"]
     },
     {
       "name": "Serverless Nest Application with TypeScript",
@@ -514,26 +388,14 @@
       "tags": [
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation"
       ],
-      "labels": [
-        "Serverless Framework",
-        "NestJS",
-        "TypeScript"
-      ]
+      "labels": ["Serverless Framework", "NestJS", "TypeScript"]
     },
     {
       "name": "Terraform AWS Minecraft Server",
       "description": "Terraform example to deploy a Minecraft server in AWS EC2 instance using Docker.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-aws-minecraft-server/",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Terraform",
-        "AWS",
-        "Minecraft",
-        "Docker",
-        "EC2"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "Minecraft", "Docker", "EC2"]
     },
     {
       "name": "AWS Cognito Local Example",
@@ -572,12 +434,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "Cognito",
-        "AWS"
-      ]
+      "labels": ["Docker", "Docker Compose", "Cognito", "AWS"]
     },
     {
       "name": "Serverless + FastAPI",
@@ -597,55 +454,29 @@
       "name": "Terraform Starter Kit for AWS VPC, RDS instance, and Bastion Host",
       "description": "Terraform Starter kit for creating AWS infrastructure using Terraform that contains a VPC, RDS instance, and a bastion host.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Terraform",
-        "AWS",
-        "VPC",
-        "RDS",
-        "Bastion"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "VPC", "RDS", "Bastion"]
     },
     {
       "name": "Terraform AWS VPC resources",
       "description": "Terraform module for creating AWS VPC resources.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/vpc",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Terraform",
-        "AWS",
-        "VPC"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "VPC"]
     },
     {
       "name": "Terraform AWS RDS Postgres instance",
       "description": "Terraform module for creating AWS RDS Postgres instance.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/rds",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Terraform",
-        "AWS",
-        "RDS"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "RDS"]
     },
     {
       "name": "Terraform Bastion Host",
       "description": "Terraform module which creates an EC2 instance acting as a bastion host",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/terraform-vpc-rds-instance-bastion-starter/modules/bastion",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Terraform",
-        "AWS",
-        "Bastion"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Terraform", "AWS", "Bastion"]
     },
     {
       "name": "Using Serverless Framework with Terraform",
@@ -656,11 +487,7 @@
         "Examples > DevOps > Infrastructure as Code > Serverless Framework, SAM and CloudFormation",
         "Examples > DevOps > Infrastructure as Code > Terraform"
       ],
-      "labels": [
-        "Serverless Framework",
-        "Terraform",
-        "AWS"
-      ]
+      "labels": ["Serverless Framework", "Terraform", "AWS"]
     },
     {
       "name": "Docker Compose NestJS Starter App",
@@ -669,12 +496,7 @@
       "tags": [
         "Examples > DevOps > Containers, Orchestration and Serverless > Containers and Compositions (Docker, Docker Compose, Buildpacks and more)"
       ],
-      "labels": [
-        "Docker",
-        "Docker Compose",
-        "NestJS",
-        "Node.js"
-      ]
+      "labels": ["Docker", "Docker Compose", "NestJS", "Node.js"]
     },
     {
       "name": "Klotho",
@@ -683,12 +505,7 @@
       "tags": [
         "Examples > DevOps > Infrastructure from Code > Klotho and more!"
       ],
-      "labels": [
-        "AWS",
-        "Pulumi",
-        "Deployment",
-        "Klotho"
-      ]
+      "labels": ["AWS", "Pulumi", "Deployment", "Klotho"]
     },
     {
       "name": "Automating Pull Request Review using DangerJS and GitHub Actions",
@@ -709,29 +526,15 @@
       "name": "ShellCheck for Shell Scripting",
       "description": "Learn how to use ShellCheck to lint your shell scripts and catch potential issues before they become a problem.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/shellcheck-for-shell-scripting",
-      "tags": [
-        "Examples > DevOps > Shell Scripting and CLI Tools"
-      ],
-      "labels": [
-        "Tutorial",
-        "ShellCheck",
-        "Shell Scripting",
-        "Automation"
-      ]
+      "tags": ["Examples > DevOps > Shell Scripting and CLI Tools"],
+      "labels": ["Tutorial", "ShellCheck", "Shell Scripting", "Automation"]
     },
     {
       "name": "Node Package Managers",
       "description": "Comparison of the most popular Node Package Managers: npm, yarn, pnpm.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/node-package-managers",
-      "tags": [
-        "Examples > DevOps > Dependency Management"
-      ],
-      "labels": [
-        "Node",
-        "npm",
-        "yarn",
-        "pnpm"
-      ]
+      "tags": ["Examples > DevOps > Dependency Management"],
+      "labels": ["Node", "npm", "yarn", "pnpm"]
     },
     {
       "name": "WordPress Docker Compose Magic",
@@ -815,10 +618,7 @@
         "Guides, Tutorials and Best Practices",
         "Examples > DevOps > Continuous Integration, Delivery and Deployment"
       ],
-      "labels": [
-        "Code Review",
-        "Code Review Tools"
-      ]
+      "labels": ["Code Review", "Code Review Tools"]
     },
     {
       "name": "Verdaccio with Docker Compose Example",
@@ -881,9 +681,7 @@
       "name": "The Ultimate Guide to Security Assessment Tools",
       "description": "Comprehensive guides for integrating security tools at different stages of the development lifecycle, including IDE integrations, Git workflows, and CI/CD pipelines.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-security-assessment-tools",
-      "tags": [
-        "Examples > DevOps > Security and Compliance"
-      ],
+      "tags": ["Examples > DevOps > Security and Compliance"],
       "labels": [
         "Security",
         "DevOps",
@@ -916,9 +714,7 @@
       "name": "nanlabs/terraform-aws-modules",
       "description": "A comprehensive collection of reusable, production-ready Terraform modules and infrastructure examples for AWS and MongoDB Atlas, following best practices for security, scalability, and cost optimization.",
       "url": "https://github.com/nanlabs/terraform-aws-modules",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": [
         "Modules Library",
         "Examples",
@@ -930,9 +726,7 @@
       "name": "Terraform Modules by nanlabs",
       "description": "Battle-tested, security-first, and cost-optimized Terraform modules for AWS and MongoDB Atlas. Includes VPC, EKS, RDS, Aurora, MSK, Bastion, IAM, Amplify, and more.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": [
         "aws-vpc",
         "aws-eks",
@@ -950,9 +744,7 @@
       "name": "Terraform Examples by nanlabs",
       "description": "End-to-end infrastructure examples using the nanlabs Terraform modules, covering simple web apps, medium-complexity microservices, and full enterprise setups.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": [
         "simple-web-app",
         "medium-complexity-infrastructure",
@@ -963,15 +755,8 @@
       "name": "aws-vpc (Terraform Module)",
       "description": "Complete wrapper around the official terraform-aws-modules/vpc/aws module with opinionated defaults, security best practices, and SSM Parameter Store integration.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-vpc",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Networking",
-        "Parameter Store",
-        "Security",
-        "Best Practices"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Networking", "Parameter Store", "Security", "Best Practices"]
     },
     {
       "name": "aws-eks (Terraform Module)",
@@ -981,96 +766,49 @@
         "Examples > DevOps > Infrastructure as Code > Terraform",
         "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
       ],
-      "labels": [
-        "Kubernetes",
-        "OIDC",
-        "Node Groups",
-        "Monitoring"
-      ]
+      "labels": ["Kubernetes", "OIDC", "Node Groups", "Monitoring"]
     },
     {
       "name": "aws-rds (Terraform Module)",
       "description": "Complete wrapper for RDS with enhanced security, monitoring, SSM Parameter Store integration, and simplified configuration for PostgreSQL/MySQL.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-rds",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Database",
-        "Parameter Store",
-        "Security",
-        "Monitoring"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Parameter Store", "Security", "Monitoring"]
     },
     {
       "name": "aws-rds-aurora (Terraform Module)",
       "description": "Fully customizable wrapper for Aurora clusters, supporting Serverless v2, SSM integration, and production-grade configuration.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-rds-aurora",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Database",
-        "Aurora",
-        "Serverless",
-        "SSM"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Aurora", "Serverless", "SSM"]
     },
     {
       "name": "aws-msk (Terraform Module)",
       "description": "Opinionated wrapper for Amazon MSK (Kafka) with enhanced security, DNS integration, logging, and production defaults.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-msk",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Streaming",
-        "Security",
-        "DNS",
-        "Logging"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Streaming", "Security", "DNS", "Logging"]
     },
     {
       "name": "aws-bastion (Terraform Module)",
       "description": "Custom implementation for a secure, zero-trust bastion host using SSM, EC2 Instance Connect, VPC endpoints, and CloudWatch logging.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-bastion",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Security",
-        "Zero Trust",
-        "Session Manager",
-        "CloudWatch"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Security", "Zero Trust", "Session Manager", "CloudWatch"]
     },
     {
       "name": "aws-docdb (Terraform Module)",
       "description": "Custom DocumentDB cluster module with integrated AWS Secrets Manager, SSM Parameter Store, and production-ready defaults.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-docdb",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Database",
-        "Secrets Manager",
-        "SSM",
-        "Security"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Secrets Manager", "SSM", "Security"]
     },
     {
       "name": "aws-iam-role (Terraform Module)",
       "description": "Flexible IAM role module supporting custom trust policies, inline/managed policies, and advanced security conditions.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-iam-role",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "IAM",
-        "Security",
-        "Policies",
-        "RBAC"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["IAM", "Security", "Policies", "RBAC"]
     },
     {
       "name": "aws-amplify-app (Terraform Module)",
@@ -1080,27 +818,14 @@
         "Examples > DevOps > Infrastructure as Code > Terraform",
         "Examples > DevOps > Low Code solutions > AWS Amplify"
       ],
-      "labels": [
-        "Frontend",
-        "CI/CD",
-        "GitHub Integration",
-        "Parameter Store"
-      ]
+      "labels": ["Frontend", "CI/CD", "GitHub Integration", "Parameter Store"]
     },
     {
       "name": "mongodb-atlas-cluster (Terraform Module)",
       "description": "Custom MongoDB Atlas cluster module with project/team management, VPC peering, AWS integration, and secure connection details.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/mongodb-atlas-cluster",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
-      "labels": [
-        "Database",
-        "Atlas",
-        "VPC Peering",
-        "Secrets Manager",
-        "SSM"
-      ]
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Database", "Atlas", "VPC Peering", "Secrets Manager", "SSM"]
     },
     {
       "name": "Simple Web App (Terraform Example)",
@@ -1110,12 +835,7 @@
         "Examples > DevOps > Infrastructure as Code > Terraform",
         "Examples > DevOps > Low Code solutions > AWS Amplify"
       ],
-      "labels": [
-        "Frontend",
-        "Amplify",
-        "VPC",
-        "Parameter Store"
-      ]
+      "labels": ["Frontend", "Amplify", "VPC", "Parameter Store"]
     },
     {
       "name": "Medium Complexity Infrastructure (Terraform Example)",
@@ -1125,20 +845,13 @@
         "Examples > DevOps > Infrastructure as Code > Terraform",
         "Examples > DevOps > Containers, Orchestration and Serverless > Kubernetes"
       ],
-      "labels": [
-        "Kubernetes",
-        "Database",
-        "Bastion",
-        "IAM"
-      ]
+      "labels": ["Kubernetes", "Database", "Bastion", "IAM"]
     },
     {
       "name": "Complete Enterprise Setup (Terraform Example)",
       "description": "Enterprise-grade infrastructure example with EKS, Aurora, MSK, DocumentDB, Bastion, IAM, monitoring, and security best practices.",
       "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/complete-enterprise-setup",
-      "tags": [
-        "Examples > DevOps > Infrastructure as Code > Terraform"
-      ],
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
       "labels": [
         "EKS",
         "Aurora",
@@ -1153,9 +866,7 @@
       "name": "Agent Toolkit",
       "description": "NaNLABS skills, agents, plugins, MCP integrations and reusable workflows for AI agents across Claude Code, Cursor, Copilot, OpenCode and other compatible clients.",
       "url": "https://github.com/nanlabs/agent-toolkit",
-      "tags": [
-        "Apps and Boilerplates"
-      ],
+      "tags": ["Apps and Boilerplates"],
       "labels": [
         "AI Agents",
         "MCP",
@@ -1170,11 +881,7 @@
       "name": "The Ultimate Guide to Incident Management and RCA",
       "description": "Bug vs incident, escalation rules, incident report template, and two worked examples with root cause analysis.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-incident-management-and-rca",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Security and Compliance",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Security and Compliance", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Incidents",
         "RCA",
@@ -1187,10 +894,7 @@
       "name": "The Ultimate Guide to Architecture Decision Records",
       "description": "When to write ADRs, standard structure, review process, blank template, and a worked example.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-architecture-decision-records",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "ADRs",
         "Architecture",
@@ -1202,10 +906,7 @@
       "name": "The Ultimate Guide to Branching Strategies",
       "description": "Trunk-based, feature branch, Gitflow, GitHub Flow, GitLab Flow, and centralized workflows compared, with MVP guidance and conventional commits.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-branching-strategies",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Git",
         "Branching",
@@ -1218,10 +919,7 @@
       "name": "The Ultimate Guide to PRD and TRD",
       "description": "Product vs technical requirements documents: what goes in each, best practices, and copy-paste templates.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-prd-and-trd",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "PRD",
         "TRD",
@@ -1233,10 +931,7 @@
       "name": "The Ultimate Guide to Task Templates and Estimation",
       "description": "Epic, task, and bug templates plus story-point estimation tables, techniques, and iteration capacity planning.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-task-templates-and-estimation",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Estimation",
         "Story Points",
@@ -1249,10 +944,7 @@
       "name": "The Ultimate Guide to Project Assessments",
       "description": "Maturity-based project evaluation: management and technical units, 1-5 rubrics per domain, and AI-native readiness.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-project-assessments",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Assessments",
         "Maturity",
@@ -1264,10 +956,7 @@
       "name": "The Ultimate Guide to Definition of Ready and Done",
       "description": "Task lifecycle, DoR/DoD checklists, and the six-layer validation model for continuous quality.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-definition-of-ready-and-done",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Definition of Ready",
         "Definition of Done",
@@ -1279,10 +968,7 @@
       "name": "The Ultimate Guide to AI-Assisted Development",
       "description": "Principles, guardrails, redaction rules, per-stage AI workflows, and a copy-paste prompt library.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-ai-assisted-development",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "AI",
         "Guardrails",
@@ -1295,10 +981,7 @@
       "name": "The Ultimate Guide to Meetings and Decision Logs",
       "description": "Meeting templates, lifecycle, AI-assisted minutes workflow, and decision log and agreement templates.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-meetings-and-decision-logs",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Meetings",
         "Decision Log",
@@ -1309,10 +992,7 @@
       "name": "The Ultimate Guide to Team Onboarding",
       "description": "Role-based onboarding checklists for developers and PMs, with environment, access, and first-task guidance.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-team-onboarding",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Onboarding",
         "Checklists",
@@ -1323,10 +1003,7 @@
       "name": "The Ultimate Guide to Multi-Squad Engineering",
       "description": "Scaling to autonomous squads: shared vs local practices, transition playbook, sync routines, and Spotify model comparison.",
       "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-multi-squad-engineering",
-      "tags": [
-        "Guides, Tutorials and Best Practices",
-        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
-      ],
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
       "labels": [
         "Squads",
         "Scaling",
