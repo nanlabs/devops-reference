@@ -861,6 +861,21 @@
         "IAM",
         "Monitoring"
       ]
+    },
+    {
+      "name": "Agent Toolkit",
+      "description": "NaNLABS skills, agents, plugins, MCP integrations and reusable workflows for AI agents across Claude Code, Cursor, Copilot, OpenCode and other compatible clients.",
+      "url": "https://github.com/nanlabs/agent-toolkit",
+      "tags": ["Apps and Boilerplates"],
+      "labels": [
+        "AI Agents",
+        "MCP",
+        "Skills",
+        "Plugins",
+        "Workflows",
+        "Claude Code",
+        "Python"
+      ]
     }
   ]
 }
