@@ -212,3 +212,14 @@ Dear developer, keeping secrets isn't just for spies in movies. It's a critical 
 May your code be secure and your coffee strong!
 
 Happy coding, and may the force of security be with you! 🚀🔒
+
+## Appendix: Redacting Sensitive Data for AI Tools
+
+Secrets management extends to AI assistants: never paste secrets or PII into prompts, tickets, or docs that feed models.
+
+- **Remove:** emails, phone numbers, tokens, keys, client names.
+- **Summarize:** describe sensitive payloads at a high level instead of pasting raw content.
+- **Mask:** use placeholders (`<API_KEY>`, `<CLIENT_NAME>`, `<ACCOUNT_ID>`).
+- **Escalate:** regulated data (health, personal data) goes to the compliance lead, never into a prompt.
+
+See also: [The Ultimate Guide to AI-Assisted Development](../the-ultimate-guide-to-ai-assisted-development).

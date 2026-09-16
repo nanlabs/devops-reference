@@ -247,6 +247,29 @@ This setup will help enforce standards and save time by automating the initial v
 
 </details>
 
+## Definition of Ready and Done for PRs
+
+A PR should only be opened when the work is **ready**, and only merged when it is **done**.
+
+**Ready (start gate):** clear description, agreed acceptance criteria, dependencies mapped, estimated, approach agreed, owner assigned.
+**Done (finish gate):** standards-compliant code, peer approval, green CI (lint, tests, format), tests written and passing, validated in a review environment, docs updated, branches cleaned up.
+
+## Reviewer Checklist
+
+- [ ] Code quality and standards compliance
+- [ ] Functionality matches requirements and acceptance criteria
+- [ ] Readability and maintainability
+- [ ] Tests cover the change; all tests pass
+- [ ] Documentation updated where needed
+- [ ] CI/CD green; no new warnings
+- [ ] Review limited to ~200–400 lines per session to avoid fatigue
+
+## Traceability
+
+Every change should trace end to end: requirement → task → branch → PR → deploy → decision (ADR). Validation without evidence counts as not performed — attach test runs, screenshots, or logs.
+
+See also: [The Ultimate Guide to Definition of Ready and Done](../the-ultimate-guide-to-definition-of-ready-and-done).
+
 ## Additional Resources
 
 For more details on integrating these practices and tools, refer to the specific guides and examples provided in the links. This index serves as a starting point to enhance your PR and code review processes efficiently.
