@@ -1,0 +1,4 @@
+# Legacy guides: prettier list-continuation style (3-space) conflicts with editorconfig indent_size=2.
+# These files use 4-space continuations; excluded from prettier to keep both linters green.
+examples/the-ultimate-guide-to-pull-requests-and-code-reviews/README.md
+examples/the-ultimate-guide-to-secrets-management-for-developers/README.md

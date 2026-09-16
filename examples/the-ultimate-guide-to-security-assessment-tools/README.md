@@ -91,3 +91,14 @@ Apart from the tools mentioned above, there are several other tools that can be 
 ---
 
 By following this guide and integrating these tools into your development and CI/CD workflows, you can significantly enhance the security posture of your applications. Happy coding! 🚀🔒
+
+## Appendix: Threat Modeling Basics
+
+Before scanning for vulnerabilities, model them. For every feature or service, answer:
+
+1. **What are we building?** — data flows, trust boundaries, entry points (draw it).
+2. **What can go wrong?** — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege ([STRIDE](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool)).
+3. **What will we do about it?** — mitigations mapped to requirements, owners, and tests.
+4. **Did we do a good job?** — review when the design changes, not once a year.
+
+Tools: [OWASP Threat Dragon](https://owasp.org/www-project-threat-dragon/), [Microsoft Threat Modeling Tool](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool). Record significant outcomes as ADRs — see [The Ultimate Guide to Architecture Decision Records](../the-ultimate-guide-to-architecture-decision-records).

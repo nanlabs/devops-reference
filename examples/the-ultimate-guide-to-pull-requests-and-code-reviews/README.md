@@ -92,7 +92,11 @@ This template ensures that all PRs include essential information and follow the 
 
 In the section below, we provide a detailed guide on how to [automate PR validation using DangerJS and TypeScript](#example-automate-pr-validation-with-dangerjs-and-typescript).
 
-You could also use templates to manage different aspects of the Issue and PR lifecycle. For example, you could have a template for bug reports, feature requests, and other types of issues. You can check out one complete example of how to manage this in the [Issues section of the DevOps Reference repository](https://github.com/nanlabs/devops-reference/issues/new/choose) where we have templates for different types of issues. You can also check out we made it possible in the [source of the issue templates](https://github.com/nanlabs/devops-reference/tree/main/.github/ISSUE_TEMPLATE).
+You could also use templates to manage different aspects of the Issue and PR lifecycle. For example, you could have a template for bug reports,
+feature requests, and other types of issues. You can check out one complete example of how to manage this in the [Issues section of the DevOps
+Reference repository](https://github.com/nanlabs/devops-reference/issues/new/choose) where we have templates for different types of issues. You can
+also check out we made it possible in the [source of the issue
+templates](https://github.com/nanlabs/devops-reference/tree/main/.github/ISSUE_TEMPLATE).
 
 ## Review Workflow
 
@@ -151,51 +155,51 @@ To streamline the initial validation of Pull Requests and save valuable time, yo
 
 1. **Install DangerJS and TypeScript:**
 
-   ```sh
-   npm install --save-dev danger typescript
-   ```
+    ```sh
+    npm install --save-dev danger typescript
+    ```
 
 2. **Initialize a TypeScript configuration:**
 
-   ```sh
-   npx tsc --init
-   ```
+    ```sh
+    npx tsc --init
+    ```
 
 3. **Create a Dangerfile:**
-   Create a `dangerfile.ts` in the root of your project with the following content:
+    Create a `dangerfile.ts` in the root of your project with the following content:
 
-   ```typescript
-   import { danger, warn, fail, message } from "danger";
+    ```typescript
+    import { danger, warn, fail, message } from "danger";
 
-   // Check for a summary in the description
-   if (danger.github.pr.body.length === 0) {
-     fail("Please provide a description for your PR.");
-   }
+    // Check for a summary in the description
+    if (danger.github.pr.body.length === 0) {
+      fail("Please provide a description for your PR.");
+    }
 
-   // Check for linked issues
-   const issueRegex = /#[0-9]+/;
-   if (!issueRegex.test(danger.github.pr.body)) {
-     warn("Please link an issue in the description.");
-   }
+    // Check for linked issues
+    const issueRegex = /#[0-9]+/;
+    if (!issueRegex.test(danger.github.pr.body)) {
+      warn("Please link an issue in the description.");
+    }
 
-   // Check for a checklist
-   const checklistRegex = /## Checklist:/;
-   if (!checklistRegex.test(danger.github.pr.body)) {
-     warn("Please include a checklist in the PR description.");
-   }
+    // Check for a checklist
+    const checklistRegex = /## Checklist:/;
+    if (!checklistRegex.test(danger.github.pr.body)) {
+      warn("Please include a checklist in the PR description.");
+    }
 
-   // Example of a custom rule
-   if (danger.github.pr.additions + danger.github.pr.deletions > 500) {
-     warn("This PR is quite large, consider splitting it into smaller PRs.");
-   }
-   ```
+    // Example of a custom rule
+    if (danger.github.pr.additions + danger.github.pr.deletions > 500) {
+      warn("This PR is quite large, consider splitting it into smaller PRs.");
+    }
+    ```
 
 4. **Add Danger to your CI pipeline:**
 
-   Update your CI configuration (e.g., GitHub Actions) to run Danger on each PR:
+    Update your CI configuration (e.g., GitHub Actions) to run Danger on each PR:
 
-   ```yaml
-   name: Pull Request Validation
+    ```yaml
+    name: Pull Request Validation
 
     concurrency:
       group: pull_request_${{ github.event.number }}
@@ -237,15 +241,38 @@ To streamline the initial validation of Pull Requests and save valuable time, yo
             uses: danger/danger-js@9.1.8
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   ```
+    ```
 
 5. **Run Danger:**
 
-   Ensure Danger runs on every PR to automate initial checks and validations.
+    Ensure Danger runs on every PR to automate initial checks and validations.
 
 This setup will help enforce standards and save time by automating the initial validation process for PRs.
 
 </details>
+
+## Definition of Ready and Done for PRs
+
+A PR should only be opened when the work is **ready**, and only merged when it is **done**.
+
+**Ready (start gate):** clear description, agreed acceptance criteria, dependencies mapped, estimated, approach agreed, owner assigned.
+**Done (finish gate):** standards-compliant code, peer approval, green CI (lint, tests, format), tests written and passing, validated in a review environment, docs updated, branches cleaned up.
+
+## Reviewer Checklist
+
+- [ ] Code quality and standards compliance
+- [ ] Functionality matches requirements and acceptance criteria
+- [ ] Readability and maintainability
+- [ ] Tests cover the change; all tests pass
+- [ ] Documentation updated where needed
+- [ ] CI/CD green; no new warnings
+- [ ] Review limited to ~200–400 lines per session to avoid fatigue
+
+## Traceability
+
+Every change should trace end to end: requirement → task → branch → PR → deploy → decision (ADR). Validation without evidence counts as not performed — attach test runs, screenshots, or logs.
+
+See also: [The Ultimate Guide to Definition of Ready and Done](../the-ultimate-guide-to-definition-of-ready-and-done).
 
 ## Additional Resources
 

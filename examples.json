@@ -876,6 +876,140 @@
         "Claude Code",
         "Python"
       ]
+    },
+    {
+      "name": "The Ultimate Guide to Incident Management and RCA",
+      "description": "Bug vs incident, escalation rules, incident report template, and two worked examples with root cause analysis.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-incident-management-and-rca",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Security and Compliance", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Incidents",
+        "RCA",
+        "Postmortems",
+        "Reliability",
+        "Best Practices"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Architecture Decision Records",
+      "description": "When to write ADRs, standard structure, review process, blank template, and a worked example.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-architecture-decision-records",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "ADRs",
+        "Architecture",
+        "Documentation",
+        "Best Practices"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Branching Strategies",
+      "description": "Trunk-based, feature branch, Gitflow, GitHub Flow, GitLab Flow, and centralized workflows compared, with MVP guidance and conventional commits.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-branching-strategies",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Git",
+        "Branching",
+        "Trunk-Based",
+        "Gitflow",
+        "Conventional Commits"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to PRD and TRD",
+      "description": "Product vs technical requirements documents: what goes in each, best practices, and copy-paste templates.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-prd-and-trd",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "PRD",
+        "TRD",
+        "Requirements",
+        "Documentation"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Task Templates and Estimation",
+      "description": "Epic, task, and bug templates plus story-point estimation tables, techniques, and iteration capacity planning.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-task-templates-and-estimation",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Estimation",
+        "Story Points",
+        "Planning",
+        "Templates",
+        "Agile"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Project Assessments",
+      "description": "Maturity-based project evaluation: management and technical units, 1-5 rubrics per domain, and AI-native readiness.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-project-assessments",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Assessments",
+        "Maturity",
+        "Quality Indicators",
+        "Governance"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Definition of Ready and Done",
+      "description": "Task lifecycle, DoR/DoD checklists, and the six-layer validation model for continuous quality.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-definition-of-ready-and-done",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Definition of Ready",
+        "Definition of Done",
+        "Validation",
+        "Workflow"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to AI-Assisted Development",
+      "description": "Principles, guardrails, redaction rules, per-stage AI workflows, and a copy-paste prompt library.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-ai-assisted-development",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "AI",
+        "Guardrails",
+        "Prompts",
+        "MCP",
+        "Best Practices"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Meetings and Decision Logs",
+      "description": "Meeting templates, lifecycle, AI-assisted minutes workflow, and decision log and agreement templates.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-meetings-and-decision-logs",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Meetings",
+        "Decision Log",
+        "Documentation"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Team Onboarding",
+      "description": "Role-based onboarding checklists for developers and PMs, with environment, access, and first-task guidance.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-team-onboarding",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Onboarding",
+        "Checklists",
+        "Documentation"
+      ]
+    },
+    {
+      "name": "The Ultimate Guide to Multi-Squad Engineering",
+      "description": "Scaling to autonomous squads: shared vs local practices, transition playbook, sync routines, and Spotify model comparison.",
+      "url": "https://github.com/nanlabs/devops-reference/tree/main/examples/the-ultimate-guide-to-multi-squad-engineering",
+      "tags": ["Guides, Tutorials and Best Practices", "Examples > DevOps > Continuous Integration, Delivery and Deployment"],
+      "labels": [
+        "Squads",
+        "Scaling",
+        "Governance",
+        "Agile"
+      ]
     }
   ]
 }

@@ -41,7 +41,7 @@ If you're sailing in the cloud, each provider has its own secret chest:
 Not on the cloud? No sweat! Here's the stealth mode:
 
 1. **Encrypt config files**: Tools like [Secrets OPerationS (SOPS)](https://github.com/getsops/sops) are like your digital invisibility cloak, hiding your secrets in plain sight.
-   ![SOPS Demo](https://camo.githubusercontent.com/9728792a3d7a222f606519c2b64a546fa1bb7e14bdb76f81bfc64088ffc4a27d/68747470733a2f2f692e696d6775722e636f6d2f5830544d354e492e676966)
+    ![SOPS Demo](https://camo.githubusercontent.com/9728792a3d7a222f606519c2b64a546fa1bb7e14bdb76f81bfc64088ffc4a27d/68747470733a2f2f692e696d6775722e636f6d2f5830544d354e492e676966)
 
 2. **Key Management**: Keep the keys to your cloak in a vault like [LastPass](https://lastpass.com/) or [Bitwarden](https://bitwarden.com/), so only you know where and how to reveal the secrets.
 
@@ -185,16 +185,17 @@ In our example, we'll use the AWS SDK for JavaScript to fetch a secret from AWS 
 A snippet of incantation in Node.js:
 
 ```javascript
-const AWS = require("aws-sdk");
-AWS.config.update({ region: "us-west-2" });
-const ssm = new AWS.SSM({ apiVersion: "2014-11-06" });
+import { SSMClient, GetParameterCommand } from "@aws-sdk/client-ssm";
+
+const ssm = new SSMClient({ region: "us-west-2" });
 
 const getSecret = async () => {
-  const params = {
-    Name: "SUPER_STRONG_AND_COMPLICATED_PASSWORD",
-    WithDecryption: true,
-  };
-  const { Parameter } = await ssm.getParameter(params).promise();
+  const { Parameter } = await ssm.send(
+    new GetParameterCommand({
+      Name: "SUPER_STRONG_AND_COMPLICATED_PASSWORD",
+      WithDecryption: true,
+    }),
+  );
   return Parameter.Value;
 };
 
@@ -212,3 +213,14 @@ Dear developer, keeping secrets isn't just for spies in movies. It's a critical 
 May your code be secure and your coffee strong!
 
 Happy coding, and may the force of security be with you! 🚀🔒
+
+## Appendix: Redacting Sensitive Data for AI Tools
+
+Secrets management extends to AI assistants: never paste secrets or PII into prompts, tickets, or docs that feed models.
+
+- **Remove:** emails, phone numbers, tokens, keys, client names.
+- **Summarize:** describe sensitive payloads at a high level instead of pasting raw content.
+- **Mask:** use placeholders (`<API_KEY>`, `<CLIENT_NAME>`, `<ACCOUNT_ID>`).
+- **Escalate:** regulated data (health, personal data) goes to the compliance lead, never into a prompt.
+
+See also: [The Ultimate Guide to AI-Assisted Development](../the-ultimate-guide-to-ai-assisted-development).
