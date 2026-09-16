@@ -194,7 +194,7 @@ const getSecret = async () => {
     new GetParameterCommand({
       Name: "SUPER_STRONG_AND_COMPLICATED_PASSWORD",
       WithDecryption: true,
-    })
+    }),
   );
   return Parameter.Value;
 };
