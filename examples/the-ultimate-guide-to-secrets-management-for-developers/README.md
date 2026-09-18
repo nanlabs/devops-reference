@@ -196,7 +196,9 @@ const db = await createPool({
 });
 ```
 
-> ⚠️ **Never print a secret.** `console.log(password)` looks harmless in a snippet, but in a real service that value lands in stdout, CI job logs, container logs and whatever aggregator ships them (CloudWatch, Datadog, Splunk). Those are all places your secret should never be, and all places with far broader read access than your secrets store. If you need to confirm retrieval worked, log the parameter *name* or a boolean, never the value.
+> ⚠️ **Never print a secret.** `console.log(password)` looks harmless in a snippet, but in a real service that value lands in stdout, CI job logs, container logs and whatever aggregator ships them (CloudWatch, Datadog, Splunk).
+>
+> Those are all places your secret should never be, and all places with far broader read access than your secrets store. If you need to confirm retrieval worked, log the parameter _name_ or a boolean, never the value.
 
 📚 To learn this magic, visit the grand library here: [AWS SDK for JavaScript](https://docs.aws.amazon.com/sdk-for-javascript/index.html).
 
