@@ -14,7 +14,6 @@ Hello, Developer Friend! Welcome to your exciting journey into the _mystical lan
     - [Avoiding `.env` for Sensitive Data](#avoiding-env-for-sensitive-data)
     - [Secure Alternatives](#secure-alternatives)
       - [Using `direnv` for Local Development](#using-direnv-for-local-development)
-      - [Using `direnv` for Local Development](#using-direnv-for-local-development-1)
         - [Managing Different Stages with `direnv`](#managing-different-stages-with-direnv)
       - [Using `teller` for a Unified Approach](#using-teller-for-a-unified-approach)
       - [Using SDKs for Dynamic Retrieval](#using-sdks-for-dynamic-retrieval)
@@ -54,19 +53,6 @@ Now that you've got your secrets stashed away like a dragon's hoard, how do you 
 `.env` files might seem convenient, but they're like leaving your front door key under the mat. Anyone who knows where to look can find it! So, let's move on to some magic spells for better security:
 
 ### Secure Alternatives
-
-#### Using `direnv` for Local Development
-
-`direnv` is like your trusty sidekick that whispers secrets to you and only you when you enter your castle (or project directory).
-
-Instead of writing down your secrets, `direnv` can fetch them from AWS Parameter Store on the fly:
-
-```shell
-# .envrc example
-export SUPER_STRONG_AND_COMPLICATED_PASSWORD=$(aws ssm get-parameter --name "SUPER_STRONG_AND_COMPLICATED_PASSWORD" --with-decryption --query "Parameter.Value" --output text)
-```
-
-📝 To set this up, you'll need `direnv` and `aws-cli` armed and ready. The official scrolls for `direnv` are here: [Direnv Documentation](https://direnv.net/docs/installation.html).
 
 #### Using `direnv` for Local Development
 
@@ -199,10 +185,20 @@ const getSecret = async () => {
   return Parameter.Value;
 };
 
-getSecret().then((password) => {
-  console.log("Secret Password:", password);
+// Hand the secret straight to the client that needs it, and let it go out of
+// scope. Never log it, never return it in an API response, never write it to disk.
+const password = await getSecret();
+
+const db = await createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password,
 });
 ```
+
+> ⚠️ **Never print a secret.** `console.log(password)` looks harmless in a snippet, but in a real service that value lands in stdout, CI job logs, container logs and whatever aggregator ships them (CloudWatch, Datadog, Splunk).
+>
+> Those are all places your secret should never be, and all places with far broader read access than your secrets store. If you need to confirm retrieval worked, log the parameter _name_ or a boolean, never the value.
 
 📚 To learn this magic, visit the grand library here: [AWS SDK for JavaScript](https://docs.aws.amazon.com/sdk-for-javascript/index.html).
 

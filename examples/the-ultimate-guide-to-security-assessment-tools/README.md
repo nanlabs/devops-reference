@@ -45,6 +45,12 @@ Performing regular scans helps in maintaining a secure codebase by identifying v
 
 Check out the [Code Scanning](CODE_SCANNING.md) guide for more details.
 
+### Shift-Left Security 🡪
+
+The principle behind everything else in this guide: move detection as close to the moment code is written as possible, because a finding costs less the earlier it surfaces.
+
+Read the [Shift-Left Security](SHIFT_LEFT_SECURITY.md) guide for the reasoning and the rollout order.
+
 ### Early Stages of Development Workflows 🚀
 
 - **IDE Integrations**: Learn how to integrate security tools with popular IDEs like VS Code and JetBrains.
@@ -74,7 +80,7 @@ Learn how to integrate security tools into your GitLab in this [guide](CONTINUOU
 
 Integrating security scans in [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/).
 
-Learn how to set up security scans in AWS CodePipeline in this [guide](CONTINUOUS_INTEGRATION_WITH_AWS.md).
+Learn how to set up security scans in AWS CodePipeline in this [guide](CONTINUOUS_INTEGRATION_WITH_AWS_CODE_PIPELINE.md).
 
 Using these CI/CD tools ensures that every change is tested and validated for security issues before being merged and deployed.
 
