@@ -1010,6 +1010,142 @@
         "Governance",
         "Agile"
       ]
+    },
+    {
+      "name": "aws-cloudtrail (Terraform Module)",
+      "description": "CloudTrail trail with S3 bucket and CloudWatch Logs integration for account activity auditing.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-cloudtrail",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Auditing", "Logging", "Compliance"]
+    },
+    {
+      "name": "aws-config (Terraform Module)",
+      "description": "Config recorder and delivery channel with S3 snapshot storage for resource compliance tracking.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-config",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Compliance", "Governance"]
+    },
+    {
+      "name": "aws-data-lake-encryption (Terraform Module)",
+      "description": "KMS keys and IAM policies for data lake encryption and service isolation.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-data-lake-encryption",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["KMS", "Encryption", "Data Lake", "Security"]
+    },
+    {
+      "name": "aws-data-lake-infrastructure (Terraform Module)",
+      "description": "Foundational S3 data lake infrastructure following medallion architecture with raw zone and Apache Iceberg support.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-data-lake-infrastructure",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Data Lake", "S3", "Medallion", "Iceberg"]
+    },
+    {
+      "name": "aws-github-oidc-provider (Terraform Module)",
+      "description": "GitHub Actions OIDC authentication for AWS without storing long-lived credentials.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-github-oidc-provider",
+      "tags": [
+        "Examples > DevOps > Infrastructure as Code > Terraform",
+        "Examples > DevOps > Continuous Integration, Delivery and Deployment"
+      ],
+      "labels": ["GitHub Actions", "OIDC", "Security"]
+    },
+    {
+      "name": "aws-glue-code-registry (Terraform Module)",
+      "description": "Glue Code Registry for centralized management of code libraries, JAR files and dependencies used by Glue jobs.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-glue-code-registry",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Glue", "ETL", "Dependencies"]
+    },
+    {
+      "name": "aws-glue-data-lake-catalog (Terraform Module)",
+      "description": "Glue databases for medallion data lakes with flexible layer and sublayer separation.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-glue-data-lake-catalog",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Glue", "Data Catalog", "Medallion"]
+    },
+    {
+      "name": "aws-glue-jobs (Terraform Module)",
+      "description": "Glue jobs with IAM roles, S3 script bucket and CloudWatch log groups following AWS best practices.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-glue-jobs",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Glue", "ETL", "IAM"]
+    },
+    {
+      "name": "aws-glue-workflow (Terraform Module)",
+      "description": "Glue workflows and triggers orchestrating existing Glue jobs.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-glue-workflow",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Glue", "Orchestration", "ETL"]
+    },
+    {
+      "name": "aws-shared-networking (Terraform Module)",
+      "description": "Shared networking components with SSM-published network info for hub-and-spoke cross-account architectures.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-shared-networking",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Networking", "SSM", "Hub and Spoke"]
+    },
+    {
+      "name": "aws-tfstate-backend (Terraform Module)",
+      "description": "S3-based Terraform state backend with lockfile state locking against concurrent modifications.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-tfstate-backend",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["State Management", "S3"]
+    },
+    {
+      "name": "aws-transit-gateway (Terraform Module)",
+      "description": "Transit Gateway hub replacing VPC peering with scalable hub-and-spoke connectivity.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-transit-gateway",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Networking", "Transit Gateway"]
+    },
+    {
+      "name": "aws-transit-gateway-spoke (Terraform Module)",
+      "description": "Transit Gateway spoke attachments with route association, propagation and SSM references.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/modules/aws-transit-gateway-spoke",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Networking", "Transit Gateway"]
+    },
+    {
+      "name": "Starter Reference (Terraform Example)",
+      "description": "Minimal VPC plus bastion starter consuming pinned library modules; reference for starter-to-library migration.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/starter-reference",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["VPC", "Bastion", "Starter"]
+    },
+    {
+      "name": "Data Processing Pipeline (Terraform Example)",
+      "description": "Batch and stream data processing pipeline on AWS managed services.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/data-processing-pipeline",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Data Engineering", "Streaming", "Batch"]
+    },
+    {
+      "name": "Analytics Platform with Document Store (Terraform Example)",
+      "description": "Analytics platform combining data lake architecture with a document database for real-time analytics.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/analytics-platform-with-document-store",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Analytics", "Data Lake", "DocumentDB"]
+    },
+    {
+      "name": "Hub-and-Spoke Networking Architecture (Terraform Example)",
+      "description": "Hub-and-spoke networking with Transit Gateway, shared services and centralized egress per Well-Architected principles.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/hub-and-spoke-networking-architecture",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Networking", "Transit Gateway"]
+    },
+    {
+      "name": "Multi-Account Data Platform (Terraform Example)",
+      "description": "Self-contained multi-account data lake example using provider aliases; path toward production multi-account architecture.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/multi-account-data-platform",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Data Lake", "Multi-Account"]
+    },
+    {
+      "name": "Secure Multi-Environment Data Platform (Terraform Example)",
+      "description": "Secure multi-environment data platform with strict isolation, advanced security controls and compliance features.",
+      "url": "https://github.com/nanlabs/terraform-aws-modules/tree/main/examples/secure-multi-environment-data-platform",
+      "tags": ["Examples > DevOps > Infrastructure as Code > Terraform"],
+      "labels": ["Data Platform", "Security", "Compliance"]
     }
   ]
 }
