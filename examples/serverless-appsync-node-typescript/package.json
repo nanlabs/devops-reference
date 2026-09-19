@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.102",
     "cfn-resolver-lib": "1.1.7",
-    "serverless": "^3.19.0",
+    "serverless": "^4.42.0",
     "serverless-appsync-plugin": "^1.14.0",
     "serverless-appsync-simulator": "^0.20.0",
     "serverless-offline": "^14.7.4",
