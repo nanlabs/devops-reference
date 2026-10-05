@@ -1,9 +1,8 @@
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 plugins:
-  - serverless-plugin-typescript
   - serverless-offline-sqs
   - serverless-offline
 
@@ -34,7 +33,7 @@ custom:
 provider:
   name: aws
   stage: local
-  runtime: nodejs16.x
+  runtime: nodejs24.x
   environment:
     STAGE: ${sls:stage}
     SQS_CLIENT_URL: ${env:SQS_CLIENT_URL, ''}
