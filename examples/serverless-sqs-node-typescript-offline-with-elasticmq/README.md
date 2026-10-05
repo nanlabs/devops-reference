@@ -1,13 +1,13 @@
 # Serverless SQS offline + TypeScript + ElasticMQ Example
 
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![serverless](http://public.serverless.com/badges/v4.svg)](http://www.serverless.com)
 
 We use Serverless Framework to do production ready deployments and local development using
 _serverless-offline_.
 
 ## Requirements
 
-**You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
+**You’ll need to have Node 24 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
@@ -25,7 +25,7 @@ Run the following command to start the compose with elasticMQ:
 npm run local:up
 ```
 
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+This repository has a local development setup that uses the file `.env.local` to configure the local environment.
 Run the following command to start the local development server:
 
 ```sh

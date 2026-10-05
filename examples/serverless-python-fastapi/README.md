@@ -4,7 +4,7 @@ We use [Serverless](https://www.serverless.com/) to deploy our API to AWS Lambda
 
 ## Requirements
 
-**You’ll need to have Node 18.17.0 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
+**You’ll need to have Node 24 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ```sh
 fnm use
@@ -14,7 +14,7 @@ npx serverless login
 
 Serverless Framework v4 requires a Serverless account. Run `npx serverless login` once on your development machine before using its CLI commands. For CI or other non-interactive environments, configure a Serverless Dashboard access key as `SERVERLESS_ACCESS_KEY`.
 
-**You'll also need to have Python 3.9 installed on your local development machine**. You can use [pyenv](https://github.com/pyenv/pyenv) to easily switch Python versions between different projects. If you are using Windows, you should use [pyenv-win](https://github.com/pyenv-win/pyenv-win).
+**You'll also need to have Python 3.12 installed on your local development machine**. You can use [pyenv](https://github.com/pyenv/pyenv) to easily switch Python versions between different projects. If you are using Windows, you should use [pyenv-win](https://github.com/pyenv/pyenv-win).
 
 ```sh
 pyenv install
