@@ -33,6 +33,8 @@ Run the following command to start the local development server:
 npm run sls:offline
 ```
 
+This command compiles the TypeScript handlers into `.build` before starting the AppSync simulator.
+
 It will start the following services:
 
 - App Sync server at `http://localhost:20002/graphql`
