@@ -8,8 +8,11 @@ We use [Serverless](https://www.serverless.com/) to deploy our API to AWS Lambda
 
 ```sh
 fnm use
-npm install
+npm ci
+npx serverless login
 ```
+
+Serverless Framework v4 requires a Serverless account. Run `npx serverless login` once on your development machine before using its CLI commands. For CI or other non-interactive environments, configure a Serverless Dashboard access key as `SERVERLESS_ACCESS_KEY`.
 
 **You'll also need to have Python 3.9 installed on your local development machine**. You can use [pyenv](https://github.com/pyenv/pyenv) to easily switch Python versions between different projects. If you are using Windows, you should use [pyenv-win](https://github.com/pyenv-win/pyenv-win).
 
@@ -42,7 +45,7 @@ npm run sls requirements install
 
 ### Run the Application
 
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+This repository has a local development setup that uses the file `.env.local` to configure the local environment.
 Run the following command to start the local development server:
 
 ```sh
