@@ -1,3 +1,4 @@
+---
 name: Lint Code Base
 on:
   push:
@@ -34,4 +35,18 @@ jobs:
           # are inherent to the format, not defects. v5 ignores repo
           # jscpd config, leaving no scoped alternative.
           VALIDATE_JSCPD: false
+          # Serverless configs are YAML, not CloudFormation templates.
+          # Keep them in a YAML-only pass below.
+          FILTER_REGEX_EXCLUDE: >-
+            (^|/)examples/serverless-[^/]+/serverless\.yml$
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Validate Serverless service YAML
+        uses: super-linter/super-linter/slim@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          FILTER_REGEX_INCLUDE: >-
+            (^|/)examples/serverless-[^/]+/serverless\.yml$
+          VALIDATE_CLOUDFORMATION: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

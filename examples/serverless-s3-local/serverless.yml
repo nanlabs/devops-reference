@@ -1,12 +1,10 @@
+---
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 plugins:
-  - serverless-python-requirements
-  - serverless-s3-local
-  - serverless-offline
-  - ./plugins/serverless-offline-python-requirements
+  - serverless-localstack
 
 useDotenv: true
 
@@ -20,24 +18,17 @@ package:
     - "**"
 
 custom:
-  pythonRequirements:
-    usePipenv: true
-  serverless-offline:
-    httpPort: 3000
-    port: 3000
-  s3:
-    host: localhost
-    port: 8000
-    directory: ${env:LOCAL_S3_PATH, '/tmp'}
-    accessKeyId: S3RVER
-    secretAccessKey: S3RVER
-    buckets:
-      - ${env:S3_EXTRA_BUCKET_NAME}
+  localstack:
+    stages:
+      - local
+    host: http://localhost
+    edgePort: 4566
 
 provider:
   name: aws
-  stage: local
-  runtime: python3.9
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  runtime: python3.12
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -54,9 +45,8 @@ provider:
 
 functions:
   slsS3LocalExampleResolver:
-    handler: on-object-created.handler
-    runtime: python3.9
-    module: src/handlers/s3
+    handler: src.handlers.s3.on_object_created.handler
+    runtime: python3.12
     events:
       - s3:
           bucket: ${env:S3_LAMBDA_TRIGGER_BUCKET_NAME}

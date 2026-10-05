@@ -1,8 +1,9 @@
 # S3 Local Example
 
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![serverless](http://public.serverless.com/badges/v4.svg)](http://www.serverless.com)
 
-We use Serverless Framework to do production ready deployments and local development using _serverless-offline_.
+We use Serverless Framework v4 to deploy to AWS and to test the S3-triggered
+Lambda locally with LocalStack.
 
 ## Usage
 
@@ -14,14 +15,15 @@ npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/
 
 ## Requirements
 
-**You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
+**You’ll need Node.js 20 or later, Python 3.12, Docker Compose, an authenticated
+Serverless Framework v4 CLI, and a LocalStack developer token.** Create a token
+at <https://app.localstack.cloud>. You can use [fnm](https://github.com/Schniz/fnm)
+and [pyenv](https://github.com/pyenv/pyenv) to switch runtime versions.
 
 ```sh
 fnm use
 npm install
 ```
-
-**You'll also need to have Python 3.9 installed on your local development machine**. You can use [pyenv](https://github.com/pyenv/pyenv) to easily switch Python versions between different projects.
 
 ```sh
 pyenv install
@@ -30,52 +32,32 @@ pyenv local
 
 ## Local Development
 
-In order to develop locally, you'll need to install the dependencies and run the application using Serverless Offline.
-
-### Install Dependencies
-
-- You'll need to have [watchman](https://facebook.github.io/watchman/) installed on your local development machine.
-- Install python requirements
-
-  ```sh
-  npm run sls requirements install -- --stage local
-  ```
-
-### Run the Application
-
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
-
-Run the following command to start the local development server:
+In order to develop locally, install the dependencies and start LocalStack:
 
 ```sh
-npm run sls:offline
+cp .env.example .env.local
+docker compose --env-file .env.local up -d
+npm run sls:deploy:local
 ```
 
-### Triggering AWS Events offline
+The LocalStack token must stay in `.env.local`; do not commit it. Serverless
+Framework v4 also requires CLI authentication. The LocalStack plugin redirects
+the `local` stage to the local emulator; the default `dev` stage targets AWS.
+LocalStack reaches Docker through an internal socket proxy that enables only
+container and image API operations and is not published to the host. Docker
+container creation still grants substantial control over the Docker host, so
+run only trusted LocalStack images and project code in this setup.
 
-You must use the AWS cli to trigger events locally. First, using aws configure set up a new profile, i.e. `aws configure --profile s3local`. The default creds are
+### Triggering S3 events locally
+
+Upload an object to the configured trigger bucket using AWS CLI credentials
+accepted by LocalStack:
 
 ```sh
-aws_access_key_id = S3RVER
-aws_secret_access_key = S3RVER
+AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=us-east-1 \
+  aws --endpoint-url=http://localhost:4566 s3 cp .gitignore \
+  s3://s3-local-lambda-trigger/
 ```
-
-```sh
-aws --endpoint-url=http://localhost:8000 s3 cp .gitignore s3://customBucket/ --profile s3local
-```
-
-### Testing pointing to the Cloud
-
-You can also test the application pointing to the cloud. You'll need to have the AWS CLI installed and configured.
-
-```sh
-export AWS_ACCESS_KEY_ID=<your-access-key-id>
-export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
-export AWS_SESSION_TOKEN=<your-session-token>
-export AWS_DEFAULT_REGION=<your-default-region>
-```
-
-and the run the previous commands.
 
 ## Deployment
 

@@ -1,7 +1,3 @@
-import os
-import boto3
-
-
 def handler(event, _context):
     print("on-object-created handler called")
     filename = event["Records"][0]["s3"]["object"]["key"]
