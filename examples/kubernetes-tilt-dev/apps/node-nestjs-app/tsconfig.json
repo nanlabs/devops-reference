@@ -1,22 +1,25 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "nodenext",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false,
-    "target": "ES2019",
+    "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "rootDir": "./",
     "incremental": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "allowJs": false,
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true
+    "moduleResolution": "nodenext",
+    "resolvePackageJsonExports": true,
+    "resolveJsonModule": true,
+    "types": ["jest", "node"]
   },
   "exclude": ["node_modules", "dist", "*coverage", "logs", "scripts"]
 }

@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 
-FROM node:18-alpine AS development
+FROM node:24-alpine AS development
 
 # Set working directory
 WORKDIR /app
@@ -20,7 +20,7 @@ COPY . ./
 
 CMD [ "npm", "run", "dev" ]
 
-FROM node:18-alpine AS build
+FROM node:24-alpine AS build
 
 # Set working directory
 WORKDIR /app
@@ -50,7 +50,7 @@ RUN if [ -f yarn.lock ]; then yarn --frozen-lockfile --production; \
 # Use the node user from the image as the user to run the app
 USER node
 
-FROM node:18-alpine AS production
+FROM node:24-alpine AS production
 
 # Set working directory
 WORKDIR /app

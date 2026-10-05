@@ -30,11 +30,15 @@ You can find useful information such as project structure, available scripts and
 
 ## Quickstart
 
+Use Node.js 24.15 or later for the NestJS 12 CLI and its tooling. [fnm](https://github.com/Schniz/fnm) can switch to this project's pinned version.
+
 ```sh
 fnm use
 npm install
 npm run dev
 ```
+
+The test suite uses Jest and requires Node.js 24.9 or later with NestJS 12.
 
 ## Development
 

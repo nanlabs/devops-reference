@@ -363,6 +363,7 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 coverage/
+*.tsbuildinfo
 
 ### macOS template
 # General
