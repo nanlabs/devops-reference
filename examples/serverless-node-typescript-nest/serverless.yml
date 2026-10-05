@@ -1,9 +1,8 @@
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: '3'
+frameworkVersion: '4'
 
 plugins:
-  - serverless-plugin-typescript
   - serverless-offline
 
 useDotenv: true
@@ -21,7 +20,7 @@ custom:
 provider:
   name: aws
   stage: local
-  runtime: nodejs18.x
+  runtime: nodejs22.x
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -29,7 +28,7 @@ provider:
 
 functions:
   main:
-    handler: src/lambda.handler
+    handler: dist/lambda.handler
     events:
       - http:
           method: ANY
