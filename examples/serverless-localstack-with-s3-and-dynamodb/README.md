@@ -71,7 +71,12 @@ aws --endpoint-url=http://localhost:4566 --no-verify-ssl s3 ls --recursive serve
 
 ## Security maintenance
 
-`adm-zip` is temporarily overridden to `0.6.1` because `serverless-localstack@1.4.0` still requires `^0.5.10`, which has no patched 0.5.x release. The S3 plugin path uses the compatible ZIP API in 0.6.1, and the override removes the reported high severity ZIP memory allocation vulnerabilities. Review this override by **2027-01-03** and remove it when the plugin accepts a patched version without an override. Advisory: [GHSA-xcpc-8h2w-3j85](https://github.com/advisories/GHSA-xcpc-8h2w-3j85).
+`adm-zip` is temporarily overridden to `0.6.1` because `serverless-localstack@1.4.0`
+still requires `^0.5.10`, which has no patched 0.5.x release. The S3 plugin path
+uses the compatible ZIP API in 0.6.1, and the override removes the reported high
+severity ZIP memory allocation vulnerabilities. Review this override by
+**2027-01-03** and remove it when the plugin accepts a patched version without an
+override. Advisory: [GHSA-xcpc-8h2w-3j85](https://github.com/advisories/GHSA-xcpc-8h2w-3j85).
 
 ## Development
 
