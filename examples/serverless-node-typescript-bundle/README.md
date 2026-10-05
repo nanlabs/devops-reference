@@ -1,6 +1,6 @@
 # Serverless Middy + TypeScript Example
 
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![serverless](http://public.serverless.com/badges/v4.svg)](http://www.serverless.com)
 
 We use Serverless Framework to do production ready deployments and local development using
 _serverless-offline_.
@@ -15,18 +15,21 @@ npx serverless install -u https://github.com/nanlabs/devops-reference/tree/main/
 
 ## Requirements
 
-**You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
+**You’ll need to have Node.js 22 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ```sh
 git clone https://github.com/nanlabs/devops-reference.git
 cd devops-reference/examples/serverless-node-typescript-bundle
 fnm use
-npm install
+npm ci
+npx serverless login
 ```
+
+Serverless Framework v4 requires authentication. Run `npx serverless login` once before using the CLI; in CI, configure a Serverless Dashboard access key as `SERVERLESS_ACCESS_KEY`.
 
 ## Local Development
 
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+This repository has a local development setup that uses the file `.env.local` to configure the local environment.
 Run the following command to start the local development server:
 
 ```sh

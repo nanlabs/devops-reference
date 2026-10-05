@@ -1,4 +1,4 @@
-import { APIGatewayProxyResult } from "aws-lambda";
+import type { APIGatewayProxyResult } from "aws-lambda";
 import middy from "@middy/core";
 import jsonBodyParser from "@middy/http-json-body-parser";
 
