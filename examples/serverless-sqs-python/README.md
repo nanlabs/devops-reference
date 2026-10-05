@@ -2,16 +2,23 @@
 
 [![serverless](http://public.serverless.com/badges/v4.svg)](http://www.serverless.com)
 
-We use Serverless Framework to do production ready deployments and local development using
+We use Serverless Framework for production deployments and local development with
 _serverless-offline_.
 
-We use LocalStack to emulate AWS SQS locally and use the Serverless Offline SQS plugin to consume the emulated queue from Lambda events.
+We use LocalStack to emulate AWS SQS locally. The Serverless Offline SQS plugin
+consumes the emulated queue from Lambda events.
 
-Queues defined in resources, such as `myFirstQueue`, are deployed in cloud environments. They are not deployed by default in LocalStack. The Serverless Offline SQS plugin creates queues automatically in LocalStack when a Lambda event consumes them.
+Queues defined in `resources`, such as `myFirstQueue`, are deployed in cloud
+environments. They are not deployed by default in LocalStack. The Serverless
+Offline SQS plugin creates a queue automatically when a Lambda event consumes it.
 
-If you need to create a queue without a lambda event consuming it look in the localstack docker-compose.yml file. There is commented code to run a set-up script.
+If you need to create a queue without a Lambda event consuming it, see the
+LocalStack `docker-compose.yml` file. It contains commented code for a setup script.
 
-To use a queue in a lambda event we have to specify its arn, and to consume a queue in a lambda function we have to pass its url. So, to simplify this we can add a custom resource per queue by specifying the local arn and the local url (for the other stages we get the value of the cloudformation resource) and then we can pass the custom resource to the lambdas by taking advantage of the stage variable. So we have to create the queues in cloudformation resources and specify them in custom resources as well.
+Specify a queue's ARN in its Lambda event and pass the queue URL to the function.
+This example defines a custom resource for each queue. In the local stage, it
+provides the LocalStack ARN and URL; in other stages, it uses the CloudFormation
+queue values. The stage variable selects the appropriate values for each function.
 
 ## Requirements
 
@@ -100,5 +107,5 @@ We recommend the following documentation:
 
 - [SQS - Serverless](https://www.serverless.com/framework/docs/providers/aws/events/sqs)
 - [AWS SQS Queue - Cloudformation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html)
-- [Serverless Offline SQS - NPM](https://www.npmjs.com/package/serverless-offline-sqs)
+- [Serverless Offline SQS - npm](https://www.npmjs.com/package/serverless-offline-sqs)
 - [SQS - Localstack](https://docs.localstack.cloud/user-guide/aws/sqs/)
