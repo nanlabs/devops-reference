@@ -32,7 +32,7 @@ npm install
 
 ## Local Development
 
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+This repository has a local development setup that uses the file `.env.local` to configure the local environment.
 Grab your `ACCOUNT SID` and `AUTH TOKEN` from the [Twilio console](https://www.twilio.com/console)
 Run the following command to start the local development server:
 

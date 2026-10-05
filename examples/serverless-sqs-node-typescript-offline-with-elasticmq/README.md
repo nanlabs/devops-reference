@@ -25,7 +25,7 @@ Run the following command to start the compose with elasticMQ:
 npm run local:up
 ```
 
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+This repository has a local development setup that uses the file `.env.local` to configure the local environment.
 Run the following command to start the local development server:
 
 ```sh
