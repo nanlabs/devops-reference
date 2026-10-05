@@ -13,3 +13,5 @@ These overrides are temporary compatibility controls for two examples whose curr
 | `serverless-appsync-python` | `form-data` | `4.0.6` | The simulator's Jest 26/jsdom chain locks `3.0.5`; the 4.x release is outside the vulnerable 3.x range. Scope is this example only. |
 
 Validation for this change: clean `npm ci` in both examples, lockfile resolution checks, targeted `npm audit` with no remaining `mysql2` or `form-data` findings, and `npx tsc --noEmit` for the TypeScript example. Local `sls package` is blocked by Serverless Framework v4's access-key/license gate; run the package step in CI where the repository credentials are configured. Reassess simulator behavior and remove or revise the overrides at the next review.
+
+At review time, check whether a newer `serverless-appsync-simulator` release accepts patched dependency versions. If it does, remove the corresponding override and regenerate the lockfile. If it does not, renew an override only with current advisory evidence and a new dated review.
