@@ -23,6 +23,8 @@ npm install
 
 ## EC2 Instance Deployment
 
+This example requires Node.js 18.20.3 or later. Serverless Framework v4 also requires CLI authentication; run `npx serverless login` interactively, or configure a supported Access Key or License Key for non-interactive use before deployment.
+
 To deploy the app to AWS, you'll first need to configure your AWS credentials. There are many ways
 to set your credentials, for more information refer to the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 

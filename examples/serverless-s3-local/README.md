@@ -43,6 +43,10 @@ npm run sls:deploy:local
 The LocalStack token must stay in `.env.local`; do not commit it. Serverless
 Framework v4 also requires CLI authentication. The LocalStack plugin redirects
 the `local` stage to the local emulator; the default `dev` stage targets AWS.
+LocalStack reaches Docker through an internal socket proxy that enables only
+container and image API operations and is not published to the host. Docker
+container creation still grants substantial control over the Docker host, so
+run only trusted LocalStack images and project code in this setup.
 
 ### Triggering S3 events locally
 
