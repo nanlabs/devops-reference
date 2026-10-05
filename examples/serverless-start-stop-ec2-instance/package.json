@@ -19,15 +19,13 @@
   "homepage": "https://github.com/nanlabs/devops-reference#readme",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.108",
-    "@types/aws-sdk": "^2.7.0",
-    "serverless": "^4.39.0",
+    "@types/node": "^24.19.1",
+    "serverless": "^4.43.0",
     "serverless-offline": "^14.7.4",
-    "serverless-plugin-typescript": "^2.1.4",
-    "typescript": "^4.8.4"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "aws-lambda": "^1.0.7",
-    "aws-sdk": "^2.1373.0",
+    "@aws-sdk/client-ec2": "^3.1095.0",
     "http-errors": "^2.0.0"
   }
 }

@@ -1,8 +1,12 @@
 import { ScheduledHandler } from "aws-lambda";
-import { EC2 } from "aws-sdk";
+import {
+  DescribeInstanceStatusCommand,
+  EC2Client,
+  StartInstancesCommand,
+} from "@aws-sdk/client-ec2";
 
 export const handler: ScheduledHandler = async (event) => {
-  const ec2 = new EC2({ region: event.region });
+  const ec2 = new EC2Client({ region: event.region });
 
   const instanceId = process.env.EC2_INSTANCE_ID;
 
@@ -11,11 +15,11 @@ export const handler: ScheduledHandler = async (event) => {
   }
 
   // check if instance is running. If not, start it
-  const instanceStatus = await ec2
-    .describeInstanceStatus({
+  const instanceStatus = await ec2.send(
+    new DescribeInstanceStatusCommand({
       InstanceIds: [instanceId],
     })
-    .promise();
+  );
 
   if (
     instanceStatus?.InstanceStatuses &&
@@ -25,12 +29,6 @@ export const handler: ScheduledHandler = async (event) => {
     return;
   }
 
-  const result = await ec2
-    .startInstances({ InstanceIds: [instanceId] })
-    .promise();
-  if (result.$response.error) {
-    throw result.$response.error;
-  }
-
-  console.log(result);
+  await ec2.send(new StartInstancesCommand({ InstanceIds: [instanceId] }));
+  console.log(`Started EC2 instance ${instanceId}`);
 };

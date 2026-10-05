@@ -1,32 +1,39 @@
 # Serverless SQS offline + Python + Localstack
 
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![serverless](http://public.serverless.com/badges/v4.svg)](http://www.serverless.com)
 
-We use Serverless Framework to do production ready deployments and local development using
+We use Serverless Framework for production deployments and local development with
 _serverless-offline_.
 
-We use Localstack to emulate AWS SQS locally and need to use the serverless-offline-sqs-external plugin to consume the localstack emulation on lambda events.
+We use LocalStack to emulate AWS SQS locally. The Serverless Offline SQS plugin
+consumes the emulated queue from Lambda events.
 
-Queues defined in resources, e.g. myFirstQueue are deployed in cloud environments. they are not deployed by default in localstack. The serverless-offline-sqs-external plugin creates the queues automatically in localstack if they are part of a lambda event.
+Queues defined in `resources`, such as `myFirstQueue`, are deployed in cloud
+environments. They are not deployed by default in LocalStack. The Serverless
+Offline SQS plugin creates a queue automatically when a Lambda event consumes it.
 
-If you need to create a queue without a lambda event consuming it look in the localstack docker-compose.yml file. There is commented code to run a set-up script.
+If you need to create a queue without a Lambda event consuming it, see the
+LocalStack `docker-compose.yml` file. It contains commented code for a setup script.
 
-To use a queue in a lambda event we have to specify its arn, and to consume a queue in a lambda function we have to pass its url. So, to simplify this we can add a custom resource per queue by specifying the local arn and the local url (for the other stages we get the value of the cloudformation resource) and then we can pass the custom resource to the lambdas by taking advantage of the stage variable. So we have to create the queues in cloudformation resources and specify them in custom resources as well.
+Specify a queue's ARN in its Lambda event and pass the queue URL to the function.
+This example defines a custom resource for each queue. In the local stage, it
+provides the LocalStack ARN and URL; in other stages, it uses the CloudFormation
+queue values. The stage variable selects the appropriate values for each function.
 
 ## Requirements
 
-**You’ll need to have Node 16.13.2 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
+**You’ll need to have Node 24 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ```sh
 fnm use
 npm install
 ```
 
-**You'll also need to have Python 3.9 installed on your local development machine**. You can use [pyenv](https://github.com/pyenv/pyenv) to easily switch Python versions between different projects.
+**You'll also need to have Python 3.12.14 installed on your local development machine**. You can use [pyenv](https://github.com/pyenv/pyenv) to easily switch Python versions between different projects.
 
 ```sh
-pyenv install
-pyenv local
+pyenv install 3.12.14
+pyenv local 3.12.14
 ```
 
 **You'll also need [Docker](https://www.docker.com/)**
@@ -60,7 +67,7 @@ npm run sls requirements install
 
 #### Run the Application
 
-This repo has a local development set up that uses the file `.env.local` to configure the local environment.
+This repository has a local development setup that uses the file `.env.local` to configure the local environment.
 Run the following command to start the local development server:
 
 ```sh
@@ -100,5 +107,5 @@ We recommend the following documentation:
 
 - [SQS - Serverless](https://www.serverless.com/framework/docs/providers/aws/events/sqs)
 - [AWS SQS Queue - Cloudformation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html)
-- [Serverless offline sqs external - NPM](https://www.npmjs.com/package/serverless-offline-sqs-external)
+- [Serverless Offline SQS - npm](https://www.npmjs.com/package/serverless-offline-sqs)
 - [SQS - Localstack](https://docs.localstack.cloud/user-guide/aws/sqs/)
