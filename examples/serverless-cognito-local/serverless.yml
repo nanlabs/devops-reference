@@ -1,10 +1,10 @@
 service: ${env:SERVICE_NAME}
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 provider:
   name: aws
   stage: local
-  runtime: nodejs16.x
+  runtime: nodejs22.x
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -19,7 +19,6 @@ functions:
           trigger: PreSignUp
 
 plugins:
-  - serverless-plugin-typescript
   - serverless-offline
 
 custom:
