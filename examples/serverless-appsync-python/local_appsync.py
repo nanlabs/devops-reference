@@ -2,9 +2,8 @@ import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
-from graphql import build_schema, graphql_sync
-
 from app.resolvers.handler import graphqlResolver
+from graphql import GraphQLObjectType, build_schema, graphql_sync
 
 SCHEMA = build_schema(Path("schema.graphql").read_text())
 
@@ -19,7 +18,10 @@ def resolver(field_name):
 
 
 for field_name in ("getResource", "getResources", "createResource"):
-    parent = SCHEMA.get_type("Mutation" if field_name == "createResource" else "Query")
+    type_name = "Mutation" if field_name == "createResource" else "Query"
+    parent = SCHEMA.get_type(type_name)
+    if not isinstance(parent, GraphQLObjectType) or field_name not in parent.fields:
+        raise RuntimeError(f"Schema is missing {type_name}.{field_name}")
     parent.fields[field_name].resolve = resolver(field_name)
 
 

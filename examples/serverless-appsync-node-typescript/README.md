@@ -25,7 +25,12 @@ npm install
 
 ## Local Development
 
-The previous AppSync simulator was removed because its dependency tree contains unresolved security advisories. The local server below runs the same GraphQL schema and Lambda handler without emulating AppSync, VTL, or authentication. When migrating an existing stack from the previous plugin based configuration, review the generated CloudFormation change set for resource replacements before applying it.
+The previous AppSync simulator was removed because its dependency tree contains
+unresolved security advisories. The local server below runs the same GraphQL
+schema and Lambda handler without emulating AppSync, VTL, or authentication.
+When migrating an existing stack from the previous plugin based configuration,
+review the generated CloudFormation change set for resource replacements before
+applying it.
 
 Install dependencies and run `npm run sls:offline` to start the local GraphQL handler at `http://127.0.0.1:20002/graphql`. Send GraphQL POST requests to that endpoint. Use a deployed development endpoint to validate AppSync-specific behavior. Configure `.env.local` for the target service name before packaging or deployment.
 
