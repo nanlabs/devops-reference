@@ -1,9 +1,8 @@
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 plugins:
-  - serverless-plugin-typescript
   - serverless-appsync-plugin
   - serverless-appsync-simulator
   - serverless-offline

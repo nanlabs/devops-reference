@@ -1,6 +1,6 @@
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 plugins:
   - serverless-python-requirements
