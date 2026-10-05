@@ -1,4 +1,4 @@
-# Serverless LocalStack Example [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+# Serverless LocalStack Example [![serverless](http://public.serverless.com/badges/v4.svg)](http://www.serverless.com)
 
 This project is a TypeScript based API generated using [create-awesome-node-app](https://www.npmjs.com/package/create-awesome-node-app). However, it is recommended to generate your own project using the command and following the options in the interactive menu. Please refer to the documentation for more information.
 
@@ -25,9 +25,9 @@ _serverless-offline_.
 
 - [Docker](https://www.docker.com/)
 - [Docker Composer](https://docs.docker.com/compose/)
-- [Node.js](https://nodejs.org/en/) 18 or later
+- [Node.js](https://nodejs.org/en/) 22 or later
 
-  **You’ll need to have Node 18 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
+  **You’ll need to have Node.js 22 or later on your local development machine** (but it’s not required on the server). You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.
 
 ## Quickstart
 
@@ -35,6 +35,9 @@ _serverless-offline_.
 # Setup NodeJs and install dependencies
 fnm use
 pnpm install
+npx serverless login
+
+# For CI or non-interactive use, set SERVERLESS_ACCESS_KEY instead.
 
 # Run the Local Stack using Docker Compose
 docker-compose up -d
@@ -65,6 +68,10 @@ export AWS_SECRET_ACCESS_KEY="dummy-value"
 aws --endpoint-url=http://localhost:4566 --no-verify-ssl s3 ls --recursive serverless-localstack-bucket
 # 2023-10-31 18:00:00         18 example/file.js
 ```
+
+## Security maintenance
+
+`adm-zip` is temporarily overridden to `0.6.1` because `serverless-localstack@1.4.0` still requires `^0.5.10`, which has no patched 0.5.x release. The S3 plugin path uses the compatible ZIP API in 0.6.1, and the override removes the reported high severity ZIP memory allocation vulnerabilities. Review this override by **2027-01-03** and remove it when the plugin accepts a patched version without an override. Advisory: [GHSA-xcpc-8h2w-3j85](https://github.com/advisories/GHSA-xcpc-8h2w-3j85).
 
 ## Development
 

@@ -1,9 +1,8 @@
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: '3'
+frameworkVersion: '4'
 
 plugins:
-  - serverless-plugin-typescript
   - serverless-localstack
   - serverless-offline
 
@@ -33,7 +32,7 @@ provider:
   name: aws
   stage: local
   region: us-east-1
-  runtime: nodejs18.x
+  runtime: nodejs22.x
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
