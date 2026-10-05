@@ -45,6 +45,7 @@ jobs:
         uses: super-linter/super-linter/slim@v5
         env:
           VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
           FILTER_REGEX_INCLUDE: >-
             (^|/)examples/serverless-[^/]+/serverless\.yml$
           VALIDATE_CLOUDFORMATION: false
