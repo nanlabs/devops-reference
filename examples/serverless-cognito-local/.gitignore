@@ -2,6 +2,7 @@
 node_modules
 jspm_packages
 .build
+/dist
 
 # Serverless directories
 .serverless

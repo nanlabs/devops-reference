@@ -8,9 +8,9 @@ Make sure you have the following software installed on your local development ma
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-- [Node.js](https://nodejs.org/en/) (version 16.13.2 or later)
+- [Node.js](https://nodejs.org/en/) (version 22 or later)
 
-**Note: Node.js 16.13.2 or later is required on your local development machine, but not on the server. You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.**
+**Note: Node.js 22 or later is required on your local development machine. You can use [fnm](https://github.com/Schniz/fnm) to easily switch Node versions between different projects.**
 
 To switch to the required Node.js version, run the following command:
 
@@ -24,33 +24,41 @@ Follow these steps to quickly get started with the Cognito local development env
 
 1. Clone this repository:
 
-   ```sh
-   git clone https://github.com/nanlabs/devops-reference.git
-   ```
+    ```sh
+    git clone https://github.com/nanlabs/devops-reference.git
+    ```
 
 2. Navigate to the Cognito local example directory:
 
-   ```sh
-   cd devops-reference/examples/serverless-cognito-local
-   ```
+    ```sh
+    cd devops-reference/examples/serverless-cognito-local
+    ```
 
 3. Start the required services using Docker Compose:
 
-   ```sh
-   docker-compose up
-   ```
+    ```sh
+    docker-compose up
+    ```
 
 4. Install the necessary dependencies:
 
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 
-5. Run the serverless framework in offline mode:
+5. Authenticate with Serverless Framework 4:
 
-   ```sh
-   npm run sls:offline
-   ```
+    ```sh
+    npx serverless login
+    ```
+
+    For unattended environments, set `SERVERLESS_ACCESS_KEY` instead.
+
+6. Run the serverless framework in offline mode:
+
+    ```sh
+    npm run sls:offline
+    ```
 
 The following services will be started:
 
