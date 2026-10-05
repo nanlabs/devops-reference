@@ -42,16 +42,14 @@
     "jest": "^30.4.2",
     "lint-staged": "^17.2.0",
     "prettier": "^3.9.6",
-    "serverless": "^4.40.0",
+    "serverless": "^4.43.0",
     "serverless-localstack": "^1.4.0",
     "serverless-offline": "^14.7.4",
-    "serverless-plugin-typescript": "^2.1.5",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.12",
-    "ts-loader": "^9.6.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^7.0.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1095.0",
@@ -59,7 +57,11 @@
     "@middy/http-header-normalizer": "^7.7.2",
     "@middy/http-json-body-parser": "^7.7.2",
     "@middy/validator": "^7.7.2",
-    "aws-lambda": "^1.0.7",
     "http-errors": "^2.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "adm-zip": "0.6.1"
+    }
   }
 }
