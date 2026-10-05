@@ -17,7 +17,8 @@ class ObjectType(Protocol):
 
 
 class GraphQLSchema(Protocol):
-    def get_type(self, name: str) -> ObjectType | None: ...
+    def get_type(self, name: str) -> ObjectType | None:
+        raise NotImplementedError
 
 
 graphql = import_module("graphql")
