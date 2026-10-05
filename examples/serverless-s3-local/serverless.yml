@@ -1,9 +1,9 @@
+---
 service: ${env:SERVICE_NAME}
 
 frameworkVersion: "4"
 
 plugins:
-  - serverless-python-requirements
   - serverless-localstack
 
 useDotenv: true
@@ -18,8 +18,6 @@ package:
     - "**"
 
 custom:
-  pythonRequirements:
-    usePipenv: true
   localstack:
     stages:
       - local

@@ -1,10 +1,12 @@
+---
 services:
   localstack:
     image: localstack/localstack:2026.08.3
     ports:
       - "127.0.0.1:4566:4566"
     environment:
-      LOCALSTACK_AUTH_TOKEN: ${LOCALSTACK_AUTH_TOKEN:?Set LOCALSTACK_AUTH_TOKEN in .env.local}
+      LOCALSTACK_AUTH_TOKEN: >-
+        ${LOCALSTACK_AUTH_TOKEN:?Set LOCALSTACK_AUTH_TOKEN in .env.local}
       SERVICES: s3,lambda,iam,logs,cloudformation,sts
       AWS_DEFAULT_REGION: us-east-1
       DOCKER_HOST: unix:///var/run/docker.sock
