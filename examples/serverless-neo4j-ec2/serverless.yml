@@ -1,5 +1,7 @@
 service: ${env:SERVICE_NAME}
 
+frameworkVersion: "4"
+
 useDotenv: true
 
 provider:

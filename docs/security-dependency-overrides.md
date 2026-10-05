@@ -3,10 +3,10 @@
 - Reviewed: 2026-10-05
 - Next review due: 2027-01-03
 
-These overrides are temporary compatibility controls for two examples. Their
-current `serverless-appsync-simulator@0.20.0` release has not updated the
-vulnerable transitive dependencies. Review the overrides by the due date and
-remove them when the simulator supports patched versions directly.
+These overrides are temporary compatibility controls for three examples. Their
+upstream packages still constrain vulnerable transitive dependencies. Review
+the overrides by the due date and remove each when its parent supports a patched
+version directly.
 
 ## `serverless-appsync-node-typescript`
 
@@ -22,11 +22,21 @@ remove them when the simulator supports patched versions directly.
   `2.3.3`. The same mysql2 advisories apply.
 - `form-data@4.0.6` replaces `3.0.5` in the simulator's Jest 26/jsdom chain.
 
+## `serverless-s3-local`
+
+- `adm-zip@0.6.1` replaces the Serverless LocalStack plugin's `^0.5.10` range.
+  No patched 0.5.x release exists; `0.6.1` is the first non-vulnerable version.
+  The plugin uses the same `AdmZip` API in its custom-resource packaging path.
+- The archived `serverless-s3-local` plugin was removed. Serverless Framework
+  4 and `serverless-localstack` use LocalStack's S3-to-Lambda event integration.
+
 ## Validation and review
 
-Both lockfiles resolve `mysql2@3.24.5` and `form-data@4.0.6`. Clean `npm ci`
-passes in both examples, and targeted `npm audit` reports no findings for either
-package. `npx tsc --noEmit` passes for the TypeScript example. Local
+The AppSync lockfiles resolve `mysql2@3.24.5` and `form-data@4.0.6`. Clean
+`npm ci` passes in those examples, and targeted `npm audit` reports no findings
+for those packages. `npx tsc --noEmit` passes for the TypeScript example. The
+S3 Local lockfile resolves `adm-zip@0.6.1`; its high audit findings are removed.
+Local
 `sls package` is blocked by Serverless Framework v4's access-key/license gate.
 Run that step in CI where the repository credentials are configured.
 
