@@ -39,6 +39,7 @@ jobs:
           # Keep them in a YAML-only pass below.
           FILTER_REGEX_EXCLUDE: >-
             (^|/)examples/serverless-[^/]+/serverless\.yml$
+          PYTHON_MYPY_CONFIG_FILE: .mypy.ini
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate Serverless service YAML

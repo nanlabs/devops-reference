@@ -2,77 +2,19 @@ service: ${env:SERVICE_NAME}
 
 frameworkVersion: "4"
 
-plugins:
-  - serverless-python-requirements
-  - serverless-appsync-plugin
-  - serverless-appsync-simulator
-  - serverless-offline
-  - ./plugins/serverless-offline-python-requirements
-
 useDotenv: true
 
 package:
   individually: true
   excludeDevDependencies: true
-  include:
-    - "**/*.py"
-    - "*.graphql"
-    - "mapping-templates/*.vtl"
-  exclude:
-    - requirements.txt
-
-custom:
-  pythonRequirements:
-    layer: true
-    usePipenv: true
-    noDeploy:
-      - pytest
-  serverless-offline:
-    httpPort: 3000
-    port: 3000
-  appsync-simulator:
-    apiKey: da2-fakeApiId123456
-    watch:
-      - "*.graphql"
-      - "mapping-templates/*.vtl"
-  appSync:
-    name: AppSyncExample
-    authenticationType: API_KEY
-    schema: schema.graphql
-    wafConfig:
-      enabled: true
-      rules:
-        - throttle: 200
-    apiKeys:
-      - name: AppSyncExample-api-key
-        description: "NaN AppSync API Key"
-        expiresAfter: 1y
-    defaultMappingTemplates:
-      request: false
-      response: response.vtl
-    mappingTemplates:
-      - type: Query
-        dataSource: AppSyncExample_lambdaDataSource
-        field: getResource
-      - type: Query
-        dataSource: AppSyncExample_lambdaDataSource
-        field: getResources
-      - type: Mutation
-        dataSource: AppSyncExample_lambdaDataSource
-        field: createResource
-    dataSources:
-      - type: AWS_LAMBDA
-        name: AppSyncExample_lambdaDataSource
-        description: "NaN AppSync Lambda DataSource"
-        config:
-          functionName: AppSyncExampleResolver
-    tags:
-      name: AppSyncExample
+  patterns:
+    - "!**"
+    - "app/**/*.py"
 
 provider:
   name: aws
   stage: local
-  runtime: python3.9
+  runtime: python3.12
   deploymentBucket:
     blockPublicAccess: true
     versioning: true
@@ -80,13 +22,121 @@ provider:
 
 functions:
   AppSyncExampleResolver:
-    runtime: python3.9
-    module: app/resolvers
-    handler: handler.graphqlResolver
-    layers:
-      - !Ref PythonRequirementsLambdaLayer
+    handler: app.resolvers.handler.graphqlResolver
 
 resources:
+  Resources:
+    GraphQlApi:
+      Type: AWS::AppSync::GraphQLApi
+      Properties:
+        Name: AppSyncExample
+        AuthenticationType: API_KEY
+        XrayEnabled: false
+        Tags:
+          - Key: name
+            Value: AppSyncExample
+    GraphQlSchema:
+      Type: AWS::AppSync::GraphQLSchema
+      Properties:
+        ApiId: !GetAtt GraphQlApi.ApiId
+        Definition: ${file(./schema.graphql)}
+    GraphQlApiAppSyncExampleapikey:
+      Type: AWS::AppSync::ApiKey
+      Properties:
+        ApiId: !GetAtt GraphQlApi.ApiId
+        Description: "NaN AppSync API Key"
+        Expires: ${file(./api-key-expiration.js)}
+    GraphQlDsAppSyncExamplelambdaDataSourceRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service: appsync.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: AppSync-Datasource-AppSyncExample_lambdaDataSource
+            PolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                - Effect: Allow
+                  Action: lambda:InvokeFunction
+                  Resource: !GetAtt AppSyncExampleResolverLambdaFunction.Arn
+    GraphQlDsAppSyncExamplelambdaDataSource:
+      Type: AWS::AppSync::DataSource
+      Properties:
+        ApiId: !GetAtt GraphQlApi.ApiId
+        Name: AppSyncExample_lambdaDataSource
+        Description: "NaN AppSync Lambda DataSource"
+        Type: AWS_LAMBDA
+        ServiceRoleArn: !GetAtt GraphQlDsAppSyncExamplelambdaDataSourceRole.Arn
+        LambdaConfig:
+          LambdaFunctionArn: !GetAtt AppSyncExampleResolverLambdaFunction.Arn
+    GraphQlResolverQuerygetResource:
+      Type: AWS::AppSync::Resolver
+      DependsOn: GraphQlSchema
+      Properties:
+        ApiId: !GetAtt GraphQlApi.ApiId
+        TypeName: Query
+        FieldName: getResource
+        Kind: UNIT
+        DataSourceName: !GetAtt GraphQlDsAppSyncExamplelambdaDataSource.Name
+        ResponseMappingTemplate: ${file(./mapping-templates/response.vtl)}
+    GraphQlResolverQuerygetResources:
+      Type: AWS::AppSync::Resolver
+      DependsOn: GraphQlSchema
+      Properties:
+        ApiId: !GetAtt GraphQlApi.ApiId
+        TypeName: Query
+        FieldName: getResources
+        Kind: UNIT
+        DataSourceName: !GetAtt GraphQlDsAppSyncExamplelambdaDataSource.Name
+        ResponseMappingTemplate: ${file(./mapping-templates/response.vtl)}
+    GraphQlResolverMutationcreateResource:
+      Type: AWS::AppSync::Resolver
+      DependsOn: GraphQlSchema
+      Properties:
+        ApiId: !GetAtt GraphQlApi.ApiId
+        TypeName: Mutation
+        FieldName: createResource
+        Kind: UNIT
+        DataSourceName: !GetAtt GraphQlDsAppSyncExamplelambdaDataSource.Name
+        ResponseMappingTemplate: ${file(./mapping-templates/response.vtl)}
+    GraphQlWaf:
+      Type: AWS::WAFv2::WebACL
+      Properties:
+        Description: ACL rules for AppSync AppSyncExample
+        Name: ${self:service}-${sls:stage}-python-appsync-waf
+        Scope: REGIONAL
+        DefaultAction:
+          Allow: {}
+        VisibilityConfig:
+          CloudWatchMetricsEnabled: true
+          MetricName: ${self:service}-${sls:stage}-python-appsync-waf
+          SampledRequestsEnabled: true
+        Tags:
+          - Key: name
+            Value: AppSyncExample
+        Rules:
+          - Name: Throttle
+            Priority: 100
+            Action:
+              Block: {}
+            Statement:
+              RateBasedStatement:
+                Limit: 200
+                AggregateKeyType: IP
+            VisibilityConfig:
+              CloudWatchMetricsEnabled: true
+              MetricName: python-appsync-throttle
+              SampledRequestsEnabled: true
+    GraphQlWafAssoc:
+      Type: AWS::WAFv2::WebACLAssociation
+      Properties:
+        ResourceArn: !GetAtt GraphQlApi.Arn
+        WebACLArn: !GetAtt GraphQlWaf.Arn
   Outputs:
     AppSyncApiUrl:
       Value: !GetAtt GraphQlApi.GraphQLUrl

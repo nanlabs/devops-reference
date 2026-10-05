@@ -14,14 +14,14 @@ const getResources = async () => [
   },
 ];
 
-const createResource = async ({ name }: { name: string }) => ({
+const createResource = async ({ data }: { data: { name: string } }) => ({
   id: "1",
-  name,
+  name: data.name,
 });
 
 export const graphqlHandler = async (
   event: AppSyncResolverEvent<AppSyncArguments>,
-  context: Context
+  context: Context,
 ) => {
   const {
     arguments: eventArguments,

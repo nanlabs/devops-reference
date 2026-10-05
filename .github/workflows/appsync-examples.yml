@@ -1,0 +1,66 @@
+name: AppSync Examples
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node-typescript:
+    name: AppSync Node.js + TypeScript
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/serverless-appsync-node-typescript
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: examples/serverless-appsync-node-typescript/.node-version
+          cache: npm
+          cache-dependency-path: examples/serverless-appsync-node-typescript/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Test handlers
+        run: npm test
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+
+  python:
+    name: AppSync Python
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/serverless-appsync-python
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: examples/serverless-appsync-python/.node-version
+          cache: npm
+          cache-dependency-path: examples/serverless-appsync-python/package-lock.json
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          npm ci
+          python -m pip install -r requirements-local.txt
+      - name: Test handlers
+        run: npm test
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+      - name: Compile Python modules
+        run: python -m compileall -q app local_appsync.py
