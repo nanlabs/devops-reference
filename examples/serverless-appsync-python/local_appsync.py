@@ -1,11 +1,27 @@
 import json
+from collections.abc import Callable, Mapping
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from importlib import import_module
 from pathlib import Path
+from typing import Any, Protocol
 
 from app.resolvers.handler import graphqlResolver
-from graphql import GraphQLObjectType, build_schema, graphql_sync
 
-SCHEMA = build_schema(Path("schema.graphql").read_text())
+
+class ResolverField(Protocol):
+    resolve: Callable[..., Any] | None
+
+
+class ObjectType(Protocol):
+    fields: Mapping[str, ResolverField]
+
+
+class GraphQLSchema(Protocol):
+    def get_type(self, name: str) -> ObjectType | None: ...
+
+
+graphql = import_module("graphql")
+SCHEMA: GraphQLSchema = graphql.build_schema(Path("schema.graphql").read_text())
 
 
 def resolver(field_name):
@@ -20,7 +36,11 @@ def resolver(field_name):
 for field_name in ("getResource", "getResources", "createResource"):
     type_name = "Mutation" if field_name == "createResource" else "Query"
     parent = SCHEMA.get_type(type_name)
-    if not isinstance(parent, GraphQLObjectType) or field_name not in parent.fields:
+    if (
+        parent is None
+        or not hasattr(parent, "fields")
+        or field_name not in parent.fields
+    ):
         raise RuntimeError(f"Schema is missing {type_name}.{field_name}")
     parent.fields[field_name].resolve = resolver(field_name)
 
@@ -34,7 +54,7 @@ class GraphQLHandler(BaseHTTPRequestHandler):
         try:
             length = int(self.headers.get("Content-Length", "0"))
             payload = json.loads(self.rfile.read(length))
-            result = graphql_sync(
+            result = graphql.graphql_sync(
                 SCHEMA,
                 payload["query"],
                 variable_values=payload.get("variables"),
