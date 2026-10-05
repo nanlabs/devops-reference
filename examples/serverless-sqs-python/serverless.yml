@@ -1,10 +1,10 @@
 service: ${env:SERVICE_NAME}
 
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 plugins:
   - serverless-python-requirements
-  - serverless-offline-sqs-external
+  - serverless-offline-sqs
   - serverless-offline
   - ./plugins/serverless-offline-python-requirements
 useDotenv: true
@@ -38,7 +38,7 @@ custom:
     port: 3000
     noPrependStageInUrl: true
 
-  serverless-offline-sqs-external:
+  serverless-offline-sqs:
     autoCreate: true # create queue if not exists
     apiVersion: "2012-11-05"
     endpoint: ${env:SQS_CLIENT_URL}
@@ -50,7 +50,7 @@ custom:
 provider:
   name: aws
   stage: local
-  runtime: python3.9
+  runtime: python3.12
   environment:
     STAGE: ${sls:stage}
   deploymentBucket:
@@ -74,7 +74,7 @@ provider:
 
 functions:
   compute:
-    runtime: python3.9
+    runtime: python3.12
     module: app/compute
     handler: handler.compute
     description: This lambda will
@@ -82,7 +82,7 @@ functions:
       - sqs: ${self:custom.myFirstQueue.Arn.${sls:stage}}
 
   sendToQueue:
-    runtime: python3.9
+    runtime: python3.12
     module: app/send_to_queue
     handler: handler.send_to_queue
     environment:
